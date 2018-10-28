@@ -29,6 +29,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/font-face.scss",
               "src/styles.scss"
             ],
             "scripts": []

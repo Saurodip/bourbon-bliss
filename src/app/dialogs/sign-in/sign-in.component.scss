@@ -1,0 +1,103 @@
+:host-context(.dropdown-menu) {
+    border-radius: 0px;
+    padding: 0px;
+}
+
+#sign-in {
+    .container {
+        text-transform: uppercase;
+        width: 840px;
+        section:first-of-type {
+            padding: 25px;
+            h4 {
+                font-family: Times New Roman;
+                letter-spacing: 2px;
+                margin: 0px;
+            }
+            small,
+            label,
+            input,
+            a {
+                font-size: 11px;
+                font-weight: 500;
+                letter-spacing: 3px;
+            }
+            .form-group:first-of-type {
+                margin-bottom: 0px !important;
+            }
+            .form-group:first-of-type {
+                margin-bottom: 12px;
+            }
+            .form-group {
+                position: relative;
+                label {
+                    span {
+                        color: red;
+                        font-size: 30px;
+                        position: relative;
+                        top: 10px;
+                        right: 5px;
+                    }
+                }
+                input {
+                    border-radius: 0px;
+                    box-shadow: none;
+                    letter-spacing: 2px;
+                    padding-right: 34px;
+                }
+                input[type="password"] {
+                    font-size: 35px;
+                }
+                i.fas.fa-exclamation-circle {
+                    top: 57px;
+                    color: red;
+                    position: absolute;
+                    right: 10px;
+                }
+                span.error {
+                    color: red;
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                    line-height: 0px;
+                }
+            }
+            input[type="submit"], input[type="button"] {
+                border-radius: 0px;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                padding: 7px 10px;
+                text-transform: uppercase;
+            }
+            .creat-account {
+                text-align: right;
+            }
+        }
+        section:last-of-type {
+            border-left: 1px solid #ccc;
+            padding: 25px;
+            letter-spacing: 2px;
+            h4 {
+                font-family: Times New Roman;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+                margin-top: 0px;
+            }
+            img {
+                height: 50px;
+                margin-top: 8px;
+                width: 50px;
+            }
+            .row {
+                margin-bottom: 20px;
+                h5 {
+                    font-size: 12px;
+                }
+                small {
+                    display: block;
+                    font-size: 10px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
