@@ -1,20 +1,28 @@
 export class Hotel {
     public heading: string;
     public description: string;
-    public action: Array<UserAction>;
-    public categories: Categories;
+    public content: Content;
 
     constructor() {
         this.heading = '';
         this.description = '';
+        this.content = new Content();
+    }
+}
+
+export class Content {
+    public action: Array<UserAction>;
+    public availability: Array<Availability>;
+
+    constructor() {
         this.action = [];
-        this.categories = new Categories();
+        this.availability = [];
     }
 }
 
 export class UserAction {
-    private key: string;
-    private operations: Array<string>;
+    public key: string;
+    public operations: Array<string>;
 
     constructor() {
         this.key = '';
@@ -22,25 +30,17 @@ export class UserAction {
     }
 }
 
-export class Categories {
-    private rooms: Array<Category>;
-    private suites: Array<Category>;
-    private fountainView: Array<Category>;
+export class Availability {
+    public type: string;
+    public path: string;
+    public icon: string;
+    public heading: string;
+    public description: string;
+    public button: string;
 
     constructor() {
-        this.rooms = [];
-        this.suites = [];
-        this.fountainView = [];
-    }
-}
-
-export class Category {
-    private icon: string;
-    private heading: string;
-    private description: string;
-    private button: string;
-
-    constructor() {
+        this.type = '';
+        this.path = '';
         this.icon = '';
         this.heading = '';
         this.description = '';

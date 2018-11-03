@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Navigation } from './navigation.model';
 
 @Component({
@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
   public navMenuItems: Array<Navigation>;
   public guestServices: Array<string>;
 
-  constructor() {
+  constructor(private elementRef: ElementRef) {
     this.viewportWidth = 0;
     this.navMenuItems = [];
     this.guestServices = [];
@@ -19,6 +19,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.viewportWidth = window.outerWidth;
+
     this.navMenuItems = [
       {
         'icon': 'fas fa-hotel',
@@ -62,5 +63,9 @@ export class NavigationComponent implements OnInit {
       'manage preferences',
       'contact us'
     ];
+  }
+
+  public navigateTo(menuIndex: number): void {
+
   }
 }

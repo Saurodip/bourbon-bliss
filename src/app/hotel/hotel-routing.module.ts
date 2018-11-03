@@ -4,7 +4,7 @@ import { HotelContainerComponent } from './container/hotel.container';
 
 const routes: Routes = [
     {
-        path: 'hotel',
+        path: '',
         component: HotelContainerComponent
     }
 ];

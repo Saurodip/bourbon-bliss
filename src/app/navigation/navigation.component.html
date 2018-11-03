@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li *ngFor="let menu of navMenuItems; let i = index">
-                    <a id="nav-{{ menu.name }}" routerLink="/{{ menu.name }}" [ngClass]="i === 0 ? 'navbar-active' : ''">
+                    <a id="nav-{{ menu.name }}" routerLink="/{{ menu.name }}" (click)="navigateTo(i)">
                         <i class="{{ menu.icon }}" aria-hidden="true"></i>{{ menu.name }}
                     </a>
                 </li>

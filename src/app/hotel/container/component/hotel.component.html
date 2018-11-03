@@ -1,3 +1,39 @@
-<p>
-  hotel works!
-</p>
+<div class="action-container">
+  <div class="row">
+    <div *ngIf="viewportWidth <= 991" class="col-xs-4 col-md-9">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{ hotelContent?.action[0].key }}</button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
+          <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="viewportWidth > 991" class="col-md-9 filter-action">
+      <span>{{ hotelContent?.action[0]?.key }} :</span>
+      <label class="radio-inline" *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
+        <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
+      </label>
+    </div>
+    <div class="col-xs-8 col-md-3">
+      <span>{{ hotelContent?.action[1]?.key }}</span>
+      <i class="view-icon {{ hotelContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+    </div>
+  </div>
+</div>
+<div class="availability-container">
+  <div class="row">
+    <div *ngFor="let item of availability; let i = index" [ngClass]="gridClass" class="hotel-view">
+      <div class="row">
+        <div [ngClass]="gridClass">
+          <img src="{{ item.path }}" alt="{{ item.type }}" class="img-responsive">
+        </div>
+        <div [ngClass]="gridClass">
+
+        </div>
+        <div [ngClass]="gridClass">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

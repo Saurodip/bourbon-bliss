@@ -1,0 +1,92 @@
+.action-container {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 25px 60px 1px;
+    text-transform: uppercase;
+    span {
+        margin-right: 15px;
+    }
+    label {
+        margin-right: 5px;
+        input[type="radio"] {
+            bottom: 3px;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+    .row:first-child {
+        button {
+            border: 2px solid #bbb8b8;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .dropdown-menu {
+            li {
+                a {
+                    font-size: 11px;
+                }
+            }
+        }
+        .filter-action {
+            position: relative;
+            top: 10px;
+        }
+        div:nth-child(2) {
+            text-align: right;
+            .view-icon {
+                background-color: white;
+                border: 2px solid #bbb8b8;
+                border-radius: 10px;
+                color: #948e8e;
+                cursor: pointer;
+                font-size: 16px;
+                height: 35px;
+                padding: 8px;
+                text-align: center;
+                width: 35px;
+            }
+        }
+    }
+}
+
+.availability-container {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 25px 75px;
+    text-transform: uppercase;
+    .row:first-child {
+        .hotel-view {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            .row {
+                margin: 0px;
+            }
+            img {
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                height: 20rem;
+                width: 35rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .action-container {
+        padding: 25px 8%;
+    }
+    .availability-container {
+        padding: 0% 12%;
+        .row:first-child {
+            .hotel-view {
+                img {
+                    border-bottom-left-radius: 0px;
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+    }
+}

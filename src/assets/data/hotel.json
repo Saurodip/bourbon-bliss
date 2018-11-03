@@ -1,114 +1,122 @@
 {
-    "hotel": {
-        "heading": "hotel rooms & suites",
-        "description": "The hotel rooms and suites at the Bellagio offer the perfect blend of beauty and elegance. Our rooms will elevate your stay, whether you're traveling for business, celebrating a honeymoon, or just looking for a remarkable getaway. With views of the Las Vegas valley or the iconic Bellagio fountains right from your suite, your stay will be nothing short of unforgettable.",
+    "heading": "hotel rooms & suites",
+    "description": "The hotel rooms and suites at the bourbon bliss offer the perfect blend of beauty and elegance. Our rooms will elevate your stay, whether you're traveling for business, celebrating a honeymoon, or just looking for a remarkable getaway. With views of the california or the iconic bourbon bliss fountains right from your suite, your stay will be nothing short of unforgettable.",
+    "content": {
         "action": [
             {
                 "key": "filter by",
-                "operations": ["view all", "rooms", "suites", "fountain view"]
+                "operations": [
+                    "view all",
+                    "rooms",
+                    "suites",
+                    "sea view"
+                ]
             },
             {
                 "key": "change view",
-                "operations": []
+                "operations": [
+                    "fas fa-grip-horizontal",
+                    "fas fa-grip-vertical"
+                ]
             }
         ],
-        "categories": {
-            "rooms": [
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                }
-            ],
-            "suites": [
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                }
-            ],
-            "fountainView": [
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                },
-                {
-                    "icon": "",
-                    "heading": "",
-                    "description": "",
-                    "button": ""
-                }
-            ]
-        }
+        "availability": [
+            {
+                "type": "rooms",
+                "path": "../../assets/images/hotel/rooms/1.jpg",
+                "icon": "fas fa-bed",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "rooms",
+                "path": "../../assets/images/hotel/rooms/2.jpg",
+                "icon": "fas fa-bed",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "rooms",
+                "path": "../../assets/images/hotel/rooms/3.jpg",
+                "icon": "fas fa-bed",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "rooms",
+                "path": "../../assets/images/hotel/rooms/4.jpg",
+                "icon": "fas fa-bed",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "suites",
+                "path": "../../assets/images/hotel/suites/1.jpg",
+                "icon": "",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "suites",
+                "path": "../../assets/images/hotel/suites/2.jpg",
+                "icon": "",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "suites",
+                "path": "../../assets/images/hotel/suites/3.jpg",
+                "icon": "",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "suites",
+                "path": "../../assets/images/hotel/suites/4.jpg",
+                "icon": "",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "sea view",
+                "path": "../../assets/images/hotel/sea-view/1.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "sea view",
+                "path": "../../assets/images/hotel/sea-view/2.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "sea view",
+                "path": "../../assets/images/hotel/sea-view/3.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "",
+                "description": "",
+                "button": ""
+            },
+            {
+                "type": "sea view",
+                "path": "../../assets/images/hotel/sea-view/4.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "",
+                "description": "",
+                "button": ""
+            }
+        ]
     }
 }
