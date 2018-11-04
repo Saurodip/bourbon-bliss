@@ -58,17 +58,92 @@
     text-transform: uppercase;
     .row:first-child {
         .hotel-view {
-            background-color: white;
-            border-radius: 10px;
             margin-bottom: 25px;
+            padding: 0px;
             .row {
-                margin: 0px;
-            }
-            img {
-                border-bottom-left-radius: 10px;
-                border-top-left-radius: 10px;
-                height: 20rem;
-                width: 35rem;
+                background-color: white;
+                border-radius: 10px;
+                margin: 0px 12px;
+                div {
+                    padding: 0px;
+                    text-align: center;
+                    img {
+                        height: 24rem;
+                        width: 100%;
+                    }
+                    i {
+                        font-size: 22px;
+                    }
+                }
+                div.horizontal-view {
+                    img {
+                        border-bottom-left-radius: 10px;
+                        border-top-left-radius: 10px;
+                    }
+                }
+                div.vertical-view {
+                    img {
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+                }
+                div.horizontal-view,
+                div.vertical-view {
+                    &:nth-of-type(2),
+                    &:nth-of-type(3) {
+                        padding: 20px 20px 0px;
+                        .row {
+                            margin: 0px;
+                        }
+                    }
+                }
+                div.vertical-view {
+                    &:nth-of-type(3) {
+                        padding-bottom: 15px; 
+                    }
+                }
+                h4 {
+                    border-bottom: 1px solid #ccc;
+                    line-height: 1.5em;
+                    margin: 0px 0px 12px;
+                    padding: 8px;
+                }
+                .area,
+                .accomodation,
+                .bed,
+                .extras {
+                    .sub-heading {
+                        font-size: 10px;
+                    }
+                    span {
+                        font-family: Raleway-Regular, Arial, Helvetica;
+                        font-size: 20px;
+                    }
+                    small {
+                        font-size: 8px;
+                    }
+                }
+                .check-rates {
+                    border: 2px solid #bbb8b8;
+                    font-size: 12px;
+                    margin: 15px;
+                    text-transform: uppercase;
+                }
+                ul {
+                    line-height: 1.4em;
+                    padding-left: 2.2em;
+                    li {
+                        font-size: 10px;
+                        list-style-type: none;
+                        text-align: left;
+                        i {
+                            font-size: 10px;
+                            padding-right: 5px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -82,9 +157,14 @@
         padding: 0% 12%;
         .row:first-child {
             .hotel-view {
-                img {
-                    border-bottom-left-radius: 0px;
-                    border-top-right-radius: 10px;
+                div.vertical-view {
+                    padding: 0px;
+                    img {
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
                 }
             }
         }

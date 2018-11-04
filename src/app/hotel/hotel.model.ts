@@ -35,15 +35,29 @@ export class Availability {
     public path: string;
     public icon: string;
     public heading: string;
-    public description: string;
-    public button: string;
+    public description: Details;
+    public facilities: Array<string>;
 
     constructor() {
         this.type = '';
         this.path = '';
         this.icon = '';
         this.heading = '';
-        this.description = '';
-        this.button = '';
+        this.description = new Details();
+        this.facilities = [];
+    }
+}
+
+export class Details {
+    public size: object;
+    public accomodation: object;
+    public bed: object;
+    public toilet: object;
+
+    constructor() {
+        this.size = {};
+        this.accomodation = {};
+        this.bed = {};
+        this.toilet = {};
     }
 }

@@ -1,7 +1,8 @@
 <div class="action-container">
   <div class="row">
-    <div *ngIf="viewportWidth <= 991" class="col-xs-4 col-md-9">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{ hotelContent?.action[0].key }}</button>
+    <div *ngIf="viewportWidth <= 991" class="col-xs-12">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{
+        hotelContent?.action[0].key }}</button>
       <ul class="dropdown-menu">
         <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
           <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
@@ -14,7 +15,7 @@
         <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
       </label>
     </div>
-    <div class="col-xs-8 col-md-3">
+    <div class="col-md-3 hidden-xs hidden-sm">
       <span>{{ hotelContent?.action[1]?.key }}</span>
       <i class="view-icon {{ hotelContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
     </div>
@@ -22,18 +23,81 @@
 </div>
 <div class="availability-container">
   <div class="row">
-    <div *ngFor="let item of availability; let i = index" [ngClass]="gridClass" class="hotel-view">
+    <div *ngFor="let item of availability; let i = index" [ngClass]="gridRowClass" class="hotel-view">
       <div class="row">
-        <div [ngClass]="gridClass">
+        <div [ngClass]="gridColumnClass">
           <img src="{{ item.path }}" alt="{{ item.type }}" class="img-responsive">
         </div>
-        <div [ngClass]="gridClass">
-
+        <div [ngClass]="gridColumnClass">
+          <i class="{{ item.icon }}"></i>
+          <h4>{{ item.heading }}</h4>
+          <div class="row">
+            <div class="col-xs-3 area">
+              <div class="row">
+                <div class="col-xs-12">
+                  <small class="sub-heading">area</small>
+                </div>
+                <div class="col-xs-12">
+                  <span>{{ item.description.size.area }}</span>
+                </div>
+                <div class="col-xs-12">
+                  <small>{{ item.description.size.unit }}</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 accomodation">
+              <div class="row">
+                <div class="col-xs-12">
+                  <small class="sub-heading">guest</small>
+                </div>
+                <div class="col-xs-12">
+                  <span>{{ item.description.accomodation.count }}</span>
+                </div>
+                <div class="col-xs-12">
+                  <small>{{ item.description.accomodation.unit }}</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 bed">
+              <div class="row">
+                <div class="col-xs-12">
+                  <small class="sub-heading">bed</small>
+                </div>
+                <div class="col-xs-12">
+                  <span>{{ item.description.bed.count }}</span>
+                </div>
+                <div class="col-xs-12">
+                  <small>{{ item.description.bed.type }}</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 extras">
+              <div class="row">
+                <div class="col-xs-12">
+                  <small class="sub-heading">{{ item.description.extras.name }}</small>
+                </div>
+                <div class="col-xs-12">
+                  <span>{{ item.description.extras.count }}</span>
+                </div>
+                <div class="col-xs-12">
+                  <small>{{ item.description.extras.type }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-default check-rates">check rates</button>
+          </div>
         </div>
-        <div [ngClass]="gridClass">
-
+        <div [ngClass]="gridColumnClass">
+          <i class="fas fa-thumbs-up"></i>
+          <h4>room facilities & services</h4>
+          <ul>
+            <li *ngFor="let facility of item.facilities; let j = index">
+              <i class="fas fa-check-circle"></i> {{ facility }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</div>

@@ -25,97 +25,409 @@
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/1.jpg",
                 "icon": "fas fa-bed",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "master bed room grand",
+                "description": {
+                    "size": {
+                        "area": "400",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "4",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/2.jpg",
                 "icon": "fas fa-bed",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "Deluxe family room",
+                "description": {
+                    "size": {
+                        "area": "580",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "4",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "4",
+                        "type": "queen"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/3.jpg",
                 "icon": "fas fa-bed",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "spacious superior room",
+                "description": {
+                    "size": {
+                        "area": "510",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "3",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "3",
+                        "type": "queen"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "complimentary breakfast",
+                    "Music system"
+                ]
             },
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/4.jpg",
                 "icon": "fas fa-bed",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "business class room",
+                "description": {
+                    "size": {
+                        "area": "450",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/1.jpg",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "icon": "fas fa-bed",
+                "heading": "superior executive suites",
+                "description": {
+                    "size": {
+                        "area": "835",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "amenities",
+                        "count": "2",
+                        "type": "sofa"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "living room with sofa"
+                ]
             },
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/2.jpg",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "icon": "fas fa-bed",
+                "heading": "prestigious presidential suite",
+                "description": {
+                    "size": {
+                        "area": "980",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "4",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "4",
+                        "type": "queen"
+                    },
+                    "extras": {
+                        "name": "amenities",
+                        "count": "2",
+                        "type": "table"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "attached boardroom",
+                    "fruit basket"
+                ]
             },
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/3.jpg",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "icon": "fas fa-bed",
+                "heading": "deluxe suite grand",
+                "description": {
+                    "size": {
+                        "area": "600",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "amenities",
+                        "count": "2",
+                        "type": "sofa"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "Mini bar"
+                ]
             },
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/4.jpg",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "icon": "fas fa-bed",
+                "heading": "Grand premier suites",
+                "description": {
+                    "size": {
+                        "area": "700",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "3",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "3",
+                        "type": "queen"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "2",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/1.jpg",
                 "icon": "fas fa-umbrella-beach",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "master bed room grand",
+                "description": {
+                    "size": {
+                        "area": "400",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/2.jpg",
                 "icon": "fas fa-umbrella-beach",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "master bed room grand",
+                "description": {
+                    "size": {
+                        "area": "400",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/3.jpg",
                 "icon": "fas fa-umbrella-beach",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "master bed room grand",
+                "description": {
+                    "size": {
+                        "area": "400",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             },
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/4.jpg",
                 "icon": "fas fa-umbrella-beach",
-                "heading": "",
-                "description": "",
-                "button": ""
+                "heading": "master bed room grand",
+                "description": {
+                    "size": {
+                        "area": "400",
+                        "unit": "sq. ft."
+                    },
+                    "accomodation": {
+                        "count": "2",
+                        "unit": "max"
+                    },
+                    "bed": {
+                        "count": "2",
+                        "type": "king"
+                    },
+                    "extras": {
+                        "name": "toilet",
+                        "count": "1",
+                        "type": "attached"
+                    }
+                },
+                "facilities": [
+                    "24 hours open reception",
+                    "wi-fi", 
+                    "air-conditioner",
+                    "television",
+                    "telephone",
+                    "coffee or tea facilities",
+                    "safe deposit box"
+                ]
             }
         ]
     }
