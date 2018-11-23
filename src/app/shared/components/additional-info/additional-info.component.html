@@ -1,0 +1,31 @@
+<div id="additional-info">
+    <h1>{{ (additionalInfo$ | async)?.heading }}</h1>
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 info-container" *ngFor="let item of additionalInfo?.content; let i = index">
+                    <i class="{{ item.icon }}"></i>
+                    <div>{{ item.key }}</div>
+                    <ng-container *ngIf="item.links.length === 1; then showButton else showLinks"></ng-container>
+                    <ng-template #showButton>
+                        <input type="button" class="btn btn-default" value="{{ item.links[0] }}">
+                    </ng-template>
+                    <ng-template #showLinks>
+                        <a *ngFor="let link of item.links; let j = index" href="#" target="_blank">
+                            <i class="{{ link }} social"></i>
+                        </a>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-4" *ngFor="let item of additionalInfo?.links; let i = index">
+                    <div>{{ item.key }}</div>
+                    <a *ngFor="let link of item.values; let j = index" href="#" target="_blank">{{ link }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

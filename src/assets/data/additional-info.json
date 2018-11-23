@@ -1,0 +1,68 @@
+{
+    "heading": "additional info",
+    "content": [
+        {
+            "icon": "far fa-credit-card",
+            "key": "life rewards",
+            "links": [
+                "learn more"
+            ]
+        },
+        {
+            "icon": "fas fa-cannabis",
+            "key": "social",
+            "links": [
+                "fab fa-facebook-square",
+                "fab fa-twitter-square",
+                "fab fa-youtube",
+                "fab fa-instagram"
+            ]
+        },
+        {
+            "icon": "fas fa-comments-dollar",
+            "key": "offers",
+            "links": [
+                "learn more"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "key": "inquiries",
+            "values": [
+                "contact us",
+                "weather",
+                "press room",
+                "investor relations",
+                "become an affiliate"
+            ]
+        },
+        {
+            "key": "guest services",
+            "values": [
+                "reservation",
+                "mobile check-in / check-out",
+                "guest receipt",
+                "guest relations",
+                "gift cards"
+            ]
+        },
+        {
+            "key": "extras",
+            "values": [
+                "site map",
+                "faq",
+                "sustainability",
+                "property map",
+                "document library",
+                "under 21 policy"
+            ]
+        }
+    ],
+    "ads": [
+        "1",
+        "2",
+        "3"
+    ],
+    "copyright": "copyright 2018"
+}

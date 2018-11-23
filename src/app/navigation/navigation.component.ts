@@ -9,11 +9,13 @@ import { Navigation } from './navigation.model';
 export class NavigationComponent implements OnInit {
   public viewportWidth: number;
   public navMenuItems: Array<Navigation>;
+  public currentIndex: number;
   public guestServices: Array<string>;
 
   constructor(private elementRef: ElementRef) {
     this.viewportWidth = 0;
     this.navMenuItems = [];
+    this.currentIndex = 0;
     this.guestServices = [];
   }
 
@@ -66,6 +68,6 @@ export class NavigationComponent implements OnInit {
   }
 
   public navigateTo(menuIndex: number): void {
-
+    this.currentIndex = menuIndex;
   }
 }

@@ -5,8 +5,18 @@
 
 html,
 body {
+    background-color: #f1f1f1;
     border: 0px;
     height: 100%;
     margin: 0px;
     padding: 0px;
+}
+
+input[type="button"] {
+    background-color: transparent;
+    border: 2px solid #bbb8b8;
+    color: #bbb8b8;
+    font-size: 13px;
+    padding: 9px 15px;
+    text-transform: uppercase;
 }

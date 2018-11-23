@@ -1,9 +1,12 @@
-<div id="hotel-container">
-    <div class="container-fluid">
-        <h1>{{ (hotelData$ | async)?.heading }}</h1>
-        <div class="row">
-            <small class="col-xs-12">{{ (hotelData$ | async)?.description }}</small>
+<div id="hotel">
+    <div class="hotel-container">
+        <div class="container-fluid">
+            <h1>{{ (hotelData$ | async)?.heading }}</h1>
+            <div class="row">
+                <small class="col-xs-12">{{ (hotelData$ | async)?.description }}</small>
+            </div>
+            <app-hotel [content]="(hotelData$ | async)?.content"></app-hotel>
+            <app-additional-info></app-additional-info>
         </div>
-        <app-hotel [content]="(hotelData$ | async)?.content"></app-hotel>
     </div>
 </div>

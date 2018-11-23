@@ -1,8 +1,8 @@
 <div class="action-container">
   <div class="row">
     <div *ngIf="viewportWidth <= 991" class="col-xs-12">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{
-        hotelContent?.action[0].key }}</button>
+      <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{
+        hotelContent?.action[0].key }}">
       <ul class="dropdown-menu">
         <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
           <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-default check-rates">check rates</button>
+            <input type="button" class="btn btn-default check-rates" value="check rates">
           </div>
         </div>
         <div [ngClass]="gridColumnClass">
