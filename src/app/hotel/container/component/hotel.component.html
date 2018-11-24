@@ -23,7 +23,7 @@
 </div>
 <div class="availability-container">
   <div class="row">
-    <div *ngFor="let item of availability; let i = index" [ngClass]="gridRowClass" class="hotel-view">
+    <div *ngFor="let item of availability; let i = index" [ngStyle]="{ 'max-height': arrayIndex === 1 ? '715px' : 'auto' }" [ngClass]="gridRowClass" class="hotel-view">
       <div class="row">
         <div [ngClass]="gridColumnClass">
           <img src="{{ item.path }}" alt="{{ item.type }}" class="img-responsive">
