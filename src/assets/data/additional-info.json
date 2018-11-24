@@ -60,9 +60,12 @@
         }
     ],
     "ads": [
-        "1",
-        "2",
-        "3"
+        "fab fa-cc-amex",
+        "fab fa-cc-mastercard",
+        "fab fa-cc-paypal",
+        "fab fa-cc-visa",
+        "fab fa-cc-apple-pay",
+        "fab fa-cc-amazon-pay"
     ],
-    "copyright": "copyright 2018"
+    "copyright": "copyright © 2018 | bourbon bliss | international | all right reserved."
 }

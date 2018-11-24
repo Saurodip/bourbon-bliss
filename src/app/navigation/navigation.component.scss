@@ -13,7 +13,7 @@
     transform: scale($value);
 }
 
-#navigation {
+#navigation-container {
     .navbar {
         background-color: white;
         .container-fluid {
@@ -106,7 +106,10 @@
             }
         }
     }
-    @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
+    #navigation-container {
         .navbar {
             .navbar-brand {
                 margin-bottom: 10px;
@@ -124,47 +127,62 @@
             }
         }
     }
-    @media (min-width: 768px) and (max-width: 991px) {
-        .navbar-brand {
-            margin-bottom: 10px;
-        }
-        #navigation {
-            .nav.navbar-nav {
-                a {
-                    padding: 12px 10px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #navigation-container {
+        .navbar {
+            .navbar-brand {
+                margin-bottom: 10px;
+            }
+            #navigation {
+                .nav.navbar-nav {
+                    a {
+                        padding: 12px 10px;
+                    }
                 }
             }
         }
     }
-    /* ANIMATED HAMBURGER ICON (TRANSFORM ☰ TO 'X') */
-    .navbar-toggle {
-        background: transparent !important;
-        border: none;
-        margin-right: -15px;
-    }
-    .navbar-default .navbar-toggle .icon-bar {
-        background-color: #b6bbbd;
-        transition: all 0.5s;
-    }
-    .navbar-toggle .top-bar {
-        transform: rotate(45deg);
-        transform-origin: 10% 10%;
-    }
-    .navbar-toggle .middle-bar {
-        opacity: 0;
-    }
-    .navbar-toggle .bottom-bar {
-        transform: rotate(-45deg);
-        transform-origin: 10% 90%;
-    }
-    .navbar-toggle.collapsed .top-bar {
-        transform: rotate(0);
-    }
-    .navbar-toggle.collapsed .middle-bar {
-        opacity: 1;
-    }
-    .navbar-toggle.collapsed .bottom-bar {
-        transform: rotate(0);
-    }
-    /* END ANIMATION */
 }
+
+/* ANIMATED HAMBURGER ICON (TRANSFORM ☰ TO 'X') */
+
+.navbar-toggle {
+    background: transparent !important;
+    border: none;
+    margin-right: -15px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #b6bbbd;
+    transition: all 0.5s;
+}
+
+.navbar-toggle .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggle .middle-bar {
+    opacity: 0;
+}
+
+.navbar-toggle .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+
+.navbar-toggle.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggle.collapsed .middle-bar {
+    opacity: 1;
+}
+
+.navbar-toggle.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+
+/* END ANIMATION */

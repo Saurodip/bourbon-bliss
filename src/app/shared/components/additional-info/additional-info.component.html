@@ -6,7 +6,7 @@
         </div>
         <div class="col-xs-12 col-md-8">
             <div class="row">
-                <div class="col-xs-12 col-md-4 info-container" *ngFor="let item of additionalInfo?.content; let i = index">
+                <div class="col-xs-12 col-sm-4 col-md-4 info-container" *ngFor="let item of additionalInfo?.content; let i = index">
                     <i class="{{ item.icon }}"></i>
                     <div>{{ item.key }}</div>
                     <ng-container *ngIf="item.links.length === 1; then showButton else showLinks"></ng-container>
@@ -21,10 +21,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-md-4" *ngFor="let item of additionalInfo?.links; let i = index">
-                    <div>{{ item.key }}</div>
-                    <a *ngFor="let link of item.values; let j = index" href="#" target="_blank">{{ link }}</a>
+                <div class="col-xs-12 col-sm-3 link-container" *ngFor="let item of additionalInfo?.links; let i = index">
+                    <h5>{{ item.key }}</h5>
+                    <ul>
+                        <li *ngFor="let link of item.values; let j = index">
+                            <a href="#" target="_blank">{{ link | uppercase }}</a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+            <div class="row">
+                <span class="col-xs-6 col-sm-2 ads" *ngFor="let ad of additionalInfo?.ads; let i = index">
+                    <i class="{{ ad }}"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 copyright">
+                <span>{{ additionalInfo?.copyright | uppercase }}</span>
             </div>
         </div>
     </div>

@@ -160,7 +160,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/1.jpg",
-                "icon": "fas fa-bed",
+                "icon": "fas fa-gem",
                 "heading": "superior executive suites",
                 "description": {
                     "size": {
@@ -194,8 +194,8 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/2.jpg",
-                "icon": "fas fa-bed",
-                "heading": "prestigious presidential suite",
+                "icon": "fas fa-gem",
+                "heading": "presidential suite",
                 "description": {
                     "size": {
                         "area": "980",
@@ -228,7 +228,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/3.jpg",
-                "icon": "fas fa-bed",
+                "icon": "fas fa-gem",
                 "heading": "deluxe suite grand",
                 "description": {
                     "size": {
@@ -262,7 +262,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/4.jpg",
-                "icon": "fas fa-bed",
+                "icon": "fas fa-gem",
                 "heading": "Grand premier suites",
                 "description": {
                     "size": {

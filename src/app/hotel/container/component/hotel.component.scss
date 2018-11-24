@@ -1,3 +1,9 @@
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .action-container {
     background-color: #f1f1f1;
     font-size: 12px;
@@ -100,7 +106,10 @@
                 }
                 div.vertical-view {
                     &:nth-of-type(3) {
-                        padding-bottom: 15px; 
+                        padding-bottom: 15px;
+                        ul {
+                            padding-left: 1em; 
+                        }
                     }
                 }
                 h4 {
@@ -108,6 +117,7 @@
                     line-height: 1.5em;
                     margin: 0px 0px 12px;
                     padding: 8px;
+                    @include ellipsis();
                 }
                 .area,
                 .accomodation,
@@ -135,6 +145,7 @@
                         font-size: 10px;
                         list-style-type: none;
                         text-align: left;
+                        @include ellipsis();
                         i {
                             font-size: 10px;
                             padding-right: 5px;
