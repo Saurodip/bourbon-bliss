@@ -1,5 +1,9 @@
 {
     "heading": "additional info",
+    "map": {
+        "latitude": 12.9641394,
+        "longitude": 77.5724034
+    },
     "content": [
         {
             "icon": "far fa-credit-card",
@@ -57,6 +61,13 @@
                 "property map",
                 "document library",
                 "under 21 policy"
+            ]
+        },
+        {
+            "key": "great price value",
+            "values": [
+                "fas fa-coins",
+                "get rooms at the best price here"
             ]
         }
     ],

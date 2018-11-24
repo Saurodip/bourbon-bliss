@@ -1,3 +1,10 @@
+@mixin brightness($value) {
+    -moz-filter: brightness($value);
+    -ms-filter: brightness($value);
+    -webkit-filter: brightness($value);
+    filter: brightness($value);
+}
+
 #additional-info {
     h1 {
         background-color: white;
@@ -12,6 +19,13 @@
     .row {
         background-color: #545454;
         margin: 0px;
+        .map-container {
+            padding: 0px;
+            @include brightness(80%);
+            agm-map {
+                height: 540px;
+            }
+        }
         div:nth-child(2) {
             padding: 0px;
             .info-container {
@@ -46,7 +60,7 @@
             .row:nth-child(2) {
                 background-color: #444444;
                 .link-container {
-                    padding: 20px 40px;
+                    padding: 20px;
                     h5,
                     a {
                         color: #bbb8b8;
@@ -60,6 +74,18 @@
                                 font-size: 11px;
                             }
                         }
+                    }
+                }
+                .link-container:last-of-type {
+                    text-align: center;
+                    i {
+                        color: #bbb8b8;
+                        font-size: 6rem;
+                        margin: 20px 0px;
+                    }
+                    div {
+                        color: #bbb8b8;
+                        font-size: 11px;
                     }
                 }
             }
@@ -82,6 +108,7 @@
                 background-color: #f1f1f1;
                 display: flex;
                 font-size: 11px;
+                justify-content: center;
                 letter-spacing: 2px;
                 line-height: 20px;
                 min-height: 50px;
