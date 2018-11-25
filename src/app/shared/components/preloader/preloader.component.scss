@@ -1,0 +1,87 @@
+#preloader {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    width: 60px;
+}
+
+li {
+    background-color: #545454;
+    display: inline-block;
+    height: 20px;
+    margin-right: 2%;
+    width: 10px;
+}
+
+.animated {
+    -webkit-animation: circle-grid-scale-delay 1.7s infinite ease-in-out;
+    animation: circle-grid-scale-delay 1.7s infinite ease-in-out;
+}
+
+@-webkit-keyframes circle-grid-scale-delay {
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+@keyframes circle-grid-scale-delay {
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+.delayed-effect-1s {
+    -webkit-animation-delay: 50ms;
+    -moz-animation-delay: 50ms;
+    -o-animation-delay: 50ms;
+    animation-delay: 50ms;
+}
+
+.delayed-effect-2s {
+    -webkit-animation-delay: 200ms;
+    -moz-animation-delay: 200ms;
+    -o-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+
+.delayed-effect-3s {
+    -webkit-animation-delay: 350ms;
+    -moz-animation-delay: 350ms;
+    -o-animation-delay: 350ms;
+    animation-delay: 350ms;
+}
+
+.delayed-effect-4s {
+    -webkit-animation-delay: 500ms;
+    -moz-animation-delay: 500ms;
+    -o-animation-delay: 500ms;
+    animation-delay: 500ms;
+}
+
+.delayed-effect-5s {
+    -webkit-animation-delay: 650ms;
+    -moz-animation-delay: 650ms;
+    -o-animation-delay: 650ms;
+    animation-delay: 650ms;
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 import { SharedService } from './shared.service';
 
@@ -13,8 +14,8 @@ import { SharedService } from './shared.service';
       apiKey: ''
     })
   ],
-  declarations: [AdditionalInfoComponent],
-  exports: [AdditionalInfoComponent],
+  declarations: [AdditionalInfoComponent, PreloaderComponent],
+  exports: [AdditionalInfoComponent, PreloaderComponent],
   providers: [SharedService]
 })
 
