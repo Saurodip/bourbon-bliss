@@ -8,7 +8,7 @@ const routes: Routes = [
     },
     {
         path: 'entertainment',
-        loadChildren: '../entertainment/entertainment.module#EntertainmentModule'
+        loadChildren: '../booking/booking.module#BookingModule'
     },
     {
         path: 'restaurants',

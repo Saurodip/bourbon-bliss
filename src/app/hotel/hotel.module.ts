@@ -9,11 +9,7 @@ import { HotelComponent } from './container/component/hotel.component';
 import { HotelService } from './hotel.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HotelRoutingModule,
-    SharedModule
-  ],
+  imports: [CommonModule, HotelRoutingModule, SharedModule],
   declarations: [HotelContainerComponent, HotelComponent],
   exports: [HotelContainerComponent, HotelComponent],
   providers: [HotelService]
