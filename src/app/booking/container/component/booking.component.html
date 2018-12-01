@@ -2,21 +2,22 @@
     <div class="col-xs-12"></div>
 </div>
 <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-11 col-xs-offset-1 col-sm-4 well">
         <div class="row">
-            <div class="col-xs-12">
-                <div *ngFor="let field of bookingContent?.fields; let i = index">
-                    <label>{{ field.heading }}</label>
+            <form class="form-horizontal">
+                <div class="col-xs-12 reservation" *ngFor="let content of bookingContent; let i = index">
+                    <h4>{{ content.heading }}</h4>
+                    <div *ngFor="let field of content.options">
+                        <div class="form-group">
+                            <label for="check-in" class="control-label col-xs-12 col-sm-6">{{ field.label }}</label>
+                            <div class="col-xs-12 col-sm-6">
+                                <input type="{{ field.type }}" class="form-control">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-
-            </div>
+            </form>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6">
-        
-    </div>
+    <div class="col-xs-11 col-sm-7 well"></div>
 </div>

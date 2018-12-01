@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
-
 import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
+import { PanelComponent } from './components/panel/panel.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
-
 import { SharedService } from './shared.service';
 
 @NgModule({
@@ -14,8 +13,8 @@ import { SharedService } from './shared.service';
       apiKey: ''
     })
   ],
-  declarations: [AdditionalInfoComponent, PreloaderComponent],
-  exports: [AdditionalInfoComponent, PreloaderComponent],
+  declarations: [AdditionalInfoComponent, PanelComponent, PreloaderComponent],
+  exports: [AdditionalInfoComponent, PanelComponent, PreloaderComponent],
   providers: [SharedService]
 })
 

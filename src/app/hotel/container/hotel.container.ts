@@ -32,6 +32,7 @@ export class HotelContainerComponent implements OnInit {
     }
 
     public getSelectedOption(option: Availability): void {
+        this.hotelService.setDataForSharing(option);
         this.router.navigate(['/booking']);
     }
 }

@@ -35,7 +35,7 @@ export class HotelComponent implements OnInit {
 
   ngOnInit() {
     this.viewportWidth = window.outerWidth;
-    this.arrayIndex = this.viewportWidth <= 991 ? 0 : 1;
+    this.arrayIndex = this.viewportWidth <= 767 ? 0 : 1;
     this.onChangeView(this.arrayIndex);
   }
 
@@ -51,8 +51,8 @@ export class HotelComponent implements OnInit {
 
   public onChangeView(arrayIndex: number): void {
     this.arrayIndex = arrayIndex === 0 ? 1 : 0;
-    this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-12' : 'col-xs-12 col-md-3';
-    this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-md-4 horizontal-view' : 'col-xs-12 vertical-view';
+    this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-12' : 'col-xs-12 col-sm-3';
+    this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
   }
 
   public onSelection(index: number): void {

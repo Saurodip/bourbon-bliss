@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpClient } from '@angular/common/http';
-import { throwError, Observable } from 'rxjs';
+import { throwError, Observable, Subject } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -11,8 +11,10 @@ export class AppService {
             'Authorization': 'my-auth-token'
         })
     };
+    private sharedData = new Subject<any>();
+    public sharedData$ = this.sharedData.asObservable();
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) {}
 
     public getRequest(api): Observable<any> {
         return this.httpClient.get<any>(api).pipe(
@@ -49,6 +51,10 @@ export class AppService {
             console.log('Server error occurred. Status Code: ' + response.status + '\nMessage:\n' + response.error);
         }
         return throwError('Something went wrong! Please try later.');
+    }
+
+    public onSharingData(data: any): void {
+        this.sharedData.next(data);
     }
 }
 

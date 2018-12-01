@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 import { Booking } from './booking.model';
+import { Availability } from '../hotel/hotel.model';
 
 @Injectable()
 export class BookingService {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Availability } from '../../hotel/hotel.model';
+import { AppService } from 'src/app/app.service';
 import { BookingService } from '../booking.service';
 import { Booking } from '../booking.model';
 
@@ -17,7 +18,7 @@ export class BookingContainerComponent implements OnInit {
 
     public bookingData$: Observable<Booking> = this.bookingService.getBookingData();
 
-    constructor(private bookingService: BookingService) {
+    constructor(private bookingService: BookingService, private appService: AppService) {
         this.bookingData = new Booking();
         this.selectedOption = new Availability();
         this.error = '';
@@ -25,11 +26,19 @@ export class BookingContainerComponent implements OnInit {
 
     ngOnInit() {
         this.fetchBookingData();
+        this.getSelectedOption();
     }
 
     private fetchBookingData(): void {
         this.bookingService.getBookingData().subscribe(
             (data) => this.bookingData = { ...data },
+            (error) => this.error = error
+        );
+    }
+
+    private getSelectedOption(): void {
+        this.appService.sharedData$.subscribe(
+            (data) => this.selectedOption = { ...data },
             (error) => this.error = error
         );
     }

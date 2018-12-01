@@ -12,6 +12,17 @@ body {
     padding: 0px;
 }
 
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="text"] {
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
 input[type="button"] {
     background-color: transparent;
     border: 1px solid #bbb8b8;

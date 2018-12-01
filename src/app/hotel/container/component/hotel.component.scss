@@ -56,103 +56,11 @@
 }
 
 .availability-container {
-    background-color: #f1f1f1;
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 25px 75px;
-    text-transform: uppercase;
+    padding: 25px 8%;
     .row:first-child {
         .hotel-view {
             margin-bottom: 25px;
             padding: 0px;
-            .row {
-                background-color: white;
-                border-radius: 10px;
-                margin: 0px 12px;
-                div {
-                    padding: 0px;
-                    text-align: center;
-                    img {
-                        height: 24rem;
-                        width: 100%;
-                    }
-                    i {
-                        font-size: 22px;
-                    }
-                }
-                div.horizontal-view {
-                    img {
-                        border-bottom-left-radius: 10px;
-                        border-top-left-radius: 10px;
-                    }
-                }
-                div.vertical-view {
-                    img {
-                        border-bottom-left-radius: 0px;
-                        border-bottom-right-radius: 0px;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                    }
-                }
-                div.horizontal-view,
-                div.vertical-view {
-                    &:nth-of-type(2),
-                    &:nth-of-type(3) {
-                        padding: 20px 20px 0px;
-                        .row {
-                            margin: 0px;
-                        }
-                    }
-                }
-                div.vertical-view {
-                    &:nth-of-type(3) {
-                        padding-bottom: 15px;
-                        ul {
-                            padding-left: 1em; 
-                        }
-                    }
-                }
-                h4 {
-                    border-bottom: 1px solid #ccc;
-                    line-height: 1.5em;
-                    margin: 0px 0px 12px;
-                    padding: 8px;
-                    @include ellipsis();
-                }
-                .area,
-                .accomodation,
-                .bed,
-                .extras {
-                    .sub-heading {
-                        font-size: 10px;
-                    }
-                    span {
-                        font-family: Raleway-Regular, Arial, Helvetica;
-                        font-size: 20px;
-                    }
-                    small {
-                        font-size: 8px;
-                    }
-                }
-                .check-rates {
-                    color: #808080;
-                    margin: 15px;
-                }
-                ul {
-                    line-height: 1.4em;
-                    padding-left: 2.2em;
-                    li {
-                        font-size: 10px;
-                        list-style-type: none;
-                        text-align: left;
-                        @include ellipsis();
-                        i {
-                            font-size: 10px;
-                            padding-right: 5px;
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -162,19 +70,15 @@
         padding: 25px 8%;
     }
     .availability-container {
-        padding: 0% 12%;
-        .row:first-child {
-            .hotel-view {
-                div.vertical-view {
-                    padding: 0px;
-                    img {
-                        border-bottom-left-radius: 0px;
-                        border-bottom-right-radius: 0px;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                    }
-                }
-            }
-        }
+        padding: 0% 9%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .action-container {
+        padding: 25px 5%;
+    }
+    .availability-container {
+        padding: 0% 6%;
     }
 }

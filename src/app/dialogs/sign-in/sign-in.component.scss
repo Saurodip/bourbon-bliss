@@ -39,10 +39,7 @@
                         right: 5px;
                     }
                 }
-                input {
-                    border-radius: 0px;
-                    box-shadow: none;
-                    letter-spacing: 2px;
+                input[type="email"] {
                     padding-right: 34px;
                 }
                 input[type="password"] {

@@ -1,0 +1,75 @@
+<div class="row panel-container">
+    <div [ngClass]="gridColumnClass">
+        <img src="{{ panelContent.path }}" alt="{{ panelContent.type }}" class="img-responsive">
+    </div>
+    <div [ngClass]="gridColumnClass">
+        <i class="{{ panelContent.icon }}"></i>
+        <h4 title="{{ panelContent.heading | uppercase }}">{{ panelContent.heading | uppercase }}</h4>
+        <div class="row">
+            <div class="col-xs-3 area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small class="sub-heading">area</small>
+                    </div>
+                    <div class="col-xs-12">
+                        <span>{{ panelContent.description.size.area }}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <small>{{ panelContent.description.size.unit }}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 accomodation">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small class="sub-heading">guest</small>
+                    </div>
+                    <div class="col-xs-12">
+                        <span>{{ panelContent.description.accomodation.count }}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <small>{{ panelContent.description.accomodation.unit }}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 bed">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small class="sub-heading">bed</small>
+                    </div>
+                    <div class="col-xs-12">
+                        <span>{{ panelContent.description.bed.count }}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <small>{{ panelContent.description.bed.type }}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 extras">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small class="sub-heading">{{ panelContent.description.extras.name }}</small>
+                    </div>
+                    <div class="col-xs-12">
+                        <span>{{ panelContent.description.extras.count }}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <small>{{ panelContent.description.extras.type }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="button" class="btn btn-default check-rates" value="book now !" (click)="onSelection(i)">
+        </div>
+    </div>
+    <div [ngClass]="gridColumnClass">
+        <i class="fas fa-thumbs-up"></i>
+        <h4>room facilities & services</h4>
+        <ul>
+            <li *ngFor="let facility of panelContent.facilities; let j = index">
+                <i class="fas fa-check-circle"></i> {{ facility }}
+            </li>
+        </ul>
+    </div>
+</div>

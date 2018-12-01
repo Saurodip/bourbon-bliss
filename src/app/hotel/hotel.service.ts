@@ -14,4 +14,8 @@ export class HotelService {
   public getHotelData(): Observable<Hotel> {
     return this.appService.getRequest(this.url);
   }
+
+  public setDataForSharing(data: Availability): void {
+    this.appService.onSharingData(data);
+  }
 }
