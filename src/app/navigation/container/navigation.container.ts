@@ -20,7 +20,6 @@ export class NavigationContainerComponent implements OnInit {
   constructor(private navigationService: NavigationService) {
     this.viewportWidth = 0;
     this.navigationData = new Navigation();
-    this.currentIndex = 0;
     this.error = '';
   }
 
@@ -34,9 +33,5 @@ export class NavigationContainerComponent implements OnInit {
       (data) => this.navigationData = { ...data },
       (error) => this.error = error
     );
-  }
-
-  public navigateTo(menuIndex: number): void {
-    this.currentIndex = menuIndex;
   }
 }

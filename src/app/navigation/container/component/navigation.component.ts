@@ -9,6 +9,7 @@ import { Navigation } from '../../navigation.model';
 
 export class NavigationComponent implements OnInit {
     public viewportWidth: number;
+    public currentIndex: number;
     public navigationContent: Navigation;
 
     @Input() set content(value: Navigation) {
@@ -19,10 +20,15 @@ export class NavigationComponent implements OnInit {
 
     constructor() {
         this.viewportWidth = 0;
+        this.currentIndex = 0;
         this.navigationContent = new Navigation();
     }
 
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
+    }
+
+    public navigateTo(menuIndex: number): void {
+        this.currentIndex = menuIndex;
     }
 }
