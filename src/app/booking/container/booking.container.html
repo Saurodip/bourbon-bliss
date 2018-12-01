@@ -1,0 +1,10 @@
+<div id="booking">
+    <div class="booking-container container-fluid">
+        <h1>{{ (bookingData$ | async)?.heading }}</h1>
+        <div class="row">
+            <small class="col-xs-12">{{ (bookingData$ | async)?.description }}</small>
+        </div>
+        <app-booking [content]="(bookingData$ | async)?.fields"></app-booking>
+        <app-additional-info></app-additional-info>
+    </div>
+</div>

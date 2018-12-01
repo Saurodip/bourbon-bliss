@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelService } from '../hotel.service';
-import { Hotel } from '../hotel.model';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { HotelService } from '../hotel.service';
+import { Hotel, Availability } from '../hotel.model';
 
 @Component({
     selector: 'app-hotel-container',
@@ -15,7 +16,7 @@ export class HotelContainerComponent implements OnInit {
 
     public hotelData$: Observable<Hotel> = this.hotelService.getHotelData();
 
-    constructor(private hotelService: HotelService) {
+    constructor(private router: Router, private hotelService: HotelService) {
         this.error = '';
     }
 
@@ -23,10 +24,14 @@ export class HotelContainerComponent implements OnInit {
         this.fetchHotelData();
     }
 
-    private fetchHotelData() {
+    private fetchHotelData(): void {
         this.hotelService.getHotelData().subscribe(
             (data) => this.hotelData = { ...data },
             (error) => this.error = error
         );
+    }
+
+    public getSelectedOption(option: Availability): void {
+        this.router.navigate(['/booking']);
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Content, Availability } from '../../hotel.model';
 
 @Component({
@@ -22,6 +22,7 @@ export class HotelComponent implements OnInit {
       this.onApplyFilter('view all', 0);
     }
   }
+  @Output() selectedOption = new EventEmitter<Availability>();
 
   constructor() {
     this.viewportWidth = 0;
@@ -52,5 +53,9 @@ export class HotelComponent implements OnInit {
     this.arrayIndex = arrayIndex === 0 ? 1 : 0;
     this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-12' : 'col-xs-12 col-md-3';
     this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-md-4 horizontal-view' : 'col-xs-12 vertical-view';
+  }
+
+  public onSelection(index: number): void {
+    this.selectedOption.emit(this.availability[index]);
   }
 }

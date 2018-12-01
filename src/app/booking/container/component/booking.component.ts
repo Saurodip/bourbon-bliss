@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Fields } from '../../booking.model';
 
 @Component({
     selector: 'app-booking',
@@ -8,10 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class BookingComponent implements OnInit {
     public viewportWidth: number;
+    public bookingContent: Fields;
 
-    @Input() set content(value) {
+    @Input() set content(value: Fields) {
         if (value) {
-
+            this.bookingContent = value;
         }
     }
 

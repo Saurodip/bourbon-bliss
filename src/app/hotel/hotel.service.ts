@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Hotel } from './hotel.model';
+import { Hotel, Availability } from './hotel.model';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 
