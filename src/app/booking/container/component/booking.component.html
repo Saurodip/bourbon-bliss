@@ -1,25 +1,33 @@
-<div class="row">
+<div class="row panel-wrapper">
     <div class="col-xs-12">
         <app-panel [gridClass]="gridColumnClass" [content]="selectedItem"></app-panel>
     </div>
 </div>
-<div class="row">
-    <div class="col-xs-11 col-xs-offset-1 col-sm-4 well">
+<div class="row form-wrapper">
+    <div class="col-xs-12 col-sm-5 well">
         <div class="row">
             <form class="form-horizontal">
                 <div class="col-xs-12 reservation" *ngFor="let content of bookingContent; let i = index">
-                    <h4>{{ content.heading }}</h4>
-                    <div *ngFor="let field of content.options">
+                    <h5><i class="{{ content.heading.icon }}"></i> {{ content.heading.text }}</h5>
+                    <div *ngFor="let field of content.options; let j = index">
                         <div class="form-group">
-                            <label for="check-in" class="control-label col-xs-12 col-sm-6">{{ field.label }}</label>
-                            <div class="col-xs-12 col-sm-6">
+                            <label for="check-in" class="control-label col-xs-12" [ngClass]="{ 'col-sm-6': i === 0, 'col-sm-8': i > 0 }"
+                                [ngStyle]="{ 'position': i === 0 ? 'relative' : 'static', 'bottom': i === 0 ? '10px' : '0px' }">
+                                <i class="{{ field.icon }}"></i> {{ field.label }}
+                                <span *ngIf="field.required">*</span>
+                                <i *ngIf="i > 0" class="fas fa-info-circle"></i>
+                            </label>
+                            <div class="col-xs-12" [ngClass]="{ 'col-sm-6': i === 0, 'col-sm-4': i > 0 }">
                                 <input type="{{ field.type }}" class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-12 button-container">
+                    <input type="submit" class="btn btn-default" value="proceed">
+                </div>
             </form>
         </div>
     </div>
-    <div class="col-xs-11 col-sm-7 well"></div>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-6 well"></div>
 </div>
