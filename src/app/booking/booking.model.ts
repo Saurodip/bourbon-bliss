@@ -33,14 +33,14 @@ export class Fields {
 export class Option {
     public icon: string;
     public label: string;
-    public required: boolean;
+    public id: string;
     public type: string;
     public tooltip: string;
 
     constructor() {
         this.icon = '';
         this.label = '';
-        this.required = false;
+        this.id = '';
         this.type = '';
         this.tooltip = '';
     }

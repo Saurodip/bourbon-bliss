@@ -10,7 +10,8 @@
         margin-top: 20px;
         padding: 20px 30px;
         text-transform: uppercase;
-        .reservation {
+        .reservation-request,
+        .additional-choice {
             h5 {
                 border-bottom: 1px solid #ccc;
                 font-family: Raleway-Regular, Arial, Helvetica;
@@ -23,36 +24,56 @@
                 }
             }
             .form-group {
-                margin-bottom: 5px;
+                margin-bottom: 0px;
                 label {
                     font-size: 11px;
                     font-weight: 500;
                     letter-spacing: 1px;
                     padding-top: 0px;
                     text-align: left;
-                    i {
-                        font-size: 1.2rem;
-                        margin-right: 10px;
-                    }
+                }
+                i {
+                    font-size: 1.2rem;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .reservation-request {
+            .form-group {
+                label {
+                    bottom: 8px;
+                    position: relative;
                     span {
                         color: red;
                         font-size: 3rem;
                         position: relative;
                         top: 10px;
                     }
-                    i.fas.fa-info-circle {
-                        cursor: pointer;
-                        margin-left: 5px;
-                    }
                 }
                 input[type="number"] {
                     width: 95px;
                 }
+            }
+        }
+        .additional-choice {
+            h5 {
+                margin-top: 25px;
+            }
+            .form-group {
                 input[type="checkbox"] {
                     cursor: pointer;
+                    display: inline-block;
                     height: 14px;
-                    margin-top: 7px;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 3px;
                     width: 14px;
+                }
+                label {
+                    margin-bottom: 20px;
+                    i.fas.fa-info-circle {
+                        margin-left: 5px;
+                    }
                 }
             }
         }
@@ -60,5 +81,40 @@
             margin: 20px 0px 10px;
             text-align: center;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .panel-wrapper {
+        padding: 45px 6% 25px;
+    }
+    .form-wrapper {
+        padding: 0% 13%;
+        .well {
+            padding: 25px;
+            .reservation-request,
+            .additional-choice {
+                h5 {
+                    margin-bottom: 10px;
+                }
+                .form-group {
+                    label {
+                        bottom: 0px;
+                        font-size: 10px;
+                        position: relative;
+                    }
+                }
+            }
+            input[type="date"],
+            input[type="number"] {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-wrapper {
+        padding: 0% 11%;
     }
 }

@@ -27,6 +27,7 @@ export class BookingComponent implements OnInit {
 
     constructor() {
         this.viewportWidth = 0;
+        this.bookingContent = new Fields();
         this.gridColumnClass = '';
     }
 

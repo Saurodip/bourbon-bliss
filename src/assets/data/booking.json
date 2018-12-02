@@ -11,21 +11,21 @@
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "check in date",
-                    "required": true,
+                    "id": "check-in",
                     "type": "date",
                     "tooltip": "please provide your check-in date"
                 },
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "check out date",
-                    "required": true,
+                    "id": "check-out",
                     "type": "date",
                     "tooltip": "please provide your check-out date"
                 },
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "number of guest",
-                    "required": true,
+                    "id": "no-of-guest",
                     "type": "number",
                     "tooltip": "please provide no. of guest"
                 }
@@ -40,28 +40,28 @@
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "guaranteed late check-out",
-                    "required": false,
+                    "id": "late-check-out",
                     "type": "checkbox",
                     "tooltip": ""
                 },
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "guaranteed early check-in",
-                    "required": false,
+                    "id": "early-check-in",
                     "type": "checkbox",
                     "tooltip": ""
                 },
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "dog friendly room fee",
-                    "required": false,
+                    "id": "dog-fee",
                     "type": "checkbox",
                     "tooltip": ""
                 },
                 {
                     "icon": "fas fa-angle-double-right",
                     "label": "daily special cuisine service",
-                    "required": false,
+                    "id": "cuisine-service",
                     "type": "checkbox",
                     "tooltip": ""
                 }
