@@ -56,11 +56,15 @@
 }
 
 .availability-container {
-    padding: 25px 8%;
+    padding: 25px 5%;
     .row:first-child {
         .hotel-view {
             margin-bottom: 25px;
             padding: 0px;
+            .check-rates {
+                color: #808080;
+                margin: 15px;
+            }
         }
     }
 }

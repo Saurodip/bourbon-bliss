@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Fields } from '../../booking.model';
+import { Availability } from 'src/app/hotel/hotel.model';
 
 @Component({
     selector: 'app-booking',
@@ -10,18 +11,27 @@ import { Fields } from '../../booking.model';
 export class BookingComponent implements OnInit {
     public viewportWidth: number;
     public bookingContent: Fields;
+    public gridColumnClass: string;
+    public selectedItem: Availability;
 
     @Input() set content(value: Fields) {
         if (value) {
             this.bookingContent = value;
         }
     }
+    @Input() set selectedOption(value: Availability) {
+        if (value) {
+            this.selectedItem = value;
+        }
+    }
 
     constructor() {
         this.viewportWidth = 0;
+        this.gridColumnClass = '';
     }
 
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
+        this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
     }
 }

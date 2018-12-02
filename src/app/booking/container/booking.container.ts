@@ -20,7 +20,6 @@ export class BookingContainerComponent implements OnInit {
 
     constructor(private bookingService: BookingService, private appService: AppService) {
         this.bookingData = new Booking();
-        this.selectedOption = new Availability();
         this.error = '';
     }
 
