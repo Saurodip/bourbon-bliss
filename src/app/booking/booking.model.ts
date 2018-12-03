@@ -55,3 +55,21 @@ export class Field {
         this.tooltip = '';
     }
 }
+
+export class CountryList {
+    public list: Array<Country>;
+
+    constructor() {
+        this.list = [];
+    }
+}
+
+export class Country {
+    public name: string;
+    public code: string;
+
+    constructor() {
+        this.name = '';
+        this.code = '';
+    }
+}
