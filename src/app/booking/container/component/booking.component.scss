@@ -12,15 +12,23 @@
         text-transform: uppercase;
         .reservation-request,
         .additional-choice {
-            h5 {
+            h4 {
                 border-bottom: 1px solid #ccc;
                 font-family: Raleway-Regular, Arial, Helvetica;
                 letter-spacing: 1px;
-                margin-bottom: 20px;
                 padding-bottom: 10px;
                 i {
                     font-size: 2rem;
                     margin-right: 10px;
+                }
+            }
+            h6 {
+                font-family: Raleway-Regular, Arial, Helvetica;
+                letter-spacing: 1px;
+                margin: 35px 0px 15px;
+                i {
+                    font-size: 1.2rem;
+                    margin-right: 6px;
                 }
             }
             .form-group {
@@ -41,7 +49,7 @@
         .reservation-request {
             .form-group {
                 label {
-                    bottom: 8px;
+                    bottom: 10px;
                     position: relative;
                     span {
                         color: red;
@@ -56,7 +64,7 @@
             }
         }
         .additional-choice {
-            h5 {
+            h4 {
                 margin-top: 25px;
             }
             .form-group {
@@ -70,7 +78,7 @@
                     width: 14px;
                 }
                 label {
-                    margin-bottom: 20px;
+                    margin-top: 15px;
                     i.fas.fa-info-circle {
                         margin-left: 5px;
                     }
@@ -78,7 +86,7 @@
             }
         }
         .button-container {
-            margin: 20px 0px 10px;
+            margin: 25px 0px 5px;
             text-align: center;
         }
     }
@@ -94,8 +102,12 @@
             padding: 25px;
             .reservation-request,
             .additional-choice {
-                h5 {
-                    margin-bottom: 10px;
+                h4 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0px;
+                }
+                h6 {
+                    margin: 30px 0px 0px;
                 }
                 .form-group {
                     label {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Fields } from '../../booking.model';
+import { Option } from '../../booking.model';
 import { Availability } from 'src/app/hotel/hotel.model';
 
 @Component({
@@ -10,11 +10,11 @@ import { Availability } from 'src/app/hotel/hotel.model';
 
 export class BookingComponent implements OnInit {
     public viewportWidth: number;
-    public bookingContent: Fields;
+    public bookingContent: Option;
     public gridColumnClass: string;
     public selectedItem: Availability;
 
-    @Input() set content(value: Fields) {
+    @Input() set content(value: Option) {
         if (value) {
             this.bookingContent = value;
         }
@@ -27,7 +27,7 @@ export class BookingComponent implements OnInit {
 
     constructor() {
         this.viewportWidth = 0;
-        this.bookingContent = new Fields();
+        this.bookingContent = new Option();
         this.gridColumnClass = '';
     }
 

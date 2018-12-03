@@ -1,12 +1,22 @@
 export class Booking {
-    public heading: Heading;
+    public heading: string;
     public description: string;
-    public fields: Array<Fields>;
+    public content: Array<Content>;
 
     constructor() {
-        this.heading = new Heading;
+        this.heading = '';
         this.description = '';
-        this.fields = [];
+        this.content = [];
+    }
+}
+
+export class Content {
+    public heading: Heading;
+    public options: Array<Option>;
+
+    constructor() {
+        this.heading = new Heading();
+        this.options = [];
     }
 }
 
@@ -20,22 +30,22 @@ export class Heading {
     }
 }
 
-export class Fields {
-    public heading: string;
-    public options: Array<Option>;
+export class Option {
+    public heading?: Heading;
+    public fields: Array<Field>;
 
     constructor() {
-        this.heading = '';
-        this.options = [];
+        this.heading = new Heading();
+        this.fields = [];
     }
 }
 
-export class Option {
+export class Field {
     public icon: string;
     public label: string;
     public id: string;
     public type: string;
-    public tooltip: string;
+    public tooltip?: string;
 
     constructor() {
         this.icon = '';

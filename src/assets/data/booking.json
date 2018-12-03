@@ -1,7 +1,7 @@
 {
     "heading": "review and booking",
     "description": "We provide the best and exclusive deals for your accommodation by many different options. From lavish five-star hotel rooms to intimate vacation rentals and accommodations - options are always endless here. We are the only one who bring different offers and deals at your door step with unbelievable price list.",
-    "fields": [
+    "content": [
         {
             "heading": {
                 "icon": "fas fa-clipboard-check",
@@ -9,25 +9,100 @@
             },
             "options": [
                 {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "check in date",
-                    "id": "check-in",
-                    "type": "date",
-                    "tooltip": "please provide your check-in date"
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "guest information"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "first name",
+                            "id": "first-name",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guest middle name",
+                            "id": "middle-name",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guest last name",
+                            "id": "last-name",
+                            "type": "text"
+                        }
+                    ]
                 },
                 {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "check out date",
-                    "id": "check-out",
-                    "type": "date",
-                    "tooltip": "please provide your check-out date"
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "address details"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "block no.",
+                            "id": "address",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "street",
+                            "id": "street",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "city",
+                            "id": "city",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "state",
+                            "id": "state",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "country",
+                            "id": "country",
+                            "type": "text"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "pin no.",
+                            "id": "pin-no",
+                            "type": "text"
+                        }
+                    ]
                 },
                 {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "number of guest",
-                    "id": "no-of-guest",
-                    "type": "number",
-                    "tooltip": "please provide no. of guest"
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "check-in/out details"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "check in date",
+                            "id": "check-in",
+                            "type": "date"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "check out date",
+                            "id": "check-out",
+                            "type": "date"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "number of guest",
+                            "id": "no-of-guest",
+                            "type": "number"
+                        }
+                    ]
                 }
             ]
         },
@@ -38,32 +113,36 @@
             },
             "options": [
                 {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "guaranteed late check-out",
-                    "id": "late-check-out",
-                    "type": "checkbox",
-                    "tooltip": ""
-                },
-                {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "guaranteed early check-in",
-                    "id": "early-check-in",
-                    "type": "checkbox",
-                    "tooltip": ""
-                },
-                {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "dog friendly room fee",
-                    "id": "dog-fee",
-                    "type": "checkbox",
-                    "tooltip": ""
-                },
-                {
-                    "icon": "fas fa-angle-double-right",
-                    "label": "daily special cuisine service",
-                    "id": "cuisine-service",
-                    "type": "checkbox",
-                    "tooltip": ""
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guaranteed late check-out",
+                            "id": "late-check-out",
+                            "type": "checkbox",
+                            "tooltip": ""
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guaranteed early check-in",
+                            "id": "early-check-in",
+                            "type": "checkbox",
+                            "tooltip": ""
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "dog friendly room fee",
+                            "id": "dog-fee",
+                            "type": "checkbox",
+                            "tooltip": ""
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "daily special cuisine service",
+                            "id": "cuisine-service",
+                            "type": "checkbox",
+                            "tooltip": ""
+                        }
+                    ]
                 }
             ]
         }

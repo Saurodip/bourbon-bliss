@@ -8,34 +8,40 @@
         <div class="row">
             <form class="form-horizontal">
                 <div class="col-xs-12 reservation-request">
-                    <h5><i class="{{ bookingContent[0]?.heading?.icon }}"></i> {{ bookingContent[0]?.heading?.text }}</h5>
-                    <div *ngFor="let field of bookingContent[0]?.options; let i = index">
-                        <div class="form-group">
-                            <label for="{{ field.id }}" class="control-label col-xs-12 col-sm-6">
-                                <i class="{{ field.icon }}"></i> {{ field.label }}
-                                <span>*</span>
-                            </label>
-                            <div class="col-xs-12 col-sm-6">
-                                <input type="{{ field.type }}" class="form-control">
+                    <h4><i class="{{ bookingContent[0]?.heading?.icon }}"></i> {{ bookingContent[0]?.heading?.text }}</h4>
+                    <div *ngFor="let item of bookingContent[0]?.options; let i = index">
+                        <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
+                        <div *ngFor="let field of item.fields; let j = index">
+                            <div class="form-group">
+                                <label for="{{ field.id }}" class="control-label col-xs-12 col-sm-6">
+                                    <i class="{{ field.icon }}"></i> {{ field.label }}
+                                    <span>*</span>
+                                </label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <input type="{{ field.type }}" class="form-control" required>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 additional-choice">
-                    <h5><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h5>
-                    <div *ngFor="let field of bookingContent[1]?.options; let i = index">
-                        <div class="form-group">
-                            <div class="col-xs-12 col-sm-10">
-                                <input type="{{ field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
-                                <label for="{{ field.id }}" class="control-label">
-                                    {{ field.label }}
-                                    <i class="fas fa-info-circle"></i>
-                                </label>
+                    <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h4>
+                    <div *ngFor="let item of bookingContent[1]?.options; let i = index">
+                        <div *ngFor="let field of item.fields; let j = index">
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-10">
+                                    <input type="{{ field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
+                                    <label for="{{ field.id }}" class="control-label">
+                                        {{ field.label }}
+                                        <i class="fas fa-info-circle"></i>
+                                    </label>
+                                </div>
+                                <div class="col-xs-12 col-sm-2"></div>
                             </div>
-                            <div class="col-xs-12 col-sm-2"></div>
                         </div>
                     </div>
                     <div class="col-xs-12 button-container">
+                        <input type="button" class="btn btn-default" value="cancel">
                         <input type="submit" class="btn btn-default" value="proceed">
                     </div>
                 </div>

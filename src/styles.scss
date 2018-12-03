@@ -16,8 +16,7 @@ input[type="date"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
-input[type="text"],
-input[type="submit"] {
+input[type="text"] {
     border-radius: 0px;
     box-shadow: none;
     font-size: 11px;
@@ -25,12 +24,14 @@ input[type="submit"] {
     text-transform: uppercase;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
     background-color: transparent;
     border: 1px solid #bbb8b8;
     border-radius: 0px;
     color: #bbb8b8;
     font-size: 13px;
+    margin: 0px 5px;
     padding: 9px 15px;
     text-transform: uppercase;
 }
