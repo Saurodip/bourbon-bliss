@@ -54,8 +54,8 @@
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "city",
-                            "id": "city",
+                            "label": "country",
+                            "id": "country",
                             "type": "text"
                         },
                         {
@@ -66,8 +66,8 @@
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "country",
-                            "id": "country",
+                            "label": "city",
+                            "id": "city",
                             "type": "text"
                         },
                         {
