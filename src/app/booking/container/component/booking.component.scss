@@ -22,71 +22,79 @@
                     margin-right: 10px;
                 }
             }
-            h6 {
-                font-family: Raleway-Regular, Arial, Helvetica;
-                letter-spacing: 1px;
-                margin: 35px 0px 15px;
-                i {
-                    font-size: 1.2rem;
-                    margin-right: 6px;
-                }
-            }
-            .form-group {
-                margin-bottom: 0px;
-                label {
-                    font-size: 11px;
-                    font-weight: 500;
+            .control-section {
+                margin-bottom: 15px;
+                padding: 0px 16px;
+                h6 {
+                    font-family: Raleway-Regular, Arial, Helvetica;
                     letter-spacing: 1px;
-                    padding-top: 0px;
-                    text-align: left;
+                    margin: 10px 0px;
+                    i {
+                        font-size: 1.2rem;
+                        margin-right: 6px;
+                    }
                 }
-                i {
-                    font-size: 1.2rem;
-                    margin-right: 10px;
+                .form-group {
+                    margin-bottom: 10px;
+                    padding-right: 20px;
+                    label {
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        padding-top: 0px;
+                        text-align: left;
+                    }
+                    i {
+                        font-size: 1.2rem;
+                        margin-right: 10px;
+                    }
                 }
             }
         }
         .reservation-request {
-            .form-group {
-                label {
-                    bottom: 10px;
-                    position: relative;
-                    span {
-                        color: red;
-                        font-size: 3rem;
+            .control-section {
+                .form-group {
+                    label {
+                        bottom: 10px;
                         position: relative;
-                        top: 10px;
+                        span {
+                            color: red;
+                            font-size: 3rem;
+                            position: relative;
+                            top: 10px;
+                        }
                     }
-                }
-                input[type="number"] {
-                    width: 95px;
                 }
             }
         }
         .additional-choice {
+            padding-left: 30px;
             h4 {
+                margin-right: 15px;
                 margin-top: 25px;
             }
             .form-group {
+                margin-bottom: 5px;
                 input[type="checkbox"] {
                     cursor: pointer;
                     display: inline-block;
                     height: 14px;
-                    margin-right: 10px;
                     position: relative;
                     top: 3px;
                     width: 14px;
                 }
                 label {
-                    margin-top: 15px;
-                    i.fas.fa-info-circle {
-                        margin-left: 5px;
-                    }
+                    font-size: 11px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                }
+                i.fas.fa-info-circle {
+                    cursor: pointer;
                 }
             }
         }
         .button-container {
-            margin: 25px 0px 5px;
+            margin: 15px 0px 10px;
             text-align: center;
         }
     }
@@ -104,17 +112,26 @@
             .additional-choice {
                 h4 {
                     font-size: 1.5rem;
-                    margin-bottom: 0px;
                 }
-                h6 {
-                    margin: 30px 0px 0px;
-                }
-                .form-group {
-                    label {
-                        bottom: 0px;
-                        font-size: 10px;
-                        position: relative;
+                .control-section {
+                    h6 {
+                        margin: 20px 0px 0px;
                     }
+                    .form-group {
+                        margin-bottom: 0px;
+                        padding-right: 0px;
+                        label {
+                            bottom: 0px;
+                            font-size: 10px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+            .additional-choice {
+                .form-group {
+                    margin-bottom: 20px;
+                    text-align: center;
                 }
             }
             input[type="date"],

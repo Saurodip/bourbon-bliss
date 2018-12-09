@@ -31,10 +31,12 @@ export class Heading {
 }
 
 export class Option {
+    public group: string;
     public heading?: Heading;
     public fields: Array<Field>;
 
     constructor() {
+        this.group = '';
         this.heading = new Heading();
         this.fields = [];
     }
@@ -45,6 +47,8 @@ export class Field {
     public label: string;
     public id: string;
     public type: string;
+    public control?: string;
+    public attributes: Attributes;
     public tooltip?: string;
 
     constructor() {
@@ -52,7 +56,27 @@ export class Field {
         this.label = '';
         this.id = '';
         this.type = '';
+        this.control = '';
+        this.attributes = new Attributes();
         this.tooltip = '';
+    }
+}
+
+export class Attributes {
+    public max: boolean;
+    public min: boolean;
+    public maxLength: boolean;
+    public minLength: boolean;
+    public checked: boolean;
+    public required: boolean;
+
+    constructor() {
+        this.max = false;
+        this.min = false;
+        this.maxLength = false;
+        this.minLength = false;
+        this.checked = false;
+        this.required = false;
     }
 }
 

@@ -4,49 +4,66 @@
     </div>
 </div>
 <div class="row form-wrapper">
-    <div class="col-xs-12 col-md-5 well">
+    <div class="col-xs-12 well">
         <div class="row">
-            <form class="form-horizontal">
+            <form [formGroup]="reservationForm" class="form-horizontal">
                 <div class="col-xs-12 reservation-request">
                     <h4><i class="{{ bookingContent[0]?.heading?.icon }}"></i> {{ bookingContent[0]?.heading?.text }}</h4>
-                    <div *ngFor="let item of bookingContent[0]?.options; let i = index">
+                    <div class="form-group control-section row" formGroupName="{{ item.group }}" *ngFor="let item of bookingContent[0]?.options; let i = index">
                         <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
-                        <div *ngFor="let field of item.fields; let j = index">
+                        <div class="col-xs-12 col-sm-6 col-sm-4" *ngFor="let field of item.fields; let j = index">
                             <div class="form-group">
-                                <label for="{{ field.id }}" class="control-label col-xs-12 col-sm-6">
+                                <label for="{{ field.id }}" class="control-label">
                                     <i class="{{ field.icon }}"></i> {{ field.label }}
                                     <span>*</span>
                                 </label>
-                                <div class="col-xs-12 col-sm-6">
-                                    <input type="{{ field.type }}" class="form-control" required>
+                                <div class="field-control">
+                                    <ng-container *ngIf="field.type !== 'select'">
+                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}">
+                                    </ng-container>
+                                    <ng-container *ngIf="field.type === 'select'">
+                                        <select class="form-control" formControlName="{{ field.control }}">
+                                            <option value="none">Select an option</option>
+                                            <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{
+                                                country.name }}</option>
+                                        </select>
+                                    </ng-container>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 additional-choice">
-                    <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h4>
-                    <div *ngFor="let item of bookingContent[1]?.options; let i = index">
-                        <div *ngFor="let field of item.fields; let j = index">
-                            <div class="form-group">
-                                <div class="col-xs-12 col-sm-10">
-                                    <input type="{{ field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
-                                    <label for="{{ field.id }}" class="control-label">
-                                        {{ field.label }}
-                                        <i class="fas fa-info-circle"></i>
-                                    </label>
+                    <div class="row">
+                        <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h4>
+                        <ng-container *ngFor="let item of bookingContent[1]?.options; let i = index">
+                            <ng-container *ngFor="let field of item.fields; let j = index">
+                                <div class="col-xs-12 form-group">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-1">
+                                            <input type="{{  field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <label for="{{ field.id }}" class="control-label">
+                                                {{ field.label }}
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-1">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-2"></div>
-                            </div>
-                        </div>
+                            </ng-container>
+                        </ng-container>
                     </div>
-                    <div class="col-xs-12 button-container">
-                        <input type="button" class="btn btn-default" value="cancel">
-                        <input type="submit" class="btn btn-default" value="proceed">
-                    </div>
+                </div>
+                <div class="col-xs-12 button-container">
+                    <input type="button" class="btn btn-default" value="cancel">
+                    <input type="submit" class="btn btn-default" value="proceed" [disabled]="reservationForm.invalid"
+                        (ngSubmit)="onSubmit(reservationForm.value);">
                 </div>
             </form>
         </div>
     </div>
-    <div class="col-xs-12 col-md-offset-1 col-md-6 well"></div>
+    <div class="col-xs-12 well"></div>
 </div>

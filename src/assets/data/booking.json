@@ -9,6 +9,7 @@
             },
             "options": [
                 {
+                    "group": "guestInformation",
                     "heading": {
                         "icon": "fas fa-tags",
                         "text": "guest information"
@@ -18,23 +19,51 @@
                             "icon": "fas fa-angle-double-right",
                             "label": "first name",
                             "id": "first-name",
-                            "type": "text"
+                            "type": "text",
+                            "control": "firstName",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "guest middle name",
+                            "label": "middle name",
                             "id": "middle-name",
-                            "type": "text"
+                            "type": "text",
+                            "control": "middleName",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false,
+                                "required": false
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "guest last name",
+                            "label": "last name",
                             "id": "last-name",
-                            "type": "text"
+                            "type": "text",
+                            "control": "lastName",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         }
                     ]
                 },
                 {
+                    "group": "address",
                     "heading": {
                         "icon": "fas fa-tags",
                         "text": "address details"
@@ -43,42 +72,97 @@
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "block no.",
-                            "id": "address",
-                            "type": "text"
+                            "id": "block-no",
+                            "type": "text",
+                            "control": "blockNo",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "street",
                             "id": "street",
-                            "type": "text"
+                            "type": "text",
+                            "control": "street",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "country",
                             "id": "country",
-                            "type": "text"
+                            "type": "select",
+                            "control": "country",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false,
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "state",
                             "id": "state",
-                            "type": "text"
+                            "type": "text",
+                            "control": "state",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "city",
                             "id": "city",
-                            "type": "text"
+                            "type": "text",
+                            "control": "city",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "pin no.",
                             "id": "pin-no",
-                            "type": "text"
+                            "type": "text",
+                            "control": "pinNo",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         }
                     ]
                 },
                 {
+                    "group": "checkInOut",
                     "heading": {
                         "icon": "fas fa-tags",
                         "text": "check-in/out details"
@@ -88,19 +172,46 @@
                             "icon": "fas fa-angle-double-right",
                             "label": "check in date",
                             "id": "check-in",
-                            "type": "date"
+                            "type": "date",
+                            "control": "checkIn",
+                            "attributes": {
+                                "max": true,
+                                "min": true,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "check out date",
                             "id": "check-out",
-                            "type": "date"
+                            "type": "date",
+                            "control": "checkOut",
+                            "attributes": {
+                                "max": true,
+                                "min": true,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": false, 
+                                "required": true
+                            }
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "number of guest",
                             "id": "no-of-guest",
-                            "type": "number"
+                            "type": "number",
+                            "control": "noOfGuest",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
                         }
                     ]
                 }
@@ -113,12 +224,22 @@
             },
             "options": [
                 {
+                    "group": "additionalChoice",
                     "fields": [
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "guaranteed late check-out",
                             "id": "late-check-out",
                             "type": "checkbox",
+                            "control": "lateCheckOut",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": true, 
+                                "required": false
+                            },
                             "tooltip": ""
                         },
                         {
@@ -126,20 +247,47 @@
                             "label": "guaranteed early check-in",
                             "id": "early-check-in",
                             "type": "checkbox",
+                            "control": "earlyCheckIn",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": true, 
+                                "required": false
+                            },
                             "tooltip": ""
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "dog friendly room fee",
-                            "id": "dog-fee",
+                            "id": "dog-room-fee",
                             "type": "checkbox",
+                            "control": "dogRoomFee",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": true, 
+                                "required": false
+                            },
                             "tooltip": ""
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "daily special cuisine service",
-                            "id": "cuisine-service",
+                            "label": "special cuisine service",
+                            "id": "cuisine-service-charge",
                             "type": "checkbox",
+                            "control": "cuisineServiceCharge",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": false,
+                                "minLength": false,
+                                "checked": true, 
+                                "required": false
+                            },
                             "tooltip": ""
                         }
                     ]

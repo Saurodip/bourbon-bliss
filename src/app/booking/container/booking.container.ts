@@ -28,6 +28,7 @@ export class BookingContainerComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.fetchBookingData();
         this.fetchCountryList();
         this.getSelectedOption();

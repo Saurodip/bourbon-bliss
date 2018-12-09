@@ -21,6 +21,7 @@ export class HotelContainerComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.fetchHotelData();
     }
 

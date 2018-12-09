@@ -16,12 +16,13 @@ input[type="date"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
-input[type="text"] {
-    border-radius: 0px;
-    box-shadow: none;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+input[type="text"],
+select {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
 }
 
 input[type="button"],

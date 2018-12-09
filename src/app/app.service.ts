@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpClient } from '@angular/common/http';
-import { throwError, Observable, Subject } from 'rxjs';
+import { throwError, Observable, BehaviorSubject } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -11,10 +11,9 @@ export class AppService {
             'Authorization': 'my-auth-token'
         })
     };
-    private sharedData = new Subject<any>();
-    public sharedData$ = this.sharedData.asObservable();
+    public sharedData$ = new BehaviorSubject<any>([]);
 
-    constructor(private httpClient: HttpClient) {}
+    constructor(private httpClient: HttpClient) { }
 
     public getRequest(api): Observable<any> {
         return this.httpClient.get<any>(api).pipe(
@@ -54,7 +53,11 @@ export class AppService {
     }
 
     public onSharingData(data: any): void {
-        this.sharedData.next(data);
+        this.sharedData$.next(data);
+    }
+
+    public sharedData(): Observable<any> {
+        return this.sharedData$.asObservable();
     }
 }
 
