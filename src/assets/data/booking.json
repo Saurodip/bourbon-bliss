@@ -146,7 +146,7 @@
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "pin no.",
+                            "label": "pin number",
                             "id": "pin-no",
                             "type": "text",
                             "control": "pinNo",
@@ -157,6 +157,45 @@
                                 "minLength": true,
                                 "checked": false, 
                                 "required": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "group": "contactDetails",
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "contact details"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "mobile no.",
+                            "id": "mobile",
+                            "type": "text",
+                            "control": "mobileNo",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false, 
+                                "required": true
+                            }
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "email id",
+                            "id": "email-id",
+                            "type": "email",
+                            "control": "emailId",
+                            "attributes": {
+                                "max": false,
+                                "min": false,
+                                "maxLength": true,
+                                "minLength": true,
+                                "checked": false,
+                                "required": false
                             }
                         }
                     ]

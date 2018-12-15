@@ -40,21 +40,25 @@ export class BookingComponent implements OnInit {
         this.gridColumnClass = '';
         this.reservationForm = this.formBuilder.group({
             guestInformation: this.formBuilder.group({
-                firstName: ['asdasdasdsa', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
+                firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
                 middleName: [''],
-                lastName: ['asadsadsad', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]]
+                lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]]
             }),
             address: this.formBuilder.group({
-                blockNo: ['asads', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
-                street: ['sdasdsadasdsadasdsad', [Validators.required, Validators.minLength(10), Validators.maxLength(30)]],
+                blockNo: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
+                street: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30)]],
                 country: ['none', Validators.required],
-                state: ['asadasdas', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
-                city: ['aadasd', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
-                pinNo: ['0898989', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
+                state: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+                city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
+                pinNo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
+            }),
+            contactDetails: this.formBuilder.group({
+                mobileNo: ['', [Validators.required, Validators.minLength(10)]],
+                emailId: ['', Validators.required]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: ['2018-12-11', Validators.required],
-                checkOut: [new Date(), Validators.required],
+                checkIn: [this.changeDateFormat(new Date()), Validators.required],
+                checkOut: [this.changeDateFormat(new Date()), Validators.required],
                 noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(15)]]
             }),
             additionalChoice: this.formBuilder.group({
@@ -70,5 +74,19 @@ export class BookingComponent implements OnInit {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         console.log(this.reservationForm);
+    }
+
+    private changeDateFormat(date): string {
+        let month = String(date.getMonth() + 1);
+        let day = String(date.getDate());
+        const year = String(date.getFullYear());
+
+        if (month.length < 2) {
+            month = '0' + month;
+        }
+        if (day.length < 2) {
+            day = '0' + day;
+        }
+        return `${year}-${month}-${day}`;
     }
 }

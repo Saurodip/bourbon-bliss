@@ -64,6 +64,17 @@
                             top: 10px;
                         }
                     }
+                    div.error {
+                        i.fas.fa-exclamation-circle {
+                            color: red;
+                        }
+                        span.error-message {
+                            color: red;
+                            font-size: 9px;
+                            letter-spacing: 1px;
+                            line-height: 0px;
+                        }
+                    }
                 }
             }
         }

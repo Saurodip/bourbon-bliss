@@ -19,15 +19,20 @@
                                 </label>
                                 <div class="field-control">
                                     <ng-container *ngIf="field.type !== 'select'">
-                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}">
+                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}"
+                                            placeholder="Enter {{ field.label }}">
                                     </ng-container>
                                     <ng-container *ngIf="field.type === 'select'">
-                                        <select class="form-control" formControlName="{{ field.control }}">
+                                        <select class="form-control" formControlName="{{ field.control }}" [required]="field.attributes.required">
                                             <option value="none">Select an option</option>
                                             <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{
                                                 country.name }}</option>
                                         </select>
                                     </ng-container>
+                                    <div class="error">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span class="error-message">please provide valid {{ field.label }}.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -35,13 +40,15 @@
                 </div>
                 <div class="col-xs-12 additional-choice">
                     <div class="row">
-                        <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h4>
+                        <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text
+                            }}</h4>
                         <ng-container *ngFor="let item of bookingContent[1]?.options; let i = index">
                             <ng-container *ngFor="let field of item.fields; let j = index">
                                 <div class="col-xs-12 form-group">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-1">
-                                            <input type="{{  field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
+                                            <input type="{{  field.type }}" class="form-control" name="additional-choice"
+                                                value="{{ field.type }}">
                                         </div>
                                         <div class="col-xs-12 col-sm-10">
                                             <label for="{{ field.id }}" class="control-label">
