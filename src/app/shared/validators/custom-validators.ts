@@ -17,6 +17,14 @@ export class CustomValidators {
         }
     }
 
+    static dropdownValidator(control: AbstractControl): { [key: string]: any } | null {
+        if (control.value !== 'none') {
+            return null;
+        } else {
+            return { dropdownValidator: true };
+        }
+    }
+
     static emailValidator(control: AbstractControl): { [key: string]: any } | null {
         if (control.value.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
             return null;
@@ -25,11 +33,13 @@ export class CustomValidators {
         }
     }
 
-    static dropdownValidator(control: AbstractControl): { [key: string]: any } | null {
-        if (control.value !== 'none') {
-            return null;
+    static minDateValidator(control: AbstractControl): { [key: string]: any } | null {
+        let selectedDate = new Date(control.value);
+        let currentDate = new Date();
+        if (selectedDate.getTime() < currentDate.getTime()) {
+            return { minDateValidator: true };
         } else {
-            return { dropdownValidator: true };
+            return null;
         }
     }
 }

@@ -60,9 +60,9 @@ export class ReservationComponent implements OnInit {
                 emailId: ['', [Validators.required, CustomValidators.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.currentDate, [Validators.required]],
+                checkIn: [this.currentDate, [Validators.required, CustomValidators.minDateValidator]],
                 checkOut: [this.currentDate, [Validators.required]],
-                noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(15), CustomValidators.numberValidator]]
+                noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
                 lateCheckOut: [''],
@@ -76,9 +76,6 @@ export class ReservationComponent implements OnInit {
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
-        this.reservationForm.valueChanges.subscribe(()=>{
-            console.log(this.reservationForm);
-        });
     }
 
     private changeDateFormat(date): string {
