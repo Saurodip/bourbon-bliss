@@ -2,7 +2,7 @@ import { AbstractControl } from '@angular/forms';
 
 export class CustomValidators {
     static characterValidator(control: AbstractControl): { [key: string]: any } | null {
-        if (control.value.match(/^[A-Za-z]+$/)) {
+        if (!control.value || control.value.match(/^[A-Za-z]+$/)) {
             return null;
         } else {
             return { characterValidator: true };

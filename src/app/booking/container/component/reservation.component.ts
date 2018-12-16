@@ -76,6 +76,9 @@ export class ReservationComponent implements OnInit {
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
+        this.reservationForm.valueChanges.subscribe(()=>{
+            console.log(this.reservationForm);
+        });
     }
 
     private changeDateFormat(date): string {
