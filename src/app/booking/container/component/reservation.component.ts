@@ -4,12 +4,12 @@ import { Option, CountryList } from '../../booking.model';
 import { Availability } from 'src/app/hotel/hotel.model';
 
 @Component({
-    selector: 'app-booking',
-    templateUrl: './booking.component.html',
-    styleUrls: ['./booking.component.scss']
+    selector: 'app-reservation',
+    templateUrl: './reservation.component.html',
+    styleUrls: ['./reservation.component.scss']
 })
 
-export class BookingComponent implements OnInit {
+export class ReservationComponent implements OnInit {
     public viewportWidth: number;
     public bookingContent: Option;
     public listOfCountries: Object;
@@ -86,22 +86,6 @@ export class BookingComponent implements OnInit {
         month = (month.length === 1) ? '0' + month : month;
 
         return year + '-' + month + '-' + day;
-    }
-
-    public onChangeFormControl(selectedControl: string) {
-        for (let formGroup in this.reservationForm.controls) {
-            if (this.reservationForm.controls.hasOwnProperty(formGroup)) {
-                let currentFormGroup = this.reservationForm.controls[formGroup];
-                for (let control in currentFormGroup['controls']) {
-                    if (currentFormGroup['controls'].hasOwnProperty(control)) {
-                        if (selectedControl === control) {
-                            this.currentControl = currentFormGroup['controls'][control];
-                            this.currentControl['name'] = control;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

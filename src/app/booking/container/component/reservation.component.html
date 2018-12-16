@@ -28,7 +28,7 @@
                                             <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{ country.name }}</option>
                                         </select>
                                     </ng-container>
-                                    <div *ngIf="currentControl.name === field.control && currentControl?.touched && currentControl?.invalid" class="error">
+                                    <div *ngIf="reservationForm.controls[item.group].controls[field.control]?.touched && reservationForm.controls[item.group].controls[field.control]?.invalid" class="error">
                                         <i class="fas fa-exclamation-circle"></i>
                                         <span class="error-message">please provide valid {{ field.label }}.</span>
                                     </div>
@@ -39,8 +39,7 @@
                 </div>
                 <div class="col-xs-12 additional-choice">
                     <div class="row">
-                        <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text
-                            }}</h4>
+                        <h4><i class="{{ bookingContent[1]?.heading?.icon }}"></i> {{ bookingContent[1]?.heading?.text }}</h4>
                         <ng-container *ngFor="let item of bookingContent[1]?.options; let i = index">
                             <ng-container *ngFor="let field of item.fields; let j = index">
                                 <div class="col-xs-12 form-group">
