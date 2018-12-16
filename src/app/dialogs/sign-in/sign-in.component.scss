@@ -45,20 +45,23 @@
                 input[type="password"] {
                     font-size: 35px;
                 }
-                i.fas.fa-exclamation-circle {
-                    top: 57px;
-                    color: red;
-                    position: absolute;
-                    right: 10px;
-                }
-                span.error {
-                    color: red;
-                    font-size: 9px;
-                    letter-spacing: 1px;
-                    line-height: 0px;
+                div.error {
+                    i.fas.fa-exclamation-circle {
+                        top: 57px;
+                        color: red;
+                        position: absolute;
+                        right: 10px;
+                    }
+                    span.error-message {
+                        color: red;
+                        font-size: 9px;
+                        letter-spacing: 1px;
+                        line-height: 0px;
+                    }
                 }
             }
-            input[type="submit"], input[type="button"] {
+            input[type="submit"],
+            input[type="button"] {
                 border: 1px solid #cccccc;
                 border-radius: 0px;
                 letter-spacing: 1px;

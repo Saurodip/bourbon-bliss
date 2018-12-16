@@ -10,19 +10,25 @@
                         [ngStyle]="{ 'border': emailControl.touched && emailControl.invalid ? '1px solid red' : '' }"
                         placeholder="default@example.com" maxlength="30" minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                         required>
-                    <i *ngIf="emailControl.touched && emailControl.invalid" class="fas fa-exclamation-circle"></i>
-                    <span *ngIf="emailControl.touched && emailControl.invalid" class="error">please provide valid email
-                        id.</span>
+                    <div class="error">
+                        <i *ngIf="emailControl.touched && emailControl.invalid" class="fas fa-exclamation-circle"></i>
+                        <span *ngIf="emailControl.touched && emailControl.invalid" class="error-message">please provide
+                            valid email
+                            id.</span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">password <span>*</span></label>
                     <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
                         #passwordControl="ngModel" [ngStyle]="{ 'border': passwordControl.touched && passwordControl.invalid ? '1px solid red' : '' }"
                         maxlength="15" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                    <i *ngIf="passwordControl.touched && passwordControl.invalid" class="fas fa-exclamation-circle"></i>
-                    <span *ngIf="passwordControl.touched && passwordControl.invalid" class="error">password must
-                        contain at least one digit, one uppercase and lowercase letter, and at least 8 or more
-                        characters.</span>
+                    <div class="error">
+                        <i *ngIf="passwordControl.touched && passwordControl.invalid" class="fas fa-exclamation-circle"></i>
+                        <span *ngIf="passwordControl.touched && passwordControl.invalid" class="error-message">password
+                            must
+                            contain at least one digit, one uppercase and lowercase letter, and at least 8 or more
+                            characters.</span>
+                    </div>
                 </div>
                 <a href="#">forget password?</a>
                 <div class="row">

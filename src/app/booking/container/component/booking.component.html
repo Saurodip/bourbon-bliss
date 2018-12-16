@@ -20,16 +20,15 @@
                                 <div class="field-control">
                                     <ng-container *ngIf="field.type !== 'select'">
                                         <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}"
-                                            placeholder="Enter {{ field.label }}">
+                                            placeholder="Enter {{ field.label }}" (blur)="onChangeFormControl(field.control)">
                                     </ng-container>
                                     <ng-container *ngIf="field.type === 'select'">
                                         <select class="form-control" formControlName="{{ field.control }}" [required]="field.attributes.required">
                                             <option value="none">Select an option</option>
-                                            <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{
-                                                country.name }}</option>
+                                            <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{ country.name }}</option>
                                         </select>
                                     </ng-container>
-                                    <div class="error">
+                                    <div *ngIf="currentControl.name === field.control && currentControl?.touched && currentControl?.invalid" class="error">
                                         <i class="fas fa-exclamation-circle"></i>
                                         <span class="error-message">please provide valid {{ field.label }}.</span>
                                     </div>

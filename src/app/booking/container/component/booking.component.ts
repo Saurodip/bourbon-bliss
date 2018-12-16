@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Option, CountryList } from '../../booking.model';
 import { Availability } from 'src/app/hotel/hotel.model';
 
@@ -16,6 +16,7 @@ export class BookingComponent implements OnInit {
     public gridColumnClass: string;
     public selectedItem: Availability;
     public reservationForm: FormGroup;
+    public currentControl: FormControl;
 
     @Input() set content(value: Option) {
         if (value) {
@@ -68,25 +69,39 @@ export class BookingComponent implements OnInit {
                 cuisineServiceCharge: ['']
             })
         });
+        this.currentControl = new FormControl();
     }
 
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
-        console.log(this.reservationForm);
     }
 
     private changeDateFormat(date): string {
-        let month = String(date.getMonth() + 1);
         let day = String(date.getDate());
-        const year = String(date.getFullYear());
+        let month = String(date.getMonth() + 1);
+        let year = String(date.getFullYear());
 
-        if (month.length < 2) {
-            month = '0' + month;
+        day = (day.length === 1) ? '0' + day : day;
+        month = (month.length === 1) ? '0' + month : month;
+
+        return year + '-' + month + '-' + day;
+    }
+
+    public onChangeFormControl(selectedControl: string) {
+        for (let formGroup in this.reservationForm.controls) {
+            if (this.reservationForm.controls.hasOwnProperty(formGroup)) {
+                let currentFormGroup = this.reservationForm.controls[formGroup];
+                for (let control in currentFormGroup['controls']) {
+                    if (currentFormGroup['controls'].hasOwnProperty(control)) {
+                        if (selectedControl === control) {
+                            this.currentControl = currentFormGroup['controls'][control];
+                            this.currentControl['name'] = control;
+                        }
+                    }
+                }
+            }
         }
-        if (day.length < 2) {
-            day = '0' + day;
-        }
-        return `${year}-${month}-${day}`;
     }
 }
+
