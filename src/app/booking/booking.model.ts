@@ -48,7 +48,6 @@ export class Field {
     public id: string;
     public type: string;
     public control?: string;
-    public attributes: Attributes;
     public tooltip?: string;
 
     constructor() {
@@ -57,26 +56,7 @@ export class Field {
         this.id = '';
         this.type = '';
         this.control = '';
-        this.attributes = new Attributes();
         this.tooltip = '';
-    }
-}
-
-export class Attributes {
-    public max: boolean;
-    public min: boolean;
-    public maxLength: boolean;
-    public minLength: boolean;
-    public checked: boolean;
-    public required: boolean;
-
-    constructor() {
-        this.max = false;
-        this.min = false;
-        this.maxLength = false;
-        this.minLength = false;
-        this.checked = false;
-        this.required = false;
     }
 }
 

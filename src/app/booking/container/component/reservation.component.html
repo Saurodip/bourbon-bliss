@@ -19,11 +19,10 @@
                                 </label>
                                 <div class="field-control">
                                     <ng-container *ngIf="field.type !== 'select'">
-                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}"
-                                            placeholder="Enter {{ field.label }}" (blur)="onChangeFormControl(field.control)">
+                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
                                     </ng-container>
                                     <ng-container *ngIf="field.type === 'select'">
-                                        <select class="form-control" formControlName="{{ field.control }}" [required]="field.attributes.required">
+                                        <select class="form-control" formControlName="{{ field.control }}">
                                             <option value="none">Select an option</option>
                                             <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{ country.name }}</option>
                                         </select>
@@ -70,5 +69,4 @@
             </form>
         </div>
     </div>
-    <div class="col-xs-12 well"></div>
 </div>

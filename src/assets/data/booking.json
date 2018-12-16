@@ -20,45 +20,21 @@
                             "label": "first name",
                             "id": "first-name",
                             "type": "text",
-                            "control": "firstName",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "firstName"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "middle name",
                             "id": "middle-name",
                             "type": "text",
-                            "control": "middleName",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false,
-                                "required": false
-                            }
+                            "control": "middleName"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "last name",
                             "id": "last-name",
                             "type": "text",
-                            "control": "lastName",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "lastName"
                         }
                     ]
                 },
@@ -74,90 +50,42 @@
                             "label": "block no.",
                             "id": "block-no",
                             "type": "text",
-                            "control": "blockNo",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "blockNo"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "street",
                             "id": "street",
                             "type": "text",
-                            "control": "street",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "street"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "country",
                             "id": "country",
                             "type": "select",
-                            "control": "country",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false,
-                                "required": true
-                            }
+                            "control": "country"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "state",
                             "id": "state",
                             "type": "text",
-                            "control": "state",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "state"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "city",
                             "id": "city",
                             "type": "text",
-                            "control": "city",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "city"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "pin number",
                             "id": "pin-no",
                             "type": "text",
-                            "control": "pinNo",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "pinNo"
                         }
                     ]
                 },
@@ -173,30 +101,14 @@
                             "label": "mobile no.",
                             "id": "mobile",
                             "type": "text",
-                            "control": "mobileNo",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "mobileNo"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "email id",
                             "id": "email-id",
                             "type": "email",
-                            "control": "emailId",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false,
-                                "required": false
-                            }
+                            "control": "emailId"
                         }
                     ]
                 },
@@ -212,45 +124,21 @@
                             "label": "check in date",
                             "id": "check-in",
                             "type": "date",
-                            "control": "checkIn",
-                            "attributes": {
-                                "max": true,
-                                "min": true,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "checkIn"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "check out date",
                             "id": "check-out",
                             "type": "date",
-                            "control": "checkOut",
-                            "attributes": {
-                                "max": true,
-                                "min": true,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "checkOut"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "number of guest",
                             "id": "no-of-guest",
                             "type": "number",
-                            "control": "noOfGuest",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": true,
-                                "minLength": true,
-                                "checked": false, 
-                                "required": true
-                            }
+                            "control": "noOfGuest"
                         }
                     ]
                 }
@@ -271,14 +159,6 @@
                             "id": "late-check-out",
                             "type": "checkbox",
                             "control": "lateCheckOut",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": true, 
-                                "required": false
-                            },
                             "tooltip": ""
                         },
                         {
@@ -287,14 +167,6 @@
                             "id": "early-check-in",
                             "type": "checkbox",
                             "control": "earlyCheckIn",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": true, 
-                                "required": false
-                            },
                             "tooltip": ""
                         },
                         {
@@ -303,14 +175,6 @@
                             "id": "dog-room-fee",
                             "type": "checkbox",
                             "control": "dogRoomFee",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": true, 
-                                "required": false
-                            },
                             "tooltip": ""
                         },
                         {
@@ -319,14 +183,6 @@
                             "id": "cuisine-service-charge",
                             "type": "checkbox",
                             "control": "cuisineServiceCharge",
-                            "attributes": {
-                                "max": false,
-                                "min": false,
-                                "maxLength": false,
-                                "minLength": false,
-                                "checked": true, 
-                                "required": false
-                            },
                             "tooltip": ""
                         }
                     ]

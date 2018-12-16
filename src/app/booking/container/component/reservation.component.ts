@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Option, CountryList } from '../../booking.model';
-import { Availability } from 'src/app/hotel/hotel.model';
+import { Availability } from '../../../hotel/hotel.model';
+import { CustomValidators } from '../../../shared/validators/custom-validators';
 
 @Component({
     selector: 'app-reservation',
@@ -15,8 +16,8 @@ export class ReservationComponent implements OnInit {
     public listOfCountries: Object;
     public gridColumnClass: string;
     public selectedItem: Availability;
+    private currentDate: string;
     public reservationForm: FormGroup;
-    public currentControl: FormControl;
 
     @Input() set content(value: Option) {
         if (value) {
@@ -39,28 +40,29 @@ export class ReservationComponent implements OnInit {
         this.bookingContent = new Option();
         this.listOfCountries = {};
         this.gridColumnClass = '';
+        this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({
             guestInformation: this.formBuilder.group({
-                firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
-                middleName: [''],
-                lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]]
+                firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
+                middleName: ['', [CustomValidators.characterValidator]],
+                lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
             }),
             address: this.formBuilder.group({
                 blockNo: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
                 street: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30)]],
-                country: ['none', Validators.required],
+                country: ['none', [Validators.required, CustomValidators.dropdownValidator]],
                 state: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
                 city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
-                pinNo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
+                pinNo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10), CustomValidators.numberValidator]]
             }),
             contactDetails: this.formBuilder.group({
-                mobileNo: ['', [Validators.required, Validators.minLength(10)]],
-                emailId: ['', Validators.required]
+                mobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.numberValidator]],
+                emailId: ['', [Validators.required, CustomValidators.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.changeDateFormat(new Date()), Validators.required],
-                checkOut: [this.changeDateFormat(new Date()), Validators.required],
-                noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(15)]]
+                checkIn: [this.currentDate, [Validators.required]],
+                checkOut: [this.currentDate, [Validators.required]],
+                noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(15), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
                 lateCheckOut: [''],
@@ -69,7 +71,6 @@ export class ReservationComponent implements OnInit {
                 cuisineServiceCharge: ['']
             })
         });
-        this.currentControl = new FormControl();
     }
 
     ngOnInit() {
