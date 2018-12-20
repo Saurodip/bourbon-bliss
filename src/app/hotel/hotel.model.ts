@@ -52,12 +52,14 @@ export class Details {
     public size: object;
     public accomodation: object;
     public bed: object;
-    public toilet: object;
+    public extras: object;
+    public price: Array<object>;
 
     constructor() {
         this.size = {};
         this.accomodation = {};
         this.bed = {};
-        this.toilet = {};
+        this.extras = {};
+        this.price = [];
     }
 }

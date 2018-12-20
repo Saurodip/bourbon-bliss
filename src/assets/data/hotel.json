@@ -28,26 +28,36 @@
                 "heading": "master bed room grand",
                 "description": {
                     "size": {
-                        "area": "400",
+                        "area": 400,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "4",
+                        "count": 4,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -62,26 +72,36 @@
                 "heading": "Deluxe family room",
                 "description": {
                     "size": {
-                        "area": "580",
+                        "area": 580,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "4",
+                        "count": 4,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "4",
+                        "count": 4,
                         "type": "queen"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -96,26 +116,36 @@
                 "heading": "spacious superior room",
                 "description": {
                     "size": {
-                        "area": "510",
+                        "area": 510,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "3",
+                        "count": 3,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "3",
+                        "count": 3,
                         "type": "queen"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -130,26 +160,36 @@
                 "heading": "business class room",
                 "description": {
                     "size": {
-                        "area": "450",
+                        "area": 450,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -164,26 +204,36 @@
                 "heading": "superior executive suites",
                 "description": {
                     "size": {
-                        "area": "835",
+                        "area": 835,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "amenities",
-                        "count": "2",
+                        "count": 2,
                         "type": "sofa"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -198,26 +248,36 @@
                 "heading": "presidential suite",
                 "description": {
                     "size": {
-                        "area": "980",
+                        "area": 980,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "4",
+                        "count": 4,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "4",
+                        "count": 4,
                         "type": "queen"
                     },
                     "extras": {
                         "name": "amenities",
-                        "count": "2",
+                        "count": 2,
                         "type": "table"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -232,26 +292,36 @@
                 "heading": "deluxe suite grand",
                 "description": {
                     "size": {
-                        "area": "600",
+                        "area": 600,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "amenities",
-                        "count": "2",
+                        "count": 2,
                         "type": "sofa"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -266,26 +336,36 @@
                 "heading": "Grand premier suites",
                 "description": {
                     "size": {
-                        "area": "700",
+                        "area": 700,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "3",
+                        "count": 3,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "3",
+                        "count": 3,
                         "type": "queen"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "2",
+                        "count": 2,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -300,26 +380,36 @@
                 "heading": "master bed room grand",
                 "description": {
                     "size": {
-                        "area": "400",
+                        "area": 400,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -334,26 +424,36 @@
                 "heading": "master bed room grand",
                 "description": {
                     "size": {
-                        "area": "400",
+                        "area": 400,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -368,26 +468,36 @@
                 "heading": "master bed room grand",
                 "description": {
                     "size": {
-                        "area": "400",
+                        "area": 400,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "tariff": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",
@@ -402,26 +512,36 @@
                 "heading": "master bed room grand",
                 "description": {
                     "size": {
-                        "area": "400",
+                        "area": 400,
                         "unit": "sq. ft."
                     },
                     "accomodation": {
-                        "count": "2",
+                        "count": 2,
                         "unit": "max"
                     },
                     "bed": {
-                        "count": "2",
+                        "count": 2,
                         "type": "king"
                     },
                     "extras": {
                         "name": "toilet",
-                        "count": "1",
+                        "count": 1,
                         "type": "attached"
-                    }
+                    },
+                    "price": [
+                        {
+                            "basis": "hour",
+                            "amount": "Rs. 200"
+                        },
+                        {
+                            "basis": "day",
+                            "tariff": "Rs. 500"
+                        }
+                    ]
                 },
                 "facilities": [
                     "24 hours open reception",
-                    "wi-fi", 
+                    "wi-fi",
                     "air-conditioner",
                     "television",
                     "telephone",

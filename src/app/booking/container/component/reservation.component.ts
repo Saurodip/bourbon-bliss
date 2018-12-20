@@ -60,7 +60,7 @@ export class ReservationComponent implements OnInit {
                 emailId: ['', [Validators.required, CustomValidators.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.currentDate, [Validators.required, CustomValidators.minDateValidator]],
+                checkIn: [this.currentDate, [Validators.required, CustomValidators.startDateValidator]],
                 checkOut: [this.currentDate, [Validators.required]],
                 noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
             }),

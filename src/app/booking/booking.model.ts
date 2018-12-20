@@ -48,6 +48,7 @@ export class Field {
     public id: string;
     public type: string;
     public control?: string;
+    public isMandatory?: boolean;
     public tooltip?: string;
 
     constructor() {
@@ -56,6 +57,7 @@ export class Field {
         this.id = '';
         this.type = '';
         this.control = '';
+        this.isMandatory = false;
         this.tooltip = '';
     }
 }

@@ -1,6 +1,9 @@
 <div class="row panel-wrapper">
     <div class="col-xs-12">
-        <app-panel [gridClass]="gridColumnClass" [content]="selectedItem"></app-panel>
+        <app-panel [gridClass]="gridColumnClass" [content]="selectedItem">
+            <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}"><span>{{ selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
+            <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}" checked><span>{{ selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
+        </app-panel>
     </div>
 </div>
 <div class="row form-wrapper">
@@ -10,12 +13,18 @@
                 <div class="col-xs-12 reservation-request">
                     <h4><i class="{{ bookingContent[0]?.heading?.icon }}"></i> {{ bookingContent[0]?.heading?.text }}</h4>
                     <div class="form-group control-section row" formGroupName="{{ item.group }}" *ngFor="let item of bookingContent[0]?.options; let i = index">
-                        <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
+                        <h6>
+                            <i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}
+                            <div class="user-action">
+                                <span *ngIf="i === 0">add guest <i class="fas fa-plus-circle"></i></span>
+                                <span *ngIf="i === 0">remove guest <i class="fas fa-minus-circle"></i></span>
+                            </div>
+                        </h6>
                         <div class="col-xs-12 col-sm-6 col-sm-4" *ngFor="let field of item.fields; let j = index">
                             <div class="form-group">
                                 <label for="{{ field.id }}" class="control-label">
                                     <i class="{{ field.icon }}"></i> {{ field.label }}
-                                    <span>*</span>
+                                    <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
                                 </label>
                                 <div class="field-control">
                                     <ng-container *ngIf="field.type !== 'select'">
@@ -44,7 +53,8 @@
                                 <div class="col-xs-12 form-group">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-1">
-                                            <input type="{{  field.type }}" class="form-control" name="additional-choice" value="{{ field.type }}">
+                                            <input type="{{  field.type }}" class="form-control" name="additional-choice"
+                                                value="{{ field.type }}">
                                         </div>
                                         <div class="col-xs-12 col-sm-10">
                                             <label for="{{ field.id }}" class="control-label">

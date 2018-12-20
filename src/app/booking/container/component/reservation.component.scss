@@ -1,5 +1,14 @@
 .panel-wrapper {
     padding: 45px 60px 25px;
+    [name="price"] {
+        margin-top: 15px;
+    }
+    span {
+        bottom: 2px;
+        position: relative;
+        padding-left: 5px;
+        padding-right: 25px;
+    }
 }
 
 .form-wrapper {
@@ -29,9 +38,29 @@
                     font-family: Raleway-Regular, Arial, Helvetica;
                     letter-spacing: 1px;
                     margin: 10px 0px;
+                    position: relative;
                     i {
                         font-size: 1.2rem;
                         margin-right: 6px;
+                    }
+                    .user-action {
+                        bottom: 0px;
+                        cursor: pointer;
+                        display: inline-block;
+                        position: absolute;
+                        right: 0px;
+                        span {
+                            i {
+                                font-size: 18px;
+                                position: relative;
+                                top: 2px;
+                            }
+                        }
+                        span:first-child {
+                            i {
+                                margin-right: 15px;
+                            }
+                        }
                     }
                 }
                 .form-group {

@@ -20,21 +20,24 @@
                             "label": "first name",
                             "id": "first-name",
                             "type": "text",
-                            "control": "firstName"
+                            "control": "firstName",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "middle name",
                             "id": "middle-name",
                             "type": "text",
-                            "control": "middleName"
+                            "control": "middleName",
+                            "isMandatory": false
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "last name",
                             "id": "last-name",
                             "type": "text",
-                            "control": "lastName"
+                            "control": "lastName",
+                            "isMandatory": true
                         }
                     ]
                 },
@@ -50,42 +53,48 @@
                             "label": "block no.",
                             "id": "block-no",
                             "type": "text",
-                            "control": "blockNo"
+                            "control": "blockNo",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "street",
                             "id": "street",
                             "type": "text",
-                            "control": "street"
+                            "control": "street",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "country",
                             "id": "country",
                             "type": "select",
-                            "control": "country"
+                            "control": "country",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "state",
                             "id": "state",
                             "type": "text",
-                            "control": "state"
+                            "control": "state",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "city",
                             "id": "city",
                             "type": "text",
-                            "control": "city"
+                            "control": "city",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "pin number",
                             "id": "pin-no",
                             "type": "text",
-                            "control": "pinNo"
+                            "control": "pinNo",
+                            "isMandatory": true
                         }
                     ]
                 },
@@ -101,14 +110,16 @@
                             "label": "mobile no.",
                             "id": "mobile",
                             "type": "text",
-                            "control": "mobileNo"
+                            "control": "mobileNo",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "email id",
                             "id": "email-id",
                             "type": "email",
-                            "control": "emailId"
+                            "control": "emailId",
+                            "isMandatory": true
                         }
                     ]
                 },
@@ -124,21 +135,24 @@
                             "label": "check in date",
                             "id": "check-in",
                             "type": "date",
-                            "control": "checkIn"
+                            "control": "checkIn",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "check out date",
                             "id": "check-out",
                             "type": "date",
-                            "control": "checkOut"
+                            "control": "checkOut",
+                            "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "number of guest",
                             "id": "no-of-guest",
                             "type": "number",
-                            "control": "noOfGuest"
+                            "control": "noOfGuest",
+                            "isMandatory": true
                         }
                     ]
                 }

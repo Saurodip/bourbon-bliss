@@ -33,13 +33,25 @@ export class CustomValidators {
         }
     }
 
-    static minDateValidator(control: AbstractControl): { [key: string]: any } | null {
+    static startDateValidator(control: AbstractControl): { [key: string]: any } | null {
         let selectedDate = new Date(control.value);
         let currentDate = new Date();
         if (selectedDate.getTime() < currentDate.getTime()) {
-            return { minDateValidator: true };
+            return { startDateValidator: true };
         } else {
             return null;
         }
+    }
+
+    static endDateValidator(date: string): { [key: string]: any } | null {
+        return function (contol: AbstractControl) {
+            let startDate = new Date(date);
+            let endDate = new Date(contol.value);
+            if (endDate.getTime() < startDate.getTime()) {
+                return { endDateValidator: true };
+            } else {
+                return null;
+            }
+        };
     }
 }
