@@ -43,6 +43,14 @@ export class ReservationComponent implements OnInit {
         this.listOfCountries = {};
         this.gridColumnClass = '';
         this.currentDate = this.changeDateFormat(new Date());
+        this.reservationForm = this.formBuilder.group({});
+        this.maxValueForAddGuestInfo = 3;
+        this.minValueForRemoveGuestInfo = 1;
+    }
+
+    ngOnInit() {
+        this.viewportWidth = window.outerWidth;
+        this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         this.reservationForm = this.formBuilder.group({
             guestInformation: this.formBuilder.array([
                 this.getFormGroup()
@@ -71,13 +79,6 @@ export class ReservationComponent implements OnInit {
                 cuisineServiceCharge: ['']
             })
         });
-        this.maxValueForAddGuestInfo = 3;
-        this.minValueForRemoveGuestInfo = 1;
-    }
-
-    ngOnInit() {
-        this.viewportWidth = window.outerWidth;
-        this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
     }
 
     private changeDateFormat(date: Date): string {
