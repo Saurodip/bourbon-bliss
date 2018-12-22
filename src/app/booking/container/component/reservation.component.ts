@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Option, CountryList } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
 import { CustomValidators } from '../../../shared/validators/custom-validators';
@@ -18,6 +18,8 @@ export class ReservationComponent implements OnInit {
     public selectedItem: Availability;
     private currentDate: string;
     public reservationForm: FormGroup;
+    public maxValueForAddGuestInfo: Number;
+    public minValueForRemoveGuestInfo: Number;
 
     @Input() set content(value: Option) {
         if (value) {
@@ -42,11 +44,9 @@ export class ReservationComponent implements OnInit {
         this.gridColumnClass = '';
         this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({
-            guestInformation: this.formBuilder.group({
-                firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
-                middleName: ['', [CustomValidators.characterValidator]],
-                lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
-            }),
+            guestInformation: this.formBuilder.array([
+                this.getFormGroup()
+            ]),
             address: this.formBuilder.group({
                 blockNo: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
                 street: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30)]],
@@ -71,6 +71,8 @@ export class ReservationComponent implements OnInit {
                 cuisineServiceCharge: ['']
             })
         });
+        this.maxValueForAddGuestInfo = 3;
+        this.minValueForRemoveGuestInfo = 1;
     }
 
     ngOnInit() {
@@ -78,7 +80,7 @@ export class ReservationComponent implements OnInit {
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
     }
 
-    private changeDateFormat(date): string {
+    private changeDateFormat(date: Date): string {
         let day = String(date.getDate());
         let month = String(date.getMonth() + 1);
         let year = String(date.getFullYear());
@@ -87,6 +89,24 @@ export class ReservationComponent implements OnInit {
         month = (month.length === 1) ? '0' + month : month;
 
         return year + '-' + month + '-' + day;
+    }
+
+    public addOrRemoveGuest(typeOfAction: string): void {
+        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        if (typeOfAction === 'add' && guestInformation.controls.length <= this.maxValueForAddGuestInfo) {
+            guestInformation.push(this.getFormGroup());
+        } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
+            guestInformation.removeAt(guestInformation.controls.length - 1);
+        }
+    }
+
+    private getFormGroup(): FormGroup {
+        let guestInfoFormGroup = this.formBuilder.group({
+            firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
+            middleName: ['', [CustomValidators.characterValidator]],
+            lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
+        });
+        return guestInfoFormGroup;
     }
 }
 

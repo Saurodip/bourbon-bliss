@@ -31,11 +31,13 @@ export class Heading {
 }
 
 export class Option {
+    public array: string;
     public group: string;
     public heading?: Heading;
     public fields: Array<Field>;
 
     constructor() {
+        this.array = '';
         this.group = '';
         this.heading = new Heading();
         this.fields = [];

@@ -9,6 +9,7 @@
             },
             "options": [
                 {
+                    "array": "guestInformation",
                     "group": "guestInformation",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -42,6 +43,7 @@
                     ]
                 },
                 {
+                    "array": "",
                     "group": "address",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -99,6 +101,7 @@
                     ]
                 },
                 {
+                    "array": "",
                     "group": "contactDetails",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -124,6 +127,7 @@
                     ]
                 },
                 {
+                    "array": "",
                     "group": "checkInOut",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -165,6 +169,7 @@
             },
             "options": [
                 {
+                    "array": "",
                     "group": "additionalChoice",
                     "fields": [
                         {

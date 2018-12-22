@@ -45,11 +45,11 @@
                     }
                     .user-action {
                         bottom: 0px;
-                        cursor: pointer;
                         display: inline-block;
                         position: absolute;
                         right: 0px;
                         span {
+                            cursor: pointer;
                             i {
                                 font-size: 18px;
                                 position: relative;
@@ -60,6 +60,15 @@
                             i {
                                 margin-right: 15px;
                             }
+                        }
+                    }
+                    .disable-add-link,
+                    .disable-remove-link {
+                        color: lightgray;
+                        pointer-events: none;
+                        i {
+                            color: lightgray;
+                            pointer-events: none;
                         }
                     }
                 }
