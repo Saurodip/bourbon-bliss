@@ -36,7 +36,12 @@ export class CustomValidators {
     static startDateValidator(control: AbstractControl): { [key: string]: any } | null {
         let selectedDate = new Date(control.value);
         let currentDate = new Date();
-        if (selectedDate.getTime() < currentDate.getTime()) {
+        let date = currentDate.getDate();
+        let month = currentDate.getMonth();
+        let year = currentDate.getFullYear();
+        currentDate = new Date(year, month, date);
+
+        if (selectedDate < currentDate) {
             return { startDateValidator: true };
         } else {
             return null;
