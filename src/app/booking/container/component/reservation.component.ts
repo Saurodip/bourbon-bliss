@@ -98,6 +98,7 @@ export class ReservationComponent implements OnInit {
         } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
             guestInformation.removeAt(guestInformation.controls.length - 1);
         }
+        console.log(this.reservationForm)
     }
 
     private getFormGroup(): FormGroup {
