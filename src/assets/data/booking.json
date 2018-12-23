@@ -4,7 +4,7 @@
     "content": [
         {
             "heading": {
-                "icon": "fas fa-clipboard-check",
+                "icon": "fas fa-burn",
                 "text": "reservation request"
             },
             "options": [
@@ -168,7 +168,7 @@
         },
         {
             "heading": {
-                "icon": "fas fa-clipboard-check",
+                "icon": "fas fa-burn",
                 "text": "additional choice"
             },
             "options": [
@@ -208,31 +208,31 @@
         },
         {
             "heading": {
-                "icon": "fas fa-clipboard-check",
+                "icon": "fas fa-burn",
                 "text": "booking price list"
             },
             "options": [
                 {
                     "fields": [
                         {
-                            "icon": "fas fa-angle-double-right",
-                            "label": "guaranteed late check-out",
-                            "id": "late-check-out"
+                            "icon": "fas fa-check",
+                            "label": "base price",
+                            "id": "base-price"
                         },
                         {
-                            "icon": "fas fa-angle-double-right",
-                            "label": "guaranteed early check-in",
-                            "id": "early-check-in"
+                            "icon": "fas fa-check",
+                            "label": "discount on base price",
+                            "id": "discount"
                         },
                         {
-                            "icon": "fas fa-angle-double-right",
-                            "label": "dog friendly room fee",
-                            "id": "dog-room-fee"
+                            "icon": "fas fa-check",
+                            "label": "service tax",
+                            "id": "service-tax"
                         },
                         {
-                            "icon": "fas fa-angle-double-right",
-                            "label": "special cuisine service",
-                            "id": "cuisine-service-charge"
+                            "icon": "fas fa-check",
+                            "label": "additional choice applied",
+                            "id": "additional-service"
                         }
                     ]
                 }

@@ -32,6 +32,8 @@
                     margin-right: 10px;
                 }
             }
+        }
+        .reservation-request {
             .control-section {
                 margin-bottom: 15px;
                 padding: 0px 16px;
@@ -76,34 +78,26 @@
                 }
                 .form-group {
                     height: 95px;
-                    margin-bottom: 0px;
+                    margin-bottom: 10px;
                     padding-right: 20px;
                     label {
+                        bottom: 10px;
                         font-size: 11px;
                         font-weight: 500;
                         letter-spacing: 1px;
                         padding-top: 0px;
-                        text-align: left;
-                    }
-                    i {
-                        font-size: 1.2rem;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        }
-        .reservation-request {
-            .control-section {
-                .form-group {
-                    label {
-                        bottom: 10px;
                         position: relative;
+                        text-align: left;
                         span {
                             color: red;
                             font-size: 3rem;
                             position: relative;
                             top: 10px;
                         }
+                    }
+                    i {
+                        font-size: 1.2rem;
+                        margin-right: 10px;
                     }
                     div.error {
                         i.fas.fa-exclamation-circle {
@@ -139,6 +133,21 @@
                     font-size: 11px;
                     font-weight: 500;
                     letter-spacing: 1px;
+                }
+            }
+        }
+        .price-list {
+            padding-left: 30px;
+            h4 {
+                margin-right: 15px;
+                margin-top: 25px;
+            }
+            .form-group {
+                font-size: 11px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                i {
+                    margin-right: 15px;
                 }
             }
         }
@@ -182,6 +191,11 @@
                 .form-group {
                     margin-bottom: 20px;
                     text-align: center;
+                }
+            }
+            .price-list {
+                h4 {
+                    margin-top: 25px;
                 }
             }
             input[type="date"],
