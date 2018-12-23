@@ -1,10 +1,10 @@
 <div class="row panel-wrapper">
     <div class="col-xs-12">
         <app-panel [gridClass]="gridColumnClass" [content]="selectedItem">
-            <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}">
-            <span>{{ selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
-            <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}" checked>
-            <span>{{ selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
+            <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[0]?.basis)">
+            <span>{{ selectedItem?.description?.price[0]?.currency + ' ' + selectedItem?.description?.price[0]?.tariff + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
+            <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[1]?.basis)" checked>
+            <span>{{ selectedItem?.description?.price[1]?.currency + ' ' + selectedItem?.description?.price[1]?.tariff + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
         </app-panel>
     </div>
 </div>
@@ -102,6 +102,11 @@
                                 </div>
                             </ng-container>
                         </ng-container>
+                    </div>
+                </div>
+                <div class="col-xs-12 price-list">
+                    <div class="row">
+                        <h4><i class="{{ bookingContent[2]?.heading?.icon }}"></i> {{ bookingContent[2]?.heading?.text }}</h4>
                     </div>
                 </div>
                 <div class="col-xs-12 button-container">

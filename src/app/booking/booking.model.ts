@@ -31,8 +31,8 @@ export class Heading {
 }
 
 export class Option {
-    public array: string;
-    public group: string;
+    public array?: string;
+    public group?: string;
     public heading?: Heading;
     public fields: Array<Field>;
 
@@ -48,7 +48,7 @@ export class Field {
     public icon: string;
     public label: string;
     public id: string;
-    public type: string;
+    public type?: string;
     public control?: string;
     public isMandatory?: boolean;
     public tooltip?: string;

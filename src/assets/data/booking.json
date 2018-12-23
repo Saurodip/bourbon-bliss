@@ -10,7 +10,6 @@
             "options": [
                 {
                     "array": "guestInformation",
-                    "group": "guestInformation",
                     "heading": {
                         "icon": "fas fa-tags",
                         "text": "guest information"
@@ -43,7 +42,6 @@
                     ]
                 },
                 {
-                    "array": "",
                     "group": "address",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -101,7 +99,6 @@
                     ]
                 },
                 {
-                    "array": "",
                     "group": "contactDetails",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -127,7 +124,6 @@
                     ]
                 },
                 {
-                    "array": "",
                     "group": "checkInOut",
                     "heading": {
                         "icon": "fas fa-tags",
@@ -152,6 +148,14 @@
                         },
                         {
                             "icon": "fas fa-angle-double-right",
+                            "label": "total hours",
+                            "id": "total-hours",
+                            "type": "number",
+                            "control": "totalHours",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
                             "label": "number of guest",
                             "id": "no-of-guest",
                             "type": "number",
@@ -169,15 +173,12 @@
             },
             "options": [
                 {
-                    "array": "",
-                    "group": "additionalChoice",
                     "fields": [
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "guaranteed late check-out",
                             "id": "late-check-out",
                             "type": "checkbox",
-                            "control": "lateCheckOut",
                             "tooltip": ""
                         },
                         {
@@ -185,7 +186,6 @@
                             "label": "guaranteed early check-in",
                             "id": "early-check-in",
                             "type": "checkbox",
-                            "control": "earlyCheckIn",
                             "tooltip": ""
                         },
                         {
@@ -193,7 +193,6 @@
                             "label": "dog friendly room fee",
                             "id": "dog-room-fee",
                             "type": "checkbox",
-                            "control": "dogRoomFee",
                             "tooltip": ""
                         },
                         {
@@ -201,8 +200,39 @@
                             "label": "special cuisine service",
                             "id": "cuisine-service-charge",
                             "type": "checkbox",
-                            "control": "cuisineServiceCharge",
                             "tooltip": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "heading": {
+                "icon": "fas fa-clipboard-check",
+                "text": "booking price list"
+            },
+            "options": [
+                {
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guaranteed late check-out",
+                            "id": "late-check-out"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "guaranteed early check-in",
+                            "id": "early-check-in"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "dog friendly room fee",
+                            "id": "dog-room-fee"
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "special cuisine service",
+                            "id": "cuisine-service-charge"
                         }
                     ]
                 }

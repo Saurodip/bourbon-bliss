@@ -47,11 +47,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -91,11 +101,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -135,11 +155,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -179,11 +209,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -223,11 +263,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -267,11 +317,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -311,11 +371,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -355,11 +425,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -399,11 +479,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -443,11 +533,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -487,11 +587,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": "Rs. 200"
+                            "tariff": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },
@@ -531,11 +641,21 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "amount": "Rs. 200"
+                            "amount": 200,
+                            "currency": "Rs.",
+                            "base price": 200,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         },
                         {
                             "basis": "day",
-                            "tariff": "Rs. 500"
+                            "tariff": 500,
+                            "currency": "Rs.",
+                            "base price": 500,
+                            "discount": "5%",
+                            "service tax": "2%",
+                            "extra service": ""
                         }
                     ]
                 },

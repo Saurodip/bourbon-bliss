@@ -3,6 +3,7 @@ import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Option, CountryList } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
 import { CustomValidators } from '../../../shared/validators/custom-validators';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
     selector: 'app-reservation',
@@ -24,6 +25,7 @@ export class ReservationComponent implements OnInit {
     @Input() set content(value: Option) {
         if (value) {
             this.bookingContent = value;
+            this.onSelectBookingBasis('day');
         }
     }
     @Input() set countryList(value: CountryList) {
@@ -70,6 +72,7 @@ export class ReservationComponent implements OnInit {
             checkInOut: this.formBuilder.group({
                 checkIn: [this.currentDate, [Validators.required, CustomValidators.startDateValidator]],
                 checkOut: [this.currentDate, [Validators.required]],
+                totalHours: [1, [Validators.required]],
                 noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
@@ -90,6 +93,38 @@ export class ReservationComponent implements OnInit {
         month = (month.length === 1) ? '0' + month : month;
 
         return year + '-' + month + '-' + day;
+    }
+
+    public onSelectBookingBasis(bookingBasis: string): void {
+        let group: object = this.bookingContent[0].options.find((item: object) => item['group'] === 'checkInOut');
+        let isCheckOutControlPresent = group['fields'].find((item: object) => item['control'] === 'checkOut');
+        let isTotalHoursControlPresent = group['fields'].find((item: object) => item['control'] === 'totalHours');
+        if (!isCheckOutControlPresent) {
+            let checkOutObject = {
+                'icon': 'fas fa-angle-double-right',
+                'label': 'check out date',
+                'id': 'check-out',
+                'type': 'date',
+                'control': 'checkOut',
+                'isMandatory': true
+            };
+            group['fields'].splice(1, 0, checkOutObject);
+        } else if (!isTotalHoursControlPresent) {
+            let totalHoursObject = {
+                'icon': 'fas fa-angle-double-right',
+                'label': 'total hours',
+                'id': 'total-hours',
+                'type': 'number',
+                'control': 'totalHours',
+                'isMandatory': true
+            };
+            group['fields'].splice(2, 0, totalHoursObject);
+        }
+        if (bookingBasis === 'day') {
+            group['fields'].splice(2, 1);
+        } else if (bookingBasis === 'hour') {
+            group['fields'].splice(1, 1);
+        }
     }
 
     public addOrRemoveGuest(typeOfAction: string): void {
