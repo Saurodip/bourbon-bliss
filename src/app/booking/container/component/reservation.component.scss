@@ -147,6 +147,7 @@
                 font-weight: 500;
                 letter-spacing: 1px;
                 i {
+                    font-size: 1.4rem;
                     margin-right: 15px;
                 }
             }
@@ -196,6 +197,11 @@
             .price-list {
                 h4 {
                     margin-top: 25px;
+                }
+                .form-group {
+                    i {
+                        font-size: 1.5rem;
+                    }
                 }
             }
             input[type="date"],

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { Option, CountryList } from '../../booking.model';
+import { Content, Option, CountryList, Field } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
 import { CustomValidators } from '../../../shared/validators/custom-validators';
 import { isNgTemplate } from '@angular/compiler';
@@ -13,7 +13,7 @@ import { isNgTemplate } from '@angular/compiler';
 
 export class ReservationComponent implements OnInit {
     public viewportWidth: number;
-    public bookingContent: Option;
+    public bookingContent: Array<Option>;
     public listOfCountries: Object;
     public gridColumnClass: string;
     public selectedItem: Availability;
@@ -21,11 +21,13 @@ export class ReservationComponent implements OnInit {
     public reservationForm: FormGroup;
     public maxValueForAddGuestInfo: Number;
     public minValueForRemoveGuestInfo: Number;
+    private bookingBasis: string;
 
-    @Input() set content(value: Option) {
+    @Input() set content(value: Array<Option>) {
         if (value) {
             this.bookingContent = value;
             this.onSelectBookingBasis('day');
+            this.getCalculatedPriceList();
         }
     }
     @Input() set countryList(value: CountryList) {
@@ -34,20 +36,29 @@ export class ReservationComponent implements OnInit {
         }
     }
     @Input() set selectedOption(value: Availability) {
-        if (value) {
+        let storageObject: object = { action: '', variable: 'SelectedItem' };
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.selectedItem = value;
+            storageObject['action'] = 'set';
+            this.applyStorage(storageObject);
+        } else {
+            storageObject['action'] = 'get';
+            this.applyStorage(storageObject);
         }
+        this.getCalculatedPriceList();
     }
 
     constructor(private formBuilder: FormBuilder) {
         this.viewportWidth = 0;
-        this.bookingContent = new Option();
+        this.bookingContent = [];
         this.listOfCountries = {};
         this.gridColumnClass = '';
+        this.selectedItem = new Availability();
         this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({});
         this.maxValueForAddGuestInfo = 3;
         this.minValueForRemoveGuestInfo = 1;
+        this.bookingBasis = 'day';
     }
 
     ngOnInit() {
@@ -84,19 +95,20 @@ export class ReservationComponent implements OnInit {
         });
     }
 
-    private changeDateFormat(date: Date): string {
-        let day = String(date.getDate());
-        let month = String(date.getMonth() + 1);
-        let year = String(date.getFullYear());
-
-        day = (day.length === 1) ? '0' + day : day;
-        month = (month.length === 1) ? '0' + month : month;
-
-        return year + '-' + month + '-' + day;
+    private applyStorage(storageObject: object): void {
+        if (typeof (Storage)) {
+            if (storageObject['action'] === 'get') {
+                this.selectedItem = JSON.parse(sessionStorage.getItem(storageObject['variable']));
+            } else if (storageObject['action'] === 'set') {
+                sessionStorage.setItem(storageObject['variable'], JSON.stringify(this.selectedItem));
+            }
+        } else {
+            console.log('Browser does not support Storage functionality.');
+        }
     }
 
     public onSelectBookingBasis(bookingBasis: string): void {
-        let group: object = this.bookingContent[0].options.find((item: object) => item['group'] === 'checkInOut');
+        let group: object = this.bookingContent[0]['options'].find((item: object) => item['group'] === 'checkInOut');
         let isCheckOutControlPresent = group['fields'].find((item: object) => item['control'] === 'checkOut');
         let isTotalHoursControlPresent = group['fields'].find((item: object) => item['control'] === 'totalHours');
         if (!isCheckOutControlPresent) {
@@ -125,6 +137,7 @@ export class ReservationComponent implements OnInit {
         } else if (bookingBasis === 'hour') {
             group['fields'].splice(1, 1);
         }
+        this.bookingBasis = bookingBasis;
     }
 
     public addOrRemoveGuest(typeOfAction: string): void {
@@ -136,6 +149,10 @@ export class ReservationComponent implements OnInit {
         }
     }
 
+    public onSelectAdditionalService(selectedAdditionalService: Event): void {
+        this.getCalculatedPriceList();
+    }
+
     private getFormGroup(): FormGroup {
         let guestInfoFormGroup = this.formBuilder.group({
             firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
@@ -143,6 +160,86 @@ export class ReservationComponent implements OnInit {
             lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
         });
         return guestInfoFormGroup;
+    }
+
+    public getCalculatedPriceList(): void {
+        if (this.bookingContent.length > 0 && this.selectedItem.description) {
+            let selectedItemPriceDetails: object = this.selectedItem.description.price.find((item: object) => item['basis'] === this.bookingBasis);
+            let priceList: object = this.bookingContent.find((item: object) => item['heading'].text === 'booking price list');
+            let amount: number;
+            priceList['options'].forEach((option: Option) => {
+                option['fields'].forEach((field: Field) => {
+                    if (field['control'] !== 'totalAmount') {
+                        let matchedItem = Object.keys(selectedItemPriceDetails).find(item => item === field['control']);
+                        if (matchedItem) {
+                            switch (matchedItem) {
+                                case 'basePrice': (() => {
+                                    let count: number;
+                                    if (this.bookingBasis === 'day') {
+                                        let checkInDate = this.reservationForm.get('checkInOut')['controls'].checkIn.value;
+                                        let checkOutDate = this.reservationForm.get('checkInOut')['controls'].checkOut.value;
+                                        count = this.getCheckInOutDateDifference(checkInDate, checkOutDate);
+                                    } else if (this.bookingBasis === 'hour') {
+                                        let duration = this.reservationForm.get('checkInOut')['controls'].totalHours.value;
+                                        count = duration;
+                                    }
+                                    amount = selectedItemPriceDetails[matchedItem] * count;
+                                    field['value'] = '+' + amount;
+                                })();
+                                    break;
+                                case 'discountPercentage': (() => {
+                                    let discountAmount: number = (amount * selectedItemPriceDetails[matchedItem]) / 100;
+                                    field['value'] = '-' + discountAmount;
+                                })();
+                                    break;
+                                case 'serviceTaxPercentage': (() => {
+                                    let serviceTaxAmount: number = (amount * selectedItemPriceDetails[matchedItem]) / 100;
+                                    field['value'] = '+' + serviceTaxAmount;
+                                })();
+                                    break;
+                                case 'additionalService': (() => {
+                                    let additionalServiceAmount: number = 0;
+                                    let additionalSeviceFormControls = this.reservationForm.get('additionalChoice')['controls'];
+                                    for (let control in additionalSeviceFormControls) {
+                                        if (additionalSeviceFormControls.hasOwnProperty(control)) {
+                                            additionalServiceAmount += additionalSeviceFormControls[control].value;
+                                        }
+                                    }
+                                    field['value'] = '+' + additionalServiceAmount;
+                                })();
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    } else {
+                        // let totalAmount: number = option['fields'].reduce((prev: object, next: object) => {
+                        //     if (prev['value']) {
+                        //         return parseFloat(prev['value']) + parseFloat(next['value']);
+                        //     }
+                        // }, 0);
+                        // field['value'] = 'Rs. ' + totalAmount;
+                    }
+                });
+            });
+        }
+    }
+
+    private changeDateFormat(date: Date): string {
+        let day = String(date.getDate());
+        let month = String(date.getMonth() + 1);
+        let year = String(date.getFullYear());
+
+        day = (day.length === 1) ? '0' + day : day;
+        month = (month.length === 1) ? '0' + month : month;
+
+        return year + '-' + month + '-' + day;
+    }
+
+    private getCheckInOutDateDifference(checkInDate: string, checkOutDate: string): number {
+        let timeDifference = Math.abs(new Date(checkOutDate).getTime() - new Date(checkInDate).getTime());
+        let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        return (daysDifference || 1);
     }
 }
 

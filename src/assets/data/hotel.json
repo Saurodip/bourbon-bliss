@@ -47,21 +47,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -101,21 +109,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -155,21 +171,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -209,21 +233,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -263,21 +295,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -317,21 +357,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -371,21 +419,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -425,21 +481,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -479,21 +543,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -533,21 +605,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -587,21 +667,24 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "tariff": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {}
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },
@@ -641,21 +724,29 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "amount": 200,
                             "currency": "Rs.",
-                            "base price": 200,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 200,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
-                            "tariff": 500,
                             "currency": "Rs.",
-                            "base price": 500,
-                            "discount": "5%",
-                            "service tax": "2%",
-                            "extra service": ""
+                            "basePrice": 500,
+                            "discountPercentage": "5",
+                            "serviceTaxPercentage": "2",
+                            "additionalService": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 100,
+                                "specialCuisineService": 100
+                            }
                         }
                     ]
                 },

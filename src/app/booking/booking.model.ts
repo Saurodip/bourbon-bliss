@@ -52,6 +52,7 @@ export class Field {
     public control?: string;
     public isMandatory?: boolean;
     public tooltip?: string;
+    public value?: string;
 
     constructor() {
         this.icon = '';
@@ -61,6 +62,7 @@ export class Field {
         this.control = '';
         this.isMandatory = false;
         this.tooltip = '';
+        this.value = '';
     }
 }
 
