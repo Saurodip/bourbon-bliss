@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Content, Option, CountryList, Field } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
@@ -11,7 +11,7 @@ import { isNgTemplate } from '@angular/compiler';
     styleUrls: ['./reservation.component.scss']
 })
 
-export class ReservationComponent implements OnInit {
+export class ReservationComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
     public bookingContent: Array<Option>;
     public listOfCountries: Object;
@@ -22,6 +22,7 @@ export class ReservationComponent implements OnInit {
     public maxValueForAddGuestInfo: Number;
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
+    private additionalService: Array<string>;
 
     @Input() set content(value: Array<Option>) {
         if (value) {
@@ -59,6 +60,7 @@ export class ReservationComponent implements OnInit {
         this.maxValueForAddGuestInfo = 3;
         this.minValueForRemoveGuestInfo = 1;
         this.bookingBasis = 'day';
+        this.additionalService = [];
     }
 
     ngOnInit() {
@@ -149,8 +151,17 @@ export class ReservationComponent implements OnInit {
         }
     }
 
-    public onSelectAdditionalService(selectedAdditionalService: Event): void {
-        this.getCalculatedPriceList();
+    public onSelectAdditionalService(event: Event): void {
+        if (event && event.currentTarget) {
+            let selectedAdditionalService: string = event.currentTarget['value'];
+            if (event.currentTarget['checked'] && !this.additionalService.includes(selectedAdditionalService)) {
+                this.additionalService.push(selectedAdditionalService);
+            } else {
+                let matchedIndex: number = this.additionalService.findIndex((service: string) => service === selectedAdditionalService);
+                this.additionalService.splice(matchedIndex, 1);
+            }
+            this.getCalculatedPriceList();
+        }
     }
 
     private getFormGroup(): FormGroup {
@@ -169,6 +180,7 @@ export class ReservationComponent implements OnInit {
             let amount: number;
             priceList['options'].forEach((option: Option) => {
                 option['fields'].forEach((field: Field) => {
+                    field['currency'] = selectedItemPriceDetails ? selectedItemPriceDetails['currency'] : '';
                     if (field['control'] !== 'totalAmount') {
                         let matchedItem = Object.keys(selectedItemPriceDetails).find(item => item === field['control']);
                         if (matchedItem) {
@@ -184,28 +196,25 @@ export class ReservationComponent implements OnInit {
                                         count = duration;
                                     }
                                     amount = selectedItemPriceDetails[matchedItem] * count;
-                                    field['value'] = '+' + amount;
+                                    field['value'] = amount;
                                 })();
                                     break;
                                 case 'discountPercentage': (() => {
                                     let discountAmount: number = (amount * selectedItemPriceDetails[matchedItem]) / 100;
-                                    field['value'] = '-' + discountAmount;
+                                    field['value'] = -discountAmount;
                                 })();
                                     break;
                                 case 'serviceTaxPercentage': (() => {
                                     let serviceTaxAmount: number = (amount * selectedItemPriceDetails[matchedItem]) / 100;
-                                    field['value'] = '+' + serviceTaxAmount;
+                                    field['value'] = serviceTaxAmount;
                                 })();
                                     break;
                                 case 'additionalService': (() => {
                                     let additionalServiceAmount: number = 0;
-                                    let additionalSeviceFormControls = this.reservationForm.get('additionalChoice')['controls'];
-                                    for (let control in additionalSeviceFormControls) {
-                                        if (additionalSeviceFormControls.hasOwnProperty(control)) {
-                                            additionalServiceAmount += additionalSeviceFormControls[control].value;
-                                        }
-                                    }
-                                    field['value'] = '+' + additionalServiceAmount;
+                                    this.additionalService.forEach((service: string) => {
+                                        additionalServiceAmount += selectedItemPriceDetails['additionalService'][service];
+                                    });
+                                    field['value'] = additionalServiceAmount;
                                 })();
                                     break;
                                 default:
@@ -213,12 +222,13 @@ export class ReservationComponent implements OnInit {
                             }
                         }
                     } else {
-                        // let totalAmount: number = option['fields'].reduce((prev: object, next: object) => {
-                        //     if (prev['value']) {
-                        //         return parseFloat(prev['value']) + parseFloat(next['value']);
-                        //     }
-                        // }, 0);
-                        // field['value'] = 'Rs. ' + totalAmount;
+                        let totalAmount: number = 0;
+                        option['fields'].forEach((optionField: Field, index: number) => {
+                            if (index < option['fields'].length - 1) {
+                                totalAmount += optionField['value'];
+                            }
+                        });
+                        field['value'] = totalAmount;
                     }
                 });
             });
@@ -240,6 +250,10 @@ export class ReservationComponent implements OnInit {
         let timeDifference = Math.abs(new Date(checkOutDate).getTime() - new Date(checkInDate).getTime());
         let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
         return (daysDifference || 1);
+    }
+
+    ngOnDestroy() {
+        sessionStorage.removeItem('SelectedItem');
     }
 }
 

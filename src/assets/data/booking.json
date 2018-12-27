@@ -179,28 +179,32 @@
                             "label": "guaranteed late check-out",
                             "id": "late-check-out",
                             "type": "checkbox",
-                            "tooltip": ""
+                            "tooltip": "",
+                            "value": "lateCheckOutFee"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "guaranteed early check-in",
                             "id": "early-check-in",
                             "type": "checkbox",
-                            "tooltip": ""
+                            "tooltip": "",
+                            "value": "earlyCheckInFee"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "dog friendly room fee",
                             "id": "dog-room-fee",
                             "type": "checkbox",
-                            "tooltip": ""
+                            "tooltip": "",
+                            "value": "dogFriendlyRoomFee"
                         },
                         {
                             "icon": "fas fa-angle-double-right",
                             "label": "special cuisine service",
                             "id": "cuisine-service-charge",
                             "type": "checkbox",
-                            "tooltip": ""
+                            "tooltip": "",
+                            "value": "specialCuisineService"
                         }
                     ]
                 }
@@ -219,35 +223,35 @@
                             "label": "base price",
                             "id": "base-price",
                             "control": "basePrice",
-                            "value": "" 
+                            "value": 0
                         },
                         {
                             "icon": "fas fa-check",
                             "label": "discount amount on base price",
                             "id": "discount-percentage",
                             "control": "discountPercentage",
-                            "value": ""
+                            "value": 0
                         },
                         {
                             "icon": "fas fa-check",
                             "label": "service tax",
                             "id": "service-tax-percentage",
                             "control": "serviceTaxPercentage",
-                            "value": ""
+                            "value": 0
                         },
                         {
                             "icon": "fas fa-check",
                             "label": "additional choice",
                             "id": "additional-service",
                             "control": "additionalService",
-                            "value": ""
+                            "value": 0
                         },
                         {
                             "icon": "fas fa-check",
                             "label": "total amount",
                             "id": "total-amount",
                             "control": "totalAmount",
-                            "value": ""
+                            "value": 0
                         }
                     ]
                 }
