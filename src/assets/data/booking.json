@@ -1,7 +1,7 @@
 {
     "heading": "review and booking",
     "description": "We provide the best and exclusive deals for your accommodation by many different options. From lavish five-star hotel rooms to intimate vacation rentals and accommodations - options are always endless here. We are the only one who bring different offers and deals at your door step with unbelievable price list.",
-    "content": [
+    "reservationContent": [
         {
             "heading": {
                 "icon": "fas fa-burn",
@@ -252,6 +252,65 @@
                             "id": "total-amount",
                             "control": "totalAmount",
                             "value": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "paymentContent": [
+        {
+            "heading": {
+                "icon": "fas fa-burn",
+                "text": "payment information"
+            },
+            "options": [
+                {
+                    "group": "cardInformation",
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "card information"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "name on card",
+                            "id": "name-on-card",
+                            "type": "text",
+                            "control": "nameOnCard",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "card number",
+                            "id": "card-number",
+                            "type": "text",
+                            "control": "cardNumber",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "expiration month",
+                            "id": "expiration-month",
+                            "type": "select",
+                            "control": "expirationMonth",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "expiration year",
+                            "id": "expiration-year",
+                            "type": "select",
+                            "control": "expirationYear",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "cvv",
+                            "id": "cvv",
+                            "type": "text",
+                            "control": "cvv",
+                            "isMandatory": true
                         }
                     ]
                 }

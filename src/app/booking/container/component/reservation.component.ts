@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, Input, ViewChildren, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { Content, Option, CountryList, Field } from '../../booking.model';
+import { Option, CountryList, Field } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
 import { CustomValidators } from '../../../shared/validators/custom-validators';
-import { isNgTemplate } from '@angular/compiler';
 
 @Component({
     selector: 'app-reservation',
@@ -11,9 +10,9 @@ import { isNgTemplate } from '@angular/compiler';
     styleUrls: ['./reservation.component.scss']
 })
 
-export class ReservationComponent implements OnInit, OnDestroy {
+export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public viewportWidth: number;
-    public bookingContent: Array<Option>;
+    public reservationContent: Array<Option>;
     public listOfCountries: Object;
     public gridColumnClass: string;
     public selectedItem: Availability;
@@ -23,10 +22,11 @@ export class ReservationComponent implements OnInit, OnDestroy {
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
     private additionalService: Array<string>;
+    private dateControlArray: Array<object>;
 
     @Input() set content(value: Array<Option>) {
         if (value) {
-            this.bookingContent = value;
+            this.reservationContent = value;
             this.onSelectBookingBasis('day');
             this.getCalculatedPriceList();
         }
@@ -49,9 +49,11 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.getCalculatedPriceList();
     }
 
+    @ViewChild('input[type=date]') dateControl: ElementRef;
+
     constructor(private formBuilder: FormBuilder) {
         this.viewportWidth = 0;
-        this.bookingContent = [];
+        this.reservationContent = [];
         this.listOfCountries = {};
         this.gridColumnClass = '';
         this.selectedItem = new Availability();
@@ -97,6 +99,11 @@ export class ReservationComponent implements OnInit, OnDestroy {
         });
     }
 
+    ngAfterViewInit() {
+        //this.dateControlArray = this.dateControl.toArray();
+        //this.dateControl.nativeElement.addEventListener('change', this.getCalculatedPriceList);
+    }
+
     private applyStorage(storageObject: object): void {
         if (typeof (Storage)) {
             if (storageObject['action'] === 'get') {
@@ -105,12 +112,12 @@ export class ReservationComponent implements OnInit, OnDestroy {
                 sessionStorage.setItem(storageObject['variable'], JSON.stringify(this.selectedItem));
             }
         } else {
-            console.log('Browser does not support Storage functionality.');
+            console.log('Browser does not support Storage feature.');
         }
     }
 
     public onSelectBookingBasis(bookingBasis: string): void {
-        let group: object = this.bookingContent[0]['options'].find((item: object) => item['group'] === 'checkInOut');
+        let group: object = this.reservationContent[0]['options'].find((item: object) => item['group'] === 'checkInOut');
         let isCheckOutControlPresent = group['fields'].find((item: object) => item['control'] === 'checkOut');
         let isTotalHoursControlPresent = group['fields'].find((item: object) => item['control'] === 'totalHours');
         if (!isCheckOutControlPresent) {
@@ -174,9 +181,9 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     public getCalculatedPriceList(): void {
-        if (this.bookingContent.length > 0 && this.selectedItem.description) {
+        if (this.reservationContent.length > 0 && this.selectedItem.description) {
             let selectedItemPriceDetails: object = this.selectedItem.description.price.find((item: object) => item['basis'] === this.bookingBasis);
-            let priceList: object = this.bookingContent.find((item: object) => item['heading'].text === 'booking price list');
+            let priceList: object = this.reservationContent.find((item: object) => item['heading'].text === 'booking price list');
             let amount: number;
             priceList['options'].forEach((option: Option) => {
                 option['fields'].forEach((field: Field) => {
