@@ -83,3 +83,21 @@ export class Country {
         this.code = '';
     }
 }
+
+export class Month {
+    public month: Array<MonthInfo>;
+
+    constructor() {
+        this.month = [];
+    }
+}
+
+export class MonthInfo {
+    public index: number;
+    public name: string;
+
+    constructor() {
+        this.index = 0;
+        this.name = '';
+    }
+}

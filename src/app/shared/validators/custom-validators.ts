@@ -26,7 +26,7 @@ export class CustomValidators {
     }
 
     static emailValidator(control: AbstractControl): { [key: string]: any } | null {
-        if (control.value.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
+        if (control.value && control.value.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
             return null;
         } else {
             return { emailValidator: true };

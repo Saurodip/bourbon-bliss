@@ -290,18 +290,18 @@
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "expiration month",
-                            "id": "expiration-month",
+                            "label": "expiry month",
+                            "id": "expiry-month",
                             "type": "select",
-                            "control": "expirationMonth",
+                            "control": "expiryMonth",
                             "isMandatory": true
                         },
                         {
                             "icon": "fas fa-angle-double-right",
-                            "label": "expiration year",
-                            "id": "expiration-year",
+                            "label": "expiry year",
+                            "id": "expiry-year",
                             "type": "select",
-                            "control": "expirationYear",
+                            "control": "expiryYear",
                             "isMandatory": true
                         },
                         {

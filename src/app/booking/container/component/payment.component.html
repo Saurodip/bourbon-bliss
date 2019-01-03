@@ -18,9 +18,13 @@
                                             <input type="{{ field.type }}" #control class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
                                         </ng-container>
                                         <ng-container *ngIf="field.type === 'select'">
-                                            <select class="form-control" formControlName="{{ field.control }}">
+                                            <select *ngIf="field.control === 'expiryMonth'" class="form-control" formControlName="{{ field.control }}">
                                                 <option value="none">Select an option</option>
-                                                <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{ country.name }}</option>
+                                                <option *ngFor="let month of expiryMonth; let k = index" value="month.code">{{ month.name }}</option>
+                                            </select>
+                                            <select *ngIf="field.control === 'expiryYear'" class="form-control" formControlName="{{ field.control }}">
+                                                <option value="none">Select an option</option>
+                                                <option *ngFor="let year of expiryYear; let k = index" value="year">{{ year }}</option>
                                             </select>
                                         </ng-container>
                                         <div *ngIf="paymentForm.controls[item.group].controls[field.control]?.touched && paymentForm.controls[item.group].controls[field.control]?.invalid" class="error">
@@ -33,7 +37,7 @@
                         </div>
                     </ng-container>
                     <div class="col-xs-12 button-container">
-                        <input type="button" class="btn btn-default" value="cancel">
+                        <input type="button" class="btn btn-default" value="reset" (click)="resetPaymentForm()">
                         <input type="submit" class="btn btn-default" value="proceed" [disabled]="paymentForm.invalid" (ngSubmit)="onSubmit(paymentForm.value);">
                     </div>
                 </div>

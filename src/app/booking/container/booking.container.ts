@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Availability } from '../../hotel/hotel.model';
 import { AppService } from 'src/app/app.service';
 import { BookingService } from '../booking.service';
-import { Booking, CountryList, Country } from '../booking.model';
+import { Booking, CountryList, Country, Month } from '../booking.model';
 
 @Component({
     selector: 'app-booking-container',
@@ -15,15 +15,18 @@ export class BookingContainerComponent implements OnInit {
     public bookingData: Booking;
     public countryList: CountryList;
     public selectedOption: Availability;
+    public expiryMonth: Month;
     public error: string;
 
     public bookingData$: Observable<Booking> = this.bookingService.getBookingData();
     public countryList$: Observable<CountryList> = this.bookingService.getCountryList();
+    public month$: Observable<Month> = this.bookingService.getExpiryMonth();
 
     constructor(private bookingService: BookingService, private appService: AppService) {
         this.bookingData = new Booking();
         this.countryList = new CountryList();
         this.selectedOption = new Availability();
+        this.expiryMonth = new Month();
         this.error = '';
     }
 
@@ -32,6 +35,7 @@ export class BookingContainerComponent implements OnInit {
         this.fetchBookingData();
         this.fetchCountryList();
         this.getSelectedOption();
+        this.fetchExpiryMonth();
     }
 
     private fetchBookingData(): void {
@@ -51,6 +55,13 @@ export class BookingContainerComponent implements OnInit {
     private getSelectedOption(): void {
         this.appService.sharedData$.subscribe(
             (data) => this.selectedOption = { ...data },
+            (error) => this.error = error
+        );
+    }
+
+    private fetchExpiryMonth(): void {
+        this.bookingService.getExpiryMonth().subscribe(
+            (data) => this.expiryMonth = { ...data },
             (error) => this.error = error
         );
     }

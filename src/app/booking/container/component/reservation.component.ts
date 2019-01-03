@@ -259,6 +259,23 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         return (daysDifference || 1);
     }
 
+    public resetReservationForm(): void {
+        this.reservationForm.reset({
+            address: {
+                country: 'none'
+            },
+            checkInOut: {
+                checkIn: this.currentDate,
+                checkOut: this.currentDate,
+                totalHours: 1,
+                noOfGuest: 1
+            }
+        });
+        this.reservationForm.setControl('guestInformation', this.formBuilder.array([
+            this.getFormGroup()
+        ]));
+    }
+
     ngOnDestroy() {
         sessionStorage.removeItem('SelectedItem');
     }
