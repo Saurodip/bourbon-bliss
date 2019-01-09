@@ -75,7 +75,7 @@
                                         <ng-container *ngIf="field.type === 'select'">
                                             <select *ngIf="field.control === 'country'" class="form-control" formControlName="{{ field.control }}">
                                                 <option value="none">Select an option</option>
-                                                <option *ngFor="let country of listOfCountries; let j = index" value="country.code">{{ country.name }}</option>
+                                                <option *ngFor="let country of listOfCountries; let j = index" value="{{ country.code }}">{{ country.name }}</option>
                                             </select>
                                         </ng-container>
                                         <div *ngIf="reservationForm.controls[item.group].controls[field.control]?.touched && reservationForm.controls[item.group].controls[field.control]?.invalid" class="error">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-xs-12 button-container">
                     <input type="button" class="btn btn-default" value="reset" (click)="resetReservationForm()">
-                    <input type="submit" class="btn btn-default" value="proceed" [disabled]="reservationForm.invalid" (ngSubmit)="onSubmit(reservationForm.value);">
+                    <input type="button" class="btn btn-default" value="save" [disabled]="reservationForm.invalid" (click)="onSubmitReservationForm(reservationForm.value)">
                 </div>
             </div>
         </form>

@@ -14,4 +14,21 @@ export class SharedService {
     public getAdditionalInformation(): Observable<AdditionalInfo> {
         return this.appService.getRequest(this.url);
     }
+
+    public applyStorage(storageObject: object): any {
+        if (typeof (Storage)) {
+            if (storageObject['action'] === 'get') {
+                return JSON.parse(sessionStorage.getItem(storageObject['variable']));
+            } else if (storageObject['action'] === 'set') {
+                sessionStorage.setItem(storageObject['variable'], JSON.stringify(storageObject['value']));
+            }
+        } else {
+            console.log('Browser does not support Storage feature.');
+        }
+        storageObject = { action: '', variable: '', value: null };
+    }
+
+    public clearStorage(): void {
+        sessionStorage.clear();
+    }
 }

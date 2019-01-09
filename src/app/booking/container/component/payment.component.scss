@@ -29,6 +29,22 @@
                         font-size: 1.2rem;
                         margin-right: 6px;
                     }
+                    .user-action {
+                        bottom: 0px;
+                        display: inline-block;
+                        position: absolute;
+                        right: 0px;
+                        span {
+                            cursor: pointer;
+                            font-size: 9px;
+                            i {
+                                font-size: 15px;
+                                left: 3px;
+                                position: relative;
+                                top: 2px;
+                            }
+                        }
+                    }
                 }
                 .form-group {
                     height: 95px;

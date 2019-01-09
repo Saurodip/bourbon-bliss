@@ -3,6 +3,7 @@ import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Option, CountryList, Field } from '../../booking.model';
 import { Availability } from '../../../hotel/hotel.model';
 import { CustomValidators } from '../../../shared/validators/custom-validators';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
     selector: 'app-reservation',
@@ -13,8 +14,10 @@ import { CustomValidators } from '../../../shared/validators/custom-validators';
 export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public viewportWidth: number;
     public reservationContent: Array<Option>;
-    public listOfCountries: Object;
+    private reservationFormData: object;
+    public listOfCountries: object;
     public gridColumnClass: string;
+    private storageObject: object;
     public selectedItem: Availability;
     private currentDate: string;
     public reservationForm: FormGroup;
@@ -37,25 +40,26 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
     @Input() set selectedOption(value: Availability) {
-        let storageObject: object = { action: '', variable: 'SelectedItem' };
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.selectedItem = value;
-            storageObject['action'] = 'set';
-            this.applyStorage(storageObject);
+            this.storageObject = { action: 'set', variable: 'SelectedItem', value: this.selectedItem };
+            this.sharedService.applyStorage(this.storageObject);
         } else {
-            storageObject['action'] = 'get';
-            this.applyStorage(storageObject);
+            this.storageObject = { action: 'get', variable: 'SelectedItem' };
+            this.selectedItem = this.sharedService.applyStorage(this.storageObject);
         }
         this.getCalculatedPriceList();
     }
 
     @ViewChild('input[type=date]') dateControl: ElementRef;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder, private sharedService: SharedService) {
         this.viewportWidth = 0;
         this.reservationContent = [];
+        this.reservationFormData = {};
         this.listOfCountries = {};
         this.gridColumnClass = '';
+        this.storageObject = { action: '', variable: '', value: null };
         this.selectedItem = new Availability();
         this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({});
@@ -68,51 +72,94 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
+        this.storageObject = { 'action': 'get', 'variable': 'ReservationFormData' };
+        let cachedFormData = this.sharedService.applyStorage(this.storageObject);
+        this.reservationFormData = {
+            guestInformation: cachedFormData && cachedFormData['guestInformation'] || [{ firstName: '', middleName: '', lastName: '' }],
+            address: {
+                blockNo: cachedFormData && cachedFormData['address'].blockNo || '',
+                street: cachedFormData && cachedFormData['address'].street || '',
+                country: cachedFormData && cachedFormData['address'].country || 'none',
+                state: cachedFormData && cachedFormData['address'].state || '',
+                city: cachedFormData && cachedFormData['address'].city || '',
+                pinNo: cachedFormData && cachedFormData['address'].pinNo || ''
+            },
+            contactDetails: {
+                mobileNo: cachedFormData && cachedFormData['contactDetails'].mobileNo || '',
+                emailId: cachedFormData && cachedFormData['contactDetails'].emailId || ''
+            },
+            checkInOut: {
+                checkIn: cachedFormData && cachedFormData['checkInOut'].checkIn || this.currentDate,
+                checkOut: cachedFormData && cachedFormData['checkInOut'].checkOut || this.currentDate,
+                totalHours: cachedFormData && cachedFormData['checkInOut'].totalHours || 1,
+                noOfGuest: cachedFormData && cachedFormData['checkInOut'].noOfGuest || 1
+            },
+            additionalChoice: {
+                lateCheckOut: cachedFormData && cachedFormData['additionalChoice'].lateCheckOut || '',
+                earlyCheckIn: cachedFormData && cachedFormData['additionalChoice'].earlyCheckIn || '',
+                dogRoomFee: cachedFormData && cachedFormData['additionalChoice'].dogRoomFee || '',
+                cuisineServiceCharge: cachedFormData && cachedFormData['additionalChoice'].cuisineServiceCharge || ''
+            }
+        };
+        this.initializeReservationForm();
+    }
+
+    ngAfterViewInit() {
+        /*this.dateControlArray = this.dateControl.toArray();
+        this.dateControl.nativeElement.addEventListener('change', this.getCalculatedPriceList);*/
+    }
+
+    private initializeReservationForm(): void {
         this.reservationForm = this.formBuilder.group({
             guestInformation: this.formBuilder.array([
                 this.getFormGroup()
             ]),
             address: this.formBuilder.group({
-                blockNo: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
-                street: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30)]],
-                country: ['none', [Validators.required, CustomValidators.dropdownValidator]],
-                state: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
-                city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
-                pinNo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10), CustomValidators.numberValidator]]
+                blockNo: [this.reservationFormData['address'].blockNo, [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
+                street: [this.reservationFormData['address'].street, [Validators.required, Validators.minLength(10), Validators.maxLength(50)]],
+                country: [this.reservationFormData['address'].country, [Validators.required, CustomValidators.dropdownValidator]],
+                state: [this.reservationFormData['address'].state, [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+                city: [this.reservationFormData['address'].city, [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
+                pinNo: [this.reservationFormData['address'].pinNo, [Validators.required, Validators.minLength(3), Validators.maxLength(10), CustomValidators.numberValidator]]
             }),
             contactDetails: this.formBuilder.group({
-                mobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.numberValidator]],
-                emailId: ['', [Validators.required, CustomValidators.emailValidator]]
+                mobileNo: [this.reservationFormData['contactDetails'].mobileNo, [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.numberValidator]],
+                emailId: [this.reservationFormData['contactDetails'].emailId, [Validators.required, CustomValidators.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.currentDate, [Validators.required, CustomValidators.startDateValidator]],
-                checkOut: [this.currentDate, [Validators.required]],
-                totalHours: [1, [Validators.required]],
-                noOfGuest: [1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
+                checkIn: [this.reservationFormData['checkInOut'].checkIn, [Validators.required, CustomValidators.startDateValidator]],
+                checkOut: [this.reservationFormData['checkInOut'].checkOut, [Validators.required]],
+                totalHours: [this.reservationFormData['checkInOut'].totalHours, [Validators.required]],
+                noOfGuest: [this.reservationFormData['checkInOut'].noOfGuest, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
-                lateCheckOut: [''],
-                earlyCheckIn: [''],
-                dogRoomFee: [''],
-                cuisineServiceCharge: ['']
+                lateCheckOut: [this.reservationFormData['additionalChoice'].lateCheckOut],
+                earlyCheckIn: [this.reservationFormData['additionalChoice'].earlyCheckIn],
+                dogRoomFee: [this.reservationFormData['additionalChoice'].dogRoomFee],
+                cuisineServiceCharge: [this.reservationFormData['additionalChoice'].cuisineServiceCharge]
             })
         });
     }
 
-    ngAfterViewInit() {
-        //this.dateControlArray = this.dateControl.toArray();
-        //this.dateControl.nativeElement.addEventListener('change', this.getCalculatedPriceList);
+    private getFormGroup(): FormGroup {
+        let guestInfoFormGroup: Array<FormGroup> = [];
+        for (let i = 0; i < this.reservationFormData['guestInformation'].length; i++) {
+            let formGroup = this.formBuilder.group({
+                firstName: [this.reservationFormData['guestInformation'][i].firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
+                middleName: [this.reservationFormData['guestInformation'][i].middleName, [CustomValidators.characterValidator]],
+                lastName: [this.reservationFormData['guestInformation'][i].lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
+            });
+            guestInfoFormGroup.push(formGroup);
+        }
+        return guestInfoFormGroup[0];
     }
 
-    private applyStorage(storageObject: object): void {
-        if (typeof (Storage)) {
-            if (storageObject['action'] === 'get') {
-                this.selectedItem = JSON.parse(sessionStorage.getItem(storageObject['variable']));
-            } else if (storageObject['action'] === 'set') {
-                sessionStorage.setItem(storageObject['variable'], JSON.stringify(this.selectedItem));
-            }
-        } else {
-            console.log('Browser does not support Storage feature.');
+    public addOrRemoveGuest(typeOfAction: string): void {
+        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        if (typeOfAction === 'add' && guestInformation.controls.length <= this.maxValueForAddGuestInfo) {
+            guestInformation.push(this.getFormGroup()[guestInformation.controls.length]);
+        } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
+            guestInformation.removeAt(guestInformation.controls.length - 1);
         }
     }
 
@@ -149,15 +196,6 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.bookingBasis = bookingBasis;
     }
 
-    public addOrRemoveGuest(typeOfAction: string): void {
-        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
-        if (typeOfAction === 'add' && guestInformation.controls.length <= this.maxValueForAddGuestInfo) {
-            guestInformation.push(this.getFormGroup());
-        } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
-            guestInformation.removeAt(guestInformation.controls.length - 1);
-        }
-    }
-
     public onSelectAdditionalService(event: Event): void {
         if (event && event.currentTarget) {
             let selectedAdditionalService: string = event.currentTarget['value'];
@@ -169,15 +207,6 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
             }
             this.getCalculatedPriceList();
         }
-    }
-
-    private getFormGroup(): FormGroup {
-        let guestInfoFormGroup = this.formBuilder.group({
-            firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
-            middleName: ['', [CustomValidators.characterValidator]],
-            lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
-        });
-        return guestInfoFormGroup;
     }
 
     public getCalculatedPriceList(): void {
@@ -276,8 +305,13 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         ]));
     }
 
+    public onSubmitReservationForm(formValue: FormGroup): void {
+        this.storageObject = { action: 'set', variable: 'ReservationFormData', value: formValue };
+        this.sharedService.applyStorage(this.storageObject);
+    }
+
     ngOnDestroy() {
-        sessionStorage.removeItem('SelectedItem');
+        this.sharedService.clearStorage();
     }
 }
 
