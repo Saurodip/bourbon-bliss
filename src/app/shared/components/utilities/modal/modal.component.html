@@ -1,0 +1,22 @@
+<div class="modal" id="modal-popover">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" (click)="onClose()">&times;</button>
+                <span [ngSwitch]="modalContent?.type">
+                    <i *ngSwitchCase="'confirmation'" class="fas fa-check-circle"></i>
+                    <i *ngSwitchCase="'info'" class="fas fa-info-circle"></i>
+                    <i *ngSwitchCase="'warning'" class="fas fa-exclamation-triangle"></i>
+                    <i *ngSwitchDefault class="fas fa-check-circle"></i>
+                </span>
+                <span>{{ modalContent?.title }}</span>
+            </div>
+            <div class="modal-body">
+                <span>{{ modalContent?.message }}</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>

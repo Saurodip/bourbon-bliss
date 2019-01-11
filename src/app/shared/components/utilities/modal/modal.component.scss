@@ -1,0 +1,26 @@
+#modal-popover {
+    font-family: Raleway-Regular, Arial, Helvetica;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    .modal-header {
+        font-size: 1.8rem;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .modal-body {
+        font-size: 1.1rem;
+        padding: 4rem;
+        span {
+            line-height: 2;
+        }
+    }
+    .modal-footer {
+        button {
+            border-radius: 0px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+    }
+}

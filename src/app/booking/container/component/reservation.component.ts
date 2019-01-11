@@ -25,6 +25,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
     private additionalService: Array<string>;
+    public isModalVisible: boolean;
+    public modalObject: object;
     private dateControlArray: Array<object>;
 
     @Input() set content(value: Array<Option>) {
@@ -67,6 +69,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.minValueForRemoveGuestInfo = 1;
         this.bookingBasis = 'day';
         this.additionalService = [];
+        this.isModalVisible = false;
+        this.modalObject = { type: '', title: '', message: '' };
     }
 
     ngOnInit() {
@@ -308,6 +312,12 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public onSubmitReservationForm(formValue: FormGroup): void {
         this.storageObject = { action: 'set', variable: 'ReservationFormData', value: formValue };
         this.sharedService.applyStorage(this.storageObject);
+        this.isModalVisible = true;
+        this.modalObject = {
+            type: 'confirmation',
+            title: 'confirmation',
+            message: 'reservation form data has been saved successfully.'
+        };
     }
 
     ngOnDestroy() {

@@ -8,13 +8,12 @@
                     <label for="email">email <span>*</span></label>
                     <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" #emailControl="ngModel"
                         [ngStyle]="{ 'border': emailControl.touched && emailControl.invalid ? '1px solid red' : '' }"
-                        placeholder="default@example.com" maxlength="30" minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                        required>
+                        placeholder="default@example.com" maxlength="30" minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                     <div class="error">
                         <i *ngIf="emailControl.touched && emailControl.invalid" class="fas fa-exclamation-circle"></i>
-                        <span *ngIf="emailControl.touched && emailControl.invalid" class="error-message">please provide
-                            valid email
-                            id.</span>
+                        <span *ngIf="emailControl.touched && emailControl.invalid" class="error-message">
+                            please provide valid email id.
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -24,10 +23,9 @@
                         maxlength="15" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <div class="error">
                         <i *ngIf="passwordControl.touched && passwordControl.invalid" class="fas fa-exclamation-circle"></i>
-                        <span *ngIf="passwordControl.touched && passwordControl.invalid" class="error-message">password
-                            must
-                            contain at least one digit, one uppercase and lowercase letter, and at least 8 or more
-                            characters.</span>
+                        <span *ngIf="passwordControl.touched && passwordControl.invalid" class="error-message">
+                            password must contain at least one digit, one uppercase and lowercase letter, and at least 8 or more characters.
+                        </span>
                     </div>
                 </div>
                 <a href="#">forget password?</a>

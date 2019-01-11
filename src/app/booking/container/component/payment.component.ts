@@ -17,6 +17,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
     public expiryMonth: Array<MonthInfo>;
     public expiryYear: Array<number>;
     private storageObject: object;
+    public modalObject: object;
     public paymentForm: FormGroup;
 
     @Input() set content(value: Array<Option>) {
@@ -42,6 +43,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
         this.expiryMonth = [];
         this.expiryYear = [];
         this.storageObject = { action: '', variable: '', value: null };
+        this.modalObject = { type: '', title: '', message: '' };
     }
 
     ngOnInit() {
@@ -79,6 +81,11 @@ export class PaymentComponent implements OnInit, OnDestroy {
     public onSaveCardDetails(formValue: FormGroup): void {
         this.storageObject = { action: 'set', variable: 'CardDetails', value: formValue };
         this.sharedService.applyStorage(this.storageObject);
+        this.modalObject = {
+            type: 'confirmation',
+            title: 'confirmation',
+            message: 'card details has been saved successfully.'
+        };
     }
 
     ngOnDestroy() {

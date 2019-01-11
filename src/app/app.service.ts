@@ -15,28 +15,28 @@ export class AppService {
 
     constructor(private httpClient: HttpClient) { }
 
-    public getRequest(api): Observable<any> {
+    public getRequest(api: string): Observable<any> {
         return this.httpClient.get<any>(api).pipe(
             retry(3),
             catchError(this.handleError)
         );
     }
 
-    public postRequest(api, body): Observable<any> {
+    public postRequest(api: string, body: any): Observable<any> {
         return this.httpClient.post<any>(api, body, this.httpOptions).pipe(
             retry(3),
             catchError(this.handleError)
         );
     }
 
-    public deleteRequest(api): Observable<any> {
-        return this.httpClient.post<any>(api, this.httpOptions).pipe(
+    public deleteRequest(api: string): Observable<any> {
+        return this.httpClient.delete<any>(api, this.httpOptions).pipe(
             retry(3),
             catchError(this.handleError)
         );
     }
 
-    public putRequest(api, body): Observable<any> {
+    public putRequest(api: string, body: any): Observable<any> {
         return this.httpClient.put<any>(api, body, this.httpOptions).pipe(
             retry(3),
             catchError(this.handleError)
