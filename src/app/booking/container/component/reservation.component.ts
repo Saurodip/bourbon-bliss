@@ -14,10 +14,10 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public viewportWidth: number;
     public reservationContent: Array<Option>;
-    private reservationFormData: object;
     public listOfCountries: object;
     public gridColumnClass: string;
     private storageObject: object;
+    private cachedFormData: object;
     public selectedItem: Availability;
     private currentDate: string;
     public reservationForm: FormGroup;
@@ -58,10 +58,10 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService) {
         this.viewportWidth = 0;
         this.reservationContent = [];
-        this.reservationFormData = {};
         this.listOfCountries = {};
         this.gridColumnClass = '';
         this.storageObject = { action: '', variable: '', value: null };
+        this.cachedFormData = {};
         this.selectedItem = new Availability();
         this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({});
@@ -77,34 +77,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.viewportWidth = window.outerWidth;
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         this.storageObject = { 'action': 'get', 'variable': 'ReservationFormData' };
-        let cachedFormData = this.sharedService.applyStorage(this.storageObject);
-        this.reservationFormData = {
-            guestInformation: cachedFormData && cachedFormData['guestInformation'] || [{ firstName: '', middleName: '', lastName: '' }],
-            address: {
-                blockNo: cachedFormData && cachedFormData['address'].blockNo || '',
-                street: cachedFormData && cachedFormData['address'].street || '',
-                country: cachedFormData && cachedFormData['address'].country || 'none',
-                state: cachedFormData && cachedFormData['address'].state || '',
-                city: cachedFormData && cachedFormData['address'].city || '',
-                pinNo: cachedFormData && cachedFormData['address'].pinNo || ''
-            },
-            contactDetails: {
-                mobileNo: cachedFormData && cachedFormData['contactDetails'].mobileNo || '',
-                emailId: cachedFormData && cachedFormData['contactDetails'].emailId || ''
-            },
-            checkInOut: {
-                checkIn: cachedFormData && cachedFormData['checkInOut'].checkIn || this.currentDate,
-                checkOut: cachedFormData && cachedFormData['checkInOut'].checkOut || this.currentDate,
-                totalHours: cachedFormData && cachedFormData['checkInOut'].totalHours || 1,
-                noOfGuest: cachedFormData && cachedFormData['checkInOut'].noOfGuest || 1
-            },
-            additionalChoice: {
-                lateCheckOut: cachedFormData && cachedFormData['additionalChoice'].lateCheckOut || '',
-                earlyCheckIn: cachedFormData && cachedFormData['additionalChoice'].earlyCheckIn || '',
-                dogRoomFee: cachedFormData && cachedFormData['additionalChoice'].dogRoomFee || '',
-                cuisineServiceCharge: cachedFormData && cachedFormData['additionalChoice'].cuisineServiceCharge || ''
-            }
-        };
+        this.cachedFormData = this.sharedService.applyStorage(this.storageObject);
         this.initializeReservationForm();
     }
 
@@ -115,53 +88,62 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private initializeReservationForm(): void {
         this.reservationForm = this.formBuilder.group({
-            guestInformation: this.formBuilder.array([
-                this.getFormGroup()
-            ]),
+            guestInformation: this.formBuilder.array([]),
             address: this.formBuilder.group({
-                blockNo: [this.reservationFormData['address'].blockNo, [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
-                street: [this.reservationFormData['address'].street, [Validators.required, Validators.minLength(10), Validators.maxLength(50)]],
-                country: [this.reservationFormData['address'].country, [Validators.required, CustomValidators.dropdownValidator]],
-                state: [this.reservationFormData['address'].state, [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
-                city: [this.reservationFormData['address'].city, [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
-                pinNo: [this.reservationFormData['address'].pinNo, [Validators.required, Validators.minLength(3), Validators.maxLength(10), CustomValidators.numberValidator]]
+                blockNo: [this.cachedFormData && this.cachedFormData['address'].blockNo || '', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
+                street: [this.cachedFormData && this.cachedFormData['address'].street || '', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]],
+                country: [this.cachedFormData && this.cachedFormData['address'].country || 'none', [Validators.required, CustomValidators.dropdownValidator]],
+                state: [this.cachedFormData && this.cachedFormData['address'].state || '', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+                city: [this.cachedFormData && this.cachedFormData['address'].city || '', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
+                pinNo: [this.cachedFormData && this.cachedFormData['address'].pinNo || '', [Validators.required, Validators.minLength(3), Validators.maxLength(10), CustomValidators.numberValidator]]
             }),
             contactDetails: this.formBuilder.group({
-                mobileNo: [this.reservationFormData['contactDetails'].mobileNo, [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.numberValidator]],
-                emailId: [this.reservationFormData['contactDetails'].emailId, [Validators.required, CustomValidators.emailValidator]]
+                mobileNo: [this.cachedFormData && this.cachedFormData['contactDetails'].mobileNo || '', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.numberValidator]],
+                emailId: [this.cachedFormData && this.cachedFormData['contactDetails'].emailId || '', [Validators.required, CustomValidators.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.reservationFormData['checkInOut'].checkIn, [Validators.required, CustomValidators.startDateValidator]],
-                checkOut: [this.reservationFormData['checkInOut'].checkOut, [Validators.required]],
-                totalHours: [this.reservationFormData['checkInOut'].totalHours, [Validators.required]],
-                noOfGuest: [this.reservationFormData['checkInOut'].noOfGuest, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
+                checkIn: [this.cachedFormData && this.cachedFormData['checkInOut'].checkIn || this.currentDate, [Validators.required, CustomValidators.startDateValidator]],
+                checkOut: [this.cachedFormData && this.cachedFormData['checkInOut'].checkOut || this.currentDate, [Validators.required]],
+                totalHours: [this.cachedFormData && this.cachedFormData['checkInOut'].totalHours || 1, [Validators.required]],
+                noOfGuest: [this.cachedFormData && this.cachedFormData['checkInOut'].noOfGuest || 1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
-                lateCheckOut: [this.reservationFormData['additionalChoice'].lateCheckOut],
-                earlyCheckIn: [this.reservationFormData['additionalChoice'].earlyCheckIn],
-                dogRoomFee: [this.reservationFormData['additionalChoice'].dogRoomFee],
-                cuisineServiceCharge: [this.reservationFormData['additionalChoice'].cuisineServiceCharge]
+                lateCheckOut: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOut || ''],
+                earlyCheckIn: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckIn || ''],
+                dogRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogRoomFee || ''],
+                cuisineServiceCharge: [this.cachedFormData && this.cachedFormData['additionalChoice'].cuisineServiceCharge || '']
             })
         });
+        this.getFormGroup();
+        this.cachedFormData = {};
     }
 
-    private getFormGroup(): FormGroup {
-        let guestInfoFormGroup: Array<FormGroup> = [];
-        for (let i = 0; i < this.reservationFormData['guestInformation'].length; i++) {
-            let formGroup = this.formBuilder.group({
-                firstName: [this.reservationFormData['guestInformation'][i].firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
-                middleName: [this.reservationFormData['guestInformation'][i].middleName, [CustomValidators.characterValidator]],
-                lastName: [this.reservationFormData['guestInformation'][i].lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
+    private getFormGroup(): void {
+        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        let formGroup: FormGroup;
+        if (Object.getOwnPropertyNames(this.cachedFormData).length !== 0) {
+            for (let i: number = 0; i < this.cachedFormData['guestInformation'].length; i++) {
+                formGroup = this.formBuilder.group({
+                    firstName: [this.cachedFormData['guestInformation'][i].firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
+                    middleName: [this.cachedFormData['guestInformation'][i].middleName, [CustomValidators.characterValidator]],
+                    lastName: [this.cachedFormData['guestInformation'][i].lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
+                });
+                guestInformation.push(formGroup);
+            }
+        } else {
+            formGroup = this.formBuilder.group({
+                firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
+                middleName: ['', [CustomValidators.characterValidator]],
+                lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]]
             });
-            guestInfoFormGroup.push(formGroup);
+            guestInformation.push(formGroup);
         }
-        return guestInfoFormGroup[0];
     }
 
     public addOrRemoveGuest(typeOfAction: string): void {
         let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
         if (typeOfAction === 'add' && guestInformation.controls.length <= this.maxValueForAddGuestInfo) {
-            guestInformation.push(this.getFormGroup()[guestInformation.controls.length]);
+            this.getFormGroup();
         } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
             guestInformation.removeAt(guestInformation.controls.length - 1);
         }
@@ -172,7 +154,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         let isCheckOutControlPresent = group['fields'].find((item: object) => item['control'] === 'checkOut');
         let isTotalHoursControlPresent = group['fields'].find((item: object) => item['control'] === 'totalHours');
         if (!isCheckOutControlPresent) {
-            let checkOutObject = {
+            let checkOutObject: object = {
                 'icon': 'fas fa-angle-double-right',
                 'label': 'check out date',
                 'id': 'check-out',
@@ -182,7 +164,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
             };
             group['fields'].splice(1, 0, checkOutObject);
         } else if (!isTotalHoursControlPresent) {
-            let totalHoursObject = {
+            let totalHoursObject: object = {
                 'icon': 'fas fa-angle-double-right',
                 'label': 'total hours',
                 'id': 'total-hours',
@@ -276,9 +258,9 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     private changeDateFormat(date: Date): string {
-        let day = String(date.getDate());
-        let month = String(date.getMonth() + 1);
-        let year = String(date.getFullYear());
+        let day: string = String(date.getDate());
+        let month: string = String(date.getMonth() + 1);
+        let year: string = String(date.getFullYear());
 
         day = (day.length === 1) ? '0' + day : day;
         month = (month.length === 1) ? '0' + month : month;
@@ -287,8 +269,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     private getCheckInOutDateDifference(checkInDate: string, checkOutDate: string): number {
-        let timeDifference = Math.abs(new Date(checkOutDate).getTime() - new Date(checkInDate).getTime());
-        let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        let timeDifference: number = Math.abs(new Date(checkOutDate).getTime() - new Date(checkInDate).getTime());
+        let daysDifference: number = Math.ceil(timeDifference / (1000 * 3600 * 24));
         return (daysDifference || 1);
     }
 
@@ -324,4 +306,3 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.sharedService.clearStorage();
     }
 }
-
