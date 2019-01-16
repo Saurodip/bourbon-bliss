@@ -121,7 +121,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     private getFormGroup(): void {
         let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
         let formGroup: FormGroup;
-        if (Object.getOwnPropertyNames(this.cachedFormData).length !== 0) {
+        if (this.cachedFormData && this.cachedFormData['guestInformation']) {
             for (let i: number = 0; i < this.cachedFormData['guestInformation'].length; i++) {
                 formGroup = this.formBuilder.group({
                     firstName: [this.cachedFormData['guestInformation'][i].firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
