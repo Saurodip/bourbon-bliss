@@ -45,13 +45,13 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() set selectedOption(value: Availability) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.selectedItem = value;
-            this.maxAccomodationCount = value['description'].accomodation['count'];
             this.storageObject = { action: 'set', variable: 'SelectedItem', value: this.selectedItem };
             this.sharedService.applyStorage(this.storageObject);
         } else {
             this.storageObject = { action: 'get', variable: 'SelectedItem' };
             this.selectedItem = this.sharedService.applyStorage(this.storageObject);
         }
+        this.maxAccomodationCount = this.selectedItem['description'].accomodation['count'];
         this.getCalculatedPriceList();
     }
 
@@ -114,7 +114,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 lateCheckOutFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOutFee || ''],
                 earlyCheckInFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckInFee || ''],
                 dogFriendlyRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogFriendlyRoomFee || ''],
-                specialCuisineService: [this.cachedFormData && this.cachedFormData['additionalChoice'].specialCuisineService || '']
+                specialCuisineService: [true]
             })
         });
         this.getFormGroup();
