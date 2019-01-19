@@ -19,12 +19,13 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     private storageObject: object;
     private cachedFormData: object;
     public selectedItem: Availability;
+    private maxAccomodationCount: number;
     private currentDate: string;
     public reservationForm: FormGroup;
     public maxValueForAddGuestInfo: Number;
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
-    private additionalService: Array<string>;
+    private additionalChoice: Array<string>;
     public isModalVisible: boolean;
     public modalObject: object;
     private dateControlArray: Array<object>;
@@ -44,6 +45,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() set selectedOption(value: Availability) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.selectedItem = value;
+            this.maxAccomodationCount = value['description'].accomodation['count'];
             this.storageObject = { action: 'set', variable: 'SelectedItem', value: this.selectedItem };
             this.sharedService.applyStorage(this.storageObject);
         } else {
@@ -63,12 +65,13 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.storageObject = { action: '', variable: '', value: null };
         this.cachedFormData = {};
         this.selectedItem = new Availability();
+        this.maxAccomodationCount = 0;
         this.currentDate = this.changeDateFormat(new Date());
         this.reservationForm = this.formBuilder.group({});
         this.maxValueForAddGuestInfo = 3;
         this.minValueForRemoveGuestInfo = 1;
         this.bookingBasis = 'day';
-        this.additionalService = [];
+        this.additionalChoice = [];
         this.isModalVisible = false;
         this.modalObject = { type: '', title: '', message: '' };
     }
@@ -105,13 +108,13 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 checkIn: [this.cachedFormData && this.cachedFormData['checkInOut'].checkIn || this.currentDate, [Validators.required, CustomValidators.startDateValidator]],
                 checkOut: [this.cachedFormData && this.cachedFormData['checkInOut'].checkOut || this.currentDate, [Validators.required]],
                 totalHours: [this.cachedFormData && this.cachedFormData['checkInOut'].totalHours || 1, [Validators.required]],
-                noOfGuest: [this.cachedFormData && this.cachedFormData['checkInOut'].noOfGuest || 1, [Validators.required, Validators.min(1), Validators.max(12), CustomValidators.numberValidator]]
+                noOfGuest: [this.cachedFormData && this.cachedFormData['checkInOut'].noOfGuest || 1, [Validators.required, Validators.min(1), Validators.max(this.maxAccomodationCount), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
-                lateCheckOut: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOut || ''],
-                earlyCheckIn: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckIn || ''],
-                dogRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogRoomFee || ''],
-                cuisineServiceCharge: [this.cachedFormData && this.cachedFormData['additionalChoice'].cuisineServiceCharge || '']
+                lateCheckOutFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOutFee || ''],
+                earlyCheckInFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckInFee || ''],
+                dogFriendlyRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogFriendlyRoomFee || ''],
+                specialCuisineService: [this.cachedFormData && this.cachedFormData['additionalChoice'].specialCuisineService || '']
             })
         });
         this.getFormGroup();
@@ -121,7 +124,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     private getFormGroup(): void {
         let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
         let formGroup: FormGroup;
-        if (Object.getOwnPropertyNames(this.cachedFormData).length !== 0) {
+        if (this.cachedFormData && this.cachedFormData['guestInformation']) {
             for (let i: number = 0; i < this.cachedFormData['guestInformation'].length; i++) {
                 formGroup = this.formBuilder.group({
                     firstName: [this.cachedFormData['guestInformation'][i].firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(15), CustomValidators.characterValidator]],
@@ -185,11 +188,11 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public onSelectAdditionalService(event: Event): void {
         if (event && event.currentTarget) {
             let selectedAdditionalService: string = event.currentTarget['value'];
-            if (event.currentTarget['checked'] && !this.additionalService.includes(selectedAdditionalService)) {
-                this.additionalService.push(selectedAdditionalService);
+            if (event.currentTarget['checked'] && !this.additionalChoice.includes(selectedAdditionalService)) {
+                this.additionalChoice.push(selectedAdditionalService);
             } else {
-                let matchedIndex: number = this.additionalService.findIndex((service: string) => service === selectedAdditionalService);
-                this.additionalService.splice(matchedIndex, 1);
+                let matchedIndex: number = this.additionalChoice.findIndex((service: string) => service === selectedAdditionalService);
+                this.additionalChoice.splice(matchedIndex, 1);
             }
             this.getCalculatedPriceList();
         }
@@ -231,10 +234,10 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                                     field['value'] = serviceTaxAmount;
                                 })();
                                     break;
-                                case 'additionalService': (() => {
+                                case 'additionalChoice': (() => {
                                     let additionalServiceAmount: number = 0;
-                                    this.additionalService.forEach((service: string) => {
-                                        additionalServiceAmount += selectedItemPriceDetails['additionalService'][service];
+                                    this.additionalChoice.forEach((service: string) => {
+                                        additionalServiceAmount += selectedItemPriceDetails['additionalChoice'][service];
                                     });
                                     field['value'] = additionalServiceAmount;
                                 })();

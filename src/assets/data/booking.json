@@ -173,6 +173,7 @@
             },
             "options": [
                 {
+                    "group": "additionalChoice",
                     "fields": [
                         {
                             "icon": "fas fa-angle-double-right",
@@ -180,6 +181,7 @@
                             "id": "late-check-out",
                             "type": "checkbox",
                             "tooltip": "",
+                            "control": "lateCheckOutFee",
                             "value": "lateCheckOutFee"
                         },
                         {
@@ -188,6 +190,7 @@
                             "id": "early-check-in",
                             "type": "checkbox",
                             "tooltip": "",
+                            "control": "earlyCheckInFee",
                             "value": "earlyCheckInFee"
                         },
                         {
@@ -196,6 +199,7 @@
                             "id": "dog-room-fee",
                             "type": "checkbox",
                             "tooltip": "",
+                            "control": "dogFriendlyRoomFee",
                             "value": "dogFriendlyRoomFee"
                         },
                         {
@@ -204,6 +208,7 @@
                             "id": "cuisine-service-charge",
                             "type": "checkbox",
                             "tooltip": "",
+                            "control": "specialCuisineService",
                             "value": "specialCuisineService"
                         }
                     ]
@@ -243,7 +248,7 @@
                             "icon": "fas fa-check",
                             "label": "additional choice",
                             "id": "additional-service",
-                            "control": "additionalService",
+                            "control": "additionalChoice",
                             "value": 0
                         },
                         {
