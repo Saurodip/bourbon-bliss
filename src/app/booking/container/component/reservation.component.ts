@@ -114,7 +114,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 lateCheckOutFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOutFee || ''],
                 earlyCheckInFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckInFee || ''],
                 dogFriendlyRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogFriendlyRoomFee || ''],
-                specialCuisineService: [true]
+                specialCuisineService: [this.cachedFormData && this.cachedFormData['additionalChoice'].specialCuisineService || '']
             })
         });
         this.getFormGroup();
