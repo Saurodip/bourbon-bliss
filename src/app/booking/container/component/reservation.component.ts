@@ -51,7 +51,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
             this.storageObject = { action: 'get', variable: 'SelectedItem' };
             this.selectedItem = this.sharedService.applyStorage(this.storageObject);
         }
-        this.maxAccomodationCount = this.selectedItem['description'].accomodation['count'];
+        this.maxAccomodationCount = this.selectedItem && this.selectedItem['description'].accomodation['count'];
         this.getCalculatedPriceList();
     }
 
@@ -93,7 +93,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.reservationForm = this.formBuilder.group({
             guestInformation: this.formBuilder.array([]),
             address: this.formBuilder.group({
-                blockNo: [this.cachedFormData && this.cachedFormData['address'].blockNo || '', [Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
+                blockNo: [this.cachedFormData && this.cachedFormData['address'].blockNo || '', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
                 street: [this.cachedFormData && this.cachedFormData['address'].street || '', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]],
                 country: [this.cachedFormData && this.cachedFormData['address'].country || 'none', [Validators.required, CustomValidators.dropdownValidator]],
                 state: [this.cachedFormData && this.cachedFormData['address'].state || '', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
@@ -111,10 +111,10 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 noOfGuest: [this.cachedFormData && this.cachedFormData['checkInOut'].noOfGuest || 1, [Validators.required, Validators.min(1), Validators.max(this.maxAccomodationCount), CustomValidators.numberValidator]]
             }),
             additionalChoice: this.formBuilder.group({
-                lateCheckOutFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOutFee || ''],
-                earlyCheckInFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckInFee || ''],
-                dogFriendlyRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogFriendlyRoomFee || ''],
-                specialCuisineService: [this.cachedFormData && this.cachedFormData['additionalChoice'].specialCuisineService || '']
+                lateCheckOutFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].lateCheckOutFee || false],
+                earlyCheckInFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].earlyCheckInFee || false],
+                dogFriendlyRoomFee: [this.cachedFormData && this.cachedFormData['additionalChoice'].dogFriendlyRoomFee || false],
+                specialCuisineService: [this.cachedFormData && this.cachedFormData['additionalChoice'].specialCuisineService || false]
             })
         });
         this.getFormGroup();
@@ -187,11 +187,11 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public onSelectAdditionalService(event: Event): void {
         if (event && event.currentTarget) {
-            let selectedAdditionalService: string = event.currentTarget['value'];
-            if (event.currentTarget['checked'] && !this.additionalChoice.includes(selectedAdditionalService)) {
-                this.additionalChoice.push(selectedAdditionalService);
+            let selectedAdditionalChoice: string = event.currentTarget['value'];
+            if (event.currentTarget['checked'] && !this.additionalChoice.includes(selectedAdditionalChoice)) {
+                this.additionalChoice.push(selectedAdditionalChoice);
             } else {
-                let matchedIndex: number = this.additionalChoice.findIndex((service: string) => service === selectedAdditionalService);
+                let matchedIndex: number = this.additionalChoice.findIndex((item: string) => item === selectedAdditionalChoice);
                 this.additionalChoice.splice(matchedIndex, 1);
             }
             this.getCalculatedPriceList();
@@ -236,9 +236,12 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                                     break;
                                 case 'additionalChoice': (() => {
                                     let additionalServiceAmount: number = 0;
-                                    this.additionalChoice.forEach((service: string) => {
-                                        additionalServiceAmount += selectedItemPriceDetails['additionalChoice'][service];
-                                    });
+                                    let additionalChoice: object = this.reservationForm.get('additionalChoice').value;
+                                    for (let choice in additionalChoice) {
+                                        if (additionalChoice[choice]) {
+                                            additionalServiceAmount += selectedItemPriceDetails['additionalChoice'][choice];
+                                        }
+                                    }
                                     field['value'] = additionalServiceAmount;
                                 })();
                                     break;

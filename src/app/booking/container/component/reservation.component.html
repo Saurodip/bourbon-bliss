@@ -99,7 +99,7 @@
                                     <div class="col-xs-12 form-group">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-1">
-                                                <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" name="additional-choice" value="{{ field.value }}" (change)="onSelectAdditionalService($event)">
+                                                <input type="checkbox" class="form-control" formControlName="{{ field.control }}" (change)="onSelectAdditionalService($event)">
                                             </div>
                                             <div class="col-xs-12 col-sm-10">
                                                 <label for="{{ field.id }}" class="control-label">{{ field.label }}</label>
@@ -110,7 +110,7 @@
                                         </div>
                                     </div>
                                 </ng-container>
-                                </div>
+                            </div>
                         </ng-container>
                     </div>
                 </div>
