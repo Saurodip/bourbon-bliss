@@ -25,20 +25,19 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public maxValueForAddGuestInfo: Number;
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
-    private additionalChoice: Array<string>;
     public isModalVisible: boolean;
     public modalObject: object;
     private dateControlArray: Array<object>;
 
     @Input() set content(value: Array<Option>) {
-        if (value) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.reservationContent = value;
             this.onSelectBookingBasis('day');
             this.getCalculatedPriceList();
         }
     }
     @Input() set countryList(value: CountryList) {
-        if (value) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.listOfCountries = value.list;
         }
     }
@@ -71,7 +70,6 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.maxValueForAddGuestInfo = 3;
         this.minValueForRemoveGuestInfo = 1;
         this.bookingBasis = 'day';
-        this.additionalChoice = [];
         this.isModalVisible = false;
         this.modalObject = { type: '', title: '', message: '' };
     }
@@ -185,17 +183,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.bookingBasis = bookingBasis;
     }
 
-    public onSelectAdditionalService(event: Event): void {
-        if (event && event.currentTarget) {
-            let selectedAdditionalChoice: string = event.currentTarget['value'];
-            if (event.currentTarget['checked'] && !this.additionalChoice.includes(selectedAdditionalChoice)) {
-                this.additionalChoice.push(selectedAdditionalChoice);
-            } else {
-                let matchedIndex: number = this.additionalChoice.findIndex((item: string) => item === selectedAdditionalChoice);
-                this.additionalChoice.splice(matchedIndex, 1);
-            }
-            this.getCalculatedPriceList();
-        }
+    public onSelectAdditionalService(): void {
+        this.getCalculatedPriceList();
     }
 
     public getCalculatedPriceList(): void {
