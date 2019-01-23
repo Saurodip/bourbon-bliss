@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { SignInService } from '../dialogs.service';
+import { DialogService } from '../dialogs.service';
 import { SignIn } from '../dialogs.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
   public signInData: SignIn;
   public error: string;
 
-  constructor(private signInService: SignInService) {
+  constructor(private dialogService: DialogService) {
     this.signInData = new SignIn();
     this.error = '';
   }
@@ -23,7 +23,7 @@ export class SignInComponent implements OnInit {
   }
 
   private fetchSignInData(): void {
-    this.signInService.getSignInData().subscribe(
+    this.dialogService.getSignInData().subscribe(
       (data) => this.signInData = { ...data },
       (error) => this.error = error
     );

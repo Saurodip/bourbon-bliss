@@ -4,7 +4,7 @@ import { AppService } from '../app.service';
 import { SignIn } from './dialogs.model';
 
 @Injectable()
-export class SignInService {
+export class DialogService {
     private url: Array<string>;
 
     constructor(private appService: AppService) {
