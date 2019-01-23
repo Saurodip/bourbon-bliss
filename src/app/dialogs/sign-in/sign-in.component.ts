@@ -19,10 +19,10 @@ export class SignInComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fetchCustomerReview();
+    this.fetchSignInData();
   }
 
-  private fetchCustomerReview(): void {
+  private fetchSignInData(): void {
     this.signInService.getSignInData().subscribe(
       (data) => this.signInData = { ...data },
       (error) => this.error = error
