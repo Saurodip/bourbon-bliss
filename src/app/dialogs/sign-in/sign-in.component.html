@@ -40,7 +40,7 @@
             </section>
             <section class="col-xs-7">
                 <h4>customer reviews</h4>
-                <div class="row" *ngFor="let review of customerReview; let i=index">
+                <div class="row" *ngFor="let review of signInData?.customerReview; let i=index">
                     <div class="col-xs-2">
                         <img src="../../../assets/images/{{ review.path }}" alt="img-review">
                     </div>

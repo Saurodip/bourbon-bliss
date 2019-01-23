@@ -6,6 +6,7 @@ import { PanelComponent } from './components/utilities/panel/panel.component';
 import { ModalComponent } from './components/utilities/modal/modal.component';
 import { PreloaderComponent } from './components/utilities/preloader/preloader.component';
 import { SharedService } from './shared.service';
+import { CustomValidatorsService } from './validators/custom-validators.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { SharedService } from './shared.service';
   ],
   declarations: [AdditionalInfoComponent, PanelComponent, ModalComponent, PreloaderComponent],
   exports: [AdditionalInfoComponent, PanelComponent, ModalComponent, PreloaderComponent],
-  providers: [SharedService]
+  providers: [SharedService, CustomValidatorsService]
 })
 
 export class SharedModule { }

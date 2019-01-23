@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Option, Month, MonthInfo } from '../../booking.model';
-import { CustomValidators } from 'src/app/shared/validators/custom-validators';
+import { CustomValidatorsService } from 'src/app/shared/validators/custom-validators.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
         }
     }
 
-    constructor(private formBuilder: FormBuilder, private sharedService: SharedService) {
+    constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
         this.paymentContent = [];
         this.cachedFormData = new Option();
@@ -53,11 +53,11 @@ export class PaymentComponent implements OnInit, OnDestroy {
     private initializePaymentForm(): void {
         this.paymentForm = this.formBuilder.group({
             cardInformation: this.formBuilder.group({
-                nameOnCard: [this.cachedFormData && this.cachedFormData['nameOnCard'] || '', [Validators.required, Validators.minLength(2), Validators.maxLength(20), CustomValidators.characterValidator]],
-                cardNumber: [this.cachedFormData && this.cachedFormData['cardNumber'] || '', [Validators.required, Validators.minLength(16), Validators.maxLength(16), CustomValidators.numberValidator]],
-                expiryMonth: [this.cachedFormData && this.cachedFormData['expiryMonth'] || 'none', [Validators.required, CustomValidators.dropdownValidator]],
-                expiryYear: [this.cachedFormData && this.cachedFormData['expiryYear'] || 'none', [Validators.required, CustomValidators.dropdownValidator]],
-                cvv: [this.cachedFormData && this.cachedFormData['cvv'] || '', [Validators.required, Validators.minLength(3), Validators.maxLength(3), CustomValidators.numberValidator]]
+                nameOnCard: [this.cachedFormData && this.cachedFormData['nameOnCard'] || '', [Validators.required, Validators.minLength(2), Validators.maxLength(20), this.customValidatorsService.characterValidator]],
+                cardNumber: [this.cachedFormData && this.cachedFormData['cardNumber'] || '', [Validators.required, Validators.minLength(16), Validators.maxLength(16), this.customValidatorsService.numberValidator]],
+                expiryMonth: [this.cachedFormData && this.cachedFormData['expiryMonth'] || 'none', [Validators.required, this.customValidatorsService.dropdownValidator]],
+                expiryYear: [this.cachedFormData && this.cachedFormData['expiryYear'] || 'none', [Validators.required, this.customValidatorsService.dropdownValidator]],
+                cvv: [this.cachedFormData && this.cachedFormData['cvv'] || '', [Validators.required, Validators.minLength(3), Validators.maxLength(3), this.customValidatorsService.numberValidator]]
             })
         });
     }

@@ -15,6 +15,17 @@ export class SharedService {
         return this.appService.getRequest(this.url);
     }
 
+    public getFormattedDate(date: Date): string {
+        let day: string = String(date.getDate());
+        let month: string = String(date.getMonth() + 1);
+        let year: string = String(date.getFullYear());
+
+        day = (day.length === 1) ? '0' + day : day;
+        month = (month.length === 1) ? '0' + month : month;
+
+        return year + '-' + month + '-' + day;
+    }
+
     public applyStorage(storageObject: object): any {
         if (typeof (Storage)) {
             if (storageObject['action'] === 'get') {
