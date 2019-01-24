@@ -27,7 +27,7 @@
                                     <h6 *ngIf="j === 0">
                                         <i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}
                                         <div *ngIf="item.array === 'guestInformation'" class="user-action">
-                                            <span (click)="addOrRemoveGuest('add')" [ngClass]="{ 'disable-add-link': reservationForm.get('guestInformation')?.controls.length === maxValueForAddGuestInfo }">add guest <i class="fas fa-plus-circle"></i></span>
+                                            <span (click)="addOrRemoveGuest('add')" [ngClass]="{ 'disable-add-link': reservationForm.get('guestInformation')?.controls.length === maxAccomodationCount }">add guest <i class="fas fa-plus-circle"></i></span>
                                             <span (click)="addOrRemoveGuest('remove')" [ngClass]="{ 'disable-remove-link': reservationForm.get('guestInformation')?.controls.length === minValueForRemoveGuestInfo }">remove guest <i class="fas fa-minus-circle"></i></span>
                                         </div>
                                     </h6>
@@ -70,7 +70,7 @@
                                     </label>
                                     <div class="field-control">
                                         <ng-container *ngIf="field.type !== 'select'">
-                                            <input type="{{ field.type }}" #control class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
+                                            <input type="{{ field.type }}" id="{{ field.id }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
                                         </ng-container>
                                         <ng-container *ngIf="field.type === 'select'">
                                             <select *ngIf="field.control === 'country'" class="form-control" formControlName="{{ field.control }}">

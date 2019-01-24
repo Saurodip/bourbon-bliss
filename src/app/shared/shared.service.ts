@@ -26,6 +26,12 @@ export class SharedService {
         return year + '-' + month + '-' + day;
     }
 
+    public getDateDifference(startDate: string, endDate: string): number {
+        let timeDifference: number = Math.abs(new Date(endDate).getTime() - new Date(startDate).getTime());
+        let daysDifference: number = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1;
+        return (daysDifference || 1);
+    }
+
     public applyStorage(storageObject: object): any {
         if (typeof (Storage)) {
             if (storageObject['action'] === 'get') {
