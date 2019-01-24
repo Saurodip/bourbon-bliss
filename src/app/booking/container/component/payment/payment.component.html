@@ -8,7 +8,7 @@
                         <div class="form-group control-section row" formGroupName="{{ item.group }}">
                             <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}
                                 <div class="user-action">
-                                    <span data-toggle="modal" data-target="#modal-popover" (click)="onSaveCardDetails(paymentForm.value)">save card details
+                                    <span data-toggle="modal" data-target="#modal-popover" [ngClass]="{ 'disabled': paymentForm.invalid }" (click)="onSaveCardDetails(paymentForm.value)">save card details
                                         <i class="fas fa-save"></i>
                                     </span>
                                 </div>

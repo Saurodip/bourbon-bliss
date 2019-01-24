@@ -17,7 +17,7 @@ export class HotelComponent implements OnInit {
   public availability: Array<Availability>;
 
   @Input() set content(value: Content) {
-    if (value) {
+    if (value && Object.getOwnPropertyNames(value).length !== 0) {
       this.hotelContent = value;
       this.onApplyFilter('view all', 0);
     }

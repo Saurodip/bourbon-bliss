@@ -23,7 +23,7 @@
 </div>
 <div class="availability-container">
   <div class="row">
-    <div *ngFor="let item of availability; let i = index" [ngStyle]="{ 'max-height': arrayIndex === 1 ? '715px' : 'auto' }"
+    <div *ngFor="let item of availability; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '760px' : 'auto' }"
       [ngClass]="gridRowClass" class="hotel-view">
       <app-panel [gridClass]="gridColumnClass" [content]="item">
         <input type="button" class="btn btn-default check-rates" value="book now !" (click)="onSelection(i)">

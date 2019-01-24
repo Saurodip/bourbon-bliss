@@ -1,9 +1,10 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, Input, ViewChildren, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Option, CountryList, Field } from '../../booking.model';
-import { Availability } from '../../../hotel/hotel.model';
-import { CustomValidatorsService } from '../../../shared/validators/custom-validators.service';
-import { SharedService } from 'src/app/shared/shared.service';
+import { Option, CountryList, Field } from '../../../booking.model';
+import { Availability } from '../../../../hotel/hotel.model';
+import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
+import { SharedService } from '../../../../shared/shared.service';
+
 
 @Component({
     selector: 'app-reservation',

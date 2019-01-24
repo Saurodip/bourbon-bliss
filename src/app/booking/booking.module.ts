@@ -4,8 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BookingRoutingModule } from './booking-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { BookingContainerComponent } from './container/booking.container';
-import { ReservationComponent } from './container/component/reservation.component';
-import { PaymentComponent } from './container/component/payment.component';
+import { ReservationComponent } from './container/component/reservation/reservation.component';
+import { PaymentComponent } from './container/component/payment/payment.component';
 import { BookingService } from './booking.service';
 
 @NgModule({

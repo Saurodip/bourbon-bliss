@@ -43,6 +43,13 @@
                                 position: relative;
                                 top: 2px;
                             }
+                            &.disabled {
+                                color: #ddd;
+                                pointer-events: none;
+                                i {
+                                    color: #ddd;
+                                }
+                            }
                         }
                     }
                 }

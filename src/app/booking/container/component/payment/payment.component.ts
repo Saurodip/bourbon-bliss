@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Option, Month, MonthInfo } from '../../booking.model';
-import { CustomValidatorsService } from 'src/app/shared/validators/custom-validators.service';
-import { SharedService } from 'src/app/shared/shared.service';
+import { Option, Month, MonthInfo } from '../../../booking.model';
+import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
+import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
     selector: 'app-payment',
@@ -31,7 +31,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
         this.initializePaymentForm();
     }
     @Input() set month(value: Month) {
-        if (value) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.expiryMonth = value.month;
         }
     }
