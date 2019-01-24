@@ -234,6 +234,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                             this.checkOut.setValidators(Validators.compose([Validators.required, this.customValidatorsService.endDateValidator(this.checkInDate)]));
                         }
                     });
+                    this.getCalculatedPriceList();
                 })();
                     break;
                 default:
@@ -313,7 +314,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private getCheckInOutDateDifference(checkInDate: string, checkOutDate: string): number {
         let timeDifference: number = Math.abs(new Date(checkOutDate).getTime() - new Date(checkInDate).getTime());
-        let daysDifference: number = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        let daysDifference: number = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1;
         return (daysDifference || 1);
     }
 
