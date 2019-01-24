@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-modal',
@@ -10,20 +10,15 @@ export class ModalComponent implements OnInit {
     public modalContent: object;
 
     @Input() set content(value: any) {
-        if (value) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.modalContent = value;
         }
     }
-    @Output() modalState = new EventEmitter<boolean>();
 
     constructor() {
         this.modalContent = {};
     }
 
     ngOnInit() {
-    }
-
-    public onClose(): void {
-        this.modalState.emit();
     }
 }

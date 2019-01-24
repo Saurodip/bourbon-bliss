@@ -70,7 +70,7 @@
                                     </label>
                                     <div class="field-control">
                                         <ng-container *ngIf="field.type !== 'select'">
-                                            <input type="{{ field.type }}" #control class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
+                                            <input type="{{ field.type }}" #control class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
                                         </ng-container>
                                         <ng-container *ngIf="field.type === 'select'">
                                             <select *ngIf="field.control === 'country'" class="form-control" formControlName="{{ field.control }}">

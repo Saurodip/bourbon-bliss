@@ -26,6 +26,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     public maxValueForAddGuestInfo: Number;
     public minValueForRemoveGuestInfo: Number;
     private bookingBasis: string;
+    private checkInDate: string;
+    private checkOutDate: string;
     public isModalVisible: boolean;
     public modalObject: object;
     private dateControlArray: Array<object>;
@@ -71,6 +73,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.maxValueForAddGuestInfo = 3;
         this.minValueForRemoveGuestInfo = 1;
         this.bookingBasis = 'day';
+        this.checkInDate = this.currentDate;
+        this.checkOutDate = this.currentDate;
         this.isModalVisible = false;
         this.modalObject = { type: '', title: '', message: '' };
     }
@@ -104,8 +108,8 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 emailId: [this.cachedFormData && this.cachedFormData['contactDetails'].emailId || '', [Validators.required, this.customValidatorsService.emailValidator]]
             }),
             checkInOut: this.formBuilder.group({
-                checkIn: [this.cachedFormData && this.cachedFormData['checkInOut'].checkIn || this.currentDate, [Validators.required, this.customValidatorsService.startDateValidator(this.checkOut)]],
-                checkOut: [this.cachedFormData && this.cachedFormData['checkInOut'].checkOut || this.currentDate, [Validators.required, this.customValidatorsService.endDateValidator(this.checkIn)]],
+                checkIn: [this.cachedFormData && this.cachedFormData['checkInOut'].checkIn || this.currentDate, [Validators.required, this.customValidatorsService.startDateValidator(this.checkOutDate)]],
+                checkOut: [this.cachedFormData && this.cachedFormData['checkInOut'].checkOut || this.currentDate, [Validators.required, this.customValidatorsService.endDateValidator(this.checkInDate)]],
                 totalHours: [this.cachedFormData && this.cachedFormData['checkInOut'].totalHours || 1, [Validators.required]],
                 noOfGuest: [this.cachedFormData && this.cachedFormData['checkInOut'].noOfGuest || 1, [Validators.required, Validators.min(1), Validators.max(this.maxAccomodationCount), this.customValidatorsService.numberValidator]]
             }),
@@ -120,28 +124,38 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
         this.cachedFormData = {};
     }
 
-    get checkIn(): string {
-        if (this.reservationForm && this.reservationForm.get('checkInOut')) {
-            return this.reservationForm.get('checkInOut')['controls'].checkIn.value;
-        } else if (this.cachedFormData) {
-            return this.cachedFormData['checkInOut'].checkIn;
-        } else {
-            return this.currentDate;
+    get guestInformation(): FormArray {
+        if (this.reservationForm && this.reservationForm.get('guestInformation')) {
+            return <FormArray>this.reservationForm.get('guestInformation');
         }
     }
 
-    get checkOut(): string {
+    get checkIn(): FormControl {
         if (this.reservationForm && this.reservationForm.get('checkInOut')) {
-            return this.reservationForm.get('checkInOut')['controls'].checkOut.value;
-        } else if (this.cachedFormData) {
-            return this.cachedFormData['checkInOut'].checkIn;
-        } else {
-            return this.currentDate;
+            return this.reservationForm.get('checkInOut')['controls'].checkIn;
+        }
+    }
+
+    get checkOut(): FormControl {
+        if (this.reservationForm && this.reservationForm.get('checkInOut')) {
+            return this.reservationForm.get('checkInOut')['controls'].checkOut;
+        }
+    }
+
+    get totalHours(): FormControl {
+        if (this.reservationForm && this.reservationForm.get('checkInOut')) {
+            return this.reservationForm.get('checkInOut')['controls'].totalHours;
+        }
+    }
+
+    get additionalChoice(): FormGroup {
+        if (this.reservationForm && this.reservationForm.get('additionalChoice')) {
+            return <FormGroup>this.reservationForm.get('additionalChoice');
         }
     }
 
     private getFormGroup(): void {
-        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        let guestInformation: FormArray = this.guestInformation;
         let formGroup: FormGroup;
         if (this.cachedFormData && this.cachedFormData['guestInformation']) {
             for (let i: number = 0; i < this.cachedFormData['guestInformation'].length; i++) {
@@ -196,11 +210,35 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public addOrRemoveGuest(typeOfAction: string): void {
-        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        let guestInformation: FormArray = this.guestInformation;
         if (typeOfAction === 'add' && guestInformation.controls.length <= this.maxValueForAddGuestInfo) {
             this.getFormGroup();
         } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
             guestInformation.removeAt(guestInformation.controls.length - 1);
+        }
+    }
+
+    public onFormControlChange(event: Event): void {
+        if (event && event.currentTarget) {
+            switch (event.currentTarget['type']) {
+                case 'date': (() => {
+                    this.checkIn.valueChanges.subscribe((date: string) => {
+                        if (this.checkInDate !== date) {
+                            this.checkInDate = date;
+                            this.checkIn.setValidators(Validators.compose([Validators.required, this.customValidatorsService.startDateValidator(this.checkOutDate)]));
+                        }
+                    });
+                    this.checkOut.valueChanges.subscribe((date: string) => {
+                        if (this.checkInDate !== date) {
+                            this.checkOutDate = date;
+                            this.checkOut.setValidators(Validators.compose([Validators.required, this.customValidatorsService.endDateValidator(this.checkInDate)]));
+                        }
+                    });
+                })();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -223,11 +261,11 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                                 case 'basePrice': (() => {
                                     let count: number;
                                     if (this.bookingBasis === 'day') {
-                                        let checkInDate = this.reservationForm.get('checkInOut')['controls'].checkIn.value;
-                                        let checkOutDate = this.reservationForm.get('checkInOut')['controls'].checkOut.value;
+                                        let checkInDate = this.checkIn.value;
+                                        let checkOutDate = this.checkOut.value;
                                         count = this.getCheckInOutDateDifference(checkInDate, checkOutDate);
                                     } else if (this.bookingBasis === 'hour') {
-                                        let duration = this.reservationForm.get('checkInOut')['controls'].totalHours.value;
+                                        let duration = this.totalHours.value;
                                         count = duration;
                                     }
                                     amount = selectedItemPriceDetails[matchedItem] * count;
@@ -246,7 +284,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                                     break;
                                 case 'additionalChoice': (() => {
                                     let additionalServiceAmount: number = 0;
-                                    let additionalChoice: object = this.reservationForm.get('additionalChoice').value;
+                                    let additionalChoice: object = this.additionalChoice.value;
                                     for (let choice in additionalChoice) {
                                         if (additionalChoice[choice]) {
                                             additionalServiceAmount += selectedItemPriceDetails['additionalChoice'][choice];
@@ -291,7 +329,7 @@ export class ReservationComponent implements OnInit, AfterViewInit, OnDestroy {
                 noOfGuest: 1
             },
         });
-        let guestInformation: FormArray = <FormArray>this.reservationForm.get('guestInformation');
+        let guestInformation: FormArray = this.guestInformation;
         guestInformation.controls = [];
         this.getFormGroup();
         this.getCalculatedPriceList();
