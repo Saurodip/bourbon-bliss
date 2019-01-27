@@ -97,7 +97,7 @@
                             <div formGroupName="{{ item.group }}">
                                 <ng-container *ngFor="let field of item.fields; let j = index">
                                     <div class="col-xs-12 form-group">
-                                        <div class="row">
+                                        <div class="row" [ngClass]="{ 'disabled': field.disabled }">
                                             <div class="col-xs-12 col-sm-1">
                                                 <input type="checkbox" class="form-control" formControlName="{{ field.control }}" (change)="onSelectAdditionalService()">
                                             </div>

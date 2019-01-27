@@ -22,7 +22,7 @@ $arrowBackgroundColor: lightgray;
 #tooltip-container {
     margin: auto;
     position: absolute;
-    width: 200px;
+    width: 250px;
     z-index: 999;
     .arrow-up {
         @include arrowPosition('', 0px, 0px, -20px);

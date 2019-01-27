@@ -121,23 +121,29 @@
             }
             .form-group {
                 margin-bottom: 5px;
-                input[type="checkbox"] {
-                    cursor: pointer;
-                    display: inline-block;
-                    height: 14px;
-                    position: relative;
-                    top: 3px;
-                    width: 14px;
-                }
-                label {
-                    font-size: 11px;
-                    font-weight: 500;
-                    letter-spacing: 1px;
-                }
-                app-tooltip {
-                    ::ng-deep #tooltip-container {
-                        left: -78px;
-                        top: 35px;
+                .row {
+                    &.disabled {
+                        opacity: 0.5;
+                        pointer-events: none;
+                    }
+                    input[type="checkbox"] {
+                        cursor: pointer;
+                        display: inline-block;
+                        height: 14px;
+                        position: relative;
+                        top: 3px;
+                        width: 14px;
+                    }
+                    label {
+                        font-size: 11px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                    }
+                    app-tooltip {
+                        ::ng-deep #tooltip-container {
+                            left: -102px;
+                            top: 35px;
+                        }
                     }
                 }
             }
@@ -160,7 +166,7 @@
                         }
                         app-tooltip {
                             ::ng-deep #tooltip-container {
-                                left: -78px;
+                                left: -102px;
                                 top: 35px;
                             }
                         }
@@ -219,8 +225,8 @@
                     text-align: center;
                     app-tooltip {
                         ::ng-deep #tooltip-container {
-                            left: 0px;
-                            right: 0px;
+                            left: 0px !important;
+                            right: 0px !important;
                         }
                     }
                 }
@@ -239,8 +245,8 @@
                             }
                             app-tooltip {
                                 ::ng-deep #tooltip-container {
-                                    left: 0px;
-                                    right: 0px;
+                                    left: 0px !important;
+                                    right: 0px !important;
                                 }
                             }
                         }

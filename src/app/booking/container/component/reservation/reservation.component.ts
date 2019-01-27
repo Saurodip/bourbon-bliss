@@ -253,6 +253,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
                 if (additionalChoiceInfo) {
                     additionalChoiceInfo['options'][0].fields.forEach((item: object) => {
                         item['tooltip'] += priceInfo['additionalChoice'][item['control']] + '.';
+                        item['disabled'] = priceInfo['additionalChoice'][item['control']] <= 0 ? true : false;
                     });
                 }
                 let priceListInfo = this.reservationContent.find((item: object) => item['heading'].text === 'booking price list');
