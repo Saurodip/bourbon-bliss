@@ -35,7 +35,6 @@
         }
         .reservation-request {
             .control-section {
-                margin-bottom: 15px;
                 padding: 0px 16px;
                 h6 {
                     font-family: Raleway-Regular, Arial, Helvetica;
@@ -207,6 +206,12 @@
                 .control-section {
                     h6 {
                         margin: 20px 0px 0px;
+                        .user-action {
+                            top: 25px;
+                        }
+                        &.guest-info {
+                            margin-bottom: 35px;
+                        }
                     }
                     .form-group {
                         margin-bottom: 0px;
