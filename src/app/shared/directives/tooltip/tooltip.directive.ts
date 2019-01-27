@@ -17,7 +17,7 @@ export class TooltipDirective implements OnInit {
         this.viewContainerRef.createEmbeddedView(this.tooltipTemplate);
     }
 
-    @HostListener('mouseleave') onMouseLeave() {
+    @HostListener('mouseleave', ['$event']) onMouseLeave(event: Event) {
         this.viewContainerRef.clear();
     }
 }
