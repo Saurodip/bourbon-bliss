@@ -116,7 +116,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         },
@@ -129,7 +129,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }
@@ -240,7 +240,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         },
@@ -253,7 +253,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }
@@ -302,7 +302,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         },
@@ -315,7 +315,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }
@@ -426,7 +426,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         },
@@ -439,7 +439,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }
@@ -550,7 +550,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         },
@@ -563,7 +563,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }
@@ -671,7 +671,12 @@
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
-                            "additionalChoice": {}
+                            "additionalChoice": {
+                                "lateCheckOutFee": 100,
+                                "earlyCheckInFee": 100,
+                                "dogFriendlyRoomFee": 0,
+                                "specialCuisineService": 100
+                            }
                         },
                         {
                             "basis": "day",
@@ -682,7 +687,7 @@
                             "additionalChoice": {
                                 "lateCheckOutFee": 100,
                                 "earlyCheckInFee": 100,
-                                "dogFriendlyRoomFee": 100,
+                                "dogFriendlyRoomFee": 0,
                                 "specialCuisineService": 100
                             }
                         }

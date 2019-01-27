@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-5 additional-choice">
+                <div class="col-xs-12 col-sm-12 col-md-5 additional-choice">
                     <div class="row">
                         <h4><i class="{{ reservationContent[1]?.heading?.icon }}"></i> {{ reservationContent[1]?.heading?.text }}</h4>
                         <ng-container *ngFor="let item of reservationContent[1]?.options; let i = index">
@@ -98,16 +98,16 @@
                                 <ng-container *ngFor="let field of item.fields; let j = index">
                                     <div class="col-xs-12 form-group">
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-1">
+                                            <div class="col-sm-12 col-md-1">
                                                 <input type="checkbox" class="form-control" formControlName="{{ field.control }}" (change)="onSelectAdditionalService()">
                                             </div>
-                                            <div class="col-xs-12 col-sm-10">
+                                            <div class="col-sm-12 col-md-10">
                                                 <label for="{{ field.id }}" class="control-label">{{ field.label }}</label>
                                             </div>
-                                            <div class="col-xs-12 col-sm-1">
-                                                <i class="fas fa-info-circle">
-                                                    <ng-template appTooltip>
-                                                        <span>gasdgshg</span>
+                                            <div class="col-sm-12 col-md-1">
+                                                <i class="fas fa-info-circle" appTooltip>
+                                                    <ng-template #tooltipTemplate>
+                                                        <app-tooltip [content]="field.tooltip" [direction]="'up'"></app-tooltip>
                                                     </ng-template>
                                                 </i>
                                             </div>
@@ -118,7 +118,7 @@
                         </ng-container>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-sm-offset-1 price-list">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-1 price-list">
                     <div class="row">
                         <h4><i class="{{ reservationContent[2]?.heading?.icon }}"></i> {{ reservationContent[2]?.heading?.text }}</h4>
                         <ng-container *ngFor="let item of reservationContent[2]?.options; let i = index">

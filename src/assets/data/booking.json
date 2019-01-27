@@ -180,7 +180,7 @@
                             "label": "guaranteed late check-out",
                             "id": "late-check-out",
                             "type": "checkbox",
-                            "tooltip": "",
+                            "tooltip": "you can avoid additional day/hour charges and spend few more hours together enjoying your room by getting late check-out facility with just rs. ",
                             "control": "lateCheckOutFee"
                         },
                         {
@@ -188,7 +188,7 @@
                             "label": "guaranteed early check-in",
                             "id": "early-check-in",
                             "type": "checkbox",
-                            "tooltip": "",
+                            "tooltip": "early check-in ensures that planning your travel is no longer a hassle. you can now choose your preferred mode of travel, schedule your arrival time as per your convenience with just rs. ",
                             "control": "earlyCheckInFee"
                         },
                         {
@@ -196,7 +196,7 @@
                             "label": "dog friendly room fee",
                             "id": "dog-room-fee",
                             "type": "checkbox",
-                            "tooltip": "",
+                            "tooltip": "we have a special arrangement for your cutest family member(s). you can gift him/her a peaceful stay with you at just rs. ",
                             "control": "dogFriendlyRoomFee"
                         },
                         {
@@ -204,7 +204,7 @@
                             "label": "special cuisine service",
                             "id": "cuisine-service-charge",
                             "type": "checkbox",
-                            "tooltip": "",
+                            "tooltip": "to give you a better insight into the food scene of the nation, we arrange few indian states' local cuisines and their special dishes for you. Avail it with just rs. ",
                             "control": "specialCuisineService"
                         }
                     ]

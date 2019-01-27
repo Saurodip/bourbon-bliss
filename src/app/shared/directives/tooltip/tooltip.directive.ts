@@ -1,18 +1,20 @@
-import { Directive, OnInit, TemplateRef, ViewContainerRef, HostListener } from '@angular/core';
+import { Directive, OnInit, ContentChild, TemplateRef, ViewContainerRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: '[appTooltip]'
 })
 
 export class TooltipDirective implements OnInit {
-    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) { }
+    @ContentChild('tooltipTemplate') private tooltipTemplate: TemplateRef<any>;
 
-    ngOnInit() {
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
+    constructor(private viewContainerRef: ViewContainerRef) {
     }
 
-    @HostListener('mouseenter') onMouseEnter() {
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
+    ngOnInit() {
+    }
+
+    @HostListener('mouseenter', ['$event']) onMouseEnter(event: Event) {
+        this.viewContainerRef.createEmbeddedView(this.tooltipTemplate);
     }
 
     @HostListener('mouseleave') onMouseLeave() {

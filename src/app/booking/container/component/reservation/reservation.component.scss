@@ -134,6 +134,12 @@
                     font-weight: 500;
                     letter-spacing: 1px;
                 }
+                app-tooltip {
+                    ::ng-deep #tooltip-container {
+                        left: -78px;
+                        top: 35px;
+                    }
+                }
             }
         }
         .price-list {
@@ -205,6 +211,12 @@
                 .form-group {
                     margin-bottom: 20px;
                     text-align: center;
+                    app-tooltip {
+                        ::ng-deep #tooltip-container {
+                            left: 0px;
+                            right: 0px;
+                        }
+                    }
                 }
             }
             .price-list {

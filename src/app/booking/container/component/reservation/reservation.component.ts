@@ -13,13 +13,13 @@ import { SharedService } from '../../../../shared/shared.service';
 
 export class ReservationComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
-    public reservationContent: Array<Option>;
+    public selectedItem: Availability;
     public listOfCountries: object;
     public gridColumnClass: string;
     private storageObject: object;
     private cachedFormData: object;
-    public selectedItem: Availability;
     private maxAccomodationCount: number;
+    public reservationContent: Array<Option>;
     private currentDate: string;
     public reservationForm: FormGroup;
     public minValueForRemoveGuestInfo: Number;
@@ -29,13 +29,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
     public isModalVisible: boolean;
     public modalObject: object;
 
-    @Input() set content(value: Array<Option>) {
-        if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.reservationContent = value;
-            this.onSelectBookingBasis('day');
-            this.getCalculatedPriceList();
-        }
-    }
     @Input() set countryList(value: CountryList) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.listOfCountries = value.list;
@@ -53,16 +46,23 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.maxAccomodationCount = this.selectedItem && this.selectedItem['description'].accomodation['count'];
         this.getCalculatedPriceList();
     }
+    @Input() set content(value: Array<Option>) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
+            this.reservationContent = value;
+            this.onSelectBookingBasis('day');
+            this.getCalculatedPriceList();
+        }
+    }
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
-        this.reservationContent = [];
+        this.selectedItem = new Availability();
         this.listOfCountries = {};
         this.gridColumnClass = '';
         this.storageObject = { action: '', variable: '', value: null };
         this.cachedFormData = {};
-        this.selectedItem = new Availability();
         this.maxAccomodationCount = 0;
+        this.reservationContent = [];
         this.currentDate = this.sharedService.getFormattedDate(new Date());
         this.reservationForm = this.formBuilder.group({});
         this.minValueForRemoveGuestInfo = 1;
@@ -196,6 +196,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
             group['fields'].splice(1, 1);
         }
         this.bookingBasis = bookingBasis;
+        this.prepareTooltipContent();
     }
 
     public addOrRemoveGuest(typeOfAction: string): void {
@@ -242,6 +243,20 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
     public onSelectAdditionalService(): void {
         this.getCalculatedPriceList();
+    }
+
+    private prepareTooltipContent(): void {
+        if (this.selectedItem && this.reservationContent && this.reservationContent.length > 0) {
+            let priceInfo: object = this.selectedItem.description.price.find((item: object) => item['basis'] === this.bookingBasis);
+            if (priceInfo) {
+                let additionalChoiceInfo = this.reservationContent.find((item: object) => item['heading'].text === 'additional choice');
+                if (additionalChoiceInfo) {
+                    additionalChoiceInfo['options'][0].fields.forEach((item: object) => {
+                        item['tooltip'] += priceInfo['additionalChoice'][item['control']] + '.';
+                    });
+                }
+            }
+        }
     }
 
     public getCalculatedPriceList(): void {
