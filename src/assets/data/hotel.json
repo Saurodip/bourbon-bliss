@@ -47,7 +47,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -60,7 +60,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -109,7 +109,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -122,7 +122,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -171,7 +171,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -184,7 +184,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -233,7 +233,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -246,7 +246,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -295,7 +295,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -308,7 +308,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -357,7 +357,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -370,7 +370,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -419,7 +419,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -432,7 +432,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -481,7 +481,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -494,7 +494,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -543,7 +543,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -556,7 +556,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -605,7 +605,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -618,7 +618,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -667,7 +667,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -680,7 +680,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -729,7 +729,7 @@
                     "price": [
                         {
                             "basis": "hour",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 200,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",
@@ -742,7 +742,7 @@
                         },
                         {
                             "basis": "day",
-                            "currency": "Rs.",
+                            "currency": "rs.",
                             "basePrice": 500,
                             "discountPercentage": "5",
                             "serviceTaxPercentage": "2",

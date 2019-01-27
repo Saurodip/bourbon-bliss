@@ -223,6 +223,7 @@
                             "icon": "fas fa-check",
                             "label": "base price",
                             "id": "base-price",
+                            "tooltip": "",
                             "control": "basePrice",
                             "value": 0
                         },
@@ -230,6 +231,7 @@
                             "icon": "fas fa-check",
                             "label": "discount amount on base price",
                             "id": "discount-percentage",
+                            "tooltip": "",
                             "control": "discountPercentage",
                             "value": 0
                         },
@@ -237,6 +239,7 @@
                             "icon": "fas fa-check",
                             "label": "service tax",
                             "id": "service-tax-percentage",
+                            "tooltip": "",
                             "control": "serviceTaxPercentage",
                             "value": 0
                         },
@@ -244,6 +247,7 @@
                             "icon": "fas fa-check",
                             "label": "additional choice",
                             "id": "additional-service",
+                            "tooltip": "",
                             "control": "additionalChoice",
                             "value": 0
                         },
@@ -251,6 +255,7 @@
                             "icon": "fas fa-check",
                             "label": "total amount",
                             "id": "total-amount",
+                            "tooltip": "",
                             "control": "totalAmount",
                             "value": 0
                         }

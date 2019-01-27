@@ -158,8 +158,14 @@
                             font-size: 1.4rem;
                             margin-right: 15px;
                         }
+                        app-tooltip {
+                            ::ng-deep #tooltip-container {
+                                left: -78px;
+                                top: 35px;
+                            }
+                        }
                     }
-                    div:last-child {
+                    div:nth-child(2) {
                         font-size: 1.2rem;
                         &.highlighted {
                             bottom: 6px;
@@ -231,6 +237,12 @@
                             i {
                                 margin: 5px 0px;
                             }
+                            app-tooltip {
+                                ::ng-deep #tooltip-container {
+                                    left: 0px;
+                                    right: 0px;
+                                }
+                            }
                         }
                     }
                 }
@@ -246,5 +258,11 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .form-wrapper {
         padding: 0% 11%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .price-list {
+        margin-top: 20px;
     }
 }

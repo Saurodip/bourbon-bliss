@@ -255,6 +255,23 @@ export class ReservationComponent implements OnInit, OnDestroy {
                         item['tooltip'] += priceInfo['additionalChoice'][item['control']] + '.';
                     });
                 }
+                let priceListInfo = this.reservationContent.find((item: object) => item['heading'].text === 'booking price list');
+                if (priceListInfo) {
+                    priceListInfo['options'][0].fields.forEach((item: object) => {
+                        switch (item['control']) {
+                            case 'basePrice': item['tooltip'] = 'base price: ' + priceInfo['currency'] + ' ' + priceInfo[item['control']] + ' x duration (per day/hour)';
+                                break;
+                            case 'discountPercentage': item['tooltip'] = 'base price x ' + priceInfo[item['control']] + '%';
+                                break;
+                            case 'serviceTaxPercentage': item['tooltip'] = 'base price x ' + priceInfo[item['control']] + '%';
+                                break;
+                            case 'additionalChoice': item['tooltip'] = 'charges for additional services that you wish to avail.';
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+                }
             }
         }
     }
