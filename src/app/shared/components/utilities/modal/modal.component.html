@@ -1,8 +1,8 @@
-<div class="modal fade" id="modal-popover" data-keyboard="false" data-backdrop="static">
+<div id="modal-popover" [ngStyle]="{ 'display': displayPropertyValue }" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" (click)="onHideModalPopover()">&times;</button>
                 <span [ngSwitch]="modalContent?.type">
                     <i *ngSwitchCase="'confirmation'" class="fas fa-check-circle"></i>
                     <i *ngSwitchCase="'info'" class="fas fa-info-circle"></i>
@@ -15,7 +15,7 @@
                 <span>{{ modalContent?.message }}</span>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                <button type="button" class="btn btn-default" (click)="onHideModalPopover()">close</button>
             </div>
         </div>
     </div>

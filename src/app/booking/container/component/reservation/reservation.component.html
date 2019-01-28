@@ -144,7 +144,7 @@
                 </div>
                 <div class="col-xs-12 button-container">
                     <input type="button" class="btn btn-default" value="reset" (click)="resetReservationForm()">
-                    <input type="button" class="btn btn-default" value="save" data-toggle="modal" data-target="#modal-popover" [disabled]="reservationForm.invalid" (click)="onSubmitReservationForm(reservationForm.value)">
+                    <input type="button" class="btn btn-default" value="save" [disabled]="reservationForm.invalid" (click)="onSubmitReservationForm(reservationForm.value)">
                 </div>
             </div>
         </form>

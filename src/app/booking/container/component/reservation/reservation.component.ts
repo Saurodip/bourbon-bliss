@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { ModalComponent } from '../../../../shared/components/utilities/modal/modal.component';
 import { Option, CountryList, Field } from '../../../booking.model';
 import { Availability } from '../../../../hotel/hotel.model';
 import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
@@ -53,6 +54,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
             this.getCalculatedPriceList();
         }
     }
+    @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
@@ -369,6 +371,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
             title: 'confirmation',
             message: 'reservation form data has been saved successfully.'
         };
+        this.modalComponent.onShowModalPopover();
     }
 
     ngOnDestroy() {

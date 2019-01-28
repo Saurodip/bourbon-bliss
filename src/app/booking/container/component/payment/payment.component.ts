@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Option, Month, MonthInfo } from '../../../booking.model';
+import { ModalComponent } from '../../../../shared/components/utilities/modal/modal.component';
 import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
 import { SharedService } from '../../../../shared/shared.service';
 
@@ -35,6 +36,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
             this.expiryMonth = value.month;
         }
     }
+    @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
@@ -86,6 +88,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
             title: 'confirmation',
             message: 'card details has been saved successfully.'
         };
+        this.modalComponent.onShowModalPopover();
     }
 
     ngOnDestroy() {

@@ -96,3 +96,29 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .form-wrapper {
+        padding: 0% 13%;
+        .well {
+            .payment-information {
+                .control-section {
+                    h6 {
+                        &.card-info {
+                            margin-bottom: 35px;
+                        }
+                        .user-action {
+                            top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-wrapper {
+        padding: 0% 11%;
+    }
+}

@@ -23,7 +23,7 @@ $arrowBackgroundColor: lightgray;
     margin: auto;
     position: absolute;
     width: 250px;
-    z-index: 999;
+    z-index: 99;
     .arrow-up {
         @include arrowPosition('', 0px, 0px, -20px);
         @include arrowStyle($arrowBackgroundColor, transparent, transparent, transparent);
