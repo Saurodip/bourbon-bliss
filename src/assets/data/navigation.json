@@ -21,10 +21,6 @@
             "name": "amenities"
         },
         {
-            "icon": "fas fa-dollar-sign",
-            "name": "casino"
-        },
-        {
             "icon": "fas fa-heart",
             "name": "weddings"
         },

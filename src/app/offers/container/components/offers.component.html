@@ -1,0 +1,18 @@
+<div class="action-container">
+    <div class="row">
+        <div *ngIf="viewportWidth <= 767" class="col-xs-12">
+            <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{ offersContent?.action[0]?.key }}">
+            <ul class="dropdown-menu">
+                <li *ngFor="let item of offersContent?.action[0]?.operations; let i = index">
+                    <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="viewportWidth > 767" class="col-md-9 filter-action">
+            <span>{{ offersContent?.action[0]?.key }} :</span>
+            <label class="radio-inline" *ngFor="let item of offersContent?.action[0]?.operations; let i = index">
+                <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
+            </label>
+        </div>
+    </div>
+</div>

@@ -23,10 +23,6 @@ const routes: Routes = [
         loadChildren: '../amenities/amenities.module#AmenitiesModule'
     },
     {
-        path: 'casino',
-        loadChildren: '../casino/casino.module#CasinoModule'
-    },
-    {
         path: 'weddings',
         loadChildren: '../weddings/weddings.module#WeddingsModule'
     },

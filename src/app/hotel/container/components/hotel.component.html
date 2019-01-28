@@ -1,8 +1,7 @@
 <div class="action-container">
   <div class="row">
     <div *ngIf="viewportWidth <= 767" class="col-xs-12">
-      <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{
-        hotelContent?.action[0].key }}">
+      <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{ hotelContent?.action[0]?.key }}">
       <ul class="dropdown-menu">
         <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
           <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>

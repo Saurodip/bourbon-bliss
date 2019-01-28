@@ -1,0 +1,21 @@
+{
+    "heading": "offers, deals and coupons",
+    "description": "we have the best offers and deals to help you save money online on everything you buy or book. at this section of our website, you will get the latest and exciting discount coupon codes. so next time to you are on a holiday or for some business work, do not forget to check out this page for much more marvelous options.",
+    "content": {
+        "action": [
+            {
+                "key": "filter by",
+                "operations": [
+                    "view all",
+                    "hotel",
+                    "entertainment",
+                    "restaurants",
+                    "wedding"
+                ]
+            }
+        ],
+        "coupons": [
+
+        ]
+    }
+}

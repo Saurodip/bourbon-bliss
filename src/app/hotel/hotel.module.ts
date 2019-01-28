@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HotelRoutingModule } from './hotel-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HotelContainerComponent } from './container/hotel.container';
-import { HotelComponent } from './container/component/hotel.component';
+import { HotelComponent } from './container/components/hotel.component';
 import { HotelService } from './hotel.service';
 
 @NgModule({

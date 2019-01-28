@@ -26,6 +26,7 @@ export class HotelComponent implements OnInit {
 
   constructor() {
     this.viewportWidth = 0;
+    this.hotelContent = new Content();
     this.checkboxIndex = 0;
     this.arrayIndex = 0;
     this.gridRowClass = '';

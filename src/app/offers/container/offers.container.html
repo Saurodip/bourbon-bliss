@@ -1,0 +1,10 @@
+<div id="offers">
+  <div class="offers-container container-fluid">
+    <h1>{{ (offersData$ | async)?.heading }}</h1>
+    <div class="row">
+      <small class="col-xs-12">{{ (offersData$ | async)?.description }}</small>
+    </div>
+    <app-offers [content]="(offersData$ | async)?.content"></app-offers>
+    <app-additional-info></app-additional-info>
+  </div>
+</div>
