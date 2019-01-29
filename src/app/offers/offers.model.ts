@@ -31,5 +31,49 @@ export class UserAction {
 }
 
 export class Coupon {
+    public type: string;
+    public heading: string;
+    public description: string;
+    public discount: Discount;
+    public eligibility: Eligibility;
+    public duration: Duration;
 
+    constructor() {
+        this.type = '';
+        this.heading = '';
+        this.description = '';
+        this.discount = new Discount();
+        this.eligibility = new Eligibility();
+        this.duration = new Duration();
+    }
+}
+
+export class Discount {
+    public type: string;
+    public code: string;
+
+    constructor() {
+        this.type = '';
+        this.code = '';
+    }
+}
+
+export class Eligibility {
+    public key: string;
+    public amount: number;
+
+    constructor() {
+        this.key = '';
+        this.amount = 0;
+    }
+}
+
+export class Duration {
+    public key: string;
+    public date: string;
+
+    constructor() {
+        this.key = '';
+        this.date = '';
+    }
 }

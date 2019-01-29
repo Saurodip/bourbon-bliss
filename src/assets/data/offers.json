@@ -9,13 +9,291 @@
                     "view all",
                     "hotel",
                     "entertainment",
-                    "restaurants",
+                    "restaurant",
                     "wedding"
+                ]
+            },
+            {
+                "key": "change view",
+                "operations": [
+                    "fas fa-grip-horizontal",
+                    "fas fa-grip-vertical"
                 ]
             }
         ],
         "coupons": [
-
+            {
+                "type": "hotel",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "hotel",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "hotel",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "hotel",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "entertainment",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "entertainment",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "entertainment",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "entertainment",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "restaurant",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "restaurant",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "restaurant",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "restaurant",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "wedding",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "wedding",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "wedding",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "wedding",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            }
         ]
     }
 }

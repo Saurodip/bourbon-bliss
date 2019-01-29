@@ -36,6 +36,36 @@
             position: relative;
             top: 10px;
         }
+        div:nth-child(2) {
+            text-align: right;
+            .view-icon {
+                background-color: white;
+                border: 2px solid #bbb8b8;
+                border-radius: 10px;
+                color: #948e8e;
+                cursor: pointer;
+                font-size: 16px;
+                height: 35px;
+                margin-right: 8px;
+                padding: 8px;
+                text-align: center;
+                width: 35px;
+            }
+        }
+    }
+}
+
+.coupons-container {
+    padding: 25px 5%;
+    .row:first-child {
+        .coupon-view {
+            margin-bottom: 25px;
+            padding: 0px;
+            .check-rates {
+                color: #808080;
+                margin-top: 28px;
+            }
+        }
     }
 }
 
@@ -43,10 +73,16 @@
     .action-container {
         padding: 25px 8%;
     }
+    .coupons-container {
+        padding: 0% 9%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .action-container {
         padding: 25px 5%;
+    }
+    .coupons-container {
+        padding: 0% 6%;
     }
 }

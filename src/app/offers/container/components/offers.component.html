@@ -14,5 +14,19 @@
                 <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
             </label>
         </div>
+        <div class="col-md-3 hidden-xs hidden-sm">
+            <span>{{ offersContent?.action[1]?.key }}</span>
+            <i class="view-icon {{ offersContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+          </div>
     </div>
 </div>
+<div class="coupons-container">
+    <div class="row">
+      <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '760px' : 'auto' }"
+        [ngClass]="gridRowClass" class="coupon-view">
+        <app-hotel-panel [gridClass]="gridColumnClass" [content]="item">
+          <input type="button" class="btn btn-default check-rates" value="book now !" (click)="onSelection(i)">
+        </app-hotel-panel>
+      </div>
+    </div>
+  </div>

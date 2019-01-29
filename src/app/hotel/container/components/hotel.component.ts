@@ -46,7 +46,7 @@ export class HotelComponent implements OnInit {
     if (type === 'view all') {
       this.availability = this.hotelContent.availability;
     } else {
-      this.availability = this.hotelContent.availability.filter(item => item.type && item.type.toLowerCase() === type);
+      this.availability = this.hotelContent.availability.filter((item: Availability) => item.type && item.type.toLowerCase() === type);
     }
   }
 
