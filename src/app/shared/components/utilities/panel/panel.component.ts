@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-hotel-panel',
-    templateUrl: './hotel-panel.component.html',
-    styleUrls: ['./hotel-panel.component.scss']
+    selector: 'app-panel',
+    templateUrl: './panel.component.html',
+    styleUrls: ['./panel.component.scss']
 })
 
-export class HotelPanelComponent implements OnInit {
+export class PanelComponent implements OnInit {
     public panelContent: any;
     public gridColumnClass: string;
 
+    @Input() template: string;
     @Input() set gridClass(value: string) {
         if (value) {
             this.gridColumnClass = value;

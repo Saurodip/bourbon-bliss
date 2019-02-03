@@ -255,7 +255,6 @@
                             "icon": "fas fa-check",
                             "label": "total amount",
                             "id": "total-amount",
-                            "tooltip": "",
                             "control": "totalAmount",
                             "value": 0
                         }

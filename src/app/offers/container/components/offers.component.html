@@ -24,9 +24,9 @@
     <div class="row">
       <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '760px' : 'auto' }"
         [ngClass]="gridRowClass" class="coupon-view">
-        <app-hotel-panel [gridClass]="gridColumnClass" [content]="item">
+        <app-panel [template]="'offers'" [gridClass]="gridColumnClass" [content]="item">
           <input type="button" class="btn btn-default check-rates" value="book now !" (click)="onSelection(i)">
-        </app-hotel-panel>
+        </app-panel>
       </div>
     </div>
   </div>
