@@ -12,7 +12,6 @@ import { SharedService } from '../../../../shared/shared.service';
 })
 
 export class PaymentComponent implements OnInit, OnDestroy {
-    public viewportWidth: number;
     public paymentContent: Array<Option>;
     private cachedFormData: Option;
     public expiryMonth: Array<MonthInfo>;
@@ -39,7 +38,6 @@ export class PaymentComponent implements OnInit, OnDestroy {
     @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
-        this.viewportWidth = 0;
         this.paymentContent = [];
         this.cachedFormData = new Option();
         this.expiryMonth = [];
@@ -78,6 +76,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
                 expiryYear: 'none'
             }
         });
+        this.sharedService.removeStorage('CardDetails');
     }
 
     public onSaveCardDetails(formValue: FormGroup): void {
@@ -92,6 +91,6 @@ export class PaymentComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.sharedService.clearStorage();
+        this.sharedService.removeStorage('CardDetails');
     }
 }

@@ -24,6 +24,27 @@
         "coupons": [
             {
                 "type": "hotel",
+                "path": "../../assets/images/hotel/rooms/1.jpg",
+                "icon": "fas fa-bed",
+                "heading": "",
+                "description": "hj hjh hjhhj jhj h h hh h hjh jh h",
+                "discount": {
+                    "type": "promo code",
+                    "code": "hhhh"
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": "12-07-2019"
+                }
+            },
+            {
+                "type": "hotel",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -41,6 +62,8 @@
             },
             {
                 "type": "hotel",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -58,40 +81,8 @@
             },
             {
                 "type": "hotel",
-                "heading": "",
-                "description": "",
-                "discount": {
-                    "type": "promo code",
-                    "code": ""
-                },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
-                "duration": {
-                    "key": "validity",
-                    "date": ""
-                }
-            },
-            {
-                "type": "hotel",
-                "heading": "",
-                "description": "",
-                "discount": {
-                    "type": "promo code",
-                    "code": ""
-                },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
-                "duration": {
-                    "key": "validity",
-                    "date": ""
-                }
-            },
-            {
-                "type": "entertainment",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -109,6 +100,8 @@
             },
             {
                 "type": "entertainment",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -126,6 +119,8 @@
             },
             {
                 "type": "entertainment",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -143,6 +138,27 @@
             },
             {
                 "type": "entertainment",
+                "path": "",
+                "icon": "",
+                "heading": "",
+                "description": "",
+                "discount": {
+                    "type": "promo code",
+                    "code": ""
+                },
+                "eligibility": {
+                    "key": "minimum booking amount",
+                    "amount": 0
+                },
+                "duration": {
+                    "key": "validity",
+                    "date": ""
+                }
+            },
+            {
+                "type": "entertainment",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -160,6 +176,8 @@
             },
             {
                 "type": "restaurant",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -177,6 +195,8 @@
             },
             {
                 "type": "restaurant",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -194,6 +214,8 @@
             },
             {
                 "type": "restaurant",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -211,6 +233,8 @@
             },
             {
                 "type": "restaurant",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -228,6 +252,8 @@
             },
             {
                 "type": "wedding",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -245,6 +271,8 @@
             },
             {
                 "type": "wedding",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -262,6 +290,8 @@
             },
             {
                 "type": "wedding",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {
@@ -279,6 +309,8 @@
             },
             {
                 "type": "wedding",
+                "path": "",
+                "icon": "",
                 "heading": "",
                 "description": "",
                 "discount": {

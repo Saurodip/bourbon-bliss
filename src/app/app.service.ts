@@ -11,7 +11,8 @@ export class AppService {
             'Authorization': 'my-auth-token'
         })
     };
-    public sharedData$ = new BehaviorSubject<any>([]);
+    public hotelSharedData$ = new BehaviorSubject<any>([]);
+    public navigationSharedData$ = new BehaviorSubject<any>([]);
 
     constructor(private httpClient: HttpClient) { }
 
@@ -52,12 +53,24 @@ export class AppService {
         return throwError('Something went wrong! Please try later.');
     }
 
-    public onSharingData(data: any): void {
-        this.sharedData$.next(data);
+    public onSharingData(data: any, from: string): void {
+        switch (from) {
+            case 'hotel': this.hotelSharedData$.next(data);
+                break;
+            case 'navigation': this.navigationSharedData$.next(data);
+                break;
+            default:
+                break;
+        }
     }
 
-    public sharedData(): Observable<any> {
-        return this.sharedData$.asObservable();
+    public sharedData(from: string): Observable<any> {
+        switch (from) {
+            case 'hotel': return this.hotelSharedData$.asObservable();
+            case 'navigation': return this.navigationSharedData$.asObservable();
+            default:
+                break;
+        }
     }
 }
 

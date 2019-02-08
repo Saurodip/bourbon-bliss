@@ -321,5 +321,73 @@
                 }
             ]
         }
+    ],
+    "couponContent": [
+        {
+            "heading": {
+                "icon": "fas fa-burn",
+                "text": "coupon request"
+            },
+            "options": [
+                {
+                    "group": "userInformation",
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "user information"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "first name",
+                            "id": "first-name",
+                            "type": "text",
+                            "control": "firstName",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "middle name",
+                            "id": "middle-name",
+                            "type": "text",
+                            "control": "middleName",
+                            "isMandatory": false
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "last name",
+                            "id": "last-name",
+                            "type": "text",
+                            "control": "lastName",
+                            "isMandatory": true
+                        }
+                    ]   
+                },
+                {
+                    "group": "contactDetails",
+                    "heading": {
+                        "icon": "fas fa-tags",
+                        "text": "contact details"
+                    },
+                    "fields": [
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "mobile no.",
+                            "id": "mobile",
+                            "type": "text",
+                            "control": "mobileNo",
+                            "isMandatory": true
+                        },
+                        {
+                            "icon": "fas fa-angle-double-right",
+                            "label": "email id",
+                            "id": "email-id",
+                            "type": "email",
+                            "control": "emailId",
+                            "isMandatory": true
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

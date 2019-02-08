@@ -4,7 +4,13 @@
         <div class="row">
             <small class="col-xs-12">{{ (bookingData$ | async)?.description }}</small>
         </div>
-        <app-reservation [content]="(bookingData$ | async)?.reservationContent" [selectedOption]="selectedOption" [countryList]="countryList"></app-reservation>
+        <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then reservationComponent else couponComponent"></ng-container>
+        <ng-template #reservationComponent>
+            <app-reservation [content]="(bookingData$ | async)?.reservationContent" [selectedOption]="selectedOption" [countryList]="countryList"></app-reservation>
+        </ng-template>
+        <ng-template #couponComponent>
+            <app-coupon [content]="(bookingData$ | async)?.couponContent"></app-coupon>
+        </ng-template>
         <app-payment [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>
         <app-additional-info></app-additional-info>
     </div>

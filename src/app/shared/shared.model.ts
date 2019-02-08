@@ -47,3 +47,14 @@ export class Link {
         this.values = [];
     }
 }
+
+export class NavigationHistory {
+    public previousMenu: string;
+    public currentMenu: string;
+
+    constructor() {
+        this.previousMenu = '';
+        this.currentMenu = '';
+    }
+}
+

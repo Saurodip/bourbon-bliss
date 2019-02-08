@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SharedService } from '../shared/shared.service';
 import { AppService } from '../app.service';
 import { Booking, CountryList, Month } from './booking.model';
 
@@ -7,7 +8,7 @@ import { Booking, CountryList, Month } from './booking.model';
 export class BookingService {
     private url: Array<string>;
 
-    constructor(private appService: AppService) {
+    constructor(private sharedService: SharedService, private appService: AppService) {
         this.url = ['assets/data/booking.json', 'assets/data/country.json', 'assets/data/calendar.json'];
     }
 

@@ -32,6 +32,8 @@ export class UserAction {
 
 export class Coupon {
     public type: string;
+    public path: string;
+    public icon: string;
     public heading: string;
     public description: string;
     public discount: Discount;
@@ -40,6 +42,8 @@ export class Coupon {
 
     constructor() {
         this.type = '';
+        this.path = '';
+        this.icon = '';
         this.heading = '';
         this.description = '';
         this.discount = new Discount();

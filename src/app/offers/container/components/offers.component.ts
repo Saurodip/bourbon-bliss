@@ -22,7 +22,7 @@ export class OffersComponent implements OnInit {
             this.onApplyFilter('view all', 0);
         }
     }
-    @Output() selectedOption = new EventEmitter<Coupon>();
+    @Output() selectedCoupon = new EventEmitter<Coupon>();
 
     constructor() {
         this.viewportWidth = 0;
@@ -52,11 +52,11 @@ export class OffersComponent implements OnInit {
 
     public onChangeView(arrayIndex: number): void {
         this.arrayIndex = arrayIndex === 0 ? 1 : 0;
-        this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-12' : 'col-xs-12 col-sm-3';
-        this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
+        this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-6' : 'col-xs-12 col-sm-3';
+        this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-6 col-sm-6 horizontal-view' : 'col-xs-12 vertical-view';
     }
 
-    public onSelection(index: number): void {
-        this.selectedOption.emit(this.coupons[index]);
+    public onCouponPurchase(index: number): void {
+        this.selectedCoupon.emit(this.coupons[index]);
     }
 }

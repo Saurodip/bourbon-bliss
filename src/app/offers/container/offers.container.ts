@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Offers } from '../offers.model';
+import { Offers, Coupon } from '../offers.model';
 import { OffersService } from '../offers.service';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-offers-container',
@@ -15,7 +17,7 @@ export class OffersContainerComponent implements OnInit {
 
   public offersData$: Observable<Offers> = this.offersService.getOffersData();
 
-  constructor(private offersService: OffersService) {
+  constructor(private router: Router, private offersService: OffersService, private sharedService: SharedService) {
     this.error = '';
   }
 
@@ -29,6 +31,11 @@ export class OffersContainerComponent implements OnInit {
       (data) => this.offersData = { ...data },
       (error) => this.error = error
     );
+  }
+
+  public purchaseSelectedCoupon(coupon: Coupon): void {
+    this.router.navigate(['/booking']);
+    this.sharedService.getRouteUrl();
   }
 }
 

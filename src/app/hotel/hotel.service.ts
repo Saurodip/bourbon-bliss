@@ -16,6 +16,6 @@ export class HotelService {
   }
 
   public setDataForSharing(data: Availability): void {
-    this.appService.onSharingData(data);
+    this.appService.onSharingData(data, 'hotel');
   }
 }

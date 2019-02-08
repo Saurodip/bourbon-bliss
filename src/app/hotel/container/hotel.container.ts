@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HotelService } from '../hotel.service';
+import { SharedService } from '../../shared/shared.service';
 import { Hotel, Availability } from '../hotel.model';
 
 @Component({
@@ -16,7 +17,7 @@ export class HotelContainerComponent implements OnInit {
 
     public hotelData$: Observable<Hotel> = this.hotelService.getHotelData();
 
-    constructor(private router: Router, private hotelService: HotelService) {
+    constructor(private router: Router, private hotelService: HotelService, private sharedService: SharedService) {
         this.error = '';
     }
 
@@ -34,6 +35,7 @@ export class HotelContainerComponent implements OnInit {
 
     public getSelectedOption(option: Availability): void {
         this.router.navigate(['/booking']);
+        this.sharedService.getRouteUrl();
         this.hotelService.setDataForSharing(option);
     }
 }

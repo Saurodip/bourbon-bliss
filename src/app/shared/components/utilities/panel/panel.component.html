@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <ng-content></ng-content>
+            <ng-content select=".check-rates"></ng-content>
         </div>
         <div [ngClass]="gridColumnClass">
             <i class="fas fa-thumbs-up"></i>
@@ -74,6 +74,20 @@
         </div>
     </ng-template>
     <ng-template #generalTemplate>
-
+        <div [ngClass]="gridColumnClass">
+            <i class="{{ panelContent?.icon }}"></i>
+            <h4 title="{{ panelContent?.heading | uppercase }}">{{ panelContent?.heading | uppercase }}</h4>
+            <div class="row">
+                <div class="col-xs-12">{{ panelContent?.description }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ng-content select=".content-projection"></ng-content>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="gridColumnClass">
+            
+        </div>
     </ng-template>
 </div>

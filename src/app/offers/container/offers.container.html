@@ -4,7 +4,7 @@
     <div class="row">
       <small class="col-xs-12">{{ (offersData$ | async)?.description }}</small>
     </div>
-    <app-offers [content]="(offersData$ | async)?.content"></app-offers>
+    <app-offers [content]="(offersData$ | async)?.content" (selectedCoupon)="purchaseSelectedCoupon($event)"></app-offers>
     <app-additional-info></app-additional-info>
   </div>
 </div>

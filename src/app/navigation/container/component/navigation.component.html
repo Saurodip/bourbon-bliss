@@ -47,8 +47,8 @@
                             <i class="fas fa-sign-in-alt"></i>sign in
                         </a>
                     </li>
-                    <li [ngClass]="{ 'active': i === currentIndex }" *ngFor="let menu of navigationContent?.navMenuItems; let i = index">
-                        <a id="nav-{{ menu.name }}" routerLink="/{{ menu.name }}" (click)="navigateTo(i)">
+                    <li [ngClass]="{ 'active': menu.name === navigationHistory?.currentMenu }" *ngFor="let menu of navigationContent?.navMenuItems; let i = index">
+                        <a id="nav-{{ menu.name }}" routerLink="/{{ menu.name }}" (click)="navigateTo()">
                             <i class="{{ menu.icon }}" aria-hidden="true"></i>{{ menu.name }}
                         </a>
                     </li>

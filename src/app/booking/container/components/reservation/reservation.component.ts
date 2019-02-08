@@ -360,6 +360,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
         guestInformation.controls = [];
         this.getFormGroup();
         this.getCalculatedPriceList();
+        this.sharedService.removeStorage('ReservationFormData');
     }
 
     public onSubmitReservationForm(formValue: FormGroup): void {
@@ -375,6 +376,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.sharedService.clearStorage();
+        this.sharedService.removeStorage('SelectedItem');
+        this.sharedService.removeStorage('ReservationFormData');
     }
 }
