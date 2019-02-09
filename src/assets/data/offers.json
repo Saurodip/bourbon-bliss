@@ -24,20 +24,27 @@
         "coupons": [
             {
                 "type": "hotel",
-                "path": "../../assets/images/hotel/rooms/1.jpg",
+                "path": "../../assets/images/offers/room-booking.jpg",
                 "icon": "fas fa-bed",
-                "heading": "",
-                "description": "hj hjh hjhhj jhj h h hh h hjh jh h",
+                "heading": "flat 10% off on room booking",
+                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
-                    "code": "hhhh"
+                    "code": "room5673"
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 5000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": "12-07-2019"
                 }
             },
@@ -47,16 +54,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -66,16 +80,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -85,16 +106,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -104,16 +132,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -123,16 +158,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -142,16 +184,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -161,16 +210,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -180,16 +236,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -199,16 +262,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -218,16 +288,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -237,16 +314,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -256,16 +340,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -275,16 +366,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -294,16 +392,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             },
@@ -313,16 +418,23 @@
                 "icon": "",
                 "heading": "",
                 "description": "",
+                "currency": "rs.",
                 "discount": {
                     "type": "promo code",
                     "code": ""
                 },
-                "eligibility": {
-                    "key": "minimum booking amount",
-                    "amount": 0
-                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1000
+                    }
+                ],
                 "duration": {
-                    "key": "validity",
+                    "key": "validity till",
                     "date": ""
                 }
             }

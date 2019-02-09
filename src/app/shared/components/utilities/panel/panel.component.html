@@ -65,12 +65,17 @@
         </div>
         <div [ngClass]="gridColumnClass">
             <i class="fas fa-thumbs-up"></i>
-            <h4>room facilities & services</h4>
-            <ul>
-                <li *ngFor="let facility of panelContent?.facilities; let j = index">
-                    <i class="fas fa-check-circle"></i> {{ facility }}
-                </li>
-            </ul>
+            <h4 title="{{ 'facilities & services' | uppercase }}">facilities & services</h4>
+            <div class="row">
+                <small class="col-xs-12">list of all facilities and services:</small>
+                <div class="col-xs-12">
+                    <ul>
+                        <li title="{{ facility | uppercase }}" *ngFor="let facility of panelContent?.facilities; let j = index">
+                            <i class="fas fa-check-circle"></i> {{ facility }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </ng-template>
     <ng-template #generalTemplate>
@@ -78,16 +83,32 @@
             <i class="{{ panelContent?.icon }}"></i>
             <h4 title="{{ panelContent?.heading | uppercase }}">{{ panelContent?.heading | uppercase }}</h4>
             <div class="row">
-                <div class="col-xs-12">{{ panelContent?.description }}</div>
+                <small class="col-xs-12 description">{{ panelContent?.description }}</small>
+                <div class="col-xs-12">{{ panelContent?.discount?.type }}: <span class="coupon-code">{{ panelContent?.discount?.code }}</span></div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <ng-content select=".content-projection"></ng-content>
+                    <ng-content select=".purchase"></ng-content>
                 </div>
             </div>
         </div>
         <div [ngClass]="gridColumnClass">
-            
+            <i class="fas fa-thumbs-up"></i>
+            <h4 title="{{ 'terms and conditions' | uppercase }}">terms and conditions</h4>
+            <div class="row">
+                <small class="col-xs-12">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
+                <div class="col-xs-12">
+                    <ul>
+                        <li title="{{ eligibility?.key | uppercase }}: {{ panelContent?.currency | uppercase }} {{ eligibility?.amount }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
+                            <i class="fas fa-check-circle"></i>{{ eligibility?.key }}: <span>{{ panelContent?.currency }} {{ eligibility?.amount }}</span>
+                        </li>
+                        <li title="{{ panelContent?.duration?.key | uppercase }}: {{ panelContent?.duration?.date | uppercase }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
+                    </ul>
+                    <div>
+                        <ng-content select=".terms-and-condition"></ng-content>
+                    </div>
+                </div>
+            </div>
         </div>
     </ng-template>
 </div>

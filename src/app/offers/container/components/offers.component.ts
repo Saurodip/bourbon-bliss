@@ -52,8 +52,8 @@ export class OffersComponent implements OnInit {
 
     public onChangeView(arrayIndex: number): void {
         this.arrayIndex = arrayIndex === 0 ? 1 : 0;
-        this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-6' : 'col-xs-12 col-sm-3';
-        this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-6 col-sm-6 horizontal-view' : 'col-xs-12 vertical-view';
+        this.gridRowClass = this.arrayIndex === 0 ? 'col-xs-12' : 'col-xs-12 col-sm-3';
+        this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
     }
 
     public onCouponPurchase(index: number): void {

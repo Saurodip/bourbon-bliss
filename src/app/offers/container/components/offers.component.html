@@ -22,15 +22,12 @@
 </div>
 <div class="coupons-container">
     <div class="row">
-        <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '500px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
+        <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '600px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
             <app-panel [template]="'offers'" [gridClass]="gridColumnClass" [content]="item">
-                <ng-container class="content-projection">
-                    <input type="button" class="btn btn-default purchase" value="purchase !" (click)="onCouponPurchase(i)">
-                    <small class="terms-and-condition">
-                        <span>*</span>
-                        <span>applicable for <b>{{ item.type }}</b> section only</span>
-                    </small>
-                </ng-container>
+                <input type="button" class="btn btn-default purchase" value="purchase !" (click)="onCouponPurchase(i)">
+                <small class="terms-and-condition">
+                    <span><span class="asterisk">*</span>applicable for <b>{{ item.type }}</b> section only</span>
+                </small>
             </app-panel>
         </div>
     </div>

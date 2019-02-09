@@ -36,8 +36,9 @@ export class Coupon {
     public icon: string;
     public heading: string;
     public description: string;
+    public currency: string;
     public discount: Discount;
-    public eligibility: Eligibility;
+    public eligibility: Array<Eligibility>;
     public duration: Duration;
 
     constructor() {
@@ -46,8 +47,9 @@ export class Coupon {
         this.icon = '';
         this.heading = '';
         this.description = '';
+        this.currency = '';
         this.discount = new Discount();
-        this.eligibility = new Eligibility();
+        this.eligibility = [];
         this.duration = new Duration();
     }
 }
