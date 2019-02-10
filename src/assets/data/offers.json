@@ -24,7 +24,7 @@
         "coupons": [
             {
                 "type": "hotel",
-                "path": "../../assets/images/offers/room-booking.jpg",
+                "path": "../../assets/images/offers/room-discount.jpg",
                 "icon": "fas fa-bed",
                 "heading": "flat 10% off on room booking",
                 "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
@@ -50,80 +50,80 @@
             },
             {
                 "type": "hotel",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/suite-discount.jpg",
+                "icon": "fas fa-gem",
+                "heading": "50% discount on executive suite",
+                "description": "now avail exclusive 50% off on all executive and deluxe suites across india only at bourbon bliss.",
                 "currency": "rs.",
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "suit3210"
                 },
                 "eligibility": [
                     {
                         "key": "min. booking amount",
-                        "amount": 1000
+                        "amount": 2000
                     },
                     {
                         "key": "max. amount can be availed",
-                        "amount": 1000
+                        "amount": 10000
                     }
                 ],
                 "duration": {
                     "key": "validity till",
-                    "date": ""
+                    "date": "11-03-2019"
                 }
             },
             {
                 "type": "hotel",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/seaview-discount.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "festive sale – upto 1500 off on seaview rooms",
+                "description": "get upto rs. 1500 off on seaview hotel rooms, holiday package booking across country.",
                 "currency": "rs.",
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "seav2963"
                 },
                 "eligibility": [
                     {
                         "key": "min. booking amount",
-                        "amount": 1000
+                        "amount": 800
                     },
                     {
                         "key": "max. amount can be availed",
-                        "amount": 1000
+                        "amount": 1500
                     }
                 ],
                 "duration": {
                     "key": "validity till",
-                    "date": ""
+                    "date": "11-04-2019"
                 }
             },
             {
                 "type": "hotel",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/last-minute-booking.jpg",
+                "icon": "fas fa-clock",
+                "heading": "last minute deal – upto 30% off",
+                "description": "now you can save extra payment on last minute deals and get upto flat 30% off on hotel bookings.",
                 "currency": "rs.",
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "last1200"
                 },
                 "eligibility": [
                     {
                         "key": "min. booking amount",
-                        "amount": 1000
+                        "amount": 0
                     },
                     {
                         "key": "max. amount can be availed",
-                        "amount": 1000
+                        "amount": 0
                     }
                 ],
                 "duration": {
                     "key": "validity till",
-                    "date": ""
+                    "date": "22-02-2019"
                 }
             },
             {

@@ -24,7 +24,7 @@
     <div class="row">
         <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '600px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
             <app-panel [template]="'offers'" [gridClass]="gridColumnClass" [content]="item">
-                <input type="button" class="btn btn-default purchase" value="purchase !" (click)="onCouponPurchase(i)">
+                <input type="button" class="btn btn-default purchase" value="purchase coupon !" (click)="onCouponPurchase(i)">
                 <small class="terms-and-condition">
                     <span><span class="asterisk">*</span>applicable for <b>{{ item.type }}</b> section only</span>
                 </small>
