@@ -4,6 +4,7 @@ import { Option, Month, MonthInfo } from '../../../booking.model';
 import { ModalComponent } from '../../../../shared/components/utilities/modal/modal.component';
 import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
 import { SharedService } from '../../../../shared/shared.service';
+import { Coupon } from 'src/app/offers/offers.model';
 
 @Component({
     selector: 'app-coupon',
@@ -14,6 +15,7 @@ import { SharedService } from '../../../../shared/shared.service';
 export class CouponComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
     public couponContent: Array<Option>;
+    public selectedItem: Coupon;
     private cachedFormData: Option;
     private storageObject: object;
     public modalObject: object;
@@ -28,11 +30,22 @@ export class CouponComponent implements OnInit, OnDestroy {
         }
         this.initializeCouponForm();
     }
+    @Input() set selectedCoupon(value: Coupon) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
+            this.selectedItem = value;
+            this.storageObject = { action: 'set', variable: 'SelectedItem', value: this.selectedItem };
+            this.sharedService.applyStorage(this.storageObject);
+        } else {
+            this.storageObject = { action: 'get', variable: 'SelectedItem' };
+            this.selectedItem = this.sharedService.applyStorage(this.storageObject);
+        }
+    }
     @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
         this.couponContent = [];
+        this.selectedItem = new Coupon();
         this.cachedFormData = new Option();
         this.storageObject = { action: '', variable: '', value: null };
         this.modalObject = { type: '', title: '', message: '' };

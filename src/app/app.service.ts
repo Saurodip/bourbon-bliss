@@ -13,6 +13,7 @@ export class AppService {
     };
     public hotelSharedData$ = new BehaviorSubject<any>([]);
     public navigationSharedData$ = new BehaviorSubject<any>([]);
+    public couponSharedData$ = new BehaviorSubject<any>([]);
 
     constructor(private httpClient: HttpClient) { }
 
@@ -59,6 +60,8 @@ export class AppService {
                 break;
             case 'navigation': this.navigationSharedData$.next(data);
                 break;
+            case 'coupon': this.couponSharedData$.next(data);
+                break;
             default:
                 break;
         }
@@ -68,6 +71,7 @@ export class AppService {
         switch (from) {
             case 'hotel': return this.hotelSharedData$.asObservable();
             case 'navigation': return this.navigationSharedData$.asObservable();
+            case 'coupon': return this.couponSharedData$.asObservable();
             default:
                 break;
         }

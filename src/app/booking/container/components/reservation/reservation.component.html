@@ -1,19 +1,3 @@
-<div class="row panel-wrapper">
-    <div class="col-xs-12">
-        <app-panel [template]="'hotel'" [gridClass]="gridColumnClass" [content]="selectedItem">
-            <div class="row check-rates">
-                <div class="col-xs-12">
-                    <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[0]?.basis)">
-                    <span>{{ selectedItem?.description?.price[0]?.currency + ' ' + selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
-                </div>
-                <div class="col-xs-12">
-                    <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[1]?.basis)" checked>
-                    <span>{{ selectedItem?.description?.price[1]?.currency + ' ' + selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
-                </div>
-            </div>
-        </app-panel>
-    </div>
-</div>
 <div class="row form-wrapper">
     <div class="col-xs-12 well">
         <form [formGroup]="reservationForm" class="form-horizontal">

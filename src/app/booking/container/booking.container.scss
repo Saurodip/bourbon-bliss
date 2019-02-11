@@ -12,9 +12,11 @@
             margin-top: 153px;
             padding: 25px 60px;
             text-transform: uppercase;
+            &+.row {
+                background-color: white;
+            }
         }
-        .row {
-            background-color: white;
+        .description {
             display: flex;
             margin: 0px;
             small {
@@ -24,6 +26,31 @@
                 text-align: center;
                 text-transform: capitalize;
                 width: 65%;
+            }
+        }
+    }
+    .panel-wrapper {
+        padding: 45px 70px 25px;
+        .purchase {
+            div {
+                font-size: 1.6rem;
+                margin-top: 15px;
+            }
+        }
+        .terms-and-condition {
+            font-size: 9px;
+            padding-bottom: 10px;
+            span {
+                .asterisk {
+                    color: red;
+                    font-size: 30px;
+                    position: relative;
+                    top: 14px;
+                    left: -5px;
+                }
+                b {
+                    font-size: 1.3em;
+                }
             }
         }
     }
@@ -44,6 +71,9 @@
                     width: 90%;
                 }
             }
+        }
+        .panel-wrapper {
+            padding: 45px 9% 25px;
         }
     }
 }

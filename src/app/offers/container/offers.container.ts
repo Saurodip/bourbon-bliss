@@ -36,6 +36,7 @@ export class OffersContainerComponent implements OnInit {
   public purchaseSelectedCoupon(coupon: Coupon): void {
     this.router.navigate(['/booking']);
     this.sharedService.getRouteUrl();
+    this.offersService.setDataForSharing(coupon);
   }
 }
 

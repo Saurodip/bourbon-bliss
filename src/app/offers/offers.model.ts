@@ -37,6 +37,7 @@ export class Coupon {
     public heading: string;
     public description: string;
     public currency: string;
+    public price: number;
     public discount: Discount;
     public eligibility: Array<Eligibility>;
     public duration: Duration;
@@ -48,6 +49,7 @@ export class Coupon {
         this.heading = '';
         this.description = '';
         this.currency = '';
+        this.price = 0;
         this.discount = new Discount();
         this.eligibility = [];
         this.duration = new Duration();

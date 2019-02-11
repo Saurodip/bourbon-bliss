@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Availability } from '../../hotel/hotel.model';
-import { BookingService } from '../booking.service';
-import { SharedService } from 'src/app/shared/shared.service';
-import { AppService } from 'src/app/app.service';
+import { Coupon } from '../../offers/offers.model';
 import { Booking, CountryList, Month } from '../booking.model';
 import { NavigationHistory } from '../../shared/shared.model';
+import { BookingService } from '../booking.service';
+import { SharedService } from '../../shared/shared.service';
+import { AppService } from '../../app.service';
 
 @Component({
     selector: 'app-booking-container',
@@ -14,9 +15,12 @@ import { NavigationHistory } from '../../shared/shared.model';
 })
 
 export class BookingContainerComponent implements OnInit {
+    public viewportWidth: number;
+    public gridColumnClass: string;
     public bookingData: Booking;
     public countryList: CountryList;
     public selectedOption: Availability;
+    public selectedCoupon: Coupon;
     public expiryMonth: Month;
     public navigationHistory: NavigationHistory;
     public error: string;
@@ -26,9 +30,12 @@ export class BookingContainerComponent implements OnInit {
     public month$: Observable<Month> = this.bookingService.getExpiryMonth();
 
     constructor(private bookingService: BookingService, private sharedService: SharedService, private appService: AppService) {
+        this.viewportWidth = 0;
+        this.gridColumnClass = '';
         this.bookingData = new Booking();
         this.countryList = new CountryList();
         this.selectedOption = new Availability();
+        this.selectedCoupon = new Coupon();
         this.expiryMonth = new Month();
         this.navigationHistory = new NavigationHistory();
         this.error = '';
@@ -36,6 +43,8 @@ export class BookingContainerComponent implements OnInit {
 
     ngOnInit() {
         window.scrollTo(0, 0);
+        this.viewportWidth = window.outerWidth;
+        this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         this.fetchBookingData();
         this.fetchCountryList();
         this.getSelectedOption();
@@ -60,6 +69,10 @@ export class BookingContainerComponent implements OnInit {
     private getSelectedOption(): void {
         this.appService.hotelSharedData$.subscribe(
             (data) => this.selectedOption = { ...data },
+            (error) => this.error = error
+        );
+        this.appService.couponSharedData$.subscribe(
+            (data) => this.selectedCoupon = { ...data },
             (error) => this.error = error
         );
     }

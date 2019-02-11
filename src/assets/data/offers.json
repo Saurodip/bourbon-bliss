@@ -29,6 +29,7 @@
                 "heading": "flat 10% off on room booking",
                 "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": "room5673"
@@ -55,6 +56,7 @@
                 "heading": "50% discount on executive suite",
                 "description": "now avail exclusive 50% off on all executive and deluxe suites across india only at bourbon bliss.",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": "suit3210"
@@ -81,6 +83,7 @@
                 "heading": "festive sale – upto 1500 off on seaview rooms",
                 "description": "get upto rs. 1500 off on seaview hotel rooms, holiday package booking across country.",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": "seav2963"
@@ -107,6 +110,7 @@
                 "heading": "last minute deal – upto 30% off",
                 "description": "now you can save extra payment on last minute deals and get upto flat 30% off on hotel bookings.",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": "last1200"
@@ -133,6 +137,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -159,6 +164,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -185,6 +191,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -211,6 +218,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -237,6 +245,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -263,6 +272,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -289,6 +299,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -315,6 +326,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -341,6 +353,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -367,6 +380,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -393,6 +407,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""
@@ -419,6 +434,7 @@
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
+                "price": 1000,
                 "discount": {
                     "type": "promo code",
                     "code": ""

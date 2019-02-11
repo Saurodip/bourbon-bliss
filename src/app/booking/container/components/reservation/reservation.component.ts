@@ -16,7 +16,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
     public selectedItem: Availability;
     public listOfCountries: object;
-    public gridColumnClass: string;
     private storageObject: object;
     private cachedFormData: object;
     private maxAccomodationCount: number;
@@ -60,7 +59,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.viewportWidth = 0;
         this.selectedItem = new Availability();
         this.listOfCountries = {};
-        this.gridColumnClass = '';
         this.storageObject = { action: '', variable: '', value: null };
         this.cachedFormData = {};
         this.maxAccomodationCount = 0;
@@ -77,7 +75,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.viewportWidth = window.outerWidth;
-        this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         this.storageObject = { 'action': 'get', 'variable': 'ReservationFormData' };
         this.cachedFormData = this.sharedService.applyStorage(this.storageObject);
         this.initializeReservationForm();
