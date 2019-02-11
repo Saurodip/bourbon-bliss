@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, OnDestroy, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Option, Month, MonthInfo } from '../../../booking.model';
+import { Option } from '../../../booking.model';
+import { Coupon } from '../../../../offers/offers.model';
 import { ModalComponent } from '../../../../shared/components/utilities/modal/modal.component';
 import { CustomValidatorsService } from '../../../../shared/validators/custom-validators.service';
 import { SharedService } from '../../../../shared/shared.service';
-import { Coupon } from 'src/app/offers/offers.model';
 
 @Component({
     selector: 'app-coupon',
@@ -21,6 +21,16 @@ export class CouponComponent implements OnInit, OnDestroy {
     public modalObject: object;
     public couponForm: FormGroup;
 
+    @Input() set selectedCoupon(value: Coupon) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
+            this.selectedItem = value;
+            this.storageObject = { action: 'set', variable: 'SelectedCoupon', value: this.selectedItem };
+            this.sharedService.applyStorage(this.storageObject);
+        } else {
+            this.storageObject = { action: 'get', variable: 'SelectedCoupon' };
+            this.selectedItem = this.sharedService.applyStorage(this.storageObject);
+        }
+    }
     @Input() set content(value: Array<Option>) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.couponContent = value;
@@ -30,16 +40,8 @@ export class CouponComponent implements OnInit, OnDestroy {
         }
         this.initializeCouponForm();
     }
-    @Input() set selectedCoupon(value: Coupon) {
-        if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.selectedItem = value;
-            this.storageObject = { action: 'set', variable: 'SelectedItem', value: this.selectedItem };
-            this.sharedService.applyStorage(this.storageObject);
-        } else {
-            this.storageObject = { action: 'get', variable: 'SelectedItem' };
-            this.selectedItem = this.sharedService.applyStorage(this.storageObject);
-        }
-    }
+    @Input() routedFrom: string;
+    @Input() gridColumnClass: string;
     @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
@@ -85,6 +87,7 @@ export class CouponComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        this.sharedService.removeStorage('SelectedCoupon');
         this.sharedService.removeStorage('UserDetails');
     }
 }

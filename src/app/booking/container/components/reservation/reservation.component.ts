@@ -29,11 +29,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
     public isModalVisible: boolean;
     public modalObject: object;
 
-    @Input() set countryList(value: CountryList) {
-        if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.listOfCountries = value.list;
-        }
-    }
     @Input() set selectedOption(value: Availability) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
             this.selectedItem = value;
@@ -53,6 +48,13 @@ export class ReservationComponent implements OnInit, OnDestroy {
             this.getCalculatedPriceList();
         }
     }
+    @Input() set countryList(value: CountryList) {
+        if (value && Object.getOwnPropertyNames(value).length !== 0) {
+            this.listOfCountries = value.list;
+        }
+    }
+    @Input() routedFrom: string;
+    @Input() gridColumnClass: string;
     @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {

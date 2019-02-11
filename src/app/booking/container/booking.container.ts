@@ -23,6 +23,7 @@ export class BookingContainerComponent implements OnInit {
     public selectedCoupon: Coupon;
     public expiryMonth: Month;
     public navigationHistory: NavigationHistory;
+    private storageObject: object;
     public error: string;
 
     public bookingData$: Observable<Booking> = this.bookingService.getBookingData();
@@ -38,6 +39,7 @@ export class BookingContainerComponent implements OnInit {
         this.selectedCoupon = new Coupon();
         this.expiryMonth = new Month();
         this.navigationHistory = new NavigationHistory();
+        this.storageObject = { action: '', variable: '', value: null };
         this.error = '';
     }
 
@@ -87,7 +89,13 @@ export class BookingContainerComponent implements OnInit {
     private getNavigationHistory(): void {
         this.sharedService.getRouteUrl();
         this.appService.navigationSharedData$.subscribe(
-            (data) => this.navigationHistory = { ...data },
+            (data) => {
+                this.navigationHistory = { ...data };
+                if (!this.navigationHistory.previousMenu) {
+                    this.storageObject = { action: 'get', variable: 'PreviousRoute' };
+                    this.navigationHistory.previousMenu = this.sharedService.applyStorage(this.storageObject);
+                }
+            },
             (error) => this.error = error
         );
     }

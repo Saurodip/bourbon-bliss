@@ -1,3 +1,19 @@
+.panel-wrapper {
+    padding: 45px 70px 25px;
+    .check-rates {
+        div {
+            &:first-child {
+                margin-top: 20px;
+            }
+            input[type="radio"] {
+                position: relative;
+                right: 10px;
+                top: 2px;
+            }
+        }
+    }
+}
+
 .form-wrapper {
     padding: 0% 7%;
     .well {
@@ -177,6 +193,9 @@
 }
 
 @media (max-width: 767px) {
+    .panel-wrapper {
+        padding: 45px 9% 25px;
+    }
     .form-wrapper {
         padding: 0% 13%;
         .well {

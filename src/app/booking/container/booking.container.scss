@@ -29,31 +29,6 @@
             }
         }
     }
-    .panel-wrapper {
-        padding: 45px 70px 25px;
-        .purchase {
-            div {
-                font-size: 1.6rem;
-                margin-top: 15px;
-            }
-        }
-        .terms-and-condition {
-            font-size: 9px;
-            padding-bottom: 10px;
-            span {
-                .asterisk {
-                    color: red;
-                    font-size: 30px;
-                    position: relative;
-                    top: 14px;
-                    left: -5px;
-                }
-                b {
-                    font-size: 1.3em;
-                }
-            }
-        }
-    }
 }
 
 @media (max-width: 767px) {
@@ -71,9 +46,6 @@
                     width: 90%;
                 }
             }
-        }
-        .panel-wrapper {
-            padding: 45px 9% 25px;
         }
     }
 }

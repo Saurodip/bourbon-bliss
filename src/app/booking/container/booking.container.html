@@ -6,40 +6,10 @@
         </div>
         <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then reservationComponent else couponComponent"></ng-container>
         <ng-template #reservationComponent>
-            <div class="row panel-wrapper">
-                <div class="col-xs-12">
-                    <app-panel [template]="navigationHistory?.previousMenu" [gridClass]="gridColumnClass" [content]="selectedOption">
-                       <div class="row check-rates">
-                            <div class="col-xs-12">
-                                <input type="radio" name="price" value="{{ selectedOption?.description?.price[0]?.basePrice + ' / ' + selectedOption?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedOption?.description?.price[0]?.basis)">
-                                <span>{{ selectedOption?.description?.price[0]?.currency + ' ' + selectedOption?.description?.price[0]?.basePrice + ' / ' + selectedOption?.description?.price[0]?.basis }}</span>
-                            </div>
-                            <div class="col-xs-12">
-                                <input type="radio" name="price" value="{{ selectedOption?.description?.price[1]?.basePrice + ' / ' + selectedOption?.description?.price[1]?.basis }}" (change)="onSelectBookingBasis(selectedOption?.description?.price[1]?.basis)" checked>
-                                <span>{{ selectedOption?.description?.price[1]?.currency + ' ' + selectedOption?.description?.price[1]?.basePrice + ' / ' + selectedOption?.description?.price[1]?.basis }}</span>
-                            </div>
-                        </div>
-                    </app-panel>
-                </div>
-            </div>
-            <app-reservation [content]="(bookingData$ | async)?.reservationContent" [selectedOption]="selectedOption" [countryList]="countryList"></app-reservation>
+            <app-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.reservationContent"  [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-reservation>
         </ng-template>
         <ng-template #couponComponent>
-            <div class="row panel-wrapper">
-                <div class="col-xs-12">
-                    <app-panel [template]="navigationHistory?.previousMenu" [gridClass]="gridColumnClass" [content]="selectedCoupon">
-                        <div class="row purchase">
-                            <div class="col-xs-12">price: {{ selectedCoupon?.currency }} {{ selectedCoupon?.price }}</div>
-                        </div>
-                        <div class="row terms-and-condition">
-                            <small>
-                                <span><span class="asterisk">*</span>applicable for <b>{{ selectedCoupon?.type }}</b> section only</span>
-                            </small>
-                        </div>
-                    </app-panel>
-                </div>
-            </div>
-            <app-coupon [content]="(bookingData$ | async)?.couponContent" [selectedCoupon]="selectedCoupon"></app-coupon>
+            <app-coupon [selectedCoupon]="selectedCoupon" [content]="(bookingData$ | async)?.couponContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-coupon>
         </ng-template>
         <app-payment [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>
         <app-additional-info></app-additional-info>
