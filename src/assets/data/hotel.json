@@ -24,6 +24,7 @@
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/1.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-bed",
                 "heading": "master bed room grand",
                 "description": {
@@ -86,6 +87,7 @@
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/2.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-bed",
                 "heading": "Deluxe family room",
                 "description": {
@@ -148,6 +150,7 @@
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/3.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-bed",
                 "heading": "spacious superior room",
                 "description": {
@@ -210,6 +213,7 @@
             {
                 "type": "rooms",
                 "path": "../../assets/images/hotel/rooms/4.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-bed",
                 "heading": "business class room",
                 "description": {
@@ -272,6 +276,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/1.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-gem",
                 "heading": "superior executive suites",
                 "description": {
@@ -334,6 +339,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/2.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-gem",
                 "heading": "presidential suite",
                 "description": {
@@ -396,6 +402,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/3.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-gem",
                 "heading": "deluxe suite grand",
                 "description": {
@@ -458,6 +465,7 @@
             {
                 "type": "suites",
                 "path": "../../assets/images/hotel/suites/4.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-gem",
                 "heading": "Grand premier suites",
                 "description": {
@@ -520,6 +528,7 @@
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/1.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-umbrella-beach",
                 "heading": "master bed room grand",
                 "description": {
@@ -582,6 +591,7 @@
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/2.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-umbrella-beach",
                 "heading": "master bed room grand",
                 "description": {
@@ -644,6 +654,7 @@
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/3.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-umbrella-beach",
                 "heading": "master bed room grand",
                 "description": {
@@ -706,6 +717,7 @@
             {
                 "type": "sea view",
                 "path": "../../assets/images/hotel/sea-view/4.jpg",
+                "ribbon": "best offer",
                 "icon": "fas fa-umbrella-beach",
                 "heading": "master bed room grand",
                 "description": {

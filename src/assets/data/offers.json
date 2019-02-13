@@ -132,89 +132,135 @@
             },
             {
                 "type": "entertainment",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/paytm-movie-discount.jpg",
+                "icon": "fas fa-film",
+                "heading": "flat rs. 100 cashback on paytm",
+                "description": "book movie tickets using paytm and get instant cashback in your paytm wallet. this offer is valid for a limited period only.",
                 "currency": "rs.",
-                "price": 1000,
+                "price": 500,
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "payt0845"
                 },
                 "eligibility": [
                     {
-                        "key": "min. booking amount",
-                        "amount": 1000
+                        "key": "for booking on paytm.com and paytm app"
                     },
                     {
-                        "key": "max. amount can be availed",
-                        "amount": 1000
+                        "key": "amount credited within 24 hours"
                     }
                 ],
                 "duration": {
                     "key": "validity till",
-                    "date": ""
+                    "date": "20-03-2019"
                 }
             },
             {
                 "type": "entertainment",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/buy-one-get-one.jpg",
+                "icon": "fas fa-film",
+                "heading": "buy one get one offer",
+                "description": "buy any movie ticket using lakshmi vilas bank debit / credit card and get another ticket absolutely free.",
                 "currency": "rs.",
-                "price": 1000,
+                "price": 500,
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "buyg1764"
                 },
                 "eligibility": [
                     {
-                        "key": "min. booking amount",
-                        "amount": 1000
+                        "key": "min. booking amount: rs. 500"
                     },
                     {
-                        "key": "max. amount can be availed",
-                        "amount": 1000
+                        "key": "ticket should be collected at the theatre"
                     }
                 ],
                 "duration": {
                     "key": "validity till",
-                    "date": ""
+                    "date": "not applicable"
                 }
             },
             {
                 "type": "entertainment",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
+                "path": "../../assets/images/offers/icici-movie-discount.jpg",
+                "icon": "fas fa-film",
+                "heading": "free movie ticket on every moonth",
+                "description": "get upto 5 tickets of your favourite and latest movies on every month with icici bank debit card only.",
                 "currency": "rs.",
-                "price": 1000,
+                "price": 1500,
                 "discount": {
                     "type": "promo code",
-                    "code": ""
+                    "code": "icic4372"
                 },
                 "eligibility": [
                     {
-                        "key": "min. booking amount",
-                        "amount": 1000
+                        "key": "min. booking amount: rs. 1500"
                     },
                     {
-                        "key": "max. amount can be availed",
-                        "amount": 1000
+                        "key": "max. no. of booking: 5 per month"
                     }
                 ],
                 "duration": {
-                    "key": "validity till",
-                    "date": ""
+                    "key": "validity",
+                    "date": "1 month"
                 }
             },
             {
                 "type": "entertainment",
-                "path": "",
-                "icon": "",
+                "path": "../../assets/images/offers/last-minute-cancellation.jpg",
+                "icon": "fas fa-film",
+                "heading": "last minute cancellation",
+                "description": "last minute change in plans? rohini silver screens offer you movie ticket cancellation in association with bookmyshow.",
+                "currency": "rs.",
+                "price": 500,
+                "discount": {
+                    "type": "promo code",
+                    "code": "last2409"
+                },
+                "eligibility": [
+                    {
+                        "key": "applicable only for rohini screens"
+                    },
+                    {
+                        "key": "amount will be credited to bank account"
+                    }
+                ],
+                "duration": {
+                    "key": "validity",
+                    "date": "not applicable"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/zomato-discount.jpg",
+                "icon": "fas fa-utensils",
+                "heading": "flat 50% off on online booking",
+                "description": "zomato offers flat 50% discount on any food orders online exclusively for you. grab this offer immediately.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "zoma8742"
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 0
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 500
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "01-03-2019"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/last-minute-cancellation.jpg",
+                "icon": "fas fa-utensils",
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
@@ -240,8 +286,8 @@
             },
             {
                 "type": "restaurant",
-                "path": "",
-                "icon": "",
+                "path": "../../assets/images/offers/last-minute-cancellation.jpg",
+                "icon": "fas fa-utensils",
                 "heading": "",
                 "description": "",
                 "currency": "rs.",
@@ -267,62 +313,8 @@
             },
             {
                 "type": "restaurant",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "currency": "rs.",
-                "price": 1000,
-                "discount": {
-                    "type": "promo code",
-                    "code": ""
-                },
-                "eligibility": [
-                    {
-                        "key": "min. booking amount",
-                        "amount": 1000
-                    },
-                    {
-                        "key": "max. amount can be availed",
-                        "amount": 1000
-                    }
-                ],
-                "duration": {
-                    "key": "validity till",
-                    "date": ""
-                }
-            },
-            {
-                "type": "restaurant",
-                "path": "",
-                "icon": "",
-                "heading": "",
-                "description": "",
-                "currency": "rs.",
-                "price": 1000,
-                "discount": {
-                    "type": "promo code",
-                    "code": ""
-                },
-                "eligibility": [
-                    {
-                        "key": "min. booking amount",
-                        "amount": 1000
-                    },
-                    {
-                        "key": "max. amount can be availed",
-                        "amount": 1000
-                    }
-                ],
-                "duration": {
-                    "key": "validity till",
-                    "date": ""
-                }
-            },
-            {
-                "type": "restaurant",
-                "path": "",
-                "icon": "",
+                "path": "../../assets/images/offers/last-minute-cancellation.jpg",
+                "icon": "fas fa-utensils",
                 "heading": "",
                 "description": "",
                 "currency": "rs.",

@@ -33,6 +33,7 @@ export class UserAction {
 export class Availability {
     public type: string;
     public path: string;
+    public ribbon: string;
     public icon: string;
     public heading: string;
     public description: Details;
@@ -41,6 +42,7 @@ export class Availability {
     constructor() {
         this.type = '';
         this.path = '';
+        this.ribbon = '';
         this.icon = '';
         this.heading = '';
         this.description = new Details();

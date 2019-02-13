@@ -39,7 +39,7 @@ export class Coupon {
     public currency: string;
     public price: number;
     public discount: Discount;
-    public eligibility: Array<Eligibility>;
+    public eligibility: Array<Object>;
     public duration: Duration;
 
     constructor() {
@@ -63,16 +63,6 @@ export class Discount {
     constructor() {
         this.type = '';
         this.code = '';
-    }
-}
-
-export class Eligibility {
-    public key: string;
-    public amount: number;
-
-    constructor() {
-        this.key = '';
-        this.amount = 0;
     }
 }
 
