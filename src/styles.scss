@@ -1,6 +1,8 @@
 * {
     color: #696868;
     font-family: Raleway-Medium, Arial, Helvetica;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 html,
@@ -12,6 +14,11 @@ body {
     padding: 0px;
 }
 
+h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 input[type="date"],
 input[type="email"],
 input[type="number"],
@@ -21,8 +28,6 @@ select {
     border-radius: 0px !important;
     box-shadow: none !important;
     font-size: 11px !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
 }
 
 input[type="button"],
@@ -33,6 +38,9 @@ input[type="submit"] {
     color: #bbb8b8;
     font-size: 13px;
     margin: 0px 5px 15px;
-    padding: 9px 15px;
-    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+[title] {
+    text-transform: capitalize !important;
 }

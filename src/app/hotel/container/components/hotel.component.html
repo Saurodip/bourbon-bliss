@@ -1,32 +1,34 @@
-<div class="action-container">
-  <div class="row">
-    <div *ngIf="viewportWidth <= 767" class="col-xs-12">
-      <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{ hotelContent?.action[0]?.key }}">
-      <ul class="dropdown-menu">
-        <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
-          <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="viewportWidth > 767" class="col-md-9 filter-action">
-      <span>{{ hotelContent?.action[0]?.key }} :</span>
-      <label class="radio-inline" *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
-        <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
-      </label>
-    </div>
-    <div class="col-md-3 hidden-xs hidden-sm">
-      <span>{{ hotelContent?.action[1]?.key }}</span>
-      <i class="view-icon {{ hotelContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+<div class="hotel-container">
+  <div class="action-container">
+    <div class="row">
+      <div *ngIf="viewportWidth <= 767" class="col-xs-12">
+        <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{ hotelContent?.action[0]?.key }}">
+        <ul class="dropdown-menu">
+          <li *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
+            <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="viewportWidth > 767" class="col-md-9 filter-action">
+        <span>{{ hotelContent?.action[0]?.key }} :</span>
+        <label class="radio-inline" *ngFor="let item of hotelContent?.action[0]?.operations; let i = index">
+          <input type="radio" name="filter" [checked]="i === checkboxIndex" (change)="onApplyFilter(item, i)">{{ item }}
+        </label>
+      </div>
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <span>{{ hotelContent?.action[1]?.key }}</span>
+        <i class="view-icon {{ hotelContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+      </div>
     </div>
   </div>
-</div>
-<div class="availability-container">
-  <div class="row">
-    <div *ngFor="let item of availability; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '760px' : 'auto' }"
-      [ngClass]="gridRowClass" class="hotel-view">
-      <app-panel [template]="'hotel'" [gridClass]="gridColumnClass" [content]="item">
-        <input type="button" class="btn btn-default check-rates" value="check rates for booking !" (click)="onSelection(i)">
-      </app-panel>
+  <div class="availability-container">
+    <div class="row">
+      <div *ngFor="let item of availability; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '760px' : 'auto' }"
+        [ngClass]="gridRowClass" class="hotel-view">
+        <app-panel [template]="'hotel'" [gridClass]="gridColumnClass" [content]="item">
+          <input type="button" class="btn btn-default check-rates" value="check rates for booking !" (click)="onSelection(i)">
+        </app-panel>
+      </div>
     </div>
   </div>
 </div>

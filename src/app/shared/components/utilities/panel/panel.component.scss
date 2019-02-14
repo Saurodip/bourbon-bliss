@@ -8,9 +8,7 @@
     background-color: white;
     border-radius: 10px;
     font-size: 12px;
-    letter-spacing: 1px;
     margin: 0px 1rem;
-    text-transform: uppercase;
     div {
         padding: 0px;
         position: relative;
@@ -29,6 +27,7 @@
                 left: -32px;
                 padding: 0.5rem;
                 position: absolute;
+                text-transform: uppercase;
                 top: 30px;
                 transform: rotate(-45deg);
                 width: 100%;
@@ -89,7 +88,7 @@
             font-size: 20px;
         }
         small {
-            font-size: 8px;
+            font-size: 10px;
         }
     }
     small {
@@ -107,7 +106,7 @@
         margin-bottom: 0px;
         padding-left: 2.2em;
         li {
-            font-size: 10px;
+            font-size: 11px;
             list-style-type: none;
             padding-bottom: 5px;
             text-align: left;

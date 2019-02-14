@@ -23,40 +23,37 @@
         .navbar-brand {
             float: none;
         }
-        .navbar-header {
-            button {
-                position: absolute;
-                right: 25px;
-                top: 2px;
-            }
-        }
         .navbar-brand {
-            height: 50px;
-            padding-top: 10px;
+            height: 40px;
+            padding: 0px;
             text-align: center;
-            text-transform: uppercase;
             h4 {
                 font-family: Times New Roman;
                 letter-spacing: 2px;
-                margin-bottom: 0px;
-                margin-top: 2px;
+                margin: 15px 0px 0px;
+                text-transform: uppercase;
             }
             small {
                 font-size: 11px;
                 letter-spacing: 3px;
+                text-transform: uppercase;
             }
         }
         #navigation {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
             .sub-row {
                 border-bottom: 1px solid #ccc;
                 padding-bottom: 8px;
                 small {
                     cursor: pointer;
                     font-size: 9px;
-                    letter-spacing: 3px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    &.dropdown-toggle {
+                        i.caret {
+                            bottom: 2px;
+                            position: relative;
+                        }
+                    }
                 }
             }
             .service-container {
@@ -64,11 +61,16 @@
             }
             ul.dropdown-menu {
                 border-radius: 0px;
+                left: 0px;
+                margin: 0px auto;
+                position: absolute;
+                right: 0px;
+                width: 175px;
                 li {
                     a {
                         color: gray;
                         font-size: 10px;
-                        letter-spacing: 1px;
+                        letter-spacing: 2px;
                         padding: 7px 20px;
                     }
                 }
@@ -86,7 +88,9 @@
                     @include transition(background-color, 0.5s, ease-in-out);
                     a {
                         font-size: 9px;
+                        letter-spacing: 2px;
                         text-align: center;
+                        text-transform: uppercase;
                     }
                     i {
                         display: block;
@@ -111,12 +115,19 @@
 @media (max-width: 767px) {
     #navigation-container {
         .navbar {
-            .navbar-brand {
-                margin-bottom: 10px;
+            .navbar-header {
+                button {
+                    position: absolute;
+                    right: 25px;
+                    top: 2px;
+                }
+                .navbar-brand {
+                    margin-bottom: 10px;
+                }
             }
             #navigation {
                 .sub-row {
-                    padding-top: 8px;
+                    padding: 5px 0px 10px;
                 }
                 .nav.navbar-nav {
                     display: block;
