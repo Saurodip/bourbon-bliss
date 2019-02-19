@@ -1,4 +1,4 @@
-<div class="row panel-container">
+<div class="row panel-container" [ngStyle]="{ 'margin': gridColumnClass.indexOf('vertical-view') !== -1 ? '0px 1rem' : '0px' }">
     <ng-container *ngIf="template === 'hotel'; then hotelTemplate else generalTemplate"></ng-container>
     <ng-template #hotelTemplate>
         <div [ngClass]="gridColumnClass">

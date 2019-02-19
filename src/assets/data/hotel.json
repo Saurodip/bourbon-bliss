@@ -7,8 +7,8 @@
                 "key": "filter by",
                 "operations": [
                     "view all",
-                    "rooms",
-                    "suites",
+                    "room",
+                    "suite",
                     "sea view"
                 ]
             },
@@ -22,7 +22,7 @@
         ],
         "availability": [
             {
-                "type": "rooms",
+                "type": "room",
                 "path": "../../assets/images/hotel/rooms/1.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-bed",
@@ -85,7 +85,7 @@
                 ]
             },
             {
-                "type": "rooms",
+                "type": "room",
                 "path": "../../assets/images/hotel/rooms/2.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-bed",
@@ -148,7 +148,7 @@
                 ]
             },
             {
-                "type": "rooms",
+                "type": "room",
                 "path": "../../assets/images/hotel/rooms/3.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-bed",
@@ -211,7 +211,7 @@
                 ]
             },
             {
-                "type": "rooms",
+                "type": "room",
                 "path": "../../assets/images/hotel/rooms/4.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-bed",
@@ -274,7 +274,7 @@
                 ]
             },
             {
-                "type": "suites",
+                "type": "suite",
                 "path": "../../assets/images/hotel/suites/1.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-gem",
@@ -337,7 +337,7 @@
                 ]
             },
             {
-                "type": "suites",
+                "type": "suite",
                 "path": "../../assets/images/hotel/suites/2.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-gem",
@@ -400,7 +400,7 @@
                 ]
             },
             {
-                "type": "suites",
+                "type": "suite",
                 "path": "../../assets/images/hotel/suites/3.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-gem",
@@ -463,7 +463,7 @@
                 ]
             },
             {
-                "type": "suites",
+                "type": "suite",
                 "path": "../../assets/images/hotel/suites/4.jpg",
                 "ribbon": "best offer",
                 "icon": "fas fa-gem",

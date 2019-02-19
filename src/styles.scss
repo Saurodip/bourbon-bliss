@@ -1,3 +1,5 @@
+$side-padding-landscape: 60px;
+$side-padding-potrait: 40px;
 * {
     color: #696868;
     font-family: Raleway-Medium, Arial, Helvetica;
@@ -15,8 +17,32 @@ body {
 }
 
 h1 {
+    background-color: #f1f1f1;
+    color: #696868;
+    font-family: Raleway-Regular, Arial, Helvetica;
+    font-size: 3em;
     font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 0px;
+    margin-top: 153px;
+    padding: 25px $side-padding-landscape;
     text-transform: uppercase;
+}
+
+.description {
+    background-color: white;
+    display: flex;
+    margin: 0px;
+    small {
+        font-size: 11px;
+        line-height: 2.2rem;
+        margin: 20px auto;
+        padding: 0px $side-padding-landscape;
+        text-align: center;
+        text-transform: capitalize;
+        width: 80%;
+    }
 }
 
 input[type="date"],
@@ -43,4 +69,20 @@ input[type="submit"] {
 
 [title] {
     text-transform: capitalize !important;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-top: 60px;
+        padding: 25px $side-padding-potrait;
+    }
+    .row {
+        small {
+            padding: 0px $side-padding-potrait;
+            text-align: justify;
+            width: 100%;
+        }
+    }
 }

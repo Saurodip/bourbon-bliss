@@ -1,7 +1,7 @@
 <div id="hotel">
     <div class="hotel-wrapper container-fluid">
         <h1>{{ (hotelData$ | async)?.heading }}</h1>
-        <div class="row">
+        <div class="row description">
             <small class="col-xs-12">{{ (hotelData$ | async)?.description }}</small>
         </div>
         <app-hotel [content]="(hotelData$ | async)?.content" (selectedOption)="getSelectedOption($event)"></app-hotel>

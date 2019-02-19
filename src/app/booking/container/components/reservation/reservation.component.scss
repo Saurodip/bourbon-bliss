@@ -1,171 +1,149 @@
-.panel-wrapper {
-    padding: 45px 70px 25px;
-    .check-rates {
-        div {
-            &:first-child {
-                margin-top: 20px;
-            }
-            input[type="radio"] {
-                position: relative;
-                right: 10px;
-                top: 2px;
+$side-padding-landscape: 60px;
+$side-padding-potrait: 40px;
+.booking-container {
+    padding: 25px $side-padding-landscape;
+    .panel-wrapper {
+        margin-top: 50px;
+        &>.col-xs-12 {
+            padding: 0px;
+            .check-rates {
+                margin: 20px 0px;
+                div {
+                    input[type="radio"] {
+                        position: relative;
+                        right: 10px;
+                        top: 2px;
+                    }
+                }
             }
         }
     }
-}
-
-.form-wrapper {
-    padding: 0% 7%;
-    .well {
-        background-color: white;
-        border-radius: 10px;
-        margin-top: 20px;
-        padding: 20px 30px;
-        text-transform: uppercase;
-        .reservation-request,
-        .additional-choice,
-        .price-list {
-            h4 {
-                border-bottom: 1px solid #ccc;
-                font-family: Raleway-Regular, Arial, Helvetica;
-                letter-spacing: 1px;
-                line-height: 1.5;
-                padding-bottom: 10px;
-                i {
-                    font-size: 2rem;
-                    margin-right: 10px;
-                }
-            }
-        }
-        .reservation-request {
-            .control-section {
-                padding: 0px 16px;
-                h6 {
+    .form-wrapper {
+        &>.col-xs-12 {
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px 30px;
+            text-transform: uppercase;
+            .reservation-request,
+            .additional-choice,
+            .price-list {
+                h4 {
+                    border-bottom: 1px solid #ccc;
                     font-family: Raleway-Regular, Arial, Helvetica;
                     letter-spacing: 1px;
-                    margin: 10px 0px;
-                    position: relative;
+                    line-height: 1.5;
+                    padding-bottom: 10px;
                     i {
-                        font-size: 1.2rem;
-                        margin-right: 6px;
-                    }
-                    .user-action {
-                        bottom: 0px;
-                        display: inline-block;
-                        position: absolute;
-                        right: 0px;
-                        span {
-                            cursor: pointer;
-                            font-size: 9px;
-                            i {
-                                font-size: 15px;
-                                position: relative;
-                                top: 2px;
-                            }
-                        }
-                        span:first-child {
-                            i {
-                                margin-right: 15px;
-                            }
-                        }
-                    }
-                    .disable-add-link,
-                    .disable-remove-link {
-                        color: lightgray;
-                        pointer-events: none;
-                        i {
-                            color: lightgray;
-                            pointer-events: none;
-                        }
-                    }
-                }
-                .form-group {
-                    height: 95px;
-                    margin-bottom: 10px;
-                    padding-right: 20px;
-                    label {
-                        bottom: 10px;
-                        font-size: 11px;
-                        font-weight: 500;
-                        letter-spacing: 1px;
-                        padding-top: 0px;
-                        position: relative;
-                        text-align: left;
-                        span {
-                            color: red;
-                            font-size: 3rem;
-                            position: relative;
-                            top: 10px;
-                        }
-                    }
-                    i {
-                        font-size: 1.2rem;
+                        font-size: 2rem;
                         margin-right: 10px;
                     }
-                    div.error {
-                        i.fas.fa-exclamation-circle {
-                            color: red;
-                        }
-                        span.error-message {
-                            color: red;
-                            font-size: 9px;
-                            letter-spacing: 1px;
-                            line-height: 0px;
-                        }
-                    }
                 }
             }
-        }
-        .additional-choice {
-            padding-left: 30px;
-            h4 {
-                margin-right: 15px;
-                margin-top: 25px;
-            }
-            .form-group {
-                margin-bottom: 5px;
-                .row {
-                    &.disabled {
-                        opacity: 0.5;
-                        pointer-events: none;
-                    }
-                    input[type="checkbox"] {
-                        cursor: pointer;
-                        display: inline-block;
-                        height: 14px;
-                        position: relative;
-                        top: 3px;
-                        width: 14px;
-                    }
-                    label {
-                        font-size: 11px;
-                        font-weight: 500;
+            .reservation-request {
+                .control-section {
+                    padding: 0px 16px;
+                    h6 {
+                        font-family: Raleway-Regular, Arial, Helvetica;
                         letter-spacing: 1px;
+                        margin: 10px 0px;
+                        position: relative;
+                        i {
+                            font-size: 1.2rem;
+                            margin-right: 6px;
+                        }
+                        .user-action {
+                            bottom: 0px;
+                            display: inline-block;
+                            position: absolute;
+                            right: 0px;
+                            span {
+                                cursor: pointer;
+                                font-size: 9px;
+                                i {
+                                    font-size: 15px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                            span:first-child {
+                                i {
+                                    margin-right: 15px;
+                                }
+                            }
+                        }
+                        .disable-add-link,
+                        .disable-remove-link {
+                            color: lightgray;
+                            pointer-events: none;
+                            i {
+                                color: lightgray;
+                                pointer-events: none;
+                            }
+                        }
                     }
-                    app-tooltip {
-                        ::ng-deep #tooltip-container {
-                            left: -102px;
-                            top: 35px;
+                    .form-group {
+                        height: 95px;
+                        margin-bottom: 10px;
+                        padding-right: 20px;
+                        label {
+                            bottom: 10px;
+                            font-size: 11px;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            padding-top: 0px;
+                            position: relative;
+                            text-align: left;
+                            span {
+                                color: red;
+                                font-size: 3rem;
+                                position: relative;
+                                top: 10px;
+                            }
+                        }
+                        i {
+                            font-size: 1.2rem;
+                            margin-right: 10px;
+                        }
+                        div.error {
+                            i.fas.fa-exclamation-circle {
+                                color: red;
+                            }
+                            span.error-message {
+                                color: red;
+                                font-size: 9px;
+                                letter-spacing: 1px;
+                                line-height: 0px;
+                            }
                         }
                     }
                 }
             }
-        }
-        .price-list {
-            padding-left: 30px;
-            h4 {
-                margin-right: 15px;
-                margin-top: 25px;
-            }
-            .form-group {
-                font-size: 11px;
-                font-weight: 500;
-                letter-spacing: 1px;
-                .row {
-                    div {
-                        i {
-                            font-size: 1.4rem;
-                            margin-right: 15px;
+            .additional-choice {
+                padding-left: 30px;
+                h4 {
+                    margin-right: 15px;
+                    margin-top: 25px;
+                }
+                .form-group {
+                    margin-bottom: 5px;
+                    .row {
+                        &.disabled {
+                            opacity: 0.5;
+                            pointer-events: none;
+                        }
+                        input[type="checkbox"] {
+                            cursor: pointer;
+                            display: inline-block;
+                            height: 14px;
+                            position: relative;
+                            top: 3px;
+                            width: 14px;
+                        }
+                        label {
+                            font-size: 11px;
+                            font-weight: 500;
+                            letter-spacing: 1px;
                         }
                         app-tooltip {
                             ::ng-deep #tooltip-container {
@@ -174,105 +152,128 @@
                             }
                         }
                     }
-                    div:nth-child(2) {
-                        font-size: 1.2rem;
-                        &.highlighted {
-                            bottom: 6px;
-                            font-size: 2rem;
-                            font-weight: bold;
-                            position: relative;
+                }
+            }
+            .price-list {
+                padding-left: 30px;
+                h4 {
+                    margin-right: 15px;
+                    margin-top: 25px;
+                }
+                .form-group {
+                    font-size: 11px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    .row {
+                        div {
+                            i {
+                                font-size: 1.4rem;
+                                margin-right: 15px;
+                            }
+                            app-tooltip {
+                                ::ng-deep #tooltip-container {
+                                    left: -102px;
+                                    top: 35px;
+                                }
+                            }
+                        }
+                        div:nth-child(2) {
+                            font-size: 1.2rem;
+                            &.highlighted {
+                                bottom: 6px;
+                                font-size: 2rem;
+                                font-weight: bold;
+                                position: relative;
+                            }
                         }
                     }
                 }
             }
-        }
-        .button-container {
-            margin: 15px 0px 10px;
-            text-align: center;
+            .button-container {
+                margin: 15px 0px 10px;
+                text-align: center;
+            }
         }
     }
 }
 
 @media (max-width: 767px) {
-    .panel-wrapper {
-        padding: 45px 9% 25px;
-    }
-    .form-wrapper {
-        padding: 0% 16%;
-        .well {
+    .booking-container {
+        padding: 25px $side-padding-potrait;
+        .panel-wrapper {
+            margin-top: 30px;
+        }
+        .form-wrapper {
             padding: 25px;
-            .reservation-request,
-            .additional-choice,
-            .price-list {
-                h4 {
-                    font-size: 1.5rem;
+            .well {
+                padding: 25px;
+                .reservation-request,
+                .additional-choice,
+                .price-list {
+                    h4 {
+                        font-size: 1.5rem;
+                    }
+                    .control-section {
+                        h6 {
+                            margin: 20px 0px 0px;
+                            .user-action {
+                                top: 25px;
+                            }
+                            &.guest-info {
+                                margin-bottom: 35px;
+                            }
+                        }
+                        .form-group {
+                            margin-bottom: 0px;
+                            padding-right: 0px;
+                            label {
+                                bottom: 0px;
+                                font-size: 10px;
+                                position: relative;
+                            }
+                        }
+                    }
                 }
-                .control-section {
-                    h6 {
-                        margin: 20px 0px 0px;
-                        .user-action {
-                            top: 25px;
+                .additional-choice {
+                    .form-group {
+                        margin-bottom: 20px;
+                        text-align: center;
+                        app-tooltip {
+                            ::ng-deep #tooltip-container {
+                                left: 0px !important;
+                                right: 0px !important;
+                            }
                         }
-                        &.guest-info {
-                            margin-bottom: 35px;
-                        }
+                    }
+                }
+                .price-list {
+                    h4 {
+                        margin-top: 25px;
                     }
                     .form-group {
-                        margin-bottom: 0px;
-                        padding-right: 0px;
-                        label {
-                            bottom: 0px;
-                            font-size: 10px;
-                            position: relative;
-                        }
-                    }
-                }
-            }
-            .additional-choice {
-                .form-group {
-                    margin-bottom: 20px;
-                    text-align: center;
-                    app-tooltip {
-                        ::ng-deep #tooltip-container {
-                            left: 0px !important;
-                            right: 0px !important;
-                        }
-                    }
-                }
-            }
-            .price-list {
-                h4 {
-                    margin-top: 25px;
-                }
-                .form-group {
-                    text-align: center;
-                    .row {
-                        margin-bottom: 7px;
-                        div {
-                            i {
-                                margin: 5px 0px;
-                            }
-                            app-tooltip {
-                                ::ng-deep #tooltip-container {
-                                    left: 0px !important;
-                                    right: 0px !important;
+                        text-align: center;
+                        .row {
+                            margin-bottom: 7px;
+                            div {
+                                i {
+                                    margin: 5px 0px;
+                                }
+                                app-tooltip {
+                                    ::ng-deep #tooltip-container {
+                                        left: 0px !important;
+                                        right: 0px !important;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            input[type="date"],
-            input[type="number"] {
-                margin-bottom: 5px;
+                input[type="date"],
+                input[type="number"] {
+                    margin-bottom: 5px;
+                }
             }
         }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .form-wrapper {
-        padding: 0% 11%;
     }
 }
 

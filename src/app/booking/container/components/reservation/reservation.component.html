@@ -1,111 +1,140 @@
-<div class="row panel-wrapper">
-    <div class="col-xs-12">
-        <app-panel [template]="routedFrom" [gridClass]="gridColumnClass" [content]="selectedItem">
-            <div class="row check-rates">
-                <div class="col-xs-12">
-                    <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[0]?.basis)">
-                    <span>{{ selectedItem?.description?.price[0]?.currency + ' ' + selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
+<div class="booking-container">
+    <div class="row panel-wrapper">
+        <div class="col-xs-12">
+            <app-panel [template]="routedFrom" [gridClass]="gridColumnClass" [content]="selectedItem">
+                <div class="row check-rates">
+                    <div class="col-xs-12">
+                        <h5>hotel {{ selectedItem?.type }} price details</h5>
+                    </div>
+                    <div class="col-xs-12">
+                        <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[0]?.basis)">
+                        <span>{{ selectedItem?.description?.price[0]?.currency + ' ' + selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[1]?.basis)" checked>
+                        <span>{{ selectedItem?.description?.price[1]?.currency + ' ' + selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
+                    </div>
                 </div>
-                <div class="col-xs-12">
-                    <input type="radio" name="price" value="{{ selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[1]?.basis)" checked>
-                    <span>{{ selectedItem?.description?.price[1]?.currency + ' ' + selectedItem?.description?.price[1]?.basePrice + ' / ' + selectedItem?.description?.price[1]?.basis }}</span>
-                </div>
-            </div>
-        </app-panel>
+            </app-panel>
+        </div>
     </div>
-</div>
-<div class="row form-wrapper">
-    <div class="col-xs-12 well">
-        <form [formGroup]="reservationForm" class="form-horizontal">
-            <div class="row">
-                <div class="col-xs-12 reservation-request">
-                    <h4><i class="{{ reservationContent[0]?.heading?.icon }}"></i> {{ reservationContent[0]?.heading?.text }}</h4>
-                    <ng-container *ngFor="let item of reservationContent[0]?.options; let i = index">
-                        <ng-container *ngIf="item.array">
-                            <div formArrayName="{{ item.array }}" *ngFor="let control of reservationForm.get(item.array)?.controls; let j = index">
-                                <div class="form-group control-section row" formGroupName="{{ j }}">
-                                    <h6 *ngIf="j === 0" class="guest-info">
-                                        <i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}
-                                        <div *ngIf="item.array === 'guestInformation'" class="user-action">
-                                            <span (click)="addOrRemoveGuest('add')" [ngClass]="{ 'disable-add-link': reservationForm.get('guestInformation')?.controls.length === maxAccomodationCount }">add guest <i class="fas fa-plus-circle"></i></span>
-                                            <span (click)="addOrRemoveGuest('remove')" [ngClass]="{ 'disable-remove-link': reservationForm.get('guestInformation')?.controls.length === minValueForRemoveGuestInfo }">remove guest <i class="fas fa-minus-circle"></i></span>
-                                        </div>
-                                    </h6>
-                                    <div class="col-xs-12 col-sm-4" *ngFor="let field of item.fields; let k = index">
-                                        <div class="form-group">
-                                            <label for="{{ field.id }}" class="control-label">
-                                                <i class="{{ field.icon }}"></i> {{ field.label }}
-                                                <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
-                                            </label>
-                                            <div class="field-control">
-                                                <ng-container *ngIf="field.type !== 'select'">
-                                                    <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
-                                                </ng-container>
-                                                <ng-container *ngIf="field.type === 'select'">
-                                                    <select class="form-control" formControlName="{{ field.control }}">
-                                                        <option value="none">Select an option</option>
-                                                        <option *ngFor="let country of listOfCountries; let l = index" value="country.code">{{ country.name }}</option>
-                                                    </select>
-                                                </ng-container>
-                                                <div *ngIf="control.controls[field.control]?.touched && control.controls[field.control]?.invalid" class="error">
-                                                    <i class="fas fa-exclamation-circle"></i>
-                                                    <span class="error-message">please provide valid {{ field.label }}.</span>
+    <div class="row form-wrapper">
+        <div class="col-xs-12">
+            <form [formGroup]="reservationForm" class="form-horizontal">
+                <div class="row">
+                    <div class="col-xs-12 reservation-request">
+                        <h4><i class="{{ reservationContent[0]?.heading?.icon }}"></i> {{ reservationContent[0]?.heading?.text }}</h4>
+                        <ng-container *ngFor="let item of reservationContent[0]?.options; let i = index">
+                            <ng-container *ngIf="item.array">
+                                <div formArrayName="{{ item.array }}" *ngFor="let control of reservationForm.get(item.array)?.controls; let j = index">
+                                    <div class="form-group control-section row" formGroupName="{{ j }}">
+                                        <h6 *ngIf="j === 0" class="guest-info">
+                                            <i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}
+                                            <div *ngIf="item.array === 'guestInformation'" class="user-action">
+                                                <span (click)="addOrRemoveGuest('add')" [ngClass]="{ 'disable-add-link': reservationForm.get('guestInformation')?.controls.length === maxAccomodationCount }">add guest <i class="fas fa-plus-circle"></i></span>
+                                                <span (click)="addOrRemoveGuest('remove')" [ngClass]="{ 'disable-remove-link': reservationForm.get('guestInformation')?.controls.length === minValueForRemoveGuestInfo }">remove guest <i class="fas fa-minus-circle"></i></span>
+                                            </div>
+                                        </h6>
+                                        <div class="col-xs-12 col-sm-4" *ngFor="let field of item.fields; let k = index">
+                                            <div class="form-group">
+                                                <label for="{{ field.id }}" class="control-label">
+                                                    <i class="{{ field.icon }}"></i> {{ field.label }}
+                                                    <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
+                                                </label>
+                                                <div class="field-control">
+                                                    <ng-container *ngIf="field.type !== 'select'">
+                                                        <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
+                                                    </ng-container>
+                                                    <ng-container *ngIf="field.type === 'select'">
+                                                        <select class="form-control" formControlName="{{ field.control }}">
+                                                            <option value="none">Select an option</option>
+                                                            <option *ngFor="let country of listOfCountries; let l = index" value="country.code">{{ country.name }}</option>
+                                                        </select>
+                                                    </ng-container>
+                                                    <div *ngIf="control.controls[field.control]?.touched && control.controls[field.control]?.invalid" class="error">
+                                                        <i class="fas fa-exclamation-circle"></i>
+                                                        <span class="error-message">please provide valid {{ field.label }}.</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </ng-container>
+                            <ng-container [ngTemplateOutlet]="!item.array ? formContent : ''" [ngTemplateOutletContext]="{ item: item }"></ng-container>
                         </ng-container>
-                        <ng-container [ngTemplateOutlet]="!item.array ? formContent : ''" [ngTemplateOutletContext]="{ item: item }"></ng-container>
-                    </ng-container>
-                    <ng-template #formContent let-item='item'>
-                        <div class="form-group control-section row" formGroupName="{{ item.group }}">
-                            <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
-                            <div class="col-xs-12 col-sm-4" *ngFor="let field of item.fields; let j = index">
-                                <div class="form-group">
-                                    <label for="{{ field.id }}" class="control-label">
-                                        <i class="{{ field.icon }}"></i> {{ field.label }}
-                                        <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
-                                    </label>
-                                    <div class="field-control">
-                                        <ng-container *ngIf="field.type !== 'select'">
-                                            <input type="{{ field.type }}" id="{{ field.id }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
-                                        </ng-container>
-                                        <ng-container *ngIf="field.type === 'select'">
-                                            <select *ngIf="field.control === 'country'" class="form-control" formControlName="{{ field.control }}">
-                                                <option value="none">Select an option</option>
-                                                <option *ngFor="let country of listOfCountries; let j = index" value="{{ country.code }}">{{ country.name }}</option>
-                                            </select>
-                                        </ng-container>
-                                        <div *ngIf="reservationForm?.controls[item.group]?.controls[field.control]?.touched && reservationForm?.controls[item.group]?.controls[field.control]?.invalid" class="error">
-                                            <i class="fas fa-exclamation-circle"></i>
-                                            <span class="error-message">please provide valid {{ field.label }}.</span>
+                        <ng-template #formContent let-item='item'>
+                            <div class="form-group control-section row" formGroupName="{{ item.group }}">
+                                <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
+                                <div class="col-xs-12 col-sm-4" *ngFor="let field of item.fields; let j = index">
+                                    <div class="form-group">
+                                        <label for="{{ field.id }}" class="control-label">
+                                            <i class="{{ field.icon }}"></i> {{ field.label }}
+                                            <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
+                                        </label>
+                                        <div class="field-control">
+                                            <ng-container *ngIf="field.type !== 'select'">
+                                                <input type="{{ field.type }}" id="{{ field.id }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
+                                            </ng-container>
+                                            <ng-container *ngIf="field.type === 'select'">
+                                                <select *ngIf="field.control === 'country'" class="form-control" formControlName="{{ field.control }}">
+                                                    <option value="none">Select an option</option>
+                                                    <option *ngFor="let country of listOfCountries; let j = index" value="{{ country.code }}">{{ country.name }}</option>
+                                                </select>
+                                            </ng-container>
+                                            <div *ngIf="reservationForm?.controls[item.group]?.controls[field.control]?.touched && reservationForm?.controls[item.group]?.controls[field.control]?.invalid" class="error">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                                <span class="error-message">please provide valid {{ field.label }}.</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </ng-template>
+                        </ng-template>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-lg-5 additional-choice">
-                    <div class="row">
-                        <h4><i class="{{ reservationContent[1]?.heading?.icon }}"></i> {{ reservationContent[1]?.heading?.text }}</h4>
-                        <ng-container *ngFor="let item of reservationContent[1]?.options; let i = index">
-                            <div formGroupName="{{ item.group }}">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-5 additional-choice">
+                        <div class="row">
+                            <h4><i class="{{ reservationContent[1]?.heading?.icon }}"></i> {{ reservationContent[1]?.heading?.text }}</h4>
+                            <ng-container *ngFor="let item of reservationContent[1]?.options; let i = index">
+                                <div formGroupName="{{ item.group }}">
+                                    <ng-container *ngFor="let field of item.fields; let j = index">
+                                        <div class="col-xs-12 form-group">
+                                            <div class="row" [ngClass]="{ 'disabled': field.disabled }">
+                                                <div class="col-xs-12 col-sm-1">
+                                                    <input type="checkbox" class="form-control" formControlName="{{ field.control }}" (change)="onSelectAdditionalService()">
+                                                </div>
+                                                <div class="col-xs-12 col-sm-10">
+                                                    <label for="{{ field.id }}" class="control-label">{{ field.label }}</label>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-1">
+                                                    <i class="fas fa-info-circle" appTooltip [templateRef]="tooltipTemplate">
+                                                        <ng-template #tooltipTemplate>
+                                                            <app-tooltip [content]="field.tooltip" [direction]="'up'"></app-tooltip>
+                                                        </ng-template>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 col-lg-offset-1 price-list">
+                        <div class="row">
+                            <h4><i class="{{ reservationContent[2]?.heading?.icon }}"></i> {{ reservationContent[2]?.heading?.text }}</h4>
+                            <ng-container *ngFor="let item of reservationContent[2]?.options; let i = index">
                                 <ng-container *ngFor="let field of item.fields; let j = index">
                                     <div class="col-xs-12 form-group">
-                                        <div class="row" [ngClass]="{ 'disabled': field.disabled }">
-                                            <div class="col-xs-12 col-sm-1">
-                                                <input type="checkbox" class="form-control" formControlName="{{ field.control }}" (change)="onSelectAdditionalService()">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8" id="{{ field.id }}">
+                                                <i *ngIf="viewportWidth >= 768" class="{{ field.icon }}"></i> {{ field.label }}
                                             </div>
-                                            <div class="col-xs-12 col-sm-10">
-                                                <label for="{{ field.id }}" class="control-label">{{ field.label }}</label>
-                                            </div>
+                                            <div class="col-xs-12 col-sm-3" [ngClass]="{ 'highlighted': field.control === 'totalAmount' }">{{ field.currency + ' ' + field.value }}</div>
                                             <div class="col-xs-12 col-sm-1">
-                                                <i class="fas fa-info-circle" appTooltip [templateRef]="tooltipTemplate">
+                                                <i *ngIf="field.label !== 'total amount'" class="fas fa-info-circle" appTooltip [templateRef]="tooltipTemplate">
                                                     <ng-template #tooltipTemplate>
                                                         <app-tooltip [content]="field.tooltip" [direction]="'up'"></app-tooltip>
                                                     </ng-template>
@@ -114,40 +143,16 @@
                                         </div>
                                     </div>
                                 </ng-container>
-                            </div>
-                        </ng-container>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-lg-6 col-lg-offset-1 price-list">
-                    <div class="row">
-                        <h4><i class="{{ reservationContent[2]?.heading?.icon }}"></i> {{ reservationContent[2]?.heading?.text }}</h4>
-                        <ng-container *ngFor="let item of reservationContent[2]?.options; let i = index">
-                            <ng-container *ngFor="let field of item.fields; let j = index">
-                                <div class="col-xs-12 form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-8" id="{{ field.id }}">
-                                            <i *ngIf="viewportWidth >= 768" class="{{ field.icon }}"></i> {{ field.label }}
-                                        </div>
-                                        <div class="col-xs-12 col-sm-3" [ngClass]="{ 'highlighted': field.control === 'totalAmount' }">{{ field.currency + ' ' + field.value }}</div>
-                                        <div class="col-xs-12 col-sm-1">
-                                            <i *ngIf="field.label !== 'total amount'" class="fas fa-info-circle" appTooltip [templateRef]="tooltipTemplate">
-                                                <ng-template #tooltipTemplate>
-                                                    <app-tooltip [content]="field.tooltip" [direction]="'up'"></app-tooltip>
-                                                </ng-template>
-                                            </i>
-                                        </div>
-                                    </div>
-                                </div>
                             </ng-container>
-                        </ng-container>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 button-container">
+                        <input type="button" class="btn btn-default" value="reset" (click)="resetReservationForm()">
+                        <input type="button" class="btn btn-default" value="save" [disabled]="reservationForm.invalid" (click)="onSubmitReservationForm(reservationForm.value)">
                     </div>
                 </div>
-                <div class="col-xs-12 button-container">
-                    <input type="button" class="btn btn-default" value="reset" (click)="resetReservationForm()">
-                    <input type="button" class="btn btn-default" value="save" [disabled]="reservationForm.invalid" (click)="onSubmitReservationForm(reservationForm.value)">
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+    <app-modal [content]="modalObject"></app-modal>
 </div>
-<app-modal [content]="modalObject"></app-modal>
