@@ -2,8 +2,12 @@ $side-padding-landscape: 60px;
 $side-padding-potrait: 40px;
 .booking-container {
     padding: 25px $side-padding-landscape;
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
     .panel-wrapper {
-        margin-top: 50px;
+        margin: 40px 0px 30px;
         &>.col-xs-12 {
             padding: 0px;
             .check-rates {
@@ -22,15 +26,12 @@ $side-padding-potrait: 40px;
         &>.col-xs-12 {
             background-color: white;
             border-radius: 10px;
-            margin-top: 20px;
-            padding: 20px 30px;
-            text-transform: uppercase;
+            padding: 20px;
             .reservation-request,
             .additional-choice,
             .price-list {
                 h4 {
                     border-bottom: 1px solid #ccc;
-                    font-family: Raleway-Regular, Arial, Helvetica;
                     letter-spacing: 1px;
                     line-height: 1.5;
                     padding-bottom: 10px;
@@ -42,9 +43,7 @@ $side-padding-potrait: 40px;
             }
             .reservation-request {
                 .control-section {
-                    padding: 0px 16px;
                     h6 {
-                        font-family: Raleway-Regular, Arial, Helvetica;
                         letter-spacing: 1px;
                         margin: 10px 0px;
                         position: relative;
@@ -59,7 +58,7 @@ $side-padding-potrait: 40px;
                             right: 0px;
                             span {
                                 cursor: pointer;
-                                font-size: 9px;
+                                font-size: 10px;
                                 i {
                                     font-size: 15px;
                                     position: relative;
@@ -84,20 +83,16 @@ $side-padding-potrait: 40px;
                     }
                     .form-group {
                         height: 95px;
-                        margin-bottom: 10px;
-                        padding-right: 20px;
+                        padding: 0px 5px;
                         label {
-                            bottom: 10px;
+                            bottom: 5px;
                             font-size: 11px;
                             font-weight: 500;
                             letter-spacing: 1px;
                             padding-top: 0px;
                             position: relative;
                             text-align: left;
-                            span {
-                                color: red;
-                                font-size: 3rem;
-                                position: relative;
+                            .asterisk {
                                 top: 10px;
                             }
                         }
@@ -105,26 +100,26 @@ $side-padding-potrait: 40px;
                             font-size: 1.2rem;
                             margin-right: 10px;
                         }
-                        div.error {
-                            i.fas.fa-exclamation-circle {
-                                color: red;
-                            }
-                            span.error-message {
-                                color: red;
-                                font-size: 9px;
-                                letter-spacing: 1px;
-                                line-height: 0px;
-                            }
+                    }
+                }
+            }
+            .additional-choice,
+            .price-list {
+                margin-top: 25px;
+                .form-group {
+                    padding: 0px;
+                    i.fas.fa-info-circle {
+                        font-size: 1.2rem;
+                    }
+                    app-tooltip {
+                        ::ng-deep #tooltip-container {
+                            left: -104px;
+                            top: 35px;
                         }
                     }
                 }
             }
             .additional-choice {
-                padding-left: 30px;
-                h4 {
-                    margin-right: 15px;
-                    margin-top: 25px;
-                }
                 .form-group {
                     margin-bottom: 5px;
                     .row {
@@ -145,37 +140,17 @@ $side-padding-potrait: 40px;
                             font-weight: 500;
                             letter-spacing: 1px;
                         }
-                        app-tooltip {
-                            ::ng-deep #tooltip-container {
-                                left: -102px;
-                                top: 35px;
-                            }
-                        }
                     }
                 }
             }
             .price-list {
-                padding-left: 30px;
-                h4 {
-                    margin-right: 15px;
-                    margin-top: 25px;
-                }
                 .form-group {
                     font-size: 11px;
                     font-weight: 500;
                     letter-spacing: 1px;
                     .row {
-                        div {
-                            i {
-                                font-size: 1.4rem;
-                                margin-right: 15px;
-                            }
-                            app-tooltip {
-                                ::ng-deep #tooltip-container {
-                                    left: -102px;
-                                    top: 35px;
-                                }
-                            }
+                        i.fas.fa-check {
+                            margin-right: 15px;
                         }
                         div:nth-child(2) {
                             font-size: 1.2rem;
@@ -200,85 +175,47 @@ $side-padding-potrait: 40px;
 @media (max-width: 767px) {
     .booking-container {
         padding: 25px $side-padding-potrait;
-        .panel-wrapper {
-            margin-top: 30px;
-        }
         .form-wrapper {
-            padding: 25px;
-            .well {
-                padding: 25px;
+            &>.col-xs-12 {
                 .reservation-request,
                 .additional-choice,
                 .price-list {
                     h4 {
-                        font-size: 1.5rem;
+                        font-size: 1.8rem;
                     }
                     .control-section {
-                        h6 {
-                            margin: 20px 0px 0px;
+                        h6.guest-info {
+                            margin-bottom: 45px;
                             .user-action {
-                                top: 25px;
-                            }
-                            &.guest-info {
-                                margin-bottom: 35px;
-                            }
-                        }
-                        .form-group {
-                            margin-bottom: 0px;
-                            padding-right: 0px;
-                            label {
-                                bottom: 0px;
-                                font-size: 10px;
-                                position: relative;
+                                top: 30px;
                             }
                         }
                     }
                 }
-                .additional-choice {
+                .additional-choice,
+                .price-list {
+                    margin-top: 10px;
                     .form-group {
-                        margin-bottom: 20px;
-                        text-align: center;
-                        app-tooltip {
-                            ::ng-deep #tooltip-container {
-                                left: 0px !important;
-                                right: 0px !important;
+                        margin-bottom: 15px;
+                        .col-xs-12 {
+                            text-align: center;
+                            app-tooltip {
+                                ::ng-deep #tooltip-container {
+                                    left: 0px !important;
+                                    right: 0px !important;
+                                }
                             }
                         }
                     }
                 }
                 .price-list {
-                    h4 {
-                        margin-top: 25px;
-                    }
                     .form-group {
-                        text-align: center;
-                        .row {
-                            margin-bottom: 7px;
-                            div {
-                                i {
-                                    margin: 5px 0px;
-                                }
-                                app-tooltip {
-                                    ::ng-deep #tooltip-container {
-                                        left: 0px !important;
-                                        right: 0px !important;
-                                    }
-                                }
-                            }
+                        .col-xs-12 {
+                            margin-bottom: 5px;
                         }
                     }
                 }
-                input[type="date"],
-                input[type="number"] {
-                    margin-bottom: 5px;
-                }
             }
         }
-    }
-}
-
-@media (max-width: 1199px) {
-    .price-list {
-        margin-top: 20px;
     }
 }

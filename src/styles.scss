@@ -19,7 +19,6 @@ body {
 h1 {
     background-color: #f1f1f1;
     color: #696868;
-    font-family: Raleway-Regular, Arial, Helvetica;
     font-size: 3em;
     font-weight: bold;
     letter-spacing: 2px;
@@ -69,6 +68,25 @@ input[type="submit"] {
 
 [title] {
     text-transform: capitalize !important;
+}
+
+.asterisk {
+    color: red;
+    font-size: 3rem;
+    position: relative;
+}
+
+.error {
+    margin-top: 2px;
+    i.fas.fa-exclamation-circle {
+        color: red;
+    }
+    span.error-message {
+        color: red;
+        font-size: 9px;
+        letter-spacing: 1px;
+        line-height: 0px;
+    }
 }
 
 @media (max-width: 767px) {
