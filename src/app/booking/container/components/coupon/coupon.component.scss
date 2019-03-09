@@ -1,124 +1,96 @@
-.panel-wrapper {
-    padding: 45px 70px 25px;
-    .purchase {
-        div {
-            font-size: 1.6rem;
-            margin-top: 15px;
-        }
+$side-padding-landscape: 60px;
+$side-padding-potrait: 40px;
+.booking-container {
+    padding: 25px $side-padding-landscape;
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
     }
-    .terms-and-condition {
-        font-size: 9px;
-        padding-bottom: 10px;
-        span {
-            .asterisk {
-                color: red;
-                font-size: 30px;
-                position: relative;
-                top: 14px;
-                left: -5px;
-            }
-            b {
-                font-size: 1.3em;
-            }
-        }
-    }
-}
-.form-wrapper {
-    padding: 0% 7%;
-    .well {
-        background-color: white;
-        border-radius: 10px;
-        margin-top: 20px;
-        padding: 20px 30px;
-        text-transform: uppercase;
-        .user-information {
-            h4 {
-                border-bottom: 1px solid #ccc;
-                font-family: Raleway-Regular, Arial, Helvetica;
-                letter-spacing: 1px;
-                padding-bottom: 10px;
-                i {
-                    font-size: 2rem;
-                    margin-right: 10px;
+    .panel-wrapper {
+        padding: 40px 0px 25px;
+        &>.col-xs-12 {
+            padding: 0px;
+            .purchase {
+                div {
+                    font-size: 1.6rem;
+                    margin-top: 15px;
                 }
             }
-            .control-section {
-                margin-bottom: 15px;
-                padding: 0px 16px;
-                h6 {
-                    font-family: Raleway-Regular, Arial, Helvetica;
+            .terms-and-condition {
+                display: block;
+                font-size: 10px;
+                padding: 0px 0px 10px;
+                text-align: center;
+                span {
+                    .asterisk {
+                        left: -3px;
+                        top: 10px;
+                    }
+                    b {
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+    .form-wrapper {
+        &>.col-xs-12 {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            .user-information {
+                h4 {
+                    border-bottom: 1px solid #ccc;
                     letter-spacing: 1px;
-                    margin: 10px 0px;
-                    position: relative;
+                    line-height: 1.5;
+                    padding-bottom: 10px;
                     i {
-                        font-size: 1.2rem;
-                        margin-right: 6px;
-                    }
-                }
-                .form-group {
-                    height: 95px;
-                    margin-bottom: 10px;
-                    padding-right: 20px;
-                    label {
-                        bottom: 10px;
-                        font-size: 11px;
-                        font-weight: 500;
-                        letter-spacing: 1px;
-                        padding-top: 0px;
-                        position: relative;
-                        text-align: left;
-                        span {
-                            color: red;
-                            font-size: 3rem;
-                            position: relative;
-                            top: 10px;
-                        }
-                    }
-                    i {
-                        font-size: 1.2rem;
+                        font-size: 2rem;
                         margin-right: 10px;
                     }
-                    div.error {
-                        i.fas.fa-exclamation-circle {
-                            color: red;
+                }
+                .control-section {
+                    h6 {
+                        letter-spacing: 1px;
+                        margin: 10px 0px;
+                        position: relative;
+                        i {
+                            font-size: 1.2rem;
+                            margin-right: 6px;
                         }
-                        span.error-message {
-                            color: red;
-                            font-size: 9px;
+                    }
+                    .form-group {
+                        height: 95px;
+                        padding: 0px 5PX;
+                        label {
+                            bottom: 5px;
+                            font-size: 11px;
+                            font-weight: 500;
                             letter-spacing: 1px;
-                            line-height: 0px;
+                            padding-top: 0px;
+                            position: relative;
+                            text-align: left;
+                            .asterisk {
+                                top: 10px;
+                            }
+                        }
+                        i {
+                            font-size: 1.2rem;
+                            margin-right: 10px;
                         }
                     }
                 }
-            }
-            .button-container {
-                margin: 10px 0px;
-                text-align: center;
+                .button-container {
+                    margin-top: 15px;
+                    text-align: center;
+                }
             }
         }
     }
 }
 
 @media (max-width: 767px) {
-    .panel-wrapper {
-        padding: 45px 9% 25px;
-    }
-    .form-wrapper {
-        padding: 0% 16%;
-        .well {
-            .user-information {
-                .control-section {
-                    h6 {
-                        margin-bottom: 35px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .form-wrapper {
-        padding: 0% 11%;
+    .booking-container {
+        padding: 25px $side-padding-potrait 0px;
     }
 }

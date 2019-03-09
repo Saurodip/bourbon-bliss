@@ -79,7 +79,7 @@ $side-padding-potrait: 40px;
 
 @media (max-width: 767px) {
     .booking-container {
-        padding: 25px $side-padding-potrait;
+        padding: 25px $side-padding-potrait 0px;
         .form-wrapper {
             &>.col-xs-12 {
                 .payment-information {
