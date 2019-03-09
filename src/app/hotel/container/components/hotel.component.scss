@@ -7,7 +7,7 @@ $side-padding-potrait: 40px;
 }
 
 .hotel-container {
-    padding: 25px $side-padding-landscape;
+    padding: 25px $side-padding-landscape 0px;
     .action-container {
         background-color: #f1f1f1;
         font-size: 12px;
@@ -62,7 +62,7 @@ $side-padding-potrait: 40px;
         }
     }
     .availability-container {
-        padding: 25px 0px;
+        padding: 25px 0px 0px;
         .row:first-child {
             margin: 0px;
             .hotel-view {
@@ -80,7 +80,7 @@ $side-padding-potrait: 40px;
 
 @media (max-width: 767px) {
     .hotel-container {
-        padding: 25px $side-padding-potrait;
+        padding: 25px $side-padding-potrait 0px;
         .action-container {
             .row:first-child {
                 text-align: center;

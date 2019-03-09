@@ -89,6 +89,15 @@ input[type="submit"] {
     }
 }
 
+.disabled {
+    color: lightgray;
+    pointer-events: none;
+    i {
+        color: lightgray;
+        pointer-events: none;
+    }
+}
+
 @media (max-width: 767px) {
     h1 {
         font-size: 2.5em;

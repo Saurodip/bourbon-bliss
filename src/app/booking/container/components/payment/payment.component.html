@@ -19,7 +19,7 @@
                                     <div class="form-group">
                                         <label for="{{ field.id }}" class="control-label">
                                             <i class="{{ field.icon }}"></i> {{ field.label }}
-                                            <span [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
+                                            <span class="asterisk" [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
                                         </label>
                                         <div class="field-control">
                                             <ng-container *ngIf="field.type !== 'select'">

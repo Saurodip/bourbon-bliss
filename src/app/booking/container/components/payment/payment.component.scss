@@ -1,7 +1,7 @@
 $side-padding-landscape: 60px;
 $side-padding-potrait: 40px;
 .booking-container {
-    padding: 0px $side-padding-landscape;
+    padding: 0px $side-padding-landscape 25px;
     .row {
         margin-left: 0px;
         margin-right: 0px;
@@ -23,8 +23,6 @@ $side-padding-potrait: 40px;
                     }
                 }
                 .control-section {
-                    margin-bottom: 15px;
-                    padding: 0px 0px 0px 16px;
                     h6 {
                         letter-spacing: 1px;
                         margin: 10px 0px;
@@ -37,42 +35,30 @@ $side-padding-potrait: 40px;
                             bottom: 0px;
                             display: inline-block;
                             position: absolute;
-                            right: 15px;
+                            right: 0px;
                             span {
                                 cursor: pointer;
-                                font-size: 9px;
+                                font-size: 10px;
                                 i {
                                     font-size: 15px;
-                                    left: 3px;
                                     position: relative;
                                     top: 2px;
-                                }
-                                &.disabled {
-                                    color: #ddd;
-                                    pointer-events: none;
-                                    i {
-                                        color: #ddd;
-                                    }
                                 }
                             }
                         }
                     }
                     .form-group {
                         height: 95px;
-                        margin-bottom: 10px;
-                        padding-right: 20px;
+                        padding: 0px 5px;
                         label {
-                            bottom: 10px;
+                            bottom: 5px;
                             font-size: 11px;
                             font-weight: 500;
                             letter-spacing: 1px;
                             padding-top: 0px;
                             position: relative;
                             text-align: left;
-                            span {
-                                color: red;
-                                font-size: 3rem;
-                                position: relative;
+                            .asterisk {
                                 top: 10px;
                             }
                         }
@@ -80,21 +66,10 @@ $side-padding-potrait: 40px;
                             font-size: 1.2rem;
                             margin-right: 10px;
                         }
-                        div.error {
-                            i.fas.fa-exclamation-circle {
-                                color: red;
-                            }
-                            span.error-message {
-                                color: red;
-                                font-size: 9px;
-                                letter-spacing: 1px;
-                                line-height: 0px;
-                            }
-                        }
                     }
                 }
                 .button-container {
-                    margin: 10px 0px;
+                    margin-top: 15px;
                     text-align: center;
                 }
             }
@@ -103,27 +78,21 @@ $side-padding-potrait: 40px;
 }
 
 @media (max-width: 767px) {
-    .form-wrapper {
-        padding: 0% 16%;
-        .well {
-            .payment-information {
-                .control-section {
-                    h6 {
-                        &.card-info {
-                            margin-bottom: 35px;
-                        }
-                        .user-action {
-                            top: 20px;
+    .booking-container {
+        padding: 25px $side-padding-potrait;
+        .form-wrapper {
+            &>.col-xs-12 {
+                .payment-information {
+                    .control-section {
+                        h6.card-info {
+                            margin-bottom: 45px;
+                            .user-action {
+                                top: 30px;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .form-wrapper {
-        padding: 0% 11%;
     }
 }
