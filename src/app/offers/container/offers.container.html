@@ -1,7 +1,7 @@
 <div id="offers">
-  <div class="offers-container container-fluid">
+  <div class="offers-wrapper container-fluid">
     <h1>{{ (offersData$ | async)?.heading }}</h1>
-    <div class="row">
+    <div class="row description">
       <small class="col-xs-12">{{ (offersData$ | async)?.description }}</small>
     </div>
     <app-offers [content]="(offersData$ | async)?.content" (selectedCoupon)="purchaseSelectedCoupon($event)"></app-offers>

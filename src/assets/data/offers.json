@@ -24,7 +24,7 @@
         "coupons": [
             {
                 "type": "hotel",
-                "path": "../../assets/images/offers/room-discount.jpg",
+                "path": "../../assets/images/offers/hotels/room-discount.jpg",
                 "icon": "fas fa-bed",
                 "heading": "flat 10% off on room booking",
                 "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
@@ -52,7 +52,7 @@
             },
             {
                 "type": "hotel",
-                "path": "../../assets/images/offers/suite-discount.jpg",
+                "path": "../../assets/images/offers/hotels/suite-discount.jpg",
                 "icon": "fas fa-gem",
                 "heading": "50% discount on executive suite",
                 "description": "now avail exclusive 50% off on all executive and deluxe suites across india only at bourbon bliss.",
@@ -80,7 +80,7 @@
             },
             {
                 "type": "hotel",
-                "path": "../../assets/images/offers/seaview-discount.jpg",
+                "path": "../../assets/images/offers/hotels/seaview-discount.jpg",
                 "icon": "fas fa-umbrella-beach",
                 "heading": "festive sale – upto 1500 off on seaview rooms",
                 "description": "get upto rs. 1500 off on seaview hotel rooms, holiday package booking across country.",
@@ -108,7 +108,7 @@
             },
             {
                 "type": "hotel",
-                "path": "../../assets/images/offers/last-minute-booking.jpg",
+                "path": "../../assets/images/offers/hotels/last-minute-booking.jpg",
                 "icon": "fas fa-clock",
                 "heading": "last minute deal – upto 30% off",
                 "description": "now you can save extra payment on last minute deals and get upto flat 30% off on hotel bookings.",
@@ -328,7 +328,7 @@
                 "path": "../../assets/images/offers/restaurant/coffee-discount.jpg",
                 "icon": "fas fa-utensils",
                 "heading": "free refreshment for weekdays",
-                "description": "now your good morning starts with a smooth brew. you will get a complimentary coffee cup along with your purchased products on breakfast time for whole week.",
+                "description": "now your good morning starts with a smooth brew. you will get a coffee cup along with your purchased products on breakfast time.",
                 "currency": "rs.",
                 "price": 800,
                 "discount": {
@@ -445,7 +445,7 @@
                 "path": "../../assets/images/offers/banquet-hall/white-petals.jpg",
                 "icon": "fas fa-vihara",
                 "heading": "25% off on booking white petals grand",
-                "description": "this grand venue is an ideal palace to host a luxurious wedding ceremony or reception night. superb interiors and lighting will make your dream come true.",
+                "description": "this grand venue is an ideal palace to host a luxurious wedding ceremony or reception. superb interiors will make your dream come true.",
                 "currency": "rs.",
                 "price": 75000,
                 "discount": {
