@@ -1,5 +1,4 @@
-$side-padding-landscape: 60px;
-$side-padding-potrait: 40px;
+@import "../../../../../variables.scss";
 .booking-container {
     padding: 0px $side-padding-landscape 25px;
     .row {
