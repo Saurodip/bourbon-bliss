@@ -33,7 +33,7 @@ h1 {
     background-color: white;
     display: flex;
     margin: 0px;
-    small {
+    &>small {
         font-size: 11px;
         line-height: 2.2rem;
         margin: 20px auto;
@@ -105,8 +105,8 @@ input[type="submit"] {
         margin-top: 60px;
         padding: 25px $side-padding-potrait;
     }
-    .row {
-        small {
+    .description {
+        &>small {
             padding: 0px $side-padding-potrait;
             text-align: justify;
             width: 100%;
