@@ -59,10 +59,14 @@ export class Coupon {
 export class Discount {
     public type: string;
     public code: string;
+    public percentage?: number;
+    public amount?: number;
 
     constructor() {
         this.type = '';
         this.code = '';
+        this.percentage = 0;
+        this.amount = 0;
     }
 }
 

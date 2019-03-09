@@ -104,29 +104,12 @@
             <div class="row">
                 <small class="col-xs-12">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
                 <div class="col-xs-12">
-                    <ul [ngSwitch]="panelContent?.type && panelContent?.type.toLowerCase()">
-                        <ng-container *ngSwitchCase="'hotel'">
-                            <li title="{{ eligibility?.key }}: {{ panelContent?.currency }} {{ eligibility?.amount }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
-                                <i class="fas fa-check-circle"></i>{{ eligibility?.key }}: <span>{{ panelContent?.currency }} {{ eligibility?.amount }}</span>
-                            </li>
-                            <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
-                        </ng-container>
-                        <ng-container *ngSwitchCase="'entertainment'">
-                            <li title="{{ eligibility?.key }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
-                                <i class="fas fa-check-circle"></i>{{ eligibility?.key }}
-                            </li>
-                            <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
-                        </ng-container>
-                        <ng-container *ngSwitchCase="'restaurant'">
-                            <li title="{{ eligibility?.key }}: {{ panelContent?.currency }} {{ eligibility?.amount }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
-                                <i class="fas fa-check-circle"></i>{{ eligibility?.key }}: <span>{{ panelContent?.currency }} {{ eligibility?.amount }}</span>
-                            </li>
-                            <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
-                        </ng-container>
-                        <ng-container *ngSwitchCase="'wedding'">
-
-                        </ng-container>
-                        <ng-container *ngSwitchDefault></ng-container>
+                    <ul>                        
+                        <li title="{{ eligibility?.key }} {{ eligibility?.amount ? (': ' + panelContent?.currency + ' ' + eligibility?.amount) : '' }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
+                            <i class="fas fa-check-circle"></i>{{ eligibility?.key }} 
+                            <span *ngIf="eligibility?.amount || eligibility?.amount >= 0"> : {{ panelContent?.currency }} {{ eligibility?.amount }}</span>
+                        </li>
+                        <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
                     </ul>
                     <div>
                         <ng-content select=".terms-and-condition"></ng-content>
