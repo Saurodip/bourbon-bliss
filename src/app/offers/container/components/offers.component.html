@@ -23,7 +23,7 @@
     </div>
     <div class="coupons-container">
         <div class="row">
-            <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '900px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
+            <div *ngFor="let item of coupons; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '935px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
                 <app-panel [template]="'offers'" [gridClass]="gridColumnClass" [content]="item">
                     <input type="button" class="btn btn-default purchase" value="purchase coupon !" (click)="onCouponPurchase(i)">
                     <small class="terms-and-condition">

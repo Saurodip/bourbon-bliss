@@ -100,5 +100,12 @@
                 text-align: center;
             }
         }
+        .coupons-container {
+            .row:first-child {
+                &>div {
+                    min-height: 900px !important;
+                }
+            }
+        }
     }
 }

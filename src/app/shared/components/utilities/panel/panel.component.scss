@@ -4,6 +4,16 @@
     white-space: nowrap;
 }
 
+@mixin multiline-ellipsis() {
+    display: -webkit-box;
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+}
+
 .panel-container {
     background-color: white;
     border-radius: 10px;
@@ -75,6 +85,9 @@
         padding: 5px;
         @include ellipsis();
     }
+    .statement {
+        margin-bottom: 10px;
+    }
     .area,
     .accomodation,
     .bed,
@@ -93,7 +106,13 @@
         font-size: 11px;
         letter-spacing: 1px;
         line-height: 2;
-        padding: 0px 0px 20px;
+        &.description {
+            margin-bottom: 15px;
+            @include multiline-ellipsis();
+        }
+        &.conditions {
+            padding-bottom: 20px;
+        }
     }
     .coupon-code {
         font-size: 1.5em;

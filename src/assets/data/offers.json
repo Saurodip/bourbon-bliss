@@ -369,9 +369,6 @@
                         "amount": 40000
                     },
                     {
-                        "key": "advance booking amount is non-refundable"
-                    },
-                    {
                         "key": "location: indira nagar, bengaluru"
                     }
                 ],
@@ -397,9 +394,6 @@
                     {
                         "key": "advanced booking amount",
                         "amount": 40000
-                    },
-                    {
-                        "key": "advance booking amount is non-refundable"
                     },
                     {
                         "key": "location: richmond circle, bengaluru"
@@ -429,9 +423,6 @@
                         "amount": 30000
                     },
                     {
-                        "key": "advance booking amount is non-refundable"
-                    },
-                    {
                         "key": "location: m. g. road, pune"
                     }
                 ],
@@ -457,9 +448,6 @@
                     {
                         "key": "advanced booking amount",
                         "amount": 35000
-                    },
-                    {
-                        "key": "advance booking amount is non-refundable"
                     },
                     {
                         "key": "location: park circus, kolkata"

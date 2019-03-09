@@ -11,6 +11,9 @@
             <i class="{{ panelContent?.icon }}"></i>
             <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
             <div class="row">
+                <div class="col-xs-12 statement">
+                    <small>you can find the room specifications below:</small>
+                </div>
                 <div class="col-xs-3 area">
                     <div class="row">
                         <div class="col-xs-12">
@@ -70,7 +73,7 @@
             <i class="fas fa-thumbs-up"></i>
             <h4 title="{{ 'facilities & services' }}">facilities & services</h4>
             <div class="row">
-                <small class="col-xs-12">list of all facilities and services:</small>
+                <small class="col-xs-12 statement">list of all facilities and services:</small>
                 <div class="col-xs-12">
                     <ul>
                         <li title="{{ facility }}" *ngFor="let facility of panelContent?.facilities; let j = index">
@@ -89,7 +92,7 @@
             <i class="{{ panelContent?.icon }}"></i>
             <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
             <div class="row">
-                <small class="col-xs-12 description">{{ panelContent?.description }}</small>
+                <small title="{{ panelContent?.description }}" class="col-xs-12 description">{{ panelContent?.description }}</small>
                 <div class="col-xs-12">{{ panelContent?.discount?.type }}: <span class="coupon-code">{{ panelContent?.discount?.code }}</span></div>
             </div>
             <div class="row">
@@ -102,7 +105,7 @@
             <i class="fas fa-file-signature"></i>
             <h4 title="{{ 'terms and conditions' }}">terms and conditions</h4>
             <div class="row">
-                <small class="col-xs-12">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
+                <small class="col-xs-12 conditions">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
                 <div class="col-xs-12">
                     <ul>                        
                         <li title="{{ eligibility?.key }} {{ eligibility?.amount ? (': ' + panelContent?.currency + ' ' + eligibility?.amount) : '' }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
