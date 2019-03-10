@@ -1,20 +1,8 @@
-@mixin brightness($value) {
-    -moz-filter: brightness($value);
-    -ms-filter: brightness($value);
-    -webkit-filter: brightness($value);
-    filter: brightness($value);
-}
-
+@import '../../../../global.scss';
 #additional-info {
     h1 {
         background-color: white;
-        color: #696868;
-        font-family: Raleway-Regular, Arial, Helvetica;
-        font-size: 3em;
-        letter-spacing: 2px;
-        margin-top: 40px;
-        padding: 25px 60px;
-        text-transform: uppercase;
+        margin-top: 40px !important;
     }
     .row {
         background-color: #545454;
@@ -122,9 +110,7 @@
 @media (max-width: 767px) {
     #additional-info {
         h1 {
-            font-size: 1.5em;
-            font-weight: bold;
-            padding: 25px 8%;
+            font-size: 1.7em;
         }
     }
 }

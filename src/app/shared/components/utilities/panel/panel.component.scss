@@ -1,19 +1,4 @@
-@mixin ellipsis() {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-@mixin multiline-ellipsis() {
-    display: -webkit-box;
-    height: 70px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    /* autoprefixer: off */
-    -webkit-box-orient: vertical;
-}
-
+@import '../../../../../global.scss';
 .panel-container {
     background-color: white;
     border-radius: 10px;
@@ -83,7 +68,7 @@
         line-height: 1.5em;
         margin: 0px 0px 12px;
         padding: 5px;
-        @include ellipsis();
+        @include singleline-ellipsis();
     }
     .statement {
         margin-bottom: 10px;
@@ -108,7 +93,7 @@
         line-height: 2;
         &.description {
             margin-bottom: 15px;
-            @include multiline-ellipsis();
+            @include multiline-ellipsis('70px', 3);
         }
         &.conditions {
             padding-bottom: 20px;
@@ -128,7 +113,7 @@
             list-style-type: none;
             padding-bottom: 5px;
             text-align: left;
-            @include ellipsis();
+            @include singleline-ellipsis();
             i {
                 font-size: 10px;
                 padding-right: 5px;

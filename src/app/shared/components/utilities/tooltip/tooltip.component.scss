@@ -1,24 +1,4 @@
-$arrowBackgroundColor: lightgray;
-@mixin arrowStyle($bottomColor, $leftColor, $rightColor, $topColor) {
-    border-bottom-color: $bottomColor;
-    border-left-color: $leftColor;
-    border-right-color: $rightColor;
-    border-top-color: $topColor;
-    border-style: solid;
-    border-width: 10px;
-    height: 0px;
-    width: 0px;
-}
-
-@mixin arrowPosition($bottom, $left, $right, $top) {
-    bottom: #{ $bottom };
-    left: #{ $left };
-    margin: auto;
-    position: absolute;
-    right: #{ $right };
-    top: #{ $top };
-}
-
+@import '../../../../../global.scss';
 #tooltip-container {
     margin: auto;
     position: absolute;

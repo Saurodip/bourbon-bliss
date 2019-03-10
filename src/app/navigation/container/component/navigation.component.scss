@@ -1,18 +1,4 @@
-@mixin transition($color, $delay, $timing-function) {
-    -moz-transition: $color $delay $timing-function;
-    -ms-transition: $color $delay $timing-function;
-    -o-transition: $color $delay $timing-function;
-    -webkit-transition: $color $delay $timing-function;
-    transition: $color $delay $timing-function;
-}
-
-@mixin scale($value) {
-    -moz-transform: scale($value);
-    -ms-transform: scale($value);
-    -webkit-transform: scale($value);
-    transform: scale($value);
-}
-
+@import '../../../../global.scss';
 #navigation-container {
     .navbar {
         background-color: white;
