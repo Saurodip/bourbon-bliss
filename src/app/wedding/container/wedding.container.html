@@ -1,0 +1,10 @@
+<div id="wedding">
+  <div class="wedding-wrapper container-fluid">
+    <h1>{{ (weddingData$ | async)?.heading }}</h1>
+    <div class="row description">
+      <small class="col-xs-12">{{ (weddingData$ | async)?.description }}</small>
+    </div>
+    <!-- <app-wedding [content]="(weddingData$ | async)?.content" (selectedCoupon)="purchaseSelectedCoupon($event)"></app-wedding> -->
+    <app-additional-info></app-additional-info>
+  </div>
+</div>

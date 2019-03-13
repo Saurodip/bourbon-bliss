@@ -23,8 +23,8 @@ const routes: Routes = [
         loadChildren: '../amenities/amenities.module#AmenitiesModule'
     },
     {
-        path: 'weddings',
-        loadChildren: '../weddings/weddings.module#WeddingsModule'
+        path: 'wedding',
+        loadChildren: '../wedding/wedding.module#WeddingModule'
     },
     {
         path: 'offers',

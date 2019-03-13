@@ -1,0 +1,463 @@
+{
+    "heading": "wedding resorts",
+    "description": "if your dream wedding involves breathtaking scenery at a vibrant resort, all within a reasonable budget, our collection of affordable properties will bring your dreams to life. our collections deliver incredible experiences at even more incredible prices. view details on locations for affordable destination celebrations on a budget below!",
+    "content": {
+        "action": [
+            {
+                "key": "filter by",
+                "operations": [
+                    "view all",
+                    "hotel",
+                    "entertainment",
+                    "restaurant",
+                    "banquet hall"
+                ]
+            },
+            {
+                "key": "change view",
+                "operations": [
+                    "fas fa-grip-horizontal",
+                    "fas fa-grip-vertical"
+                ]
+            }
+        ],
+        "coupons": [
+            {
+                "type": "hotel",
+                "path": "../../assets/images/offers/hotels/room-discount.jpg",
+                "icon": "fas fa-bed",
+                "heading": "flat 10% off on room booking",
+                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "room5673",
+                    "percentage": 10
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 5000
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "12-07-2019"
+                }
+            },
+            {
+                "type": "hotel",
+                "path": "../../assets/images/offers/hotels/suite-discount.jpg",
+                "icon": "fas fa-gem",
+                "heading": "50% discount on executive suite",
+                "description": "now avail exclusive 50% off on all executive and deluxe suites across india only at bourbon bliss.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "suit3210",
+                    "percentage": 50
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 2000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 5000
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "11-03-2019"
+                }
+            },
+            {
+                "type": "hotel",
+                "path": "../../assets/images/offers/hotels/seaview-discount.jpg",
+                "icon": "fas fa-umbrella-beach",
+                "heading": "festive sale – upto 1500 off on seaview rooms",
+                "description": "get upto rs. 1500 off on seaview hotel rooms, holiday package booking across country.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "seav2963",
+                    "amount": 1500
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 800
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 1500
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "11-04-2019"
+                }
+            },
+            {
+                "type": "hotel",
+                "path": "../../assets/images/offers/hotels/last-minute-booking.jpg",
+                "icon": "fas fa-clock",
+                "heading": "last minute deal – upto 30% off",
+                "description": "now you can save extra payment on last minute deals and get upto flat 30% off on hotel bookings.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "last1200",
+                    "percentage": 30
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 0
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 0
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "22-02-2019"
+                }
+            },
+            {
+                "type": "entertainment",
+                "path": "../../assets/images/offers/entertainment/paytm-movie-discount.jpg",
+                "icon": "fas fa-film",
+                "heading": "flat rs. 100 cashback on paytm",
+                "description": "book movie tickets using paytm and get instant cashback in your paytm wallet. this offer is valid for a limited period only.",
+                "currency": "rs.",
+                "price": 500,
+                "discount": {
+                    "type": "promo code",
+                    "code": "payt0845",
+                    "amount": 100
+                },
+                "eligibility": [
+                    {
+                        "key": "for booking on paytm.com and paytm app"
+                    },
+                    {
+                        "key": "amount credited within 24 hours"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "20-03-2019"
+                }
+            },
+            {
+                "type": "entertainment",
+                "path": "../../assets/images/offers/entertainment/buy-one-get-one.jpg",
+                "icon": "fas fa-film",
+                "heading": "buy one get one offer",
+                "description": "buy any movie ticket using lakshmi vilas bank debit / credit card and get another ticket absolutely free.",
+                "currency": "rs.",
+                "price": 500,
+                "discount": {
+                    "type": "promo code",
+                    "code": "buyg1764",
+                    "amount": 0
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 500
+                    },
+                    {
+                        "key": "ticket should be collected at the theatre"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "not applicable"
+                }
+            },
+            {
+                "type": "entertainment",
+                "path": "../../assets/images/offers/entertainment/icici-movie-discount.jpg",
+                "icon": "fas fa-film",
+                "heading": "free movie ticket on every moonth",
+                "description": "get upto 5 tickets of your favourite and latest movies on every month with icici bank debit card only.",
+                "currency": "rs.",
+                "price": 1500,
+                "discount": {
+                    "type": "promo code",
+                    "code": "icic4372",
+                    "amount": 0
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1500
+                    },
+                    {
+                        "key": "max. no. of booking: 5 tickets / month"
+                    }
+                ],
+                "duration": {
+                    "key": "validity",
+                    "date": "1 month"
+                }
+            },
+            {
+                "type": "entertainment",
+                "path": "../../assets/images/offers/entertainment/last-minute-cancellation.jpg",
+                "icon": "fas fa-film",
+                "heading": "last minute cancellation",
+                "description": "last minute change in plans? rohini silver screens offer you movie ticket cancellation in association with bookmyshow.",
+                "currency": "rs.",
+                "price": 500,
+                "discount": {
+                    "type": "promo code",
+                    "code": "last2409",
+                    "percentage": 30
+                },
+                "eligibility": [
+                    {
+                        "key": "applicable only for rohini screens"
+                    },
+                    {
+                        "key": "amount will be credited to bank account"
+                    }
+                ],
+                "duration": {
+                    "key": "validity",
+                    "date": "not applicable"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/restaurant/zomato-discount.jpg",
+                "icon": "fas fa-utensils",
+                "heading": "flat 50% off on online booking",
+                "description": "zomato offers flat 50% discount on any food orders online exclusively for you. grab this offer immediately.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "zoma8742",
+                    "percentage": 50
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 0
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 500
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "01-03-2019"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/restaurant/chinese-buffet-discount.jpg",
+                "icon": "fas fa-utensils",
+                "heading": "flat 10% off on chinese buffet",
+                "description": "the oriental spice offers flat 10% discount on chinese chinese buffet orders for limited time period. so don't waste time, hurry!",
+                "currency": "rs.",
+                "price": 800,
+                "discount": {
+                    "type": "promo code",
+                    "code": "lunc5543",
+                    "percentage": 10
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 800
+                    },
+                    {
+                        "key": "applicable only for chinese buffet"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "24-05-2019"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/restaurant/kolkata-deal.jpg",
+                "icon": "fas fa-utensils",
+                "heading": "flat 50% discount on girf",
+                "description": "dineout girf presents an exiting offer only for kolkata food lovers. now you can get unbelievable flat 50% discount on anytime buffet booking.",
+                "currency": "rs.",
+                "price": 1000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "kolk5050",
+                    "percentage": 50
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 1000
+                    },
+                    {
+                        "key": "max. amount can be availed",
+                        "amount": 800
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "30-06-2019"
+                }
+            },
+            {
+                "type": "restaurant",
+                "path": "../../assets/images/offers/restaurant/coffee-discount.jpg",
+                "icon": "fas fa-utensils",
+                "heading": "free refreshment for weekdays",
+                "description": "now your good morning starts with a smooth brew. you will get a coffee cup along with your purchased products on breakfast time.",
+                "currency": "rs.",
+                "price": 800,
+                "discount": {
+                    "type": "promo code",
+                    "code": "coff9810",
+                    "amount": 0
+                },
+                "eligibility": [
+                    {
+                        "key": "min. booking amount",
+                        "amount": 800
+                    },
+                    {
+                        "key": "applicable for next 5 week days of your booking"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "15-08-2019"
+                }
+            },
+            {
+                "type": "banquet hall",
+                "path": "../../assets/images/offers/banquet-hall/sahanaj-hall.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "flat 20% off on sahanaj hall",
+                "description": "sahanaj hall is a beautiful venue to host your pre-wedding function, corporate events, birthday parties, anniversaries and other social events.",
+                "currency": "rs.",
+                "price": 100000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "saha2647",
+                    "percentage": 20
+                },
+                "eligibility": [
+                    {
+                        "key": "advance booking amount",
+                        "amount": 40000
+                    },
+                    {
+                        "key": "location: indira nagar, bengaluru"
+                    }
+                ],
+                "duration": {
+                    "key": "validity",
+                    "date": "not applicable"
+                }
+            },
+            {
+                "type": "banquet hall",
+                "path": "../../assets/images/offers/banquet-hall/pelazzio-grand.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "upto 40% off on booking pelazzio",
+                "description": "this is a lavish wedding venue with well-maintained lawn area, that permits you to get a catering group of your own choice and dj music.",
+                "currency": "rs.",
+                "price": 90000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "pela0227",
+                    "percentage": 40
+                },
+                "eligibility": [
+                    {
+                        "key": "advanced booking amount",
+                        "amount": 40000
+                    },
+                    {
+                        "key": "location: richmond circle, bengaluru"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "09-10-2019"
+                }
+            },
+            {
+                "type": "banquet hall",
+                "path": "../../assets/images/offers/banquet-hall/the-fern-banquets.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "exciting offer for the fern banquets",
+                "description": "the fern banquet is the ultimate place to plan your wedding program, conferences or even birthday and anniversary parties and that also upto 30% discount.",
+                "currency": "rs.",
+                "price": 80000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "fern9983",
+                    "percentage": 30
+                },
+                "eligibility": [
+                    {
+                        "key": "advance booking amount",
+                        "amount": 30000
+                    },
+                    {
+                        "key": "location: m. g. road, pune"
+                    }
+                ],
+                "duration": {
+                    "key": "validity till",
+                    "date": "18-07-2019"
+                }
+            },
+            {
+                "type": "banquet hall",
+                "path": "../../assets/images/offers/banquet-hall/white-petals.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "25% off on booking white petals grand",
+                "description": "this grand venue is an ideal palace to host a luxurious wedding ceremony or reception. superb interiors will make your dream come true.",
+                "currency": "rs.",
+                "price": 75000,
+                "discount": {
+                    "type": "promo code",
+                    "code": "peta8756",
+                    "percentage": 25
+                },
+                "eligibility": [
+                    {
+                        "key": "advanced booking amount",
+                        "amount": 35000
+                    },
+                    {
+                        "key": "location: park circus, kolkata"
+                    }
+                ],
+                "duration": {
+                    "key": "validity",
+                    "date": "not applicable"
+                }
+            }
+        ]
+    }
+}
