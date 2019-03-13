@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Wedding, MarriageHall } from '../wedding.model';
 import { WeddingService } from '../wedding.service';
-import { SharedService } from 'src/app/shared/shared.service';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-wedding-container',
