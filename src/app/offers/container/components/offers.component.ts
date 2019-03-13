@@ -10,7 +10,7 @@ import { Content, Coupon } from '../../offers.model';
 export class OffersComponent implements OnInit {
     public viewportWidth: number;
     public offersContent: Content;
-    public checkboxIndex: number;
+    public selectedFilterIndex: number;
     public arrayIndex: number;
     public gridRowClass: string;
     public gridColumnClass: string;
@@ -27,7 +27,7 @@ export class OffersComponent implements OnInit {
     constructor() {
         this.viewportWidth = 0;
         this.offersContent = new Content();
-        this.checkboxIndex = 0;
+        this.selectedFilterIndex = 0;
         this.arrayIndex = 0;
         this.gridRowClass = '';
         this.gridColumnClass = '';
@@ -41,7 +41,7 @@ export class OffersComponent implements OnInit {
     }
 
     public onApplyFilter(type: string, index: number): void {
-        this.checkboxIndex = index;
+        this.selectedFilterIndex = index;
         type = type && type.toLowerCase();
         if (type === 'view all') {
             this.coupons = this.offersContent.coupons;
