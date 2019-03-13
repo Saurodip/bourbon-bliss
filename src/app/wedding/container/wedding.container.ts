@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { WeddingResort, Wedding } from '../wedding.model';
+import { Wedding, MarriageHall } from '../wedding.model';
 import { WeddingService } from '../wedding.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -32,7 +32,7 @@ export class WeddingContainerComponent implements OnInit {
     );
   }
 
-  public purchaseSelectedCoupon(coupon: WeddingResort): void {
+  public purchaseSelectedCoupon(marriageHall: MarriageHall): void {
     this.router.navigate(['/booking']);
     this.sharedService.getRouteUrl();
     // this.offersService.setDataForSharing(coupon);
