@@ -1,16 +1,12 @@
 {
-    "heading": "wedding resorts",
+    "heading": "wedding marriage halls",
     "description": "if your dream wedding involves breathtaking scenery at a vibrant resort and all within a reasonable budget, our collection of affordable properties will bring your dreams to life. all the arrangements deliver incredible experiences at even more incredible prices. view details on locations for affordable destination celebrations on a budget below!",
     "content": {
         "action": [
             {
                 "key": "filter by",
                 "operations": [
-                    "view all",
-                    "hotel",
-                    "entertainment",
-                    "restaurant",
-                    "banquet hall"
+                    "view all"
                 ]
             },
             {

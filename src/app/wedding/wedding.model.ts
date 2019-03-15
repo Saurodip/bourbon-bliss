@@ -12,11 +12,11 @@ export class Wedding {
 
 export class Content {
     public action: Array<UserAction>;
-    public marriageHall: Array<MarriageHall>;
+    public marriageHalls: Array<MarriageHall>;
 
     constructor() {
         this.action = [];
-        this.marriageHall = [];
+        this.marriageHalls = [];
     }
 }
 

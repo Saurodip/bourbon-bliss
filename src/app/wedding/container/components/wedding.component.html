@@ -1,0 +1,22 @@
+<div class="wedding-container">
+    <div class="action-container">
+        <div class="row">
+            <div class="col-md-12 hidden-xs hidden-sm">
+                <span>{{ weddingContent?.action[1]?.key }}</span>
+                <i class="view-icon {{ weddingContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="wedding-container">
+        <div class="row">
+            <div *ngFor="let item of weddingContent?.marriageHalls; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '935px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
+                <app-panel [template]="'wedding'" [gridClass]="gridColumnClass" [content]="item">
+                    <input type="button" class="btn btn-default booking" value="book marriage hall !" (click)="onCouponPurchase(i)">
+                    <small class="terms-and-condition">
+                        <span><span class="asterisk">*</span>applicable for <b>{{ item.type }}</b> section only</span>
+                    </small>
+                </app-panel>
+            </div>
+        </div>
+    </div>
+</div>

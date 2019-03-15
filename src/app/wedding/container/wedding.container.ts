@@ -32,9 +32,9 @@ export class WeddingContainerComponent implements OnInit {
     );
   }
 
-  public purchaseSelectedCoupon(marriageHall: MarriageHall): void {
+  public bookSelectedMarrigeHall(marriageHall: MarriageHall): void {
     this.router.navigate(['/booking']);
     this.sharedService.getRouteUrl();
-    // this.offersService.setDataForSharing(coupon);
+    // this.weddingService.setDataForSharing(marriageHall);
   }
 }
