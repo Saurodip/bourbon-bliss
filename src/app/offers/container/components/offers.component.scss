@@ -34,10 +34,12 @@
                 }
             }
             .filter-action {
+                padding: 0px;
                 position: relative;
                 top: 10px;
             }
             div:nth-child(2) {
+                padding: 0px;
                 text-align: right;
                 .view-icon {
                     background-color: white;
@@ -97,7 +99,7 @@
         .coupons-container {
             .row:first-child {
                 &>div {
-                    min-height: 900px !important;
+                    min-height: 870px !important;
                 }
             }
         }

@@ -1,10 +1,6 @@
 @import "../../../../../global.scss";
 .booking-container {
     padding: 0px $side-padding-landscape 25px;
-    .row {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
     .form-wrapper {
         &>.col-xs-12 {
             background-color: white;
@@ -22,6 +18,7 @@
                     }
                 }
                 .control-section {
+                    padding: 0px 15px;
                     h6 {
                         letter-spacing: 1px;
                         margin: 10px 0px;

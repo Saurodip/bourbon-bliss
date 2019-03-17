@@ -5,118 +5,131 @@
     font-size: 12px;
     div {
         padding: 0px;
-        position: relative;
         text-align: center;
-        img {
-            height: 30rem;
-            width: 100%;
-        }
-        .ribbon-container {
-            height: 150px;
-            position: absolute;
-            top: 0px;
-            width: 150px;
-            .ribbon {
-                background-color: #f1f1f1;
-                left: -32px;
-                padding: 0.5rem;
-                position: absolute;
-                text-transform: uppercase;
-                top: 30px;
-                transform: rotate(-45deg);
+        .image-container {
+            position: relative;
+            img {
+                height: 30rem;
                 width: 100%;
             }
+            &.horizontal-view {
+                img {
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+            }
+            &.vertical-view {
+                img {
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+            }
+            .ribbon-container {
+                height: 150px;
+                position: absolute;
+                top: 0px;
+                width: 150px;
+                .ribbon {
+                    background-color: #f1f1f1;
+                    left: -32px;
+                    padding: 0.5rem;
+                    position: absolute;
+                    text-transform: uppercase;
+                    top: 30px;
+                    transform: rotate(-45deg);
+                    width: 100%;
+                }
+            }
         }
-        i {
-            font-size: 22px;
-        }
-    }
-    div.horizontal-view {
-        img {
-            border-bottom-left-radius: 10px;
-            border-top-left-radius: 10px;
-        }
-    }
-    div.vertical-view {
-        img {
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-    }
-    div.horizontal-view,
-    div.vertical-view {
-        &:nth-of-type(2),
-        &:nth-of-type(3) {
+        .description-container,
+        .additional-info-container {
             padding: 15px 20px 0px;
-            .row {
-                margin: 0px;
+            .icon {
+                font-size: 1.5em;
+            }
+            h4 {
+                border-bottom: 1px solid #ccc;
+                line-height: 1.5em;
+                margin: 0px 0px 12px;
+                padding: 5px;
+                @include singleline-ellipsis();
+            }
+            small {
+                font-size: 1rem;
+                letter-spacing: 1px;
+                line-height: 2;
             }
         }
-    }
-    div.vertical-view {
-        &:nth-of-type(3) {
-            padding-bottom: 15px;
+        .additional-info-container {
             ul {
-                padding-left: 0em;
+                line-height: 1.4em;
+                margin-bottom: 0px;
+                padding-left: 2.2em;
+                li {
+                    font-size: 1rem;
+                    list-style-type: none;
+                    padding-bottom: 5px;
+                    text-align: left;
+                    @include singleline-ellipsis();
+                    i {
+                        font-size: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+        &.vertical-view.additional-info-container {
+            padding-bottom: 15px;
+        }
+    }
+    #hotelTemplate {
+        .description-container,
+        .additional-info-container {
+            .statement {
+                margin-bottom: 10px;
+            }
+        }
+        .description-container {
+            .area,
+            .accomodation,
+            .bed,
+            .extras {
+                span {
+                    font-size: 2em;
+                }
             }
         }
     }
-    h4 {
-        border-bottom: 1px solid #ccc;
-        line-height: 1.5em;
-        margin: 0px 0px 12px;
-        padding: 5px;
-        @include singleline-ellipsis();
-    }
-    .statement {
-        margin-bottom: 10px;
-    }
-    .area,
-    .accomodation,
-    .bed,
-    .extras {
-        .sub-heading {
-            font-size: 10px;
+    #offersTemplate {
+        .description-container {
+            .description {
+                margin-bottom: 15px;
+                @include multiline-ellipsis('70px', 3);
+            }
+            .coupon-code {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin: 10px 0px;
+            }
         }
-        span {
-            font-size: 20px;
-        }
-        small {
-            font-size: 10px;
+        .additional-info-container {
+            .statement {
+                margin-bottom: 15px;
+            }
         }
     }
-    small {
-        font-size: 11px;
-        letter-spacing: 1px;
-        line-height: 2;
-        &.description {
-            margin-bottom: 15px;
-            @include multiline-ellipsis('70px', 3);
+    #weddingTemplate {
+        .description-container {
+            .description {
+                margin-bottom: 15px;
+                @include multiline-ellipsis('100px', 5);
+            }
         }
-        &.conditions {
-            padding-bottom: 20px;
-        }
-    }
-    .coupon-code {
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: 10px 0px;
-    }
-    ul {
-        line-height: 1.4em;
-        margin-bottom: 0px;
-        padding-left: 2.2em;
-        li {
-            font-size: 11px;
-            list-style-type: none;
-            padding-bottom: 5px;
-            text-align: left;
-            @include singleline-ellipsis();
-            i {
-                font-size: 10px;
-                padding-right: 5px;
+        .additional-info-container {
+            .statement {
+                margin-bottom: 15px;
             }
         }
     }
@@ -126,12 +139,10 @@
     .panel-container {
         margin: 0px !important;
         div.vertical-view {
-            padding: 0px;
-            img {
-                border-bottom-left-radius: 0px;
-                border-bottom-right-radius: 0px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+            &.additional-info-container {
+                ul {
+                    padding-left: 1rem;
+                }
             }
         }
     }

@@ -35,6 +35,6 @@ export class WeddingContainerComponent implements OnInit {
   public bookSelectedMarrigeHall(marriageHall: MarriageHall): void {
     this.router.navigate(['/booking']);
     this.sharedService.getRouteUrl();
-    // this.weddingService.setDataForSharing(marriageHall);
+    this.weddingService.setDataForSharing(marriageHall);
   }
 }

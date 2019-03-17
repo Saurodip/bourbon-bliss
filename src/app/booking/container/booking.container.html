@@ -4,11 +4,11 @@
         <div class="row description">
             <small class="col-xs-12">{{ (bookingData$ | async)?.description }}</small>
         </div>
-        <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then reservationComponent else couponComponent"></ng-container>
-        <ng-template #reservationComponent>
-            <app-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.reservationContent"  [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-reservation>
+        <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then hotelReservationComponent else defaultReservationComponent"></ng-container>
+        <ng-template #hotelReservationComponent>
+            <app-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.reservationContent" [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-reservation>
         </ng-template>
-        <ng-template #couponComponent>
+        <ng-template #defaultReservationComponent>
             <app-coupon [selectedCoupon]="selectedCoupon" [content]="(bookingData$ | async)?.couponContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-coupon>
         </ng-template>
         <app-payment [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>

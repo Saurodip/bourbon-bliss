@@ -4,7 +4,7 @@
             <app-panel [template]="routedFrom" [gridClass]="gridColumnClass" [content]="selectedItem">
                 <div class="row check-rates">
                     <div class="col-xs-12">
-                        <h5>hotel {{ selectedItem?.type }} price details</h5>
+                        <h6>hotel {{ selectedItem?.type }} price details</h6>
                     </div>
                     <div class="col-xs-12">
                         <input type="radio" name="price" value="{{ selectedItem?.description?.price[0]?.basePrice + ' / ' + selectedItem?.description?.price[0]?.basis }}" (change)="onSelectBookingBasis(selectedItem?.description?.price[0]?.basis)">

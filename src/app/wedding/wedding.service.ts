@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Wedding } from '../wedding/wedding.model';
+import { Wedding, MarriageHall } from '../wedding/wedding.model';
 import { AppService } from '../app.service';
 
 @Injectable()
@@ -13,5 +13,9 @@ export class WeddingService {
 
     public getWeddingData(): Observable<Wedding> {
         return this.appService.getRequest(this.url);
+    }
+
+    public setDataForSharing(data: MarriageHall): void {
+        this.appService.onSharingData(data, 'wedding');
     }
 }
