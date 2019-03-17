@@ -37,7 +37,7 @@ export class MarriageHall {
     public description: string;
     public currency: string;
     public price: number;
-    public venue: Venue;
+    public specification: Array<Specification>;
 
     constructor() {
         this.path = '';
@@ -46,20 +46,16 @@ export class MarriageHall {
         this.description = '';
         this.currency = '';
         this.price = 0;
-        this.venue = new Venue();
+        this.specification = [];
     }
 }
 
-export class Venue {
-    public area: string;
-    public accomodation: string;
-    public amenities: string;
-    public contact: number;
+export class Specification {
+    public key: string;
+    public value: string;
 
     constructor() {
-        this.area = '';
-        this.accomodation = '';
-        this.amenities = '';
-        this.contact = 0;
+        this.key = '';
+        this.value = '';
     }
 }

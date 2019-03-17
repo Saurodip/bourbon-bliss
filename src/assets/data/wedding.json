@@ -19,60 +19,140 @@
         ],
         "marriageHalls": [
             {
-                "path": "../../assets/images/offers/hotels/room-discount.jpg",
-                "icon": "fas fa-bed",
-                "heading": "flat 10% off on room booking",
-                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "path": "../../assets/images/wedding/1.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "royal glass palace",
+                "description": "this exquisite palace combines elegant touches with contemporary design and a wide range of services to please your guests. a perfect setting for your dream wedding with first class hospitality from the experts.",
                 "currency": "rs.",
-                "price": 0,
-                "venue": {
-                    "area": "",
-                    "accomodation": "",
-                    "amenities": "",
-                    "contact": 1000000000
-                }
+                "price": 120000,
+                "specification": [
+                    {
+                        "key": "area",
+                        "value": "401,300 sq. ft."
+                    },
+                    {
+                        "key": "accomodation",
+                        "value": "500 persons"
+                    },
+                    {
+                        "key": "amenities",
+                        "value": "3 rooms, closed spacious hall, buffet and à la carte"
+                    },
+                    {
+                        "key": "venue",
+                        "value": "4/6, decker lane road, james sarani, kolkata - 700931"
+                    },
+                    {
+                        "key": "contact",
+                        "value": "9208376543"
+                    },
+                    {
+                        "key": "advance booking amount",
+                        "value": "50%"
+                    }
+                ]
             },
             {
-                "path": "../../assets/images/offers/hotels/room-discount.jpg",
-                "icon": "fas fa-bed",
-                "heading": "flat 10% off on room booking",
-                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "path": "../../assets/images/wedding/2.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "dancing daffodils",
+                "description": "this place is recently renovated and decorated with greenaries that perfectly creates the ambience for your magical experience. an exclusive musical and lighting shows will be arranged for customers on request.",
                 "currency": "rs.",
-                "price": 0,
-                "venue": {
-                    "area": "",
-                    "accomodation": "",
-                    "amenities": "",
-                    "contact": 10000000000
-                }
+                "price": 80000,
+                "specification": [
+                    {
+                        "key": "area",
+                        "value": "30,400 sq. ft."
+                    },
+                    {
+                        "key": "accomodation",
+                        "value": "200 persons"
+                    },
+                    {
+                        "key": "amenities",
+                        "value": "2 rooms, open spacious lounge, buffet and à la carte"
+                    },
+                    {
+                        "key": "venue",
+                        "value": "9/4, st. john's road, church street, bengaluru - 560276"
+                    },
+                    {
+                        "key": "contact",
+                        "value": "8876023412"
+                    },
+                    {
+                        "key": "advance booking amount",
+                        "value": "50%"
+                    }
+                ]
             },
             {
-                "path": "../../assets/images/offers/hotels/room-discount.jpg",
-                "icon": "fas fa-bed",
-                "heading": "flat 10% off on room booking",
-                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "path": "../../assets/images/wedding/3.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "palm villa resort",
+                "description": "this complex provides common areas surrounded by huge tropical gardens and designed to provide fun for children, teenagers and adults, offering a wide variety of activities throughout the day and artist performances with shows.",
                 "currency": "rs.",
-                "price": 0,
-                "venue": {
-                    "area": "",
-                    "accomodation": "",
-                    "amenities": "",
-                    "contact": 100000000
-                }
+                "price": 150000,
+                "specification": [
+                    {
+                        "key": "area",
+                        "value": "530,165 sq. ft."
+                    },
+                    {
+                        "key": "accomodation",
+                        "value": "800 persons"
+                    },
+                    {
+                        "key": "amenities",
+                        "value": "3 rooms, 1 kitchen, open spacious lounge, buffet and à la carte"
+                    },
+                    {
+                        "key": "venue",
+                        "value": "42/1, bandra feast lane, brabourne road, mumbai - 400023"
+                    },
+                    {
+                        "key": "contact",
+                        "value": "8898454321"
+                    },
+                    {
+                        "key": "advance booking amount",
+                        "value": "60%"
+                    }
+                ]
             },
             {
-                "path": "../../assets/images/offers/hotels/room-discount.jpg",
-                "icon": "fas fa-bed",
-                "heading": "flat 10% off on room booking",
-                "description": "now you can get flat 10% off on domestic hotel room booking at bourbon bliss. this offer only applicable room's booking.",
+                "path": "../../assets/images/wedding/4.jpg",
+                "icon": "fas fa-vihara",
+                "heading": "risa banquets",
+                "description": "risa banquets invites you to get lost in endless luxuries and offers an inspiring setting for staying relaxed or being as active as desired. whatever occasion it may be, we will make your stay unforgettable.",
                 "currency": "rs.",
-                "price": 0,
-                "venue": {
-                    "area": "",
-                    "accomodation": "",
-                    "amenities": "",
-                    "contact": 1000000000
-                }
+                "price": 900000,
+                "specification": [
+                    {
+                        "key": "area",
+                        "value": "203,090 sq. ft."
+                    },
+                    {
+                        "key": "accomodation",
+                        "value": "500 persons"
+                    },
+                    {
+                        "key": "amenities",
+                        "value": "2 rooms, closed spacious hall, buffet and à la carte"
+                    },
+                    {
+                        "key": "venue",
+                        "value": "6A/2, richmond circle, crystal avenue, pune - 200932"
+                    },
+                    {
+                        "key": "contact",
+                        "value": "9918272711"
+                    },
+                    {
+                        "key": "advance booking amount",
+                        "value": "40%"
+                    }
+                ]
             }
         ]
     }

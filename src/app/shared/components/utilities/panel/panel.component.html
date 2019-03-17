@@ -1,124 +1,161 @@
 <div class="row panel-container" [ngStyle]="{ 'margin': gridColumnClass.indexOf('vertical-view') !== -1 ? '0px 1rem' : '0px' }">
-    <ng-container *ngIf="template === 'hotel'; then hotelTemplate else generalTemplate"></ng-container>
-    <ng-template #hotelTemplate>
-        <div [ngClass]="gridColumnClass">
-            <img src="{{ panelContent?.path }}" alt="{{ panelContent?.type }}" class="img-responsive">
-            <div class="ribbon-container">
-                <div class="ribbon">{{ panelContent?.ribbon }}</div>
-            </div>
-        </div>
-        <div [ngClass]="gridColumnClass">
-            <i class="{{ panelContent?.icon }}"></i>
-            <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
-            <div class="row">
-                <div class="col-xs-12 statement">
-                    <small>you can find the room specifications below:</small>
+    <ng-container [ngSwitch]="template">
+        <ng-template [ngSwitchCase]="'hotel'" #hotelTemplate>
+            <div [ngClass]="gridColumnClass">
+                <img src="{{ panelContent?.path }}" alt="{{ panelContent?.type }}" class="img-responsive">
+                <div class="ribbon-container">
+                    <div class="ribbon">{{ panelContent?.ribbon }}</div>
                 </div>
-                <div class="col-xs-3 area">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <small class="sub-heading">area</small>
+            </div>
+            <div [ngClass]="gridColumnClass">
+                <i class="{{ panelContent?.icon }}"></i>
+                <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
+                <div class="row">
+                    <div class="col-xs-12 statement">
+                        <small>you can find the room specifications below:</small>
+                    </div>
+                    <div class="col-xs-3 area">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <small class="sub-heading">area</small>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>{{ panelContent?.description?.size?.area }}</span>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>{{ panelContent?.description?.size?.unit }}</small>
+                            </div>
                         </div>
-                        <div class="col-xs-12">
-                            <span>{{ panelContent?.description?.size?.area }}</span>
+                    </div>
+                    <div class="col-xs-3 accomodation">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <small class="sub-heading">guest</small>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>{{ panelContent?.description?.accomodation?.count }}</span>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>{{ panelContent?.description?.accomodation?.unit }}</small>
+                            </div>
                         </div>
-                        <div class="col-xs-12">
-                            <small>{{ panelContent?.description?.size?.unit }}</small>
+                    </div>
+                    <div class="col-xs-3 bed">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <small class="sub-heading">bed</small>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>{{ panelContent?.description?.bed?.count }}</span>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>{{ panelContent?.description?.bed?.type }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 extras">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <small class="sub-heading">{{ panelContent?.description?.extras?.name }}</small>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>{{ panelContent?.description?.extras?.count }}</span>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>{{ panelContent?.description?.extras?.type }}</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-3 accomodation">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <small class="sub-heading">guest</small>
-                        </div>
-                        <div class="col-xs-12">
-                            <span>{{ panelContent?.description?.accomodation?.count }}</span>
-                        </div>
-                        <div class="col-xs-12">
-                            <small>{{ panelContent?.description?.accomodation?.unit }}</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3 bed">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <small class="sub-heading">bed</small>
-                        </div>
-                        <div class="col-xs-12">
-                            <span>{{ panelContent?.description?.bed?.count }}</span>
-                        </div>
-                        <div class="col-xs-12">
-                            <small>{{ panelContent?.description?.bed?.type }}</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3 extras">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <small class="sub-heading">{{ panelContent?.description?.extras?.name }}</small>
-                        </div>
-                        <div class="col-xs-12">
-                            <span>{{ panelContent?.description?.extras?.count }}</span>
-                        </div>
-                        <div class="col-xs-12">
-                            <small>{{ panelContent?.description?.extras?.type }}</small>
-                        </div>
+                <ng-content select=".check-rates"></ng-content>
+            </div>
+            <div [ngClass]="gridColumnClass">
+                <i class="fas fa-thumbs-up"></i>
+                <h4 title="{{ 'facilities & services' }}">facilities & services</h4>
+                <div class="row">
+                    <small class="col-xs-12 statement">list of all facilities and services:</small>
+                    <div class="col-xs-12">
+                        <ul>
+                            <li title="{{ facility }}" *ngFor="let facility of panelContent?.facilities; let j = index">
+                                <i class="fas fa-check-circle"></i> {{ facility }}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <ng-content select=".check-rates"></ng-content>
-        </div>
-        <div [ngClass]="gridColumnClass">
-            <i class="fas fa-thumbs-up"></i>
-            <h4 title="{{ 'facilities & services' }}">facilities & services</h4>
-            <div class="row">
-                <small class="col-xs-12 statement">list of all facilities and services:</small>
-                <div class="col-xs-12">
-                    <ul>
-                        <li title="{{ facility }}" *ngFor="let facility of panelContent?.facilities; let j = index">
-                            <i class="fas fa-check-circle"></i> {{ facility }}
-                        </li>
-                    </ul>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'offers'" #offersTemplate>
+            <div [ngClass]="gridColumnClass">
+                <img src="{{ panelContent?.path }}" alt="{{ panelContent?.type }}" class="img-responsive">
+            </div>
+            <div [ngClass]="gridColumnClass">
+                <i class="{{ panelContent?.icon }}"></i>
+                <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
+                <div class="row">
+                    <small title="{{ panelContent?.description }}" class="col-xs-12 description">{{ panelContent?.description }}</small>
+                    <div class="col-xs-12">{{ panelContent?.discount?.type }}: <span class="coupon-code">{{ panelContent?.discount?.code }}</span></div>
                 </div>
-            </div>
-        </div>
-    </ng-template>
-    <ng-template #generalTemplate>
-        <div [ngClass]="gridColumnClass">
-            <img src="{{ panelContent?.path }}" alt="{{ panelContent?.type }}" class="img-responsive">
-        </div>
-        <div [ngClass]="gridColumnClass">
-            <i class="{{ panelContent?.icon }}"></i>
-            <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
-            <div class="row">
-                <small title="{{ panelContent?.description }}" class="col-xs-12 description">{{ panelContent?.description }}</small>
-                <div class="col-xs-12">{{ panelContent?.discount?.type }}: <span class="coupon-code">{{ panelContent?.discount?.code }}</span></div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <ng-content select=".purchase"></ng-content>
-                </div>
-            </div>
-        </div>
-        <div [ngClass]="gridColumnClass">
-            <i class="fas fa-file-signature"></i>
-            <h4 title="{{ 'terms and conditions' }}">terms and conditions</h4>
-            <div class="row">
-                <small class="col-xs-12 conditions">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
-                <div class="col-xs-12">
-                    <ul>                        
-                        <li title="{{ eligibility?.key }} {{ eligibility?.amount ? (': ' + panelContent?.currency + ' ' + eligibility?.amount) : '' }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
-                            <i class="fas fa-check-circle"></i>{{ eligibility?.key }} 
-                            <span *ngIf="eligibility?.amount || eligibility?.amount >= 0"> : {{ panelContent?.currency }} {{ eligibility?.amount }}</span>
-                        </li>
-                        <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
-                    </ul>
-                    <div>
-                        <ng-content select=".terms-and-condition"></ng-content>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ng-content select=".purchase"></ng-content>
                     </div>
                 </div>
             </div>
-        </div>
-    </ng-template>
+            <div [ngClass]="gridColumnClass">
+                <i class="fas fa-file-signature"></i>
+                <h4 title="{{ 'terms and conditions' }}">terms and conditions</h4>
+                <div class="row">
+                    <small class="col-xs-12 conditions">there are certain terms and conditions are applicable to this coupon code. please find out here:</small>
+                    <div class="col-xs-12">
+                        <ul>                        
+                            <li title="{{ eligibility?.key }} {{ eligibility?.amount ? (': ' + panelContent?.currency + ' ' + eligibility?.amount) : '' }}" *ngFor="let eligibility of panelContent?.eligibility; let j = index">
+                                <i class="fas fa-check-circle"></i>{{ eligibility?.key }} 
+                                <span *ngIf="eligibility?.amount || eligibility?.amount >= 0"> : {{ panelContent?.currency }} {{ eligibility?.amount }}</span>
+                            </li>
+                            <li title="{{ panelContent?.duration?.key }}: {{ panelContent?.duration?.date }}"><i class="fas fa-check-circle"></i>{{ panelContent?.duration?.key }}: <span>{{ panelContent?.duration?.date }}</span></li>
+                        </ul>
+                        <div>
+                            <ng-content select=".terms-and-condition"></ng-content>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'wedding'" #weddingTemplate>
+            <div [ngClass]="gridColumnClass">
+                <img src="{{ panelContent?.path }}" alt="marriage-hall" class="img-responsive">
+            </div>
+            <div [ngClass]="gridColumnClass">
+                <i class="{{ panelContent?.icon }}"></i>
+                <h4 title="{{ panelContent?.heading }}">{{ panelContent?.heading }}</h4>
+                <div class="row">
+                    <small title="{{ panelContent?.description }}" class="col-xs-12 description">{{ panelContent?.description }}</small>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ng-content select=".book-marriage-hall"></ng-content>
+                    </div>
+                </div>
+            </div>
+            <div [ngClass]="gridColumnClass">
+                <i class="fas fa-file-signature"></i>
+                <h4 title="{{ 'terms and conditions' }}">specifications in detail</h4>
+                <div class="row">
+                    <small class="col-xs-12 conditions">please find all the relevant details here:</small>
+                    <div class="col-xs-12">
+                        <ul>                        
+                            <li title="{{ specification?.key + ': ' + specification?.value }}" *ngFor="let specification of panelContent?.specification; let j = index">
+                                <i class="fas fa-check-circle"></i> 
+                                <span>{{ specification?.key }}: {{ specification?.value }}</span>
+                            </li>
+                            <li title="{{ 'price: ' + panelContent?.currency + ' ' + panelContent?.price + ' / day' }}">
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ 'price: ' + panelContent?.currency + ' ' + panelContent?.price + ' / day' }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ng-container>
 </div>
