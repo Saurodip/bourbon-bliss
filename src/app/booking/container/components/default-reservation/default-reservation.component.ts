@@ -7,33 +7,33 @@ import { CustomValidatorsService } from '../../../../shared/validators/custom-va
 import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
-    selector: 'app-coupon',
-    templateUrl: './coupon.component.html',
-    styleUrls: ['./coupon.component.scss']
+    selector: 'app-default-reservation',
+    templateUrl: './default-reservation.component.html',
+    styleUrls: ['./default-reservation.component.scss']
 })
 
-export class CouponComponent implements OnInit, OnDestroy {
+export class DefaultReservationComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
-    public couponContent: Array<Option>;
-    public selectedItem: Coupon;
+    public defaultReservationContent: Array<Option>;
+    public selectedOption: Coupon;
     private cachedFormData: Option;
     private storageObject: object;
     public modalObject: object;
-    public couponForm: FormGroup;
+    public reservationForm: FormGroup;
 
-    @Input() set selectedCoupon(value: Coupon) {
+    @Input() set selectedItem(value: Coupon) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.selectedItem = value;
-            this.storageObject = { action: 'set', variable: 'SelectedCoupon', value: this.selectedItem };
+            this.selectedOption = value;
+            this.storageObject = { action: 'set', variable: 'SelectedCoupon', value: this.selectedOption };
             this.sharedService.applyStorage(this.storageObject);
         } else {
             this.storageObject = { action: 'get', variable: 'SelectedCoupon' };
-            this.selectedItem = this.sharedService.applyStorage(this.storageObject);
+            this.selectedOption = this.sharedService.applyStorage(this.storageObject);
         }
     }
     @Input() set content(value: Array<Option>) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.couponContent = value;
+            this.defaultReservationContent = value;
         } else {
             this.storageObject = { action: 'get', variable: 'UserDetails' };
             this.cachedFormData = this.sharedService.applyStorage(this.storageObject);
@@ -46,8 +46,8 @@ export class CouponComponent implements OnInit, OnDestroy {
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
         this.viewportWidth = 0;
-        this.couponContent = [];
-        this.selectedItem = new Coupon();
+        this.defaultReservationContent = [];
+        this.selectedOption = new Coupon();
         this.cachedFormData = new Option();
         this.storageObject = { action: '', variable: '', value: null };
         this.modalObject = { type: '', title: '', message: '' };
@@ -57,7 +57,7 @@ export class CouponComponent implements OnInit, OnDestroy {
     }
 
     private initializeCouponForm(): void {
-        this.couponForm = this.formBuilder.group({
+        this.reservationForm = this.formBuilder.group({
             userInformation: this.formBuilder.group({
                 firstName: [this.cachedFormData && this.cachedFormData['userInformation'].firstName || '', [Validators.required, Validators.minLength(2), Validators.maxLength(15), this.customValidatorsService.characterValidator]],
                 middleName: [this.cachedFormData && this.cachedFormData['userInformation'].middleName || '', [this.customValidatorsService.characterValidator]],
@@ -71,7 +71,7 @@ export class CouponComponent implements OnInit, OnDestroy {
     }
 
     public resetCouponForm(): void {
-        this.couponForm.reset();
+        this.reservationForm.reset();
         this.sharedService.removeStorage('UserDetails');
     }
 

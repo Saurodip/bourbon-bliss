@@ -11,7 +11,6 @@ import { Content, MarriageHall } from '../../wedding.model';
 export class WeddingComponent implements OnInit {
     public viewportWidth: number;
     public weddingContent: Content;
-    public selectedFilterIndex: number;
     public arrayIndex: number;
     public gridRowClass: string;
     public gridColumnClass: string;
@@ -26,7 +25,6 @@ export class WeddingComponent implements OnInit {
     constructor() {
         this.viewportWidth = 0;
         this.weddingContent = new Content();
-        this.selectedFilterIndex = 0;
         this.arrayIndex = 0;
         this.gridRowClass = '';
         this.gridColumnClass = '';
@@ -44,7 +42,7 @@ export class WeddingComponent implements OnInit {
         this.gridColumnClass = this.arrayIndex === 0 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
     }
 
-    public onBookMarriageHall(index: number): void {
+    public onBookingMarriageHall(index: number): void {
         this.selectedMarriageHall.emit(this.weddingContent.marriageHalls[index]);
     }
 }

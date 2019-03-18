@@ -23,8 +23,8 @@
             <form [formGroup]="reservationForm" class="form-horizontal">
                 <div class="row">
                     <div class="col-xs-12 reservation-request">
-                        <h4><i class="{{ reservationContent[0]?.heading?.icon }}"></i> {{ reservationContent[0]?.heading?.text }}</h4>
-                        <ng-container *ngFor="let item of reservationContent[0]?.options; let i = index">
+                        <h4><i class="{{ hotelReservationContent[0]?.heading?.icon }}"></i> {{ hotelReservationContent[0]?.heading?.text }}</h4>
+                        <ng-container *ngFor="let item of hotelReservationContent[0]?.options; let i = index">
                             <ng-container *ngIf="item.array">
                                 <div formArrayName="{{ item.array }}" *ngFor="let control of reservationForm.get(item.array)?.controls; let j = index">
                                     <div class="form-group control-section row" formGroupName="{{ j }}">
@@ -96,8 +96,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-lg-5 additional-choice">
                         <div class="row">
-                            <h4><i class="{{ reservationContent[1]?.heading?.icon }}"></i> {{ reservationContent[1]?.heading?.text }}</h4>
-                            <ng-container *ngFor="let item of reservationContent[1]?.options; let i = index">
+                            <h4><i class="{{ hotelReservationContent[1]?.heading?.icon }}"></i> {{ hotelReservationContent[1]?.heading?.text }}</h4>
+                            <ng-container *ngFor="let item of hotelReservationContent[1]?.options; let i = index">
                                 <div formGroupName="{{ item.group }}">
                                     <ng-container *ngFor="let field of item.fields; let j = index">
                                         <div class="col-xs-12 form-group">
@@ -124,8 +124,8 @@
                     </div>
                     <div class="col-xs-12 col-lg-6 col-lg-offset-1 price-list">
                         <div class="row">
-                            <h4><i class="{{ reservationContent[2]?.heading?.icon }}"></i> {{ reservationContent[2]?.heading?.text }}</h4>
-                            <ng-container *ngFor="let item of reservationContent[2]?.options; let i = index">
+                            <h4><i class="{{ hotelReservationContent[2]?.heading?.icon }}"></i> {{ hotelReservationContent[2]?.heading?.text }}</h4>
+                            <ng-container *ngFor="let item of hotelReservationContent[2]?.options; let i = index">
                                 <ng-container *ngFor="let field of item.fields; let j = index">
                                     <div class="col-xs-12 form-group">
                                         <div class="row">

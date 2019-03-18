@@ -20,7 +20,7 @@ export class BookingContainerComponent implements OnInit {
     public bookingData: Booking;
     public countryList: CountryList;
     public selectedOption: Availability;
-    public selectedCoupon: Coupon;
+    public selectedItem: Coupon;
     public expiryMonth: Month;
     public navigationHistory: NavigationHistory;
     private storageObject: object;
@@ -36,7 +36,7 @@ export class BookingContainerComponent implements OnInit {
         this.bookingData = new Booking();
         this.countryList = new CountryList();
         this.selectedOption = new Availability();
-        this.selectedCoupon = new Coupon();
+        this.selectedItem = new Coupon();
         this.expiryMonth = new Month();
         this.navigationHistory = new NavigationHistory();
         this.storageObject = { action: '', variable: '', value: null };
@@ -69,12 +69,12 @@ export class BookingContainerComponent implements OnInit {
     }
 
     private getSelectedOption(): void {
-        this.appService.hotelSharedData$.subscribe(
+        this.appService.sharedSelectedHotelData$.subscribe(
             (data) => this.selectedOption = { ...data },
             (error) => this.error = error
         );
-        this.appService.couponSharedData$.subscribe(
-            (data) => this.selectedCoupon = { ...data },
+        this.appService.sharedSelectedItemData$.subscribe(
+            (data) => this.selectedItem = { ...data },
             (error) => this.error = error
         );
     }
@@ -88,7 +88,7 @@ export class BookingContainerComponent implements OnInit {
 
     private getNavigationHistory(): void {
         this.sharedService.getRouteUrl();
-        this.appService.navigationSharedData$.subscribe(
+        this.appService.sharedNavigationData$.subscribe(
             (data) => {
                 this.navigationHistory = { ...data };
                 if (!this.navigationHistory.previousMenu) {

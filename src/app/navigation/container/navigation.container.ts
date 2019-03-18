@@ -42,7 +42,7 @@ export class NavigationContainerComponent implements OnInit {
 
   private getNavigationHistory(): void {
     this.sharedService.getRouteUrl();
-    this.appService.navigationSharedData$.subscribe(
+    this.appService.sharedNavigationData$.subscribe(
       (data) => this.navigationHistory = { ...data },
       (error) => this.error = error
     );

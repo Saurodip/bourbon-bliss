@@ -11,10 +11,7 @@
         <div class="row">
             <div *ngFor="let item of weddingContent?.marriageHalls; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '855px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
                 <app-panel [template]="'wedding'" [gridClass]="gridColumnClass" [content]="item">
-                    <input type="button" class="btn btn-default book-marriage-hall" value="book marriage hall !" (click)="onCouponPurchase(i)">
-                    <small class="hall-details">
-                        <span><span class="asterisk">*</span>applicable for <b>{{ item.type }}</b> section only</span>
-                    </small>
+                    <input type="button" class="btn btn-default book-marriage-hall" value="book marriage hall !" (click)="onBookingMarriageHall(i)">
                 </app-panel>
             </div>
         </div>

@@ -1,13 +1,13 @@
 <div class="booking-container">
     <div class="row panel-wrapper">
         <div class="col-xs-12">
-            <app-panel [template]="routedFrom" [gridClass]="gridColumnClass" [content]="selectedItem">
+            <app-panel [template]="routedFrom" [gridClass]="gridColumnClass" [content]="selectedOption">
                 <div class="row purchase">
-                    <div class="col-xs-12">price: {{ selectedItem?.currency }} {{ selectedItem?.price }}</div>
+                    <div class="col-xs-12">price: {{ selectedOption?.currency }} {{ selectedOption?.price }}</div>
                 </div>
                 <div class="row terms-and-condition">
                     <small>
-                        <span><span class="asterisk">*</span>applicable for <b>{{ selectedItem?.type }}</b> section only</span>
+                        <span><span class="asterisk">*</span>applicable for <b>{{ selectedOption?.type }}</b> section only</span>
                     </small>
                 </div>
             </app-panel>
@@ -15,11 +15,11 @@
     </div>
     <div class="row form-wrapper">
         <div class="col-xs-12">
-            <form [formGroup]="couponForm" class="form-horizontal">
+            <form [formGroup]="reservationForm" class="form-horizontal">
                 <div class="row">
                     <div class="col-xs-12 user-information">
-                        <h4><i class="{{ couponContent[0]?.heading?.icon }}"></i> {{ couponContent[0]?.heading?.text }}</h4>
-                        <ng-container *ngFor="let item of couponContent[0]?.options; let i = index">
+                        <h4><i class="{{ defaultReservationContent[0]?.heading?.icon }}"></i> {{ defaultReservationContent[0]?.heading?.text }}</h4>
+                        <ng-container *ngFor="let item of defaultReservationContent[0]?.options; let i = index">
                             <div class="form-group control-section row" formGroupName="{{ item.group }}">
                                 <h6><i class="{{ item.heading.icon }}"></i> {{ item.heading.text }}</h6>
                                 <div class="col-xs-12 col-sm-4" *ngFor="let field of item.fields; let j = index">
@@ -30,7 +30,7 @@
                                         </label>
                                         <div class="field-control">
                                             <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
-                                            <div *ngIf="couponForm.controls[item.group].controls[field.control]?.touched && couponForm.controls[item.group].controls[field.control]?.invalid" class="error">
+                                            <div *ngIf="reservationForm.controls[item.group].controls[field.control]?.touched && reservationForm.controls[item.group].controls[field.control]?.invalid" class="error">
                                                 <i class="fas fa-exclamation-circle"></i>
                                                 <span class="error-message">please provide valid {{ field.label }}.</span>
                                             </div>
@@ -41,7 +41,7 @@
                         </ng-container>
                         <div class="col-xs-12 button-container">
                             <input type="button" class="btn btn-default" value="reset" (click)="resetCouponForm()">
-                            <input type="button" class="btn btn-default" value="save" [disabled]="couponForm.invalid" (click)="onSaveUserDetails(couponForm.value);">
+                            <input type="button" class="btn btn-default" value="save" [disabled]="reservationForm.invalid" (click)="onSaveUserDetails(reservationForm.value);">
                         </div>
                     </div>
                 </div>

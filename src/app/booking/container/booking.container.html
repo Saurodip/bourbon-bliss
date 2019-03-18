@@ -4,12 +4,12 @@
         <div class="row description">
             <small class="col-xs-12">{{ (bookingData$ | async)?.description }}</small>
         </div>
-        <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then hotelReservationComponent else defaultReservationComponent"></ng-container>
-        <ng-template #hotelReservationComponent>
-            <app-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.reservationContent" [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-reservation>
+        <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then hotelReservation else defaultReservation"></ng-container>
+        <ng-template #hotelReservation>
+            <app-hotel-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.hotelReservationContent" [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-hotel-reservation>
         </ng-template>
-        <ng-template #defaultReservationComponent>
-            <app-coupon [selectedCoupon]="selectedCoupon" [content]="(bookingData$ | async)?.couponContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-coupon>
+        <ng-template #defaultReservation>
+            <app-default-reservation [selectedItem]="selectedItem" [content]="(bookingData$ | async)?.defaultReservationContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-default-reservation>
         </ng-template>
         <app-payment [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>
         <app-additional-info></app-additional-info>

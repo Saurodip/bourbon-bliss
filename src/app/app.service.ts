@@ -11,10 +11,9 @@ export class AppService {
             'Authorization': 'my-auth-token'
         })
     };
-    public hotelSharedData$ = new BehaviorSubject<any>([]);
-    public navigationSharedData$ = new BehaviorSubject<any>([]);
-    public couponSharedData$ = new BehaviorSubject<any>([]);
-    public weddingSharedData$ = new BehaviorSubject<any>([]);
+    public sharedNavigationData$ = new BehaviorSubject<any>([]);
+    public sharedSelectedHotelData$ = new BehaviorSubject<any>([]);
+    public sharedSelectedItemData$ = new BehaviorSubject<any>([]);
 
     constructor(private httpClient: HttpClient) { }
 
@@ -57,27 +56,20 @@ export class AppService {
 
     public onSharingData(data: any, from: string): void {
         switch (from) {
-            case 'hotel': this.hotelSharedData$.next(data);
+            case 'navigation': this.sharedNavigationData$.next(data);
                 break;
-            case 'navigation': this.navigationSharedData$.next(data);
+            case 'hotel': this.sharedSelectedHotelData$.next(data);
                 break;
-            case 'coupon': this.couponSharedData$.next(data);
-                break;
-            case 'wedding': this.weddingSharedData$.next(data);
-                break;
-            default:
+            default: this.sharedSelectedItemData$.next(data);
                 break;
         }
     }
 
     public sharedData(from: string): Observable<any> {
         switch (from) {
-            case 'hotel': return this.hotelSharedData$.asObservable();
-            case 'navigation': return this.navigationSharedData$.asObservable();
-            case 'coupon': return this.couponSharedData$.asObservable();
-            case 'wedding': return this.weddingSharedData$.asObservable();
-            default:
-                break;
+            case 'navigation': return this.sharedNavigationData$.asObservable();
+            case 'hotel': return this.sharedSelectedHotelData$.asObservable();
+            default: return this.sharedSelectedItemData$.asObservable();
         }
     }
 }

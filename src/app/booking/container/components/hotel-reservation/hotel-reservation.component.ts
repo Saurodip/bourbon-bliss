@@ -7,19 +7,19 @@ import { CustomValidatorsService } from '../../../../shared/validators/custom-va
 import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
-    selector: 'app-reservation',
-    templateUrl: './reservation.component.html',
-    styleUrls: ['./reservation.component.scss']
+    selector: 'app-hotel-reservation',
+    templateUrl: './hotel-reservation.component.html',
+    styleUrls: ['./hotel-reservation.component.scss']
 })
 
-export class ReservationComponent implements OnInit, OnDestroy {
+export class HotelReservationComponent implements OnInit, OnDestroy {
     public viewportWidth: number;
     public selectedItem: Availability;
     public listOfCountries: object;
     private storageObject: object;
     private cachedFormData: object;
     private maxAccomodationCount: number;
-    public reservationContent: Array<Option>;
+    public hotelReservationContent: Array<Option>;
     private currentDate: string;
     public reservationForm: FormGroup;
     public minValueForRemoveGuestInfo: Number;
@@ -38,12 +38,12 @@ export class ReservationComponent implements OnInit, OnDestroy {
             this.storageObject = { action: 'get', variable: 'SelectedItem' };
             this.selectedItem = this.sharedService.applyStorage(this.storageObject);
         }
-        this.maxAccomodationCount = this.selectedItem && this.selectedItem['description'].accomodation['count'];
+        this.maxAccomodationCount = this.selectedItem && this.selectedItem['description'] && this.selectedItem['description'].accomodation['count'];
         this.getCalculatedPriceList();
     }
     @Input() set content(value: Array<Option>) {
         if (value && Object.getOwnPropertyNames(value).length !== 0) {
-            this.reservationContent = value;
+            this.hotelReservationContent = value;
             this.onSelectBookingBasis('day');
             this.getCalculatedPriceList();
         }
@@ -64,7 +64,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.storageObject = { action: '', variable: '', value: null };
         this.cachedFormData = {};
         this.maxAccomodationCount = 0;
-        this.reservationContent = [];
+        this.hotelReservationContent = [];
         this.currentDate = this.sharedService.getFormattedDate(new Date());
         this.reservationForm = this.formBuilder.group({});
         this.minValueForRemoveGuestInfo = 1;
@@ -167,7 +167,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     public onSelectBookingBasis(bookingBasis: string): void {
-        let group: object = this.reservationContent[0]['options'].find((item: object) => item['group'] === 'checkInOut');
+        let group: object = this.hotelReservationContent[0]['options'].find((item: object) => item['group'] === 'checkInOut');
         let isCheckOutControlPresent = group['fields'].find((item: object) => item['control'] === 'checkOut');
         let isTotalHoursControlPresent = group['fields'].find((item: object) => item['control'] === 'totalHours');
         if (!isCheckOutControlPresent) {
@@ -247,17 +247,17 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     private prepareTooltipContent(): void {
-        if (this.selectedItem && this.reservationContent && this.reservationContent.length > 0) {
+        if (this.selectedItem && this.hotelReservationContent && this.hotelReservationContent.length > 0) {
             let priceInfo: object = this.selectedItem.description.price.find((item: object) => item['basis'] === this.bookingBasis);
             if (priceInfo) {
-                let additionalChoiceInfo = this.reservationContent.find((item: object) => item['heading'].text === 'additional choice');
+                let additionalChoiceInfo = this.hotelReservationContent.find((item: object) => item['heading'].text === 'additional choice');
                 if (additionalChoiceInfo) {
                     additionalChoiceInfo['options'][0].fields.forEach((item: object) => {
                         item['tooltip'] += priceInfo['additionalChoice'][item['control']] + '.';
                         item['disabled'] = priceInfo['additionalChoice'][item['control']] <= 0 ? true : false;
                     });
                 }
-                let priceListInfo = this.reservationContent.find((item: object) => item['heading'].text === 'booking price list');
+                let priceListInfo = this.hotelReservationContent.find((item: object) => item['heading'].text === 'booking price list');
                 if (priceListInfo) {
                     priceListInfo['options'][0].fields.forEach((item: object) => {
                         switch (item['control']) {
@@ -279,9 +279,9 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     public getCalculatedPriceList(): void {
-        if (this.reservationContent.length > 0 && this.selectedItem.description) {
+        if (this.hotelReservationContent.length > 0 && this.selectedItem.description) {
             let selectedItemPriceDetails: object = this.selectedItem.description.price.find((item: object) => item['basis'] === this.bookingBasis);
-            let priceList: object = this.reservationContent.find((item: object) => item['heading'].text === 'booking price list');
+            let priceList: object = this.hotelReservationContent.find((item: object) => item['heading'].text === 'booking price list');
             let amount: number;
             priceList['options'].forEach((option: Option) => {
                 option['fields'].forEach((field: Field) => {

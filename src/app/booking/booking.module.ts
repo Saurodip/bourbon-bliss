@@ -4,14 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BookingRoutingModule } from './booking-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { BookingContainerComponent } from './container/booking.container';
-import { ReservationComponent } from './container/components/reservation/reservation.component';
-import { CouponComponent } from './container/components/coupon/coupon.component';
+import { HotelReservationComponent } from './container/components/hotel-reservation/hotel-reservation.component';
+import { DefaultReservationComponent } from './container/components/default-reservation/default-reservation.component';
 import { PaymentComponent } from './container/components/payment/payment.component';
 import { BookingService } from './booking.service';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, BookingRoutingModule, SharedModule],
-  declarations: [BookingContainerComponent, ReservationComponent, CouponComponent, PaymentComponent],
+  declarations: [BookingContainerComponent, HotelReservationComponent, DefaultReservationComponent, PaymentComponent],
   providers: [BookingService]
 })
 
