@@ -2,10 +2,8 @@
 .offers-container {
     padding: 25px $side-padding-landscape 0px;
     .action-container {
-        background-color: #f1f1f1;
         font-size: 12px;
         letter-spacing: 1px;
-        text-transform: uppercase;
         span {
             margin-right: 15px;
         }
@@ -61,7 +59,7 @@
         .row:first-child {
             margin: 0px;
             .coupon-view {
-                margin-bottom: 25px;
+                margin-bottom: $panel-gap;
                 padding: 0px;
                 .purchase {
                     color: #808080;

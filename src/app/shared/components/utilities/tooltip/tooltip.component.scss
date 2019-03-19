@@ -6,19 +6,19 @@
     z-index: 99;
     .arrow-up {
         @include arrowPosition('', 0px, 0px, -20px);
-        @include arrowStyle($arrowBackgroundColor, transparent, transparent, transparent);
+        @include arrowStyle($arrow-background-color, transparent, transparent, transparent);
     }
     .arrow-down {
         @include arrowPosition(-20px, 0px, 0px, '');
-        @include arrowStyle(transparent, transparent, transparent, $arrowBackgroundColor);
+        @include arrowStyle(transparent, transparent, transparent, $arrow-background-color);
     }
     .arrow-right {
         @include arrowPosition(0px, '', -20px, 0px);
-        @include arrowStyle(transparent, $arrowBackgroundColor, transparent, transparent);
+        @include arrowStyle(transparent, $arrow-background-color, transparent, transparent);
     }
     .arrow-left {
         @include arrowPosition(0px, -20px, '', 0px);
-        @include arrowStyle(transparent, transparent, $arrowBackgroundColor, transparent);
+        @include arrowStyle(transparent, transparent, $arrow-background-color, transparent);
     }
     .tooltip-message {
         background-color: #f7f7f7;

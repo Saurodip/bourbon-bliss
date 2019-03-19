@@ -9,7 +9,7 @@
     </div>
     <div class="wedding-container">
         <div class="row">
-            <div *ngFor="let item of weddingContent?.marriageHalls; let i = index" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '855px' : 'auto' }" [ngClass]="gridRowClass" class="coupon-view">
+            <div class="marriage-hall" [ngClass]="gridRowClass" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '855px' : 'auto' }" *ngFor="let item of weddingContent?.marriageHalls; let i = index">
                 <app-panel [template]="'wedding'" [gridClass]="gridColumnClass" [content]="item">
                     <input type="button" class="btn btn-default book-marriage-hall" value="book marriage hall !" (click)="onBookingMarriageHall(i)">
                 </app-panel>

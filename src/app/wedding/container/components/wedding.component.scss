@@ -2,20 +2,10 @@
 .wedding-container {
     padding: 25px $side-padding-landscape 0px;
     .action-container {
-        background-color: #f1f1f1;
         font-size: 12px;
         letter-spacing: 1px;
-        text-transform: uppercase;
         span {
             margin-right: 15px;
-        }
-        label {
-            margin-right: 5px;
-            input[type="radio"] {
-                bottom: 3px;
-                cursor: pointer;
-                position: absolute;
-            }
         }
         .row {
             div:first-child {
@@ -38,32 +28,9 @@
     }
     .wedding-container {
         padding: 25px 0px 0px;
-        .row:first-child {
-            margin: 0px;
-            .coupon-view {
-                margin-bottom: 25px;
-                padding: 0px;
-                .purchase {
-                    color: #808080;
-                    margin-bottom: 20px;
-                    margin-top: 28px;
-                }
-                .terms-and-condition {
-                    display: block;
-                    font-size: 10px;
-                    padding-bottom: 10px;
-                    text-align: center;
-                    span {
-                        .asterisk {
-                            left: -3px;
-                            top: 10px;
-                        }
-                        b {
-                            font-size: 1.3em;
-                        }
-                    }
-                }
-            }
+        .marriage-hall {
+            padding: 0px;
+            margin-bottom: $panel-gap;
         }
     }
 }
@@ -71,16 +38,9 @@
 @media (max-width: 767px) {
     .wedding-container {
         padding: 25px $side-padding-potrait 0px;
-        .action-container {
-            .row:first-child {
-                text-align: center;
-            }
-        }
         .wedding-container {
-            .row:first-child {
-                &>div {
-                    min-height: 855px !important;
-                }
+            .marriage-hall {
+                min-height: 855px !important;
             }
         }
     }
