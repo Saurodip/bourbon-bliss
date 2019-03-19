@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Option } from '../../../booking.model';
 import { Coupon } from '../../../../offers/offers.model';
@@ -42,6 +42,7 @@ export class DefaultReservationComponent implements OnInit, OnDestroy {
     }
     @Input() routedFrom: string;
     @Input() gridColumnClass: string;
+    @Output() saveDefaultReservationForm = new EventEmitter<boolean>();
     @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private customValidatorsService: CustomValidatorsService) {
@@ -84,6 +85,7 @@ export class DefaultReservationComponent implements OnInit, OnDestroy {
             message: 'user details has been saved successfully.'
         };
         this.modalComponent.onShowModalPopover();
+        this.saveDefaultReservationForm.emit(true);
     }
 
     ngOnDestroy() {

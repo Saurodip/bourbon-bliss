@@ -24,6 +24,7 @@ export class BookingContainerComponent implements OnInit {
     public expiryMonth: Month;
     public navigationHistory: NavigationHistory;
     private storageObject: object;
+    public displayPaymentSection: boolean;
     public error: string;
 
     public bookingData$: Observable<Booking> = this.bookingService.getBookingData();
@@ -40,6 +41,7 @@ export class BookingContainerComponent implements OnInit {
         this.expiryMonth = new Month();
         this.navigationHistory = new NavigationHistory();
         this.storageObject = { action: '', variable: '', value: null };
+        this.displayPaymentSection = false;
         this.error = '';
     }
 
@@ -98,5 +100,9 @@ export class BookingContainerComponent implements OnInit {
             },
             (error) => this.error = error
         );
+    }
+
+    public onSaveReservationForm(status: boolean): void {
+        this.displayPaymentSection = status;
     }
 }

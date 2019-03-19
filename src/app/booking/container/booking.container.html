@@ -6,12 +6,12 @@
         </div>
         <ng-container *ngIf="navigationHistory?.previousMenu === 'hotel'; then hotelReservation else defaultReservation"></ng-container>
         <ng-template #hotelReservation>
-            <app-hotel-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.hotelReservationContent" [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-hotel-reservation>
+            <app-hotel-reservation [selectedOption]="selectedOption" [content]="(bookingData$ | async)?.hotelReservationContent" [countryList]="countryList" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass" (saveHotelReservationForm)="onSaveReservationForm($event)"></app-hotel-reservation>
         </ng-template>
         <ng-template #defaultReservation>
-            <app-default-reservation [selectedItem]="selectedItem" [content]="(bookingData$ | async)?.defaultReservationContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass"></app-default-reservation>
+            <app-default-reservation [selectedItem]="selectedItem" [content]="(bookingData$ | async)?.defaultReservationContent" [routedFrom]="navigationHistory?.previousMenu" [gridColumnClass]="gridColumnClass" (saveDefaultReservationForm)="onSaveReservationForm($event)"></app-default-reservation>
         </ng-template>
-        <app-payment [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>
+        <app-payment *ngIf="displayPaymentSection" [content]="(bookingData$ | async)?.paymentContent" [month]="expiryMonth"></app-payment>
         <app-additional-info></app-additional-info>
     </div>
 </div>
