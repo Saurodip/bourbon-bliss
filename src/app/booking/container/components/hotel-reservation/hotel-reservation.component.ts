@@ -139,6 +139,12 @@ export class HotelReservationComponent implements OnInit, OnDestroy {
         }
     }
 
+    get noOfGuest(): FormControl {
+        if (this.reservationForm && this.reservationForm.get('checkInOut')) {
+            return this.reservationForm.get('checkInOut')['controls'].noOfGuest;
+        }
+    }
+
     get additionalChoice(): FormGroup {
         if (this.reservationForm && this.reservationForm.get('additionalChoice')) {
             return <FormGroup>this.reservationForm.get('additionalChoice');
@@ -208,6 +214,7 @@ export class HotelReservationComponent implements OnInit, OnDestroy {
         } else if (typeOfAction === 'remove' && guestInformation.controls.length > this.minValueForRemoveGuestInfo) {
             guestInformation.removeAt(guestInformation.controls.length - 1);
         }
+        this.noOfGuest.patchValue(guestInformation.controls.length);
     }
 
     public onFormControlChange(event: Event): void {
