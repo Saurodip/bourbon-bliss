@@ -1,0 +1,306 @@
+{
+    "heading": "restaurants",
+    "description": "when you just thought the humble delicious foods could not get any better, we have upped the stakes, the steaks and the roast – chicken / pork / beef, which you can enjoy with a starter and dessert – this will bring you the ultimate in feasting.",
+    "content": {
+        "action": [
+            {
+                "key": "filter by",
+                "operations": [
+                    "view all",
+                    "bangalore",
+                    "kolkata",
+                    "mumbai"
+                ]
+            },
+            {
+                "key": "change view",
+                "operations": [
+                    "fas fa-grip-horizontal",
+                    "fas fa-grip-vertical"
+                ]
+            }
+        ],
+        "restaurants": [
+            {
+                "path": "../../assets/images/restaurant/bindewald's-kitchen.jpg",
+                "icon": "fas fa-utensils",
+                "name": "bindewald's kitchen",
+                "description": "fill your plate up with tasty continental food at this incredible restaurant located in the heart of bangalore. a jolly ambiance, lively staff, and aromatic food waiting to be gorged upon await you at the only place.",
+                "currency": "rs.",
+                "cost": 1000,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "a la carte"
+                    },
+                    {
+                        "key": "address",
+                        "value": "11/a, stephens' museum road, bangalore - 560898"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "sunday to friday (12pm - 3pm, 7pm - 11pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "bangalore"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "chicken and beef steak, and lasagna"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 9090128191
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/bingo-binge.jpg",
+                "icon": "fas fa-utensils",
+                "name": "bingo binge",
+                "description": "bingo binge has built a reputation in mumbai for having mean burgers and delicious steak. out of all the best restaurants in mumbai, this one probably has the most amount of reserved tables for a fast-food joint.",
+                "currency": "rs.",
+                "cost": 800,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "a la carte"
+                    },
+                    {
+                        "key": "address",
+                        "value": "39/c, ground floor, 4th cross, 2nd block, mumbai - 400003"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "all days (12pm - 2:30pm, 6pm - 10pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "mumbai"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "burgers and steak"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 8910928976
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/chung-king-chow-down.jpg",
+                "icon": "fas fa-utensils",
+                "name": "chung king chow down",
+                "description": "the exact place you need to be if you are looking for an authentic, high-end sushi dining experience that would surpass all your expectations. Eating in chung king chow down is not only a dining experience, but it's a healing of the mind, body, and senses for those who appreciate good japanese cuisine.",
+                "currency": "rs.",
+                "cost": 1800,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "a la carte"
+                    },
+                    {
+                        "key": "address",
+                        "value": "93, triangular park, lake gardens, kolkata - 700032"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "monday - friday (12pm - 10pm), saturday & sunday (12pm to 12 am)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "kolkata"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "japanese cuisine"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 7787298201
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/guns-and-booze.jpg",
+                "icon": "fas fa-utensils",
+                "name": "guns & booze",
+                "description": "guns & booze has managed to maintain its old-world charm in the changing times of the city. one of the few good restaurants in bangalore that has stuck to its original recipe of success and thrived under intense competition from cuisines that have come in along with the wave of modernity.",
+                "currency": "rs.",
+                "cost": 1000,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "buffet"
+                    },
+                    {
+                        "key": "address",
+                        "value": "4, b wing, 5th block, city centre stop, koramangala, bengaluru - 560120"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "all days (12pm - 3pm, 7pm - 11pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "bangalore"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "chicken kebab, tandoori chicken and chicken biryani"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 8821829810
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/dumpty's-cafe.jpg",
+                "icon": "fas fa-utensils",
+                "name": "dumpty's cafe",
+                "description": "an outstanding eating joint that has founded itself only at the turn of the millennium, dumpty's cafe ice cream parlour is a sweet delight that goes on doing what it does best in providing some of the best desserts.",
+                "currency": "rs.",
+                "cost": 500,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "ice cream parlour"
+                    },
+                    {
+                        "key": "address",
+                        "value": "67, 1st floor, white feather main road, mumbai - 400045"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "all days (10pm - 2pm, 7pm - 10pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "mumbai"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "hot chocolate fudge, brownie sundae, and apple pie"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 7621329800
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/shellac-and-hammock.jpg",
+                "icon": "fas fa-utensils",
+                "name": "shellac and hammock",
+                "description": "if you happen to live in kolkata and are fond of music, then shellac and hammock is the place to be. often known to promote independent artists and performers from the underground music scene, music lovers have made this place into a lively and happening scene every weekend.",
+                "currency": "rs.",
+                "cost": 1500,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "bar"
+                    },
+                    {
+                        "key": "address",
+                        "value": "41, st. peter's main road, park street, kolkata - 700071"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "monday - friday (6pm - 12pm), saturday & sunday (2pm - 12am)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "kolkata"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "microbrewery and jazz music venue"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 9098926101
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/the-pepper-dragon.jpg",
+                "icon": "fas fa-utensils",
+                "name": "the pepper dragon",
+                "description": "after successfully establishing restaurants all across india, the pepper dragon has packed its chinese craze in a brown basket and served it up to the people of kolkata. the taste and playful flavors of the restaurant have been taking the city by storm ever since.",
+                "currency": "rs.",
+                "cost": 1200,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "a la carte"
+                    },
+                    {
+                        "key": "address",
+                        "value": "12/d, china town avenue, topshia, kolkata - 700012"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "all days (12pm - 3pm, 6pm - 10pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "kolkata"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "chinese cuisine"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 8761028330
+                    }
+                ]
+            },
+            {
+                "path": "../../assets/images/restaurant/grits-and-greetings.jpg",
+                "icon": "fas fa-utensils",
+                "name": "grits and greetings",
+                "description": "a little light on the pocket, but equally majestic in ambiance, a sweet and romantic weekend brunch with your one. a lovely hangout place to breathe in the fresh air at one of the classiest rooftop restaurants in bangalore for a gala time tasting the finest cuisines from around the world.",
+                "currency": "rs.",
+                "cost": 900,
+                "unit": "cost for two",
+                "info": [
+                    {
+                        "key": "type",
+                        "value": "a la carte"
+                    },
+                    {
+                        "key": "address",
+                        "value": "302, church street road, southern park, bangalore - 560201"
+                    },
+                    {
+                        "key": "timings",
+                        "value": "all days (12pm - 2pm, 6pm - 11pm)"
+                    },
+                    {
+                        "key": "location",
+                        "value": "bangalore"
+                    },
+                    {
+                        "key": "speciality",
+                        "value": "mocktails, biryani, desserts"
+                    },
+                    {
+                        "key": "contact",
+                        "value": 7562835487
+                    }
+                ]
+            }
+        ]
+    }
+}

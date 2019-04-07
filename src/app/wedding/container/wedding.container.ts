@@ -10,6 +10,7 @@ import { SharedService } from '../../shared/shared.service';
   templateUrl: './wedding.container.html',
   styleUrls: ['./wedding.container.scss']
 })
+
 export class WeddingContainerComponent implements OnInit {
   public weddingData: Wedding;
   public error: string;

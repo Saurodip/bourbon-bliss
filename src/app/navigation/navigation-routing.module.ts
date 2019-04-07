@@ -12,7 +12,7 @@ const routes: Routes = [
     },
     {
         path: 'restaurants',
-        loadChildren: '../restaurants/restaurants.module#RestaurantsModule'
+        loadChildren: '../restaurant/restaurant.module#RestaurantModule'
     },
     {
         path: 'nightlife',

@@ -29,7 +29,16 @@
                                             <span class="asterisk" [ngStyle]="{ 'visibility': field.isMandatory ? 'visible' : 'hidden' }">*</span>
                                         </label>
                                         <div class="field-control">
-                                            <input type="{{ field.type }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}">
+                                            <ng-container *ngIf="field.type !== 'select'">
+                                                <input type="{{ field.type }}" id="{{ field.id }}" class="form-control" formControlName="{{ field.control }}" placeholder="Enter {{ field.label }}" (change)="onFormControlChange($event)">
+                                            </ng-container>
+                                            <ng-container *ngIf="field.type === 'select'">
+                                                <select *ngIf="field.control === 'time'" class="form-control" formControlName="{{ field.control }}">
+                                                    <option value="none">Select an option</option>
+                                                    <option *ngFor="let slot of timeSlots; let j = index" value="{{ slot }}">{{ slot }}</option>
+                                                    <option *ngFor="let slot of timeSlots; let j = index" value="{{ slot }}">{{ slot }}</option>
+                                                </select>
+                                            </ng-container>
                                             <div *ngIf="reservationForm.controls[item.group].controls[field.control]?.touched && reservationForm.controls[item.group].controls[field.control]?.invalid" class="error">
                                                 <i class="fas fa-exclamation-circle"></i>
                                                 <span class="error-message">please provide valid {{ field.label }}.</span>

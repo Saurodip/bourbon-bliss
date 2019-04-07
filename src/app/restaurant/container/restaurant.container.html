@@ -1,0 +1,10 @@
+<div id="restaurant">
+  <div class="restaurant-wrapper container-fluid">
+    <h1>{{ (restaurantData$ | async)?.heading }}</h1>
+    <div class="row description">
+      <small class="col-xs-12">{{ (restaurantData$ | async)?.description }}</small>
+    </div>
+    <app-restaurant [content]="(restaurantData$ | async)?.content" (selectedRestaurant)="bookSelectedRestaurant($event)"></app-restaurant>
+    <app-additional-info></app-additional-info>
+  </div>
+</div>

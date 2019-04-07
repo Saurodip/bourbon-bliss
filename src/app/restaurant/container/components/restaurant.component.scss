@@ -1,5 +1,5 @@
 @import "../../../../global.scss";
-.offers-container {
+.restaurant-container {
     padding: 25px $side-padding-landscape 0px;
     .action-container {
         font-size: 12px;
@@ -54,51 +54,21 @@
             }
         }
     }
-    .coupons-container {
+    .restaurant-container {
         padding: 25px 0px 0px;
-        .row:first-child {
-            margin: 0px;
-            .coupon-view {
-                margin-bottom: $panel-gap;
-                padding: 0px;
-                .purchase {
-                    color: #808080;
-                    margin-bottom: 20px;
-                    margin-top: 28px;
-                }
-                .terms-and-condition {
-                    display: block;
-                    font-size: 10px;
-                    padding-bottom: 10px;
-                    text-align: center;
-                    span {
-                        .asterisk {
-                            left: -3px;
-                            top: 10px;
-                        }
-                        b {
-                            font-size: 1.3em;
-                        }
-                    }
-                }
-            }
+        .restaurant {
+            padding: 0px;
+            margin-bottom: $panel-gap;
         }
     }
 }
 
 @media (max-width: 767px) {
-    .offers-container {
+    .restaurant-container {
         padding: 25px $side-padding-potrait 0px;
-        .action-container {
-            .row:first-child {
-                text-align: center;
-            }
-        }
-        .coupons-container {
-            .row:first-child {
-                &>div {
-                    min-height: 890px !important;
-                }
+        .restaurant-container {
+            .restaurant {
+                min-height: 855px !important;
             }
         }
     }

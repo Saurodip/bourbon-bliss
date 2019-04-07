@@ -1,0 +1,33 @@
+<div class="restaurant-container">
+    <div class="action-container">
+        <div class="row">
+            <div *ngIf="viewportWidth <= 767" class="col-xs-12">
+                <input type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" value="{{ restaurantContent?.action[0]?.key }}">
+                <ul class="dropdown-menu">
+                    <li *ngFor="let item of restaurantContent?.action[0]?.operations; let i = index">
+                        <a href="javascript:void(0)" (click)="onApplyFilter(item, i)">{{ item }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="viewportWidth > 767" class="col-md-9 filter-action">
+                <span>{{ restaurantContent?.action[0]?.key }} :</span>
+                <label class="radio-inline" *ngFor="let item of restaurantContent?.action[0]?.operations; let i = index">
+                    <input type="radio" name="filter" [checked]="i === selectedFilterIndex" (change)="onApplyFilter(item, i)">{{ item }}
+                </label>
+            </div>
+            <div class="col-md-3 hidden-xs hidden-sm">
+                <span>{{ restaurantContent?.action[1]?.key }}</span>
+                <i class="view-icon {{ restaurantContent?.action[1]?.operations[arrayIndex] }}" (click)="onChangeView(arrayIndex)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="restaurant-container">
+        <div class="row">
+            <div class="restaurant" [ngClass]="gridRowClass" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '855px' : 'auto' }" *ngFor="let item of restaurants; let i = index">
+                <app-panel [template]="'restaurants'" [gridClass]="gridColumnClass" [content]="item">
+                    <input type="button" class="btn btn-default book-a-table" value="book a table !" (click)="onBookingRestaurant(i)">
+                </app-panel>
+            </div>
+        </div>
+    </div>
+</div>

@@ -74,6 +74,14 @@ export class CountryList {
     }
 }
 
+export class TimeSlot {
+    public timeSlots: Array<string>;
+
+    constructor() {
+        this.timeSlots = [];
+    }
+}
+
 export class Country {
     public name: string;
     public code: string;

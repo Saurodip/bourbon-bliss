@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, TimeInterval } from 'rxjs';
 import { Availability } from '../../hotel/hotel.model';
 import { Coupon } from '../../offers/offers.model';
-import { Booking, CountryList, Month } from '../booking.model';
+import { Booking, CountryList, Month, TimeSlot } from '../booking.model';
 import { NavigationHistory } from '../../shared/shared.model';
 import { BookingService } from '../booking.service';
 import { SharedService } from '../../shared/shared.service';
@@ -19,6 +19,7 @@ export class BookingContainerComponent implements OnInit {
     public gridColumnClass: string;
     public bookingData: Booking;
     public countryList: CountryList;
+    public time: TimeSlot;
     public selectedOption: Availability;
     public selectedItem: Coupon;
     public expiryMonth: Month;
@@ -36,6 +37,7 @@ export class BookingContainerComponent implements OnInit {
         this.gridColumnClass = '';
         this.bookingData = new Booking();
         this.countryList = new CountryList();
+        this.time = new TimeSlot();
         this.selectedOption = new Availability();
         this.selectedItem = new Coupon();
         this.expiryMonth = new Month();
@@ -51,6 +53,7 @@ export class BookingContainerComponent implements OnInit {
         this.gridColumnClass = this.viewportWidth > 767 ? 'col-xs-12 col-sm-4 horizontal-view' : 'col-xs-12 vertical-view';
         this.fetchBookingData();
         this.fetchCountryList();
+        this.fetchTimeSlots();
         this.getSelectedOption();
         this.fetchExpiryMonth();
         this.getNavigationHistory();
@@ -70,6 +73,20 @@ export class BookingContainerComponent implements OnInit {
         );
     }
 
+    private fetchExpiryMonth(): void {
+        this.bookingService.getExpiryMonth().subscribe(
+            (data) => this.expiryMonth = { ...data },
+            (error) => this.error = error
+        );
+    }
+
+    private fetchTimeSlots(): void {
+        this.bookingService.getTimeSlots().subscribe(
+            (data) => this.time = { ...data },
+            (error) => this.error = error
+        );
+    }
+
     private getSelectedOption(): void {
         this.appService.sharedSelectedHotelData$.subscribe(
             (data) => this.selectedOption = { ...data },
@@ -77,13 +94,6 @@ export class BookingContainerComponent implements OnInit {
         );
         this.appService.sharedSelectedItemData$.subscribe(
             (data) => this.selectedItem = { ...data },
-            (error) => this.error = error
-        );
-    }
-
-    private fetchExpiryMonth(): void {
-        this.bookingService.getExpiryMonth().subscribe(
-            (data) => this.expiryMonth = { ...data },
             (error) => this.error = error
         );
     }

@@ -82,9 +82,12 @@
         }
         &.vertical-view.additional-info-container {
             padding-bottom: 15px;
+            ul {
+                padding-left: 0px;
+            }
         }
     }
-    #hotelTemplate {
+    #hotel-template {
         .description-container,
         .additional-info-container {
             .statement {
@@ -102,17 +105,11 @@
             }
         }
     }
-    #offersTemplate {
+    #restaurant-template {
         .description-container {
             .description {
                 margin-bottom: 15px;
-                @include multiline-ellipsis('70px', 3);
-            }
-            .coupon-code {
-                font-size: 1.5em;
-                font-weight: bold;
-                margin: 10px 0px;
-                text-transform: lowercase;
+                @include multiline-ellipsis(125px, 6);
             }
         }
         .additional-info-container {
@@ -121,11 +118,30 @@
             }
         }
     }
-    #weddingTemplate {
+    #wedding-template {
         .description-container {
             .description {
                 margin-bottom: 15px;
-                @include multiline-ellipsis('100px', 5);
+                @include multiline-ellipsis(100px, 5);
+            }
+        }
+        .additional-info-container {
+            .statement {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    #offers-template {
+        .description-container {
+            .description {
+                margin-bottom: 15px;
+                @include multiline-ellipsis(65px, 3);
+            }
+            .coupon-code {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin: 10px 0px;
+                text-transform: lowercase;
             }
         }
         .additional-info-container {
