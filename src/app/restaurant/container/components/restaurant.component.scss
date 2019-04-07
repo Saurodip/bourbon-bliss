@@ -54,7 +54,7 @@
             }
         }
     }
-    .restaurant-container {
+    .restaurants-container {
         padding: 25px 0px 0px;
         .restaurant {
             padding: 0px;
@@ -66,7 +66,12 @@
 @media (max-width: 767px) {
     .restaurant-container {
         padding: 25px $side-padding-potrait 0px;
-        .restaurant-container {
+        .action-container {
+            .row:first-child {
+                text-align: center;
+            }
+        }
+        .restaurants-container {
             .restaurant {
                 min-height: 855px !important;
             }

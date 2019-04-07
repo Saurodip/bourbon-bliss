@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="restaurant-container">
+    <div class="restaurants-container">
         <div class="row">
             <div class="restaurant" [ngClass]="gridRowClass" [ngStyle]="{ 'min-height': arrayIndex === 1 ? '855px' : 'auto' }" *ngFor="let item of restaurants; let i = index">
                 <app-panel [template]="'restaurants'" [gridClass]="gridColumnClass" [content]="item">
